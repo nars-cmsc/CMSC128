@@ -1,0 +1,98 @@
+body{
+	height: 100%;
+	font-family: Arial Nova, sans-serif;
+	font-size: 16pt;
+	background-color: #fff;
+	margin:0;
+}
+header{
+	z-index: 2;
+	position: fixed;
+	background-image: linear-gradient(to right, #8e0000, #385723);
+	padding: 20px;
+	width: calc(100% - 0%);
+	top: 0;
+	height: 70px;
+}
+.logos img {
+	width: 67px;
+	height: 67px;
+	padding-left: 1%;
+	padding-top: .5%;
+	float: left;
+}
+.banner_lines {
+	float: left;
+}
+.banner_lines h3, h4, h6{
+	color: #fff;
+	margin: 0;
+	margin-left: 25px;
+	text-transform: uppercase;
+}
+.container-info {
+	float:left;
+	margin-top:200px;
+	padding-left:10%;
+	padding-right:8%;
+	padding-top:3%;
+	padding-bottom:3%;
+	text-align:center;
+	border-right-style: solid;
+}
+.container-info h3{
+	color:#8e0000;
+	text-transform: uppercase;
+}
+form {
+	float:left;
+	padding:10%;
+	margin-top:10%;
+	font-size:16pt;
+}
+.content {
+	font-size:14pt;
+}
+input[type=text]{
+	width:300px;
+	height:30px;
+	color:#c0c0c0;
+	border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+	width:100px;
+	height:50px;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 100px 100px 100px 100px;
+	border:0;
+	background-color:#8e0000;
+	float:right;
+	text-transform: uppercase;
+}
+.fa {
+	padding:15px;
+	font-size:30px;
+	width:25px;
+	text-align:center;
+	text-decoration:none;
+	border-radius:50%;
+	margin-top:0;
+	margin-bottom:10px;
+	margin-left:20px;
+	margin-right:20px;
+}
+.fa:hover {
+	opacity:0.7;
+}
+.fa-facebook {
+	background:#ffcc00;
+	color:#ffffff;
+}
+.fa-at {
+	background:#ffcc00;
+	color:#ffffff;
+}
+p {
+	font-size:12pt;
+}
