@@ -13,13 +13,18 @@
 	<?php include('header.php');?>
 	<article>
 		<div class = "container-info">
-			<h3>Welcome!</h3>
+			<h3>Welcome dear respondent!</h3>
 			<div class="content">
 				Please use the credentials sent to you by email.<br><br>
-				By CLICKING the LOG IN BUTTON, I CONSENT TO and recognize the authority of the 
-				Department of Mathematics and Computer Science of the University of the Philippines
-				Baguio, to process the information that I will be providing for the enhancement
-				of its future batches.
+				We would like to ask your help in completing the succeeding survey.
+				Your answers will be used as important feedback to improve our degree programs.<br><br>
+				Your participation in this study is voluntary and you may opt not to participate
+				by exiting this webpage. Once you log in and choose to participate, 
+				it is mandatory for you to fill in the required fields. Please rest assured 
+				your answers will not be attributed to you or matched with your identity. Since 
+				no personal information will be collected from you, the Philippine Data Privacy
+				Act does not apply to the processing of information gathered through this survey.<br><br>
+				Thank you.
 			</div>
 		</div>
 		<div class="login-form">

@@ -4,22 +4,29 @@
 	<style type="text/css">
 		footer {
 			position:fixed;
-			left:0;
-			bottom:0;
+			left:0px;
+			bottom:0px;
 			width:100%;
 			color:#ffffff;
 			background-color:#385723;
 			font-size:12pt;
 			padding:20px;
 		}
+		.info {
+			float:left;
+		}
+		.icons{
+			float:right;
+			padding-right:30px;
+		}
 	</style>
 </head>
 	<footer>
-		Department of Mathematics and Computer Science <br>
+		<p class="info">Department of Mathematics and Computer Science <br>
 		College of Science <br> 
-		University of the Philippines Baguio<br>
-		In case of technical problems, you may contact us through:
+		University of the Philippines Baguio</p>
+		<p class="icons">In case of technical problems, you may contact us through:
 		<a href="https://www.facebook.com/upbdmcs/" target="_blank" title="Department of Mathematics and Computer Science, University of the Philippines Baguio"><i class="fa fa-facebook"></i></a>
-		<a href="#" target="_blank" title="Email"><i class="fa fa-at"></i></a>
+		<a href="#" target="_blank" title="Email"><i class="fa fa-at"></i></a></p>
 	</footer>
 	</body>
