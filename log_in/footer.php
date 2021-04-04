@@ -4,6 +4,7 @@
 	<style type="text/css">
 		footer {
 			background-color:#385723;
+			position:fixed;
 			left:0;
 			bottom:0;
 			width:100%;
