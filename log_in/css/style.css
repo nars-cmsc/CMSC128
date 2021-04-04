@@ -16,6 +16,7 @@ body{
 	text-align:left;
 	border-right-style: solid;
 	width:450px;
+	position:relative;
 }
 .container-info h3{
 	color:#8e0000;
@@ -83,4 +84,21 @@ input[type=submit]:hover{
 }
 p {
 	font-size:12pt;
+}
+.content-alum {
+	margin-top:140px;
+	padding-left:50px;
+	padding-right:50px;
+}
+.content-alum h2 {
+	font-size:18pt;
+}
+.content-alum h3 {
+	font-size:14pt;
+}
+.entry {
+	font-size:10pt;
+}
+.options {
+	font-size:10pt;
 }
