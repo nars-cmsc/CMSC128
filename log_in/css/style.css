@@ -33,10 +33,10 @@ header{
 .container-info {
 	float:left;
 	margin-top:200px;
-	padding-left:10%;
-	padding-right:8%;
-	padding-top:3%;
-	padding-bottom:3%;
+	padding-left:130px;
+	padding-right:105px;
+	padding-top:30px;
+	padding-bottom:30px;
 	text-align:center;
 	border-right-style: solid;
 }
@@ -46,8 +46,8 @@ header{
 }
 form {
 	float:left;
-	padding:10%;
-	margin-top:10%;
+	padding:130px;
+	margin-top:120px;
 	font-size:16pt;
 }
 .content {
