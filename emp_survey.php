@@ -192,7 +192,7 @@
 				<input class="options" type="radio" name="ques13" value="">Important
 		<!-- QUESTION # 14 -->
 			<div class="entry">
-				<h3 class="ques_title">13. Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?</h3>
+				<h3 class="ques_title">13. Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?(Write "None" if none)</h3>
 			</div>
 				<textarea id="" name="ques14" rows="4" cols="50"></textarea>
 		<!-- QUESTION # 15 -->
