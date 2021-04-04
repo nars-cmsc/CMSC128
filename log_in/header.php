@@ -41,7 +41,7 @@
 	
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
   </head>
-
+<body>
 	<header>
 		<div class = "logos">
 			<img src = "../log_in/images/UP_seal.png">			<!--change location folder-->
