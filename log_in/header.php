@@ -1,8 +1,6 @@
-
   <head>    
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../log_in/css/style.css">
 	<link rel="icon" type="images/png" href="../log_in/images/UP_seal.png">		<!--change location folder-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

@@ -9,20 +9,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
   </head>
-  
-  <body>
-	<header>
-		<div class = "logos">
-			<img src = "../log_in/images/UP_seal.png">
-			<img src = "../log_in/images/CS_logo.png">
-		</div>		
-		<div class = "banner_lines">	
-			<h3>Department of Mathematics and Computer Science</h3>
-			<h4>College of Science</h4>
-			<h6>University of the Philippines Baguio</h6>
-		</div>
-	</header>
-	
+ 
+	<?php include('header.php');?>
 	<article>
 		<div class = "container-info">
 			<h3>Welcome!</h3>
@@ -43,6 +31,4 @@
 			</form>
 		</div>
 	</article>
-	
-  </body>
 </html>
