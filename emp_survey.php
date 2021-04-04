@@ -6,8 +6,9 @@
 <head>
 	<title>Employer Satisfaction Survey</title>
 </head>
-
-	<?php include('header.php'); ?><!-- for header/ navbar -->
+	<!-- for header/ navbar -->
+	<!--<?php //include('header.php'); ?>-->
+	<!-- label class = option; radio bttn class = options -->
 
 	<div class="content">
 		<h1>Employer Satisfaction Survey</h1>
@@ -16,15 +17,18 @@
 			<div class="entry">
 				<h3 class="ques_title">1. Which sector of economy does your company/organization belong to?</h3>
 			</div>
-				<input class="options" type="radio" name="sector" value="public">Public
-				<input class="options" type="radio" name="sector" value="private">Private
-				<input class="options" type="radio" name="sector" value="other">Others, please specify:
+				<input class="options" type="radio" name="sector" value="public" id="public">
+					<label for="public" class="option">Public</label> 
+				<input class="options" type="radio" name="sector" value="private" id="private">
+					<label for="private" class="option">Private</label> 
+				<input class="options" type="radio" name="sector" value="other" id="others"><label for="others" class="option">Others, please specify:</label>
+					<input type="text" name="">
 		<!-- QUESTION # 2 -->
 			<div class="entry">
 				<h3 class="ques_title">2. Where is your company/organization located?</h3>
 			</div>
-				<input class="options" type="radio" name="locale" value="philippines">Philippines
-				<input class="options" type="radio" name="locale" value="abroad">Abroad
+				<input class="options" type="radio" name="locale" value="philippines" id="phil"><label for="phil" class="option">Philippines</label>
+				<input class="options" type="radio" name="locale" value="abroad" id="abroad"><label for="abroad" class="option">Abroad</label>
 		<!-- QUESTION # 3 -->
 			<div class="entry">
 				<h3 class="ques_title">2.1. If you answered “Abroad”, please specify the region and sub-region based on the United Nations Geographic Regions:</h3>
@@ -96,9 +100,9 @@
 			<div class="entry">
 				<h3 class="ques_title">4. What is your position in your company/organization?</h3>
 			</div>
-				<input class="options" type="radio" name="position" value="">Chief level – General Manager/President/CEO<br>
-				<input class="options" type="radio" name="position" value="">Supervisory – Director/Managing Director/Supervisor<br>
-				<input class="options" type="radio" name="position" value="">Rank and file
+				<input class="options" type="radio" name="position" value="" id="chief"><label for="chief" class="option">Chief level – General Manager/President/CEO</label><br>
+				<input class="options" type="radio" name="position" value="" id="supe"><label for="supe" class="option">Supervisory – Director/Managing Director/Supervisor</label><br>
+				<input class="options" type="radio" name="position" value="" id="rank"><label for="rank" class="option">Rank and file</label>
 		<!-- QUESTION # 6 -->
 			<div class="entry">
 				<h3 class="ques_title">5. How many UP graduates are employed in your company/organization?</h3>
@@ -108,65 +112,497 @@
 			<div class="entry">
 				<h3 class="ques_title">6. How much do you agree or disagree with this statement: “UP graduates recruited in the last three to five years have the skills to work in my company/organization.”?</h3>
 			</div>
-				<input class="options" type="radio" name="workskill" value="">Strongly Disagree
-				<input class="options" type="radio" name="workskill" value="">Disagree
-				<input class="options" type="radio" name="workskill" value="">Agree
-				<input class="options" type="radio" name="workskill" value="">Strongly Agree
+				<input class="options" type="radio" name="workskill" value="" id="a7_1"><label for="a7_1" class="option">Strongly Disagree</label>
+				<input class="options" type="radio" name="workskill" value="" id="a7_2"><label for="a7_2" class="option">Disagree</label>
+				<input class="options" type="radio" name="workskill" value="" id="a7_3"><label for="a7_3" class="option">Agree</label>
+				<input class="options" type="radio" name="workskill" value="" id="a7_4"><label for="a7_4" class="option">Strongly Agree</label>
 		<!-- QUESTION # 8 -->
 			<div class="entry">
 				<h3 class="ques_title">7. Rate the importance of each skill when hiring new staff. Then rate your satisfaction on how well these are demonstrated by your staff who are UP graduates. Kindly encircle your ratings.</h3>
 			</div>
-				Reading Comprehension
-				<br/>
-				Active Listening
-				<br/>
-				Writing Skills
-				<br/>
-				Verbal Communication
-				<br/>
-				Mathematics Skills
-				<br/>
-				Scientific Literacy
-				<br/>
-				Digital Literacy
-				<br/>
-				Critical Thinking
-				<br/>
-				Participatory Learning
-				<br/>
-				Creative and Innovation
-				<br/>
-				Leadership Skills
-				<br/>
-				Social Awareness
-				<br/>
-				Service Orientation
-				<br/>
-				Time Management
-				<br/>
-				Complex Problem Solving Skills
-				<br/>
-				Judgment and Decision Making
-				<br/>
-				Systems Analysis and Evaluation
+				<table border="0">
+					<tr>
+						<th colspan="4">Importance in Hiring</th>
+						<th>SKILLS</th>
+						<th colspan="4">Performance Satisfaction</th>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_1" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Reading Comprehension</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_1_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_2" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Active Listening</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_2_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_3" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Writing Skills</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_3_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_4" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Verbal Communication</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_4_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_5" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Mathematics Skills</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_5_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_6" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Scientific Literacy</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_6_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_7" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Digital Literacy</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_7_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_8" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Critical Thinking</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_8_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_9" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Participatory Learning</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_9_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_10" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Creative and Innovation</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_10_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_11" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Leadership Skills</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_11_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_12" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Social Awareness</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_12_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_13" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Service Orientation</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_13_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_14" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Time Management</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_14_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_15" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Complex Problem Solving Skills</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_15_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_16" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Judgment and Decision Making</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_16_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input class="options" type="radio" name="ques8_17" value="" id="a8_1"><label for="a8_1" class="option">Unimportant</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17" value="" id="a8_2"><label for="a8_2" class="option">Of Little Importance</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17" value="" id="a8_3"><label for="a8_3" class="option">Important</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17" value="" id="a8_4"><label for="a8_4" class="option">Very Important</label>
+						</td>
+						<td>Systems Analysis and Evaluation</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17_1" value="" id="a8_5"><label for="a8_5" class="option">Very Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17_1" value="" id="a8_6"><label for="a8_6" class="option">Unsatisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17_1" value="" id="a8_7"><label for="a8_7" class="option">Satisfied</label>
+						</td>
+						<td>
+							<input class="options" type="radio" name="ques8_17_1" value="" id="a8_8"><label for="a8_8" class="option">Very Satisfied</label>
+						</td>
+					</tr>
+				</table>
 				<br/>
 				Others, please specify: <input type="text" name="others7">
 		<!-- QUESTION # 9 -->
 			<div class="entry">
 				<h3 class="ques_title">8. Based on your experience with the staff, how LIKELY are you to hire other graduates of UP?</h3>
 			</div>
-				<input class="options" type="radio" name="ques9" value="">Very Unlikely
-				<input class="options" type="radio" name="ques9" value="">Unlikely
-				<input class="options" type="radio" name="ques9" value="">Likely
-				<input class="options" type="radio" name="ques9" value="">Very Likely
+				<input class="options" type="radio" name="ques9" value="" id="a9_1"><label for="a9_1" class="option">Very Unlikely</label>
+				<input class="options" type="radio" name="ques9" value="" id="a9_2"><label for="a9_2" class="option">Unlikely</label>
+				<input class="options" type="radio" name="ques9" value="" id="a9_3"><label for="a9_3" class="option">Likely</label>
+				<input class="options" type="radio" name="ques9" value="" id="a9_4"><label for="a9_4" class="option">Very Likely</label>
 		<!-- QUESTION # 10 -->		
 			<div class="entry">
 				<h3 class="ques_title">9. Based on your experience with the staff how likely are you going to keep the UP graduates in your company/organization?</h3>
 			</div>
-				<input class="options" type="radio" name="ques10" value="">Very Unlikely
-				<input class="options" type="radio" name="ques10" value="">Unlikely
-				<input class="options" type="radio" name="ques10" value="">Likely
-				<input class="options" type="radio" name="ques10" value="">Very Likely
+				<input class="options" type="radio" name="ques9" value="" id="a9_1"><label for="a10_1" class="option">Very Unlikely</label>
+				<input class="options" type="radio" name="ques9" value="" id="a9_2"><label for="a10_2" class="option">Unlikely</label>
+				<input class="options" type="radio" name="ques9" value="" id="a9_3"><label for="a10_3" class="option">Likely</label>
+				<input class="options" type="radio" name="ques9" value="" id="a9_4"><label for="a10_4" class="option">Very Likely</label>
 		<!-- QUESTION # 11 -->
 			<div class="entry">
 				<h3 class="ques_title">10. Rate the importance of each item to the successful performance of the job for which your staff, who are UP graduates, were hired. Then, rate your satisfaction on how well these are demonstrated.</h3>
@@ -186,10 +622,10 @@
 			<div class="entry">
 				<h3 class="ques_title">12. How important is UP cooperation for your company/organization? Please rate the importance of cooperating with UP in the design of curricula and study programs.</h3>
 			</div>
-				<input class="options" type="radio" name="ques13" value="">Unimportant
-				<input class="options" type="radio" name="ques13" value="">Of Little Importance
-				<input class="options" type="radio" name="ques13" value="">Moderately part Important
-				<input class="options" type="radio" name="ques13" value="">Important
+				<input class="options" type="radio" name="ques13" value="" id="a13_1"><label for="a13_1" class="option">Unimportant</label>
+				<input class="options" type="radio" name="ques13" value="" id="a13_2"><label for="a13_2" class="option">Of Little Importance</label>
+				<input class="options" type="radio" name="ques13" value="" id="a13_3"><label for="a13_3" class="option">Moderately part Important</label>
+				<input class="options" type="radio" name="ques13" value="" id="a13_4"><label for="a13_4" class="option">Important</label>
 		<!-- QUESTION # 14 -->
 			<div class="entry">
 				<h3 class="ques_title">13. Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?(Write "None" if none)</h3>
