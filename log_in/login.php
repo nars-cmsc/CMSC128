@@ -15,10 +15,11 @@
 		<div class = "container-info">
 			<h3>Welcome!</h3>
 			<div class="content">
-				Please use the credentials sent to you by email.<br><br><br><br>				
-				<p>In case of technical problems, you may contact us through:</p>
-				<a href="https://www.facebook.com/upbdmcs/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
-				<a href="#" target="_blank" title="Email"><i class="fa fa-at"></i></a>
+				Please use the credentials sent to you by email.<br><br>
+				By CLICKING the LOG IN BUTTON, I CONSENT TO and recognize the authority of the 
+				Department of Mathematics and Computer Science of the University of the Philippines
+				Baguio, to process the information that I will be providing for the enhancement
+				of its future batches.
 			</div>
 		</div>
 		<div class="login-form">
@@ -27,7 +28,7 @@
 				<input type="text" placeholder="Type your email address here..."><br><br>
 				<label for="password">Password:</label><br>
 				<input type="text" placeholder="Type your password here..."><br><br>
-				<input type="submit" value="Log-in">
+				<input type="submit" value="Log in">
 			</form>
 		</div>
 	</article>
