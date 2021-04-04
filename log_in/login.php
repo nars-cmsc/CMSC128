@@ -31,4 +31,5 @@
 			</form>
 		</div>
 	</article>
+	<?php include('footer.php');?>
 </html>
