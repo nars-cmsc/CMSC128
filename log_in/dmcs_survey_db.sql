@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2021 at 10:54 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: Apr 04, 2021 at 09:23 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,21 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `survey`
---
-
-CREATE TABLE `survey` (
-  `survey_id` mediumint(9) NOT NULL,
-  `survey_name` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `survey`
---
-
-INSERT INTO `survey` (`survey_id`, `survey_name`) VALUES
-(1, 'Employer Satisfaction Survey');
-
 -- Table structure for table `alumni survey`
 --
 
@@ -108,26 +93,12 @@ INSERT INTO `survey_questions` (`question_id`, `survey_id`, `question_body`) VAL
 --
 
 CREATE TABLE `users` (
-  `user_id` mediumint(9) NOT NULL,
-  `user_name` varchar(300) NOT NULL
+  `Chuchu` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`user_id`, `user_name`) VALUES
-(1, 'jane');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `survey`
---
-ALTER TABLE `survey`
-  ADD PRIMARY KEY (`survey_id`);
 
 --
 -- Indexes for table `survey_answers`
@@ -143,40 +114,6 @@ ALTER TABLE `survey_answers`
 ALTER TABLE `survey_questions`
   ADD PRIMARY KEY (`question_id`),
   ADD KEY `survey_id` (`survey_id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `survey`
---
-ALTER TABLE `survey`
-  MODIFY `survey_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `survey_answers`
---
-ALTER TABLE `survey_answers`
-  MODIFY `answer_id` mediumint(9) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `survey_questions`
---
-ALTER TABLE `survey_questions`
-  MODIFY `question_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
