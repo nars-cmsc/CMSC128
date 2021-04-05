@@ -188,6 +188,57 @@
 			<div class="entry">
 				<h3 class="ques_title">10. In the order of importance, list your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
 			</div>
+				<table border="0">
+					
+					<tr>
+						<td>
+							1.		<textarea id="" name="minlevel" rows="2" cols="50"></textarea><br>
+						</td>
+						<td>
+							<textarea id="" name="minlevel" rows="2" cols="50"></textarea>		%<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							2.		<textarea id="" name="minlevel" rows="2" cols="50"></textarea><br>
+						</td>
+						<td>
+							<textarea id="" name="minlevel" rows="2" cols="50"></textarea>		%<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							3.		<textarea id="" name="minlevel" rows="2" cols="50"></textarea><br>
+						</td>
+						<td>
+							<textarea id="" name="minlevel" rows="2" cols="50"></textarea>		%<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							4.		<textarea id="" name="minlevel" rows="2" cols="50"></textarea><br>
+						</td>
+						<td>
+							<textarea id="" name="minlevel" rows="2" cols="50"></textarea>		%<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							5.		<textarea id="" name="minlevel" rows="2" cols="50"></textarea><br>
+						</td>
+						<td>
+							<textarea id="" name="minlevel" rows="2" cols="50"></textarea>		%<br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							6.		<textarea id="" name="minlevel" rows="2" cols="50"></textarea><br>
+						</td>
+						<td>
+							<textarea id="" name="minlevel" rows="2" cols="50"></textarea>		%<br>
+						</td>
+					</tr>
+				</table>
 		
 		<!-- QUESTION # 11 -->
 			<div class="entry">
