@@ -1,0 +1,104 @@
+body{
+	height: 100%;
+	font-family: Arial Nova, sans-serif;
+	font-size: 16pt;
+	background-color: #fff;
+	margin:0;
+}
+.container-info {
+	float:left;
+	margin-top:140px;
+	padding-left:130px;
+	padding-right:105px;
+	padding-top:30px;
+	padding-bottom:30px;
+	margin-bottom:140px;
+	text-align:left;
+	border-right-style: solid;
+	width:450px;
+	position:relative;
+}
+.container-info h3{
+	color:#8e0000;
+	text-transform: uppercase;
+}
+form {
+	float:left;
+	padding:80px;
+	margin-top:140px;
+	font-size:16pt;
+}
+.content {
+	font-size:14pt;
+}
+input[type=text]{
+	width:300px;
+	height:30px;
+	color:#c0c0c0;
+	border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+	width:100px;
+	height:50px;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 100px 100px 100px 100px;
+	border:0;
+	background-color:#ffcc00;
+	float:right;
+	text-transform: uppercase;
+}
+input[type=submit]:hover{
+	width:100px;
+	height:50px;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 100px 100px 100px 100px;
+	border:0;
+	background-color:#8e0000;
+	float:right;
+	text-transform: uppercase;
+}
+.fa {
+	padding:15px;
+	font-size:30px;
+	width:20px;
+	text-align:center;
+	text-decoration:none;
+	border-radius:50%;
+	margin-top:0;
+	margin-bottom:10px;
+	margin-left:20px;
+	margin-right:20px;
+}
+.fa:hover {
+	background:#8e0000;	
+}
+.fa-facebook {
+	background:#ffcc00;
+	color:#ffffff;
+}
+.fa-at {
+	background:#ffcc00;
+	color:#ffffff;
+}
+p {
+	font-size:12pt;
+}
+.content-alum {
+	margin-top:140px;
+	padding-left:50px;
+	padding-right:50px;
+}
+.content-alum h2 {
+	font-size:18pt;
+}
+.content-alum h3 {
+	font-size:14pt;
+}
+.entry {
+	font-size:10pt;
+}
+.options {
+	font-size:10pt;
+}
