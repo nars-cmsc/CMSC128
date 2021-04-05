@@ -90,15 +90,32 @@ p {
 	padding-left:50px;
 	padding-right:50px;
 }
+.content-emp {
+	margin-top:140px;
+	padding-left:50px;
+	padding-right:50px;
+}
+.content-alum h1 {
+	font-size:22pt;
+}
 .content-alum h2 {
 	font-size:18pt;
 }
-.content-alum h3 {
+.content-emp h1{
+	font-size:22pt;
+}
+.content-emp h2{
+	font-size:18pt;
+}
+.ques_title {
+	font-size:16pt;
+}
+.subques {
 	font-size:14pt;
 }
-.entry {
-	font-size:10pt;
+label {
+	font-size:12pt;
 }
-.options {
-	font-size:10pt;
+.submit-button {
+	float:right;
 }
