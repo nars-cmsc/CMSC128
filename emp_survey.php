@@ -4,13 +4,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Employer Satisfaction Survey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="images/png" href="images/UP_seal.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<title>Employer Satisfaction Survey - UPB DMCS</title>
 </head>
 	<!-- for header/ navbar -->
-	<!--<?php //include('header.php'); ?>-->
+	<?php include('header.php'); ?>
 	<!-- label class = option; radio bttn class = options -->
 
-	<div class="content">
+	<div class="content-emp">
+		<div class="content-survey">
 		<h1>Employer Satisfaction Survey</h1>
 		<h2>Please make sure to fill in answers to all the questions.</h2>
 		<!-- QUESTION # 1 -->
@@ -646,17 +654,19 @@
 				<h3 class="ques_title">16. Would you like to elaborate on any of your answers/ratings above? Please indicate the numbers or items you are discussing. (Write "None" if you don't want to elaborate any.)</h3>
 			</div>
 				<textarea id="" name="ques17" rows="4" cols="50"></textarea>
-	<!-- submit button -->
-		<form action="emp_survey.php" method="post">
-			<input type="submit" name="submit" value="Submit"/>
-	<!-- DON'T MIND THIS FOR FUTURE STUFF PA DIS -->
-	<!-- 	<input type="hidden" name="question_id" value="question_id"/>
-			<input type="hidden" name="submitted" value="1"/> -->
-		</form>
+			<!-- submit button -->
+			<form class="submit-button" action="emp_survey.php" method="post">
+				<input type="submit" name="submit" value="Submit"/>
+		<!-- DON'T MIND THIS FOR FUTURE STUFF PA DIS -->
+		<!-- 	<input type="hidden" name="question_id" value="question_id"/>
+				<input type="hidden" name="submitted" value="1"/> -->
+			</form>	
+	</div>
+		<!-- for footer/ contact details -->
+	<?php include('footer.php'); ?>
 	</div>
 
-	<!-- for footer/ contact details -->
-	<!-- <?php //include('footer.php'); ?>-->
-
+	
+</body>
 </html>
 						
