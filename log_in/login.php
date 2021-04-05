@@ -9,28 +9,22 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
   </head>
-  
-  <body>
-	<header>
-		<div class = "logos">
-			<img src = "../log_in/images/UP_seal.png">
-			<img src = "../log_in/images/CS_logo.png">
-		</div>		
-		<div class = "banner_lines">	
-			<h3>Department of Mathematics and Computer Science</h3>
-			<h4>College of Science</h4>
-			<h6>University of the Philippines Baguio</h6>
-		</div>
-	</header>
-	
+ 
+	<?php include('header.php');?>
 	<article>
 		<div class = "container-info">
-			<h3>Welcome!</h3>
+			<h3>Welcome dear respondent!</h3>
 			<div class="content">
-				Please use the credentials sent to you by email.<br><br><br><br>				
-				<p>In case of technical problems, you may contact us through:</p>
-				<a href="https://www.facebook.com/upbdmcs/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
-				<a href="#" target="_blank" title="Email"><i class="fa fa-at"></i></a>
+				Please use the credentials sent to you by email.<br><br>
+				We would like to ask your help in completing the succeeding survey.
+				Your answers will be used as important feedback to improve our degree programs.<br><br>
+				Your participation in this study is voluntary and you may opt not to participate
+				by exiting this webpage. Once you log in and choose to participate, 
+				it is mandatory for you to fill in the required fields. Please rest assured 
+				your answers will not be attributed to you or matched with your identity. Since 
+				no personal information will be collected from you, the Philippine Data Privacy
+				Act does not apply to the processing of information gathered through this survey.<br><br>
+				Thank you.
 			</div>
 		</div>
 		<div class="login-form">
@@ -39,10 +33,9 @@
 				<input type="text" placeholder="Type your email address here..."><br><br>
 				<label for="password">Password:</label><br>
 				<input type="text" placeholder="Type your password here..."><br><br>
-				<input type="submit" value="Log-in">
+				<input type="submit" value="Log in">
 			</form>
 		</div>
 	</article>
-	
-  </body>
+	<?php include('footer.php');?>
 </html>
