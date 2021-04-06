@@ -29,8 +29,8 @@
 		}
 		.logos img {
 			position: relative;
-			width: 3.5%;
-			height: 3.5%;
+			width: 4.5rem;
+			height: 4.5rem;
 			float: left;
 		}
 		/* added this to personalize the padding of each logo*/
