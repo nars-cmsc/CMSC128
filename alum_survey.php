@@ -1,5 +1,13 @@
 <!-- University of the Philippines Baguio Department of Mathematics and Computer Science Alumni Survey-->
+<?php 
+require_once 'controller.php';
 
+if (!isset($_SESSION['id'])) {
+	header('location:login.php');
+	exit();
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -453,13 +461,14 @@
 			</div>
 						<textarea id="" name="ques19" rows="10" cols="50"></textarea>
 	<!-- submit button -->
-			<form class="submit-button" action="emp_survey.php" method="post">
+			<form class="submit-button" action="alum_survey.php" method="post">
 				<input type="submit" name="submit" value="Submit"/>
 		<!-- DON'T MIND THIS FOR FUTURE STUFF PA DIS -->
 		<!-- 	<input type="hidden" name="question_id" value="question_id"/>
 				<input type="hidden" name="submitted" value="1"/> -->
-			</form>	
+			</form>
 	</div>
+
 		<!-- for footer/ contact details -->
 	<?php include('footer.php'); ?>
 	</div>

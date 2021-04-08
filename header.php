@@ -1,3 +1,11 @@
+<?php 
+require_once 'controller.php';
+
+if (!isset($_SESSION['id'])) {
+	header('location:login.php');
+	exit();
+}
+?>
   <head>    
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,7 +87,7 @@
 			<h6>University of the Philippines Baguio</h6>
 		</div>
 		<div class="log_out">
-			<a href="#"><img src = "images/logout.png"></a>
+			<a href="header.php?logout=1" class="logout"><img src = "images/logout.png"></a>
 		</div>
 	</header>
 	</div>

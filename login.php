@@ -1,3 +1,5 @@
+<?php require_once 'controller.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>    
@@ -84,11 +86,11 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
-  </head>
-  <body>
-  	<!-- added container for header -->
-  	<div id="container-header">
-  		<header>
+	</head>
+	<body>
+		<!-- added container for header -->
+		<div id="container-header">
+			<header>
 			<div class = "logos">
 				<img src = "images/UP_seal.png" id = "up">		
 				<img src = "images/CS_logo.png" id = "cs">	
@@ -118,12 +120,20 @@
 			</div>
 		</div>
 		<div class="login-form">
-			<form>
+			<form action="login.php" method="post">
+				<!-- added this area for error messages -->
+				<?php if (count($errors) > 0): ?>
+					<div class="alert">
+						<?php foreach ($errors as $error): ?>
+							<?php echo $error; ?><br>
+						<?php endforeach; ?>	
+					</div>
+				<?php endif;?>
 				<label for="email">E-mail:</label><br>
-				<input type="text" placeholder="Type your email address here..."><br><br>
+				<input type="email" placeholder="Type your email address here..." name="email" value="<?php echo $email; ?>"><br><br>
 				<label for="password">Password:</label><br>
-				<input type="text" placeholder="Type your password here..."><br><br>
-				<input type="submit" value="Log in">
+				<input type="password" placeholder="Type your password here..." name="password"><br><br>
+				<input type="submit" value="Log in" name="login-btn">
 			</form>
 		</div>
 	</div>
@@ -138,4 +148,4 @@
 	</footer>
 	</div>
 	</body>
-</html>
+	</html>
