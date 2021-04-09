@@ -1,4 +1,17 @@
-<?php require_once 'controller.php'; ?>
+<?php require_once 'controller.php'; 
+
+// prevent back to login
+if (isset($_SESSION['email'])) {
+	if ($_SESSION['role'] === 0) {
+		header('location: alum_survey.php');
+		exit();
+	}
+	elseif ($_SESSION['role'] === 1) {
+		header('location: emp_survey.php');
+		exit();
+	}
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">

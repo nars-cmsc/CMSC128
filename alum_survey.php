@@ -2,12 +2,13 @@
 <?php 
 require_once 'controller.php';
 
-if (!isset($_SESSION['id'])) {
+// if user is not logged in
+if (!isset($_SESSION['email'])) {
 	header('location:login.php');
 	exit();
 }
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -2,11 +2,10 @@
 
 session_start();
 
-require 'config/connection.php';
+require ('config/connection.php');
 
 $errors = array();
 $email = "";
-
 
 // if user clicks log in button
 if (isset($_POST['login-btn'])) {
@@ -41,10 +40,8 @@ if (isset($_POST['login-btn'])) {
 			// successful login
 			$_SESSION['id'] = $user['user_id'];
 			$_SESSION['email'] = $user['email'];
+			$_SESSION['role'] = $user['role_id'];
 
-			// message prompt
-			$_SESSION['message'] = "You are now logged in!";
-			$_SESSION['alert-class'] = "alert-success";
 			if ($user['role_id'] === 0) {
 				header('location: alum_survey.php');
 				exit();
@@ -59,10 +56,9 @@ if (isset($_POST['login-btn'])) {
 		else {
 			$errors['login_fail'] = "Wrong credentials";
 		}
-	}
+	}	
+}// end of login-btn
 
-	
-}
 
 // if user clicks logout button
 if (isset($_GET['logout'])) {
@@ -73,8 +69,6 @@ if (isset($_GET['logout'])) {
 	header('location: login.php');
 	exit();
 }
-
-
 ?>
 
 <!-- EMAIL: jane@gmail.com PASSWORD: 12345 (ALUMNI)

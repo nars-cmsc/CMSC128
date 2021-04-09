@@ -1,11 +1,5 @@
-<?php 
-require_once 'controller.php';
+<?php require_once 'controller.php'; ?>
 
-if (!isset($_SESSION['id'])) {
-	header('location:login.php');
-	exit();
-}
-?>
   <head>    
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
