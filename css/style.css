@@ -114,11 +114,14 @@ p {
 	min-height: 100%;
 }
 .content-emp {
-	margin-top:140px;
+	/*margin-top:140px;*/
 	padding-left:50px;
 	padding-right:50px;
 	position: relative; /* added this*/
-	min-height: 100%;
+	/*min-height: 100%;*/
+	display: block;
+	overflow: auto;
+	padding-bottom: 25rem;
 }
 .content-alum h1 {
 	font-size:22pt;
@@ -131,10 +134,6 @@ p {
 }
 .content-emp h2{
 	font-size:18pt;
-}
-/* added this */
-.content-survey{
-	padding-bottom: 25rem;
 }
 .ques_title {
 	font-size:16pt;

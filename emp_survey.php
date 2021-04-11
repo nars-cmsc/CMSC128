@@ -3,6 +3,7 @@
 <?php 
 include_once ('controller.php');
 
+// if user is not logged in
 if (!isset($_SESSION['email'])) {
 	header('location:login.php');
 	exit();
@@ -27,106 +28,111 @@ if (!isset($_SESSION['email'])) {
 	<!-- label class = option; radio bttn class = options -->
 
 	<div class="content-emp">
-		<div class="content-survey">
+		<form class="emp-form" action="emp_survey.php" method="post">
 		<h1>Employer Satisfaction Survey</h1>
 		<h2>Please make sure to fill in answers to all the questions.</h2>
+		<!-- error alert -->
+		<?php if (count($errors) > 0): ?>
+			<div class="alert">
+				<?php foreach ($errors as $error): ?>
+					<?php echo $error; ?><br>
+				<?php endforeach; ?>	
+			</div>
+		<?php endif;?>
+
 		<!-- QUESTION # 1 -->
 			<div class="entry">
+				<input type="hidden" name="one" value="1">
 				<h3 class="ques_title">1. Which sector of economy does your company/organization belong to?</h3>
 			</div>
-				<input class="options" type="radio" name="ques1" value="public" id="public">
-					<label for="public" class="option">Public</label> 
-				<input class="options" type="radio" name="ques1" value="private" id="private">
-					<label for="private" class="option">Private</label> 
-				<input class="options" type="radio" name="ques1" value="other" id="others"><label for="others" class="option">Others, please specify:</label>
-					<input type="text" name="q1_other" id="q1_other" style="display:none;">
-					
+				<input class="options" type="radio" name="ques1" value="public" id="ques1_1">
+					<label for="ques1_1" class="option">Public</label> 
+				<input class="options" type="radio" name="ques1" value="private" id="ques1_2">
+					<label for="ques1_2" class="option">Private</label> 
+				<input class="options" type="radio" name="ques1" value="other" id="ques1_other"><label for="ques1_other" class="option">Others, please specify:</label>
+					<input type="text" name="ques1_otxt" id="ques1_otxt"  style="display:none;">
+
 		<!-- QUESTION # 2 -->
 			<div class="entry">
+				<input type="hidden" name="two" value="2">
 				<h3 class="ques_title">2. Where is your company/organization located?</h3>
 			</div>
-				<input class="options" type="radio" name="locale" value="philippines" id="phil"><label for="phil" class="option">Philippines</label>
-				<input class="options" type="radio" name="locale" value="abroad" id="abroad"><label for="abroad" class="option">Abroad</label>
+				<input class="options" type="radio" name="ques2" value="philippines" id="ques2_1"><label for="ques2_1" class="option">Philippines</label>
+				<input class="options" type="radio" name="ques2" value="abroad" id="ques2_2"><label for="ques2_2" class="option">Abroad</label>
+		
 		<!-- QUESTION # 2.1 -->
+			<input type="hidden" name="twopone" value="3">
 			<div id="q2_1" style="display: none;">
 				<div class="entry">
 					<h3 class="ques_title">2.1. If you answered “Abroad”, please specify the region and sub-region based on the United Nations Geographic Regions:</h3>
 				</div>
 					<label for="region">Region: </label>
-					<select name="region" id="region" onchange="make_subreg(this.value);">
+					<select name="ques2_1_1" id="ques2_1_1" onchange="make_subreg(this.value);">
 						<option value="" selected disabled >
 							Select a region
 						</option>
-						<option>Africa</option>
-						<option>America</option>
-						<option>Antarctica</option>
-						<option>Asia</option>
-						<option>Europe</option>
-						<option>Oceania</option>
+						<option value="Africa">Africa</option>
+						<option value="America">America</option>
+						<option value="Antarctica">Antarctica</option>
+						<option value="Asia">Asia</option>
+						<option value="Europe">Europe</option>
+						<option value="Oceania">Oceania</option>
 					</select>
-					<label for="subregion">Sub region: </label>
-					<select name="subregion" id="subregion">
+					<label for="ques2_1_2">Sub region: </label>
+					<select name="ques2_1_2" id="ques2_1_2">
 						<option value="" selected disabled >
 							Select a subregion
 						</option>
 					</select>
 			</div>
-			
+
 		<!-- QUESTION # 3 -->
 			<div class="entry">
+				<input type="hidden" name="three" value="3">
 				<h3 class="ques_title">3. Which industry and business does your company/organization belong to?</h3>
 			</div>
-				<select name="industry" id="industry" onchange="other_txt();">
+				<select name="ques3" id="ques3" onchange="other_txt();">
 					<option value="none" selected disabled >
 						Select industry and business
 					</option>
-					<option value="">Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use</option>
-					<option value="">Activities of International Organizations and Bodies</option>
-					<option value="">Administrative and Support Service Activities</option>
-					<option value="">Agriculture, Forestry and Fishing</option>
-					<option value="">Arts, Entertainment and Recreation</option>
-					<option value="">Construction</option>
-					<option value="">Education</option>
-					<option value="">Electricity, Gas, Steam and Air Conditioning Supply</option>
-					<option value="">Finance, Banks, and Insurance</option>
-					<option value="">Hotel/Accommodation, and Restaurant and Food Service</option>
-					<option value="">Human Health and Social Work Activities</option>
-					<option value=""> Information Technology</option>
-					<option value="">Manufacturing</option>
-					<option value="">Media and Communication</option>
-					<option value="">Mining and Quarrying</option>
-					<option value="">Other Service Activities</option>
-					<option value="">Professional, Scientific and Technical Activities</option>
-					<option value="">Public Administration and Defense; Compulsory Social Security</option>
-					<option value="">Real Estate Activities</option>
-					<option value="">Transportation and Storage</option>
-					<option value="">Water Supply; Sewerage, Waste Management and Remediation Activities</option>
-					<option value="">Wholesale and Retail Trade</option>
+					<?php foreach ($ques3_arr as $ques3_el): ?>
+						<option value="<?php echo $ques3_el; ?>">
+							<?php echo $ques3_el; ?>
+						</option><br>
+					<?php endforeach; ?>
 					<option value="other">Others, please specify:</option>
 				</select>
-				<input type="text" name="q3_other" id="q3_other" style="display:none;">
+				<input type="text" name="ques3_other" id="ques3_other" style="display:none;">
+
 		<!-- QUESTION # 4 -->
 			<div class="entry">
+				<input type="hidden" name="four" value="4">
 				<h3 class="ques_title">4. What is your position in your company/organization?</h3>
 			</div>
-				<input class="options" type="radio" name="position" value="" id="chief"><label for="chief" class="option">Chief level – General Manager/President/CEO</label><br>
-				<input class="options" type="radio" name="position" value="" id="supe"><label for="supe" class="option">Supervisory – Director/Managing Director/Supervisor</label><br>
-				<input class="options" type="radio" name="position" value="" id="rank"><label for="rank" class="option">Rank and file</label>
+				<input class="options" type="radio" name="ques4" value="Chief level – General Manager/President/CEO" id="ques4_1"><label for="ques4_1" class="option">Chief level – General Manager/President/CEO</label><br>
+				<input class="options" type="radio" name="ques4" value="Supervisory – Director/Managing Director/Supervisor" id="ques4_2"><label for="supe" class="option">Supervisory – Director/Managing Director/Supervisor</label><br>
+				<input class="options" type="radio" name="ques4" value="Rank and file" id="ques4_3"><label for="rank" class="option">Rank and file</label>
+
 		<!-- QUESTION # 5 -->
 			<div class="entry">
+				<input type="hidden" name="five" value="5">
 				<h3 class="ques_title">5. How many UP graduates are employed in your company/organization?</h3>
 			</div>
-				<input type="text" name="num_grad" id="">
+				<input type="text" name="ques5" id="ques5">
+
 		<!-- QUESTION # 6 -->
 			<div class="entry">
+				<input type="hidden" name="six" value="6">
 				<h3 class="ques_title">6. How much do you agree or disagree with this statement: “UP graduates recruited in the last three to five years have the skills to work in my company/organization.”?</h3>
 			</div>
-				<input class="options" type="radio" name="workskill" value="" id="a7_1"><label for="a7_1" class="option">Strongly Disagree</label>
-				<input class="options" type="radio" name="workskill" value="" id="a7_2"><label for="a7_2" class="option">Disagree</label>
-				<input class="options" type="radio" name="workskill" value="" id="a7_3"><label for="a7_3" class="option">Agree</label>
-				<input class="options" type="radio" name="workskill" value="" id="a7_4"><label for="a7_4" class="option">Strongly Agree</label>
+				<input class="options" type="radio" name="ques6" value="Strongly Disagree" id="ques6_1"><label for="ques6_1" class="option">Strongly Disagree</label>
+				<input class="options" type="radio" name="ques6" value="Disagree" id="ques6_2"><label for="ques6_2" class="option">Disagree</label>
+				<input class="options" type="radio" name="ques6" value="Agree" id="ques6_3"><label for="ques6_3" class="option">Agree</label>
+				<input class="options" type="radio" name="ques6" value="Strongly Agree" id="ques6_4"><label for="ques6_4" class="option">Strongly Agree</label>
+
 		<!-- QUESTION # 7 -->
 			<div class="entry">
+				<input type="hidden" name="seven" value="7">
 				<h3 class="ques_title">7. Rate the importance of each skill when hiring new staff. Kindly select your ratings.</h3>
 			</div>
 				<table border="0">
@@ -137,265 +143,31 @@ if (!isset($_SESSION['email'])) {
 						<th>Important</th>
 						<th>Very Important</th>
 					</tr>
+					<?php $i = 0; foreach ($skills_arr as $skill): ?>
 					<tr>
-						<td>Reading Comprehension</td>
+						<?php $i++; ?>
 						<td>
-							<input class="options" type="radio" name="ques7_1" value="" id="">
+							<?php echo $skill; ?>
 						</td>
 						<td>
-							<input class="options" type="radio" name="ques7_1" value="" id="">
+							<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Unimportant';?>" id="">
 						</td>
 						<td>
-							<input class="options" type="radio" name="ques7_1" value="" id="">
+							<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Of Little Importance';?>" id="">
 						</td>
 						<td>
-							<input class="options" type="radio" name="ques7_1" value="" id="">
+							<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Important';?>" id="">
 						</td>
-					</tr>
+						<td>
+							<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Very Important';?>" id="">
+						</td>
 					<tr>
-						<td>Active Listening</td>
-						<td>
-							<input class="options" type="radio" name="ques7_2" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_2" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_2" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_2" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Writing Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques7_3" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_3" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_3" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_3" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Verbal Communication</td>
-						<td>
-							<input class="options" type="radio" name="ques7_4" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_4" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_4" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_4" value="" id="">
-					</tr>
-					<tr>
-						<td>Mathematics Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques7_5" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_5" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_5" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_5" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Scientific Literacy</td>
-						<td>
-							<input class="options" type="radio" name="ques7_6" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_6" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_6" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_6" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Digital Literacy</td>
-						<td>
-							<input class="options" type="radio" name="ques7_7" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_7" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_7" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_7" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Critical Thinking</td>
-						<td>
-							<input class="options" type="radio" name="ques7_8" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_8" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_8" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_8" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Participatory Learning</td>
-						<td>
-							<input class="options" type="radio" name="ques7_9" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_9" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_9" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_9" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Creative and Innovation</td>
-						<td>
-							<input class="options" type="radio" name="ques7_10" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_10" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_10" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_10" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Leadership Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques7_11" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_11" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_11" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_11" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Social Awareness</td>
-						<td>
-							<input class="options" type="radio" name="ques7_12" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_12" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_12" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_12" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Service Orientation</td>
-						<td>
-							<input class="options" type="radio" name="ques7_13" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_13" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_13" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_13" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Time Management</td>
-						<td>
-							<input class="options" type="radio" name="ques7_14" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_14" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_14" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_14" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Complex Problem Solving Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques7_15" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_15" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_15" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_15" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Judgment and Decision Making</td>
-						<td>
-							<input class="options" type="radio" name="ques7_16" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_16" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_16" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_16" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Systems Analysis and Evaluation</td>
-						<td>
-							<input class="options" type="radio" name="ques7_17" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_17" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_17" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques7_17" value="" id="">
-						</td>
-					</tr>
+					<?php endforeach; ?>
 				</table>
-				<br/>
-				<!-- Others, please specify: <input type="text" name="others7"> -->
+
 		<!-- QUESTION # 8 -->
 			<div class="entry">
+				<input type="hidden" name="eight" value="8">
 				<h3 class="ques_title">8. Rate your satisfaction on how well each skill is demonstrated by your staff who are UP graduates. Kindly select your ratings.</h3>
 			</div>
 				<table border="0">
@@ -406,281 +178,51 @@ if (!isset($_SESSION['email'])) {
 						<th>Satisfied</th>
 						<th>Very Satisfied</th>
 					</tr>
+					<?php $i = 0; foreach ($skills_arr as $skill): ?>
 					<tr>
-						<td>Reading Comprehension</td>
+						<?php $i++; ?>
 						<td>
-							<input class="options" type="radio" name="ques8_1" value="" id="">
+							<?php echo $skill; ?>
 						</td>
 						<td>
-							<input class="options" type="radio" name="ques8_1" value="" id="">
+							<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Very Unsatisfied';?>" id="">
 						</td>
 						<td>
-							<input class="options" type="radio" name="ques8_1" value="" id="">
+							<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Unsatisfied';?>" id="">
 						</td>
 						<td>
-							<input class="options" type="radio" name="ques8_1" value="" id="">
+							<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Satisfied';?>" id="">
 						</td>
-					</tr>
+						<td>
+							<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Very Satisfied';?>" id="">
+						</td>
 					<tr>
-						<td>Active Listening</td>
-						<td>
-							<input class="options" type="radio" name="ques8_2" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_2" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_2" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_2" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Writing Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques8_3" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_3" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_3" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_3" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Verbal Communication</td>
-						<td>
-							<input class="options" type="radio" name="ques8_4" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_4" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_4" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_4" value="" id="">
-					</tr>
-					<tr>
-						<td>Mathematics Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques8_5" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_5" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_5" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_5" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Scientific Literacy</td>
-						<td>
-							<input class="options" type="radio" name="ques8_6" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_6" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_6" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_6" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Digital Literacy</td>
-						<td>
-							<input class="options" type="radio" name="ques8_7" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_7" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_7" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_7" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Critical Thinking</td>
-						<td>
-							<input class="options" type="radio" name="ques8_8" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_8" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_8" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_8" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Participatory Learning</td>
-						<td>
-							<input class="options" type="radio" name="ques8_9" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_9" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_9" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_9" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Creative and Innovation</td>
-						<td>
-							<input class="options" type="radio" name="ques8_10" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_10" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_10" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_10" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Leadership Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques8_11" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_11" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_11" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_11" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Social Awareness</td>
-						<td>
-							<input class="options" type="radio" name="ques8_12" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_12" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_12" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_12" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Service Orientation</td>
-						<td>
-							<input class="options" type="radio" name="ques8_13" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_13" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_13" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_13" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Time Management</td>
-						<td>
-							<input class="options" type="radio" name="ques8_14" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_14" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_14" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_14" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Complex Problem Solving Skills</td>
-						<td>
-							<input class="options" type="radio" name="ques8_15" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_15" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_15" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_15" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Judgment and Decision Making</td>
-						<td>
-							<input class="options" type="radio" name="ques8_16" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_16" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_16" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_16" value="" id="">
-						</td>
-					</tr>
-					<tr>
-						<td>Systems Analysis and Evaluation</td>
-						<td>
-							<input class="options" type="radio" name="ques8_17" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_17" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_17" value="" id="">
-						</td>
-						<td>
-							<input class="options" type="radio" name="ques8_17" value="" id="">
-						</td>
-					</tr>
+					<?php endforeach; ?>
 				</table>
-				<br/>
-				<!-- Others, please specify: <input type="text" name="others7"> -->
+
 		<!-- QUESTION # 9 -->
 			<div class="entry">
+				<input type="hidden" name="nine" value="9">
 				<h3 class="ques_title">9. Based on your experience with the staff, how LIKELY are you to hire other graduates of UP?</h3>
 			</div>
-				<input class="options" type="radio" name="ques9" value="" id="a9_1"><label for="a9_1" class="option">Very Unlikely</label>
-				<input class="options" type="radio" name="ques9" value="" id="a9_2"><label for="a9_2" class="option">Unlikely</label>
-				<input class="options" type="radio" name="ques9" value="" id="a9_3"><label for="a9_3" class="option">Likely</label>
-				<input class="options" type="radio" name="ques9" value="" id="a9_4"><label for="a9_4" class="option">Very Likely</label>
+				<input class="options" type="radio" name="ques9" value="Very Unlikely" id="ques9_1"><label for="ques9_1" class="option">Very Unlikely</label>
+				<input class="options" type="radio" name="ques9" value="Unlikely" id="ques9_2"><label for="ques9_2" class="option">Unlikely</label>
+				<input class="options" type="radio" name="ques9" value="Likely" id="ques9_3"><label for="ques9_3" class="option">Likely</label>
+				<input class="options" type="radio" name="ques9" value="Very Likely" id="ques9_4"><label for="ques9_4" class="option">Very Likely</label>
+
 		<!-- QUESTION # 10 -->		
 			<div class="entry">
+				<input type="hidden" name="ten" value="10">
 				<h3 class="ques_title">10. Based on your experience with the staff how likely are you going to keep the UP graduates in your company/organization?</h3>
 			</div>
-				<input class="options" type="radio" name="ques10" value="" id="a9_1"><label for="a10_1" class="option">Very Unlikely</label>
-				<input class="options" type="radio" name="ques10" value="" id="a9_2"><label for="a10_2" class="option">Unlikely</label>
-				<input class="options" type="radio" name="ques10" value="" id="a9_3"><label for="a10_3" class="option">Likely</label>
-				<input class="options" type="radio" name="ques10" value="" id="a9_4"><label for="a10_4" class="option">Very Likely</label>
+				<input class="options" type="radio" name="ques10" value="Very Unlikely" id="ques10_1"><label for="ques10_1" class="option">Very Unlikely</label>
+				<input class="options" type="radio" name="ques10" value="Unlikely" id="ques10_2"><label for="ques10_2" class="option">Unlikely</label>
+				<input class="options" type="radio" name="ques10" value="Likely" id="ques10_3"><label for="ques10_3" class="option">Likely</label>
+				<input class="options" type="radio" name="ques10" value="Very Likely" id="ques10_4"><label for="ques10_4" class="option">Very Likely</label>
+
 		<!-- QUESTION # 11 -->
 			<div class="entry">
+				<input type="hidden" name="eleven" value="11">
 				<h3 class="ques_title">11. Rate the importance of each item to the successful performance of the job for which your staff, who are UP graduates, were hired. Then, rate your satisfaction on how well these are demonstrated.</h3>
 			</div>
 			<table border="0">
@@ -691,175 +233,31 @@ if (!isset($_SESSION['email'])) {
 					<th>Important</th>
 					<th>Very Important</th>
 				</tr>
+				<?php $i = 0; foreach ($dmcs_skills_arr as $skill): ?>
+					<tr>
+					<?php $i++; ?>
+					<td>
+						<?php echo $skill; ?>
+					</td>
+					<td>
+						<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Unimportant';?>" id="">
+					</td>
+					<td>
+						<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Of Little Importance';?>" id="">
+					</td>
+					<td>
+						<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Important';?>" id="">
+					</td>
+					<td>
+						<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Very Important';?>" id="">
+					</td>
 				<tr>
-					<td>Willing to undergo training and/or further education</td>
-					<td>
-						<input class="options" type="radio" name="ques11_1" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_1" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_1" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_1" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Has strong and professional work ethic</td>
-					<td>
-						<input class="options" type="radio" name="ques11_2" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_2" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_2" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_2" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Willing to share knowledge and expertise within the company and/or community</td>
-					<td>
-						<input class="options" type="radio" name="ques11_3" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_3" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_3" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_3" value="" id="a8_4">
-					</td>
-				</tr>
-				<tr>
-					<td>Willing and has a positive attitude towards working with others</td>
-					<td>
-						<input class="options" type="radio" name="ques11_4" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_4" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_4" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_4" value="" id="">
-				</tr>
-				<tr>
-					<td>Is able to learn quickly the basic company operations</td>
-					<td>
-						<input class="options" type="radio" name="ques11_5" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_5" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_5" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_5" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Is able to provide solutions and contribute to the growth of the company</td>
-					<td>
-						<input class="options" type="radio" name="ques11_6" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_6" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_6" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_6" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Is able to master company operations</td>
-					<td>
-						<input class="options" type="radio" name="ques11_7" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_7" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_7" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_7" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Effective in both oral and written communication</td>
-					<td>
-						<input class="options" type="radio" name="ques11_8" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_8" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_8" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_8" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Computer and Technical Literate</td>
-					<td>
-						<input class="options" type="radio" name="ques11_9" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_9" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_9" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_9" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Effective and efficient in accomplishing tasks</td>
-					<td>
-						<input class="options" type="radio" name="ques11_10" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_10" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_10" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_10" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Able to provide innovative ideas to the company</td>
-					<td>
-						<input class="options" type="radio" name="ques11_11" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_11" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_11" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques11_11" value="" id="">
-					</td>
-				</tr>
+				<?php endforeach; ?>
 			</table>
-			<br/>
-			<!-- Others, please specify: <input type="text" name="others7"> -->
+
 		<!-- QUESTION # 12 -->
 			<div class="entry">
+				<input type="hidden" name="twelve" value="12">
 				<h3 class="ques_title">12. Rate your satisfaction on how well each item was demonstrated by your hired UP graduates.</h3>
 			</div>
 			<table border="0">
@@ -870,221 +268,118 @@ if (!isset($_SESSION['email'])) {
 					<th>Satisfied</th>
 					<th>Very Satisfied</th>
 				</tr>
+				<?php $i = 0; foreach ($dmcs_skills_arr as $skill): ?>
 				<tr>
-					<td>Willing to undergo training and/or further education</td>
+					<?php $i++; ?>
 					<td>
-						<input class="options" type="radio" name="ques12_1" value="" id="">
+						<?php echo $skill; ?>
 					</td>
 					<td>
-						<input class="options" type="radio" name="ques12_1" value="" id="">
+						<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Very Unsatisfied';?>" id="">
 					</td>
 					<td>
-						<input class="options" type="radio" name="ques12_1" value="" id="">
+						<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Unsatisfied';?>" id="">
 					</td>
 					<td>
-						<input class="options" type="radio" name="ques12_1" value="" id="">
+						<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Satisfied';?>" id="">
 					</td>
-				</tr>
+					<td>
+						<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Very Satisfied';?>" id="">
+					</td>
 				<tr>
-					<td>Has strong and professional work ethic</td>
-					<td>
-						<input class="options" type="radio" name="ques12_2" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_2" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_2" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_2" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Willing to share knowledge and expertise within the company and/or community</td>
-					<td>
-						<input class="options" type="radio" name="ques12_3" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_3" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_3" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_3" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Willing and has a positive attitude towards working with others</td>
-					<td>
-						<input class="options" type="radio" name="ques12_4" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_4" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_4" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_4" value="" id="a_4">
-				</tr>
-				<tr>
-					<td>Is able to learn quickly the basic company operations</td>
-					<td>
-						<input class="options" type="radio" name="ques12_5" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_5" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_5" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_5" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Is able to provide solutions and contribute to the growth of the company</td>
-					<td>
-						<input class="options" type="radio" name="ques12_6" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_6" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_6" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_6" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Is able to master company operations</td>
-					<td>
-						<input class="options" type="radio" name="ques12_7" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_7" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_7" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_7" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Effective in both oral and written communication</td>
-					<td>
-						<input class="options" type="radio" name="ques12_8" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_8" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_8" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_8" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Computer and Technical Literate</td>
-					<td>
-						<input class="options" type="radio" name="ques12_9" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_9" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_9" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_9" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Effective and efficient in accomplishing tasks</td>
-					<td>
-						<input class="options" type="radio" name="ques12_10" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_10" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_10" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_10" value="" id="">
-					</td>
-				</tr>
-				<tr>
-					<td>Able to provide innovative ideas to the company</td>
-					<td>
-						<input class="options" type="radio" name="ques12_11" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_11" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_11" value="" id="">
-					</td>
-					<td>
-						<input class="options" type="radio" name="ques12_11" value="" id="">
-					</td>
-				</tr>
+				<?php endforeach; ?>
 			</table>
-			<br/>
-			<!-- Others, please specify: <input type="text" name="others7"> -->
+
 		<!-- QUESTION # 13 -->
 			<div class="entry">
+				<input type="hidden" name="thirteen" value="13">
 				<h3 class="ques_title">13. Which actions should UP take in order to improve the skill and competency set of its graduates? Check all that apply.</h3>
 			</div>
-				<input type="checkbox" id="q12ans1" name="" value="">Design courses that are more relevant to the needs of employers<br>
-				<input type="checkbox" id="q12ans2" name="" value="">Include practical experience as part of the academic programs<br>
-				<input type="checkbox" id="q12ans3" name="" value="">Include sector specific job placements as an integral part of the degree program<br>
-				<input type="checkbox" id="q12ans4" name="" value="">Provide better post-graduation support (facilitate relations between graduates and companies/organizations)<br>
-				<input type="checkbox" id="other" name="" value="" onclick="show_hide(this);">Others, please specify
-				<input type="text" name="q11_other" id="q11_other" style="display:none;">
+				<input type="checkbox" id="ques13_1" name="ques13[]" value="Design courses that are more relevant to the needs of employers"><label>Design courses that are more relevant to the needs of employers</label><br>
+				<input type="checkbox" id="ques13_2" name="ques13[]" value="Include practical experience as part of the academic programs"><label>Include practical experience as part of the academic programs</label><br>
+				<input type="checkbox" id="ques13_3" name="ques13[]" value="Include sector specific job placements as an integral part of the degree program"><label>Include sector specific job placements as an integral part of the degree program</label><br>
+				<input type="checkbox" id="ques13_4" name="ques13[]" value="Provide better post-graduation support (facilitate relations between graduates and companies/organizations)"><label>Provide better post-graduation support (facilitate relations between graduates and companies/organizations)</label><br>
+				<input type="checkbox" id="ques13_other" name="ques13[]" value="other" onclick="show_hide(this);"><label for="ques13_other">Others, please specify</label>
+				<input type="text" name="ques13_otxt" id="ques13_otxt" style="display:none;">
+
 		<!-- QUESTION # 14 -->
 			<div class="entry">
+				<input type="hidden" name="fourteen" value="14">
 				<h3 class="ques_title">14. How important is UP cooperation for your company/organization? Please rate the importance of cooperating with UP in the design of curricula and study programs.</h3>
 			</div>
-				<input class="options" type="radio" name="ques13" value="" id="a13_1"><label for="a13_1" class="option">Unimportant</label>
-				<input class="options" type="radio" name="ques13" value="" id="a13_2"><label for="a13_2" class="option">Of Little Importance</label>
-				<input class="options" type="radio" name="ques13" value="" id="a13_3"><label for="a13_3" class="option">Moderately part Important</label>
-				<input class="options" type="radio" name="ques13" value="" id="a13_4"><label for="a13_4" class="option">Important</label>
+				<input class="options" type="radio" name="ques14" value="Unimportant" id="ques14_1"><label for="ques14_1" class="option">Unimportant</label>
+				<input class="options" type="radio" name="ques14" value="Of Little Importance" id="ques14_2"><label for="ques14_2" class="option">Of Little Importance</label>
+				<input class="options" type="radio" name="ques14" value="Moderately part Important" id="ques14_3"><label for="ques14_3" class="option">Moderately part Important</label>
+				<input class="options" type="radio" name="ques14" value="Important" id="ques14_4"><label for="ques14_4" class="option">Important</label>
+
 		<!-- QUESTION # 15 -->
 			<div class="entry">
-				<h3 class="ques_title">15. Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?(Write "None" if none)</h3>
+				<input type="hidden" name="fifteen" value="15">
+				<h3 class="ques_title">15. Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?</h3>
 			</div>
-				<textarea id="" name="ques14" rows="4" cols="50" style="resize: none;"></textarea>
+				<input type="radio" name="ques15" class="options" id="ques15_y" onclick="$('#ques15_txt').show();" value="Yes">
+					<label class="option" for="ques15_y">Yes</label>
+				<input type="radio" name="ques15" class="options" id="ques15_n" onclick="$('#ques15_txt').hide();" value="No">
+					<label class="option" for="ques15_n">No</label>
+				<br>
+			<div id="ques15_txt" style="display: none;">
+				<textarea rows="4" cols="50" style="resize: none;" name="ques15_ytxt"></textarea>
+			</div>
+
 		<!-- QUESTION # 16 -->
 			<div class="entry">
-				<h3 class="ques_title">16. If any, what are specific complaints about the graduates? (Write "NA" if not applicable)</h3>
+				<input type="hidden" name="sixteen" value="16">
+				<h3 class="ques_title">16. Do you have any negative feedback about the graduates?</h3>
 			</div>
-				<textarea id="" name="ques15" rows="4" cols="50" style="resize: none;"></textarea>
+				<input type="radio" name="ques16" class="options" id="ques16_y" onclick="$('#ques16_txt').show();" value="Yes">
+					<label class="option" for="ques16_y">Yes</label>
+				<input type="radio" name="ques16" class="options" id="ques16_n" onclick="$('#ques16_txt').hide();" value="No">
+					<label class="option" for="ques16_n">No</label>
+				<br>
+			<div id="ques16_txt" style="display: none;">
+				<textarea rows="4" cols="50" style="resize: none;" name="ques16_ytxt"></textarea>
+			</div>
+
 		<!-- QUESTION # 17 -->
 			<div class="entry">
-				<h3 class="ques_title">17. Are specific strengths of the graduates appreciated? If yes, what are these strengths? (Write "NA" if not applicable)</h3>
+				<input type="hidden" name="seventeen" value="17">
+				<h3 class="ques_title">17. Are specific strengths of the graduates appreciated? If yes, what are these strengths?</h3>
 			</div>
-				<textarea id="" name="ques16" rows="4" cols="50" style="resize: none;"></textarea>
+				<input type="radio" name="ques17" class="options" id="ques17_y" onclick="$('#ques17_txt').show();" value="Yes">
+					<label class="option" for="ques17_y">Yes</label>
+				<input type="radio" name="ques17" class="options" id="ques17_n" onclick="$('#ques17_txt').hide();" value="No">
+					<label class="option" for="ques17_n">No</label>
+				<br>
+			<div id="ques17_txt" style="display: none;">
+				<textarea rows="4" cols="50" style="resize: none;" name="ques17_ytxt"></textarea>
+			</div>			
+
 		<!-- QUESTION # 18 -->
 			<div class="entry">
-				<h3 class="ques_title">18. Would you like to elaborate on any of your answers/ratings above? Please indicate the numbers or items you are discussing. (Write "None" if you don't want to elaborate any.)</h3>
+				<input type="hidden" name="eighteen" value="18">
+				<h3 class="ques_title">18. Would you like to elaborate on any of your answers/ratings above? Please indicate the numbers or items you are discussing.</h3>
 			</div>
-				<textarea id="" name="ques17" rows="4" cols="50" style="resize: none;"></textarea>
+				<input type="radio" name="ques18" class="options" id="ques18_y" onclick="$('#ques18_txt').show();" value="Yes">
+					<label class="option" for="ques18_y">Yes</label>
+				<input type="radio" name="ques18" class="options" id="ques18_n" onclick="$('#ques18_txt').hide();" value="No">
+					<label class="option" for="ques18_n">No</label>
+				<br>
+			<div id="ques18_txt" style="display: none;">
+				<textarea rows="4" cols="50" style="resize: none;" name="ques18_ytxt"></textarea>
+			</div>
+
+		<!-- <?php //echo $_POST['ques2_1_2']; ?> -->
 			<!-- submit button -->
-			<form class="submit-button" action="emp_survey.php" method="post">
-				<input type="submit" name="submit" value="Submit"/>
+			<input type="submit" name="submit-emp" value="Submit"/>
+			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>">
 		<!-- DON'T MIND THIS FOR FUTURE STUFF PA DIS -->
 		<!-- 	<input type="hidden" name="question_id" value="question_id"/>
 				<input type="hidden" name="submitted" value="1"/> -->
-			</form>	
-	</div>
+			
+	
+	</form>	
 		<!-- for footer/ contact details -->
-	<?php include('footer.php'); ?>
+		<?php include('footer.php'); ?>
 	</div>
 
 	
