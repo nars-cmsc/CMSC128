@@ -1,0 +1,149 @@
+body{
+	height: 100%;
+	font-family: Arial Nova, sans-serif;
+	font-size: 16pt;
+	background-color: #fff;
+	margin:0;
+}
+
+.container-login{
+	display: flex;
+}
+.container-login > div{
+  	margin-top: 13rem;
+  	margin-bottom: 18rem;
+}
+.container-info {
+	margin-left: 15rem;
+	margin-right: 5rem;
+	padding-right: 11rem;
+	text-align:justify;
+	border-right-style: solid;	
+}
+.container-info h3{
+	color:#8e0000;
+	text-transform: uppercase;
+	text-align: left;
+}
+.login-form {
+	margin-right: 15rem;
+	margin-left: 5rem;
+	padding-right: 10%;
+}
+form {
+	font-size:16pt;
+	padding-top: 7rem;
+}
+.content {
+	font-size:14pt;
+}
+/* for alert message */
+.alert {
+	text-align: left;
+	padding: 1rem;
+  	background-color: #db7c6b; /* Red */
+  	color: white;
+ 	margin-bottom: 1rem;
+ 	width: 16rem;
+}
+input[type=email]{
+	width:300px;
+	height:30px;
+	color:#c0c0c0;
+	border-radius: 10px 10px 10px 10px;
+}
+input[type=password]{
+	width:300px;
+	height:30px;
+	color:#c0c0c0;
+	border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+	width:100px;
+	height:50px;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 100px 100px 100px 100px;
+	border:0;
+	background-color:#ffcc00;
+	float:right;
+	text-transform: uppercase;
+}
+input[type=submit]:hover{
+	width:100px;
+	height:50px;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 100px 100px 100px 100px;
+	border:0;
+	background-color:#8e0000;
+	float:right;
+	text-transform: uppercase;
+}
+.fa {
+	padding:15px;
+	font-size:30px;
+	width:20px;
+	text-align:center;
+	text-decoration:none;
+	border-radius:50%;
+	margin-top:0;
+	margin-bottom:10px;
+	margin-left:20px;
+	margin-right:20px;
+}
+.fa:hover {
+	background:#8e0000;	
+}
+.fa-facebook {
+	background:#ffcc00;
+	color:#ffffff;
+}
+.fa-at {
+	background:#ffcc00;
+	color:#ffffff;
+}
+p {
+	font-size:12pt;
+}
+.content-alum {
+	margin-top:140px;
+	padding-left:50px;
+	padding-right:50px;
+	position: relative; /* added this*/
+	min-height: 100%;
+}
+.content-emp {
+	/*margin-top:140px;*/
+	padding-left:50px;
+	padding-right:50px;
+	position: relative; /* added this*/
+	/*min-height: 100%;*/
+	display: block;
+	overflow: auto;
+	padding-bottom: 25rem;
+}
+.content-alum h1 {
+	font-size:22pt;
+}
+.content-alum h2 {
+	font-size:18pt;
+}
+.content-emp h1{
+	font-size:22pt;
+}
+.content-emp h2{
+	font-size:18pt;
+}
+.ques_title {
+	font-size:16pt;
+}
+.subques {
+	font-size:14pt;
+}
+label {
+	font-size:12pt;
+}
+.submit-button {
+	float:right;
+}
