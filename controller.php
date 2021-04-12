@@ -365,12 +365,12 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 
 	// VALIDATION / ERROR HANDLING
 
-	// ERROR: required fields are empty
+	// ERROR: required fields are empty or only white spaces
 	if (empty($one) && $user_exist == false) {
 		$errors['es_q1'] = "Need to answer #1. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques1']) && $one == 'other' && empty($one_other)) {
+	if (isset($_POST['ques1']) && $one == 'other' && (empty($one_other) || strlen(trim($one_other)) <= 0) && $user_exist == false) {
 		$errors['es_q1'] = "Need to answer #1. 'Others' field cannot be empty.";
 		$error = true;
 	}
@@ -379,7 +379,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q2'] = "Need to answer #2. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques2']) && $two == 'abroad' && empty($region)) {
+	if (isset($_POST['ques2']) && $two == 'abroad' && empty($region) && $user_exist == false) {
 		$errors['es_q2'] = "Need to answer #2.1. Field cannot be empty.";
 		$error = true;
 	}
@@ -388,7 +388,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q3'] = "Need to answer #3. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques3']) && $three == 'other' && empty($three_other)) {
+	if (isset($_POST['ques3']) && $three == 'other' && (empty($three_other) || strlen(trim($three_other)) <= 0) && $user_exist == false) {
 		$errors['es_q3'] = "Need to answer #3. 'Others' field cannot be empty.";
 		$error = true;
 	}
@@ -398,7 +398,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$error = true;
 	}
 
-	if (empty($five) && $user_exist == false) {
+	if ((empty($five) || strlen(trim($five)) <= 0) && $user_exist == false) {
 		$errors['es_q5'] = "Need to answer #5. Field cannot be empty.";
 		$error = true;
 	}
@@ -458,7 +458,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q13'] = "Need to answer #13. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques13']) && $chk13 == true && empty($check13_other)) {
+	if (isset($_POST['ques13']) && $chk13 == true && (empty($check13_other) || strlen(trim($check13_other)) <= 0) && $user_exist == false) {
 		$errors['es_q13'] = "Need to answer #13. 'Others' field cannot be empty.";
 		$error = true;
 	}
@@ -472,7 +472,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q15'] = "Need to answer #15. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques15']) && $fifteen == 'Yes' && empty($fifteen_txt)) {
+	if (isset($_POST['ques15']) && $fifteen == 'Yes' && (empty($fifteen_txt) || strlen(trim($fifteen_txt)) <= 0) && $user_exist == false) {
 		$errors['es_q15'] = "Need to answer #15. 'Yes' field cannot be empty.";
 		$error = true;
 	}
@@ -481,7 +481,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q16'] = "Need to answer #16. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques16']) && $sixteen == 'Yes' && empty($sixteen_txt)) {
+	if (isset($_POST['ques16']) && $sixteen == 'Yes' && (empty($sixteen_txt) || strlen(trim($sixteen_txt)) <= 0) && $user_exist == false) {
 		$errors['es_q16'] = "Need to answer #16. 'Yes' field cannot be empty.";
 		$error = true;
 	}
@@ -490,7 +490,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q17'] = "Need to answer #17. Field cannot be empty.";
 		$error = true;
 	}
-	if (isset($_POST['ques17']) && $seventeen == 'Yes' && empty($seventeen_txt)) {
+	if (isset($_POST['ques17']) && $seventeen == 'Yes' && (empty($seventeen_txt) || strlen(trim($seventeen_txt)) <= 0) && $user_exist == false) {
 		$errors['es_q17'] = "Need to answer #17. 'Yes' field cannot be empty.";
 		$error = true;
 	}
@@ -891,6 +891,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$seventeen_field')";
 	    mysqli_query($db_conn, $sql);
 
+	    header('location: emp_survey.php');
 
 	} // end of if no errors
 

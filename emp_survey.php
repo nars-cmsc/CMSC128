@@ -45,13 +45,15 @@ if (!isset($_SESSION['email'])) {
 				<input type="hidden" name="one" value="1"/>
 				<h3 class="ques_title">1. Which sector of economy does your company/organization belong to?</h3>
 			</div>
-				<input class="options" type="radio" name="ques1"  id="ques1_1"value="public"/>
+				<input class="options" type="radio" name="ques1"  id="ques1_1"value="public" />
 					<label for="ques1_1" class="option">Public</label> 
 				<input class="options" type="radio" name="ques1"  id="ques1_2"value="private"/>
 					<label for="ques1_2" class="option">Private</label> 
 				<input class="options" type="radio" name="ques1"  id="ques1_other"value="other"/>
 					<label for="ques1_other" class="option">Others, please specify:</label>
-					<input type="text" name="ques1_otxt" id="ques1_otxt"  style="display:none;" placeholder="Type other sector here..." />
+					<input type="text" name="ques1_otxt" id="ques1_otxt"  style="display:none;"
+					placeholder="Type other sector here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
+					minlength="7" />
 
 
 		<!-- QUESTION # 2 -->
@@ -108,7 +110,9 @@ if (!isset($_SESSION['email'])) {
 					<?php endforeach; ?>
 					<option value="other">Others, please specify:</option>
 				</select>
-				<input type="text" name="ques3_other" id="ques3_other" style="display:none;" placeholder="Type other industry and business here..." />
+				<input type="text" name="ques3_other" id="ques3_other" style="display:none;"
+				placeholder="Type other industry and business here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
+				minlength="7" />
 
 
 		<!-- QUESTION # 4 -->
@@ -131,7 +135,7 @@ if (!isset($_SESSION['email'])) {
 				<input type="hidden" name="five" value="5"/>
 				<h3 class="ques_title">5. How many UP graduates are employed in your company/organization?</h3>
 			</div>
-				<input type="text" name="ques5" id="ques5" placeholder="Type number of UP graduates here..." />
+				<input type="number" min="0" step="1" name="ques5" id="ques5" placeholder="Type number of UP graduates here..."/>
 
 
 		<!-- QUESTION # 6 -->
@@ -254,7 +258,7 @@ if (!isset($_SESSION['email'])) {
 		<!-- QUESTION # 11 -->
 			<div class="entry">
 				<input type="hidden" name="eleven" value="11"/>
-				<h3 class="ques_title">11. Rate the importance of each item to the successful performance of the job for which your staff, who are UP graduates, were hired. Then, rate your satisfaction on how well these are demonstrated.</h3>
+				<h3 class="ques_title">11. Rate the importance of each item to the successful performance of the job for which your staff, who are UP graduates, were hired.</h3>
 			</div>
 			<table border="0">
 				<tr>
@@ -342,7 +346,9 @@ if (!isset($_SESSION['email'])) {
 					<br>
 				<input type="checkbox" id="ques13_other" name="ques13[]" value="other" onclick="show_hide(this);"/>
 					<label for="ques13_other">Others, please specify:</label>
-					<input type="text" name="ques13_otxt" id="ques13_otxt" style="display:none;" placeholder="Type other actions here..." />
+					<input type="text" name="ques13_otxt" id="ques13_otxt" style="display:none;"
+					placeholder="Type other actions here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
+					minlength="7" />
 
 
 		<!-- QUESTION # 14 -->
@@ -371,7 +377,9 @@ if (!isset($_SESSION['email'])) {
 					<label class="option" for="ques15_n">No</label>
 				<br>
 			<div id="ques15_txt" style="display: none;">
-				<textarea rows="4" cols="50" style="resize: none;" name="ques15_ytxt" placeholder="Type your comments or suggestions here..."></textarea>
+				<textarea rows="4" cols="50" style="resize: none;" name="ques15_ytxt" 
+				placeholder="Type your comments or suggestions here... (Use letters only)" 
+				onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 			</div>
 
 
@@ -386,7 +394,9 @@ if (!isset($_SESSION['email'])) {
 					<label class="option" for="ques16_n">No</label>
 				<br>
 			<div id="ques16_txt" style="display: none;">
-				<textarea rows="4" cols="50" style="resize: none;" name="ques16_ytxt" placeholder="Type your negative feedback here..."></textarea>
+				<textarea rows="4" cols="50" style="resize: none;" name="ques16_ytxt" 
+				placeholder="Type your negative feedback here... (Use letters only)" 
+				onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 			</div>
 
 
@@ -401,7 +411,9 @@ if (!isset($_SESSION['email'])) {
 					<label class="option" for="ques17_n">No</label>
 				<br>
 			<div id="ques17_txt" style="display: none;">
-				<textarea rows="4" cols="50" style="resize: none;" name="ques17_ytxt" placeholder="Type strengths you appreciate here..."></textarea>
+				<textarea rows="4" cols="50" style="resize: none;" name="ques17_ytxt"
+				placeholder="Type strengths you appreciate here... (Use letters only)" 
+				onkeyup="this.value = this.value.replace(/[0-9^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 			</div>		
 
 
