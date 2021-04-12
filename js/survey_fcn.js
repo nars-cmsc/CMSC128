@@ -28,12 +28,12 @@ function show_hide(other) {
 
 // for select to display textbox
 function other_txt() {
-    var selectBox = document.getElementById("industry");
+    var selectBox = document.getElementById("ques3");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
     if (selectedValue == "other") {
-        $('#q3_other').show();
+        $('#ques3_other').show();
     } else {
-        $('#q3_other').hide();
+        $('#ques3_other').hide();
     }
 }
 

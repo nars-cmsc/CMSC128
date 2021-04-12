@@ -61,7 +61,7 @@ if (!isset($_SESSION['email'])) {
 				<input class="options" type="radio" name="ques2" value="abroad" id="ques2_2"><label for="ques2_2" class="option">Abroad</label>
 		
 		<!-- QUESTION # 2.1 -->
-			<input type="hidden" name="twopone" value="3">
+			<input type="hidden" name="twopone" value="2">
 			<div id="q2_1" style="display: none;">
 				<div class="entry">
 					<h3 class="ques_title">2.1. If you answered “Abroad”, please specify the region and sub-region based on the United Nations Geographic Regions:</h3>
