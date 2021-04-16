@@ -1,12 +1,21 @@
 <!-- University of the Philippines Baguio Department of Mathematics and Computer Science Alumni Survey-->
+<?php 
+require_once 'controller.php';
+
+// if user is not logged in
+if (!isset($_SESSION['email'])) {
+	header('location:login.php');
+	exit();
+}
+?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../log_in/css/style.css">
-	<link rel="icon" type="images/png" href="../log_in/images/UP_seal.png">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="icon" type="images/png" href="images/UP_seal.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
@@ -16,6 +25,7 @@
 	<?php include('header.php'); ?>
 
 	<div class="content-alum">
+		<div class="content-survey">
 		<h1>Alumni Survey</h1>
 		<h2>Please make sure to fill in answers to all the questions.</h2>
 		<!-- QUESTION # 1 -->
@@ -452,14 +462,17 @@
 			</div>
 						<textarea id="" name="ques19" rows="10" cols="50"></textarea>
 	<!-- submit button -->
-		<form class="submit-button" action="emp_survey.php" method="post">
-			<input type="submit" name="submit" value="Submit"/>
-	<!-- DON'T MIND THIS FOR FUTURE STUFF PA DIS -->
-	<!-- 	<input type="hidden" name="question_id" value="question_id"/>
-			<input type="hidden" name="submitted" value="1"/> -->
-		</form>
+			<form class="submit-button" action="alum_survey.php" method="post">
+				<input type="submit" name="submit" value="Submit"/>
+		<!-- DON'T MIND THIS FOR FUTURE STUFF PA DIS -->
+		<!-- 	<input type="hidden" name="question_id" value="question_id"/>
+				<input type="hidden" name="submitted" value="1"/> -->
+			</form>
+			
 	</div>
-<!-- for footer/ contact details -->
-<?php include('footer.php'); ?>
+
+		<!-- for footer/ contact details -->
+		<?php include('footer.php'); ?>
+	</div>
 </html>
 						
