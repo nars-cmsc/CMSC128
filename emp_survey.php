@@ -413,7 +413,7 @@ if (!isset($_SESSION['email'])) {
 			<div id="ques17_txt" style="display: none;">
 				<textarea rows="4" cols="50" style="resize: none;" name="ques17_ytxt"
 				placeholder="Type strengths you appreciate here... (Use letters only)" 
-				onkeyup="this.value = this.value.replace(/[0-9^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
+				onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 			</div>		
 
 

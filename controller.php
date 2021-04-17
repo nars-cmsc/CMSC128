@@ -4,6 +4,11 @@ session_start();
 
 require ('config/connection.php');
 
+$ADMIN_ROLE_ID = 0;
+$ALUMNI_ROLE_ID = 1;
+$EMPLOYER_ROLE_ID = 2;
+$ALUM_EMP_ROLE_ID = 3;
+
 $errors = array();
 $error;
 $email = "";
@@ -40,6 +45,7 @@ $dmcs_skills_arr = array(
 	"Able to provide innovative ideas to the company"
 );
 
+
 // if user clicks log in button
 if (isset($_POST['login-btn'])) {
 	$email = $_POST['email'];
@@ -75,19 +81,27 @@ if (isset($_POST['login-btn'])) {
 			$_SESSION['email'] = $user['email'];
 			$_SESSION['role'] = $user['role_id'];
 
-			if ($user['role_id'] === 0) {
+			// check role of the user
+			if ($user['role_id'] === $ALUMNI_ROLE_ID) {
 				header('location: alum_survey.php');
 				exit();
 			}
-			elseif ($user['role_id'] === 1) {
+			elseif ($user['role_id'] === $EMPLOYER_ROLE_ID) {
 				header('location: emp_survey.php');
 				exit();
 			}
-			
+			elseif ($user['role_id'] === $ALUM_EMP_ROLE_ID) {
+				header('location: alum_emp.php');
+				exit();
+			}
+			// elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
+			// 	header('location: admin.php');
+			// 	exit();
+			// }
 			
 		}
 		else {
-			$errors['login_fail'] = "Wrong credentials";
+			$errors['login_fail'] = "Email and password do not match!";
 		}
 	}	
 }// end of login-btn
@@ -891,7 +905,15 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$seventeen_field')";
 	    mysqli_query($db_conn, $sql);
 
-	    header('location: emp_survey.php');
+
+		if ($_SESSION['role'] == $EMPLOYER_ROLE_ID) {
+			header('location: emp_survey.php');
+			echo '<script> alert("Thank you for completing the survey!"); </script>';
+		}
+		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+			header('location: alum_emp.php');
+		}
+	    
 
 	} // end of if no errors
 
@@ -911,10 +933,18 @@ if (isset($_GET['logout'])) {
 ?>
 
 <!-- EMAIL: jane@gmail.com PASSWORD: 12345 (ALUMNI)
-	 EMAIL: john@gmail.com PASSWORD: 12345 (EMPLOYER) -->
+	 EMAIL: john@gmail.com PASSWORD: 12345 (EMPLOYER)
+	 EMAIL: juan@gmail.com PASSWORD: 12345 (ALUMNI and EMPLOYER)
+	 EMAIL: admin@gmail.com PASSWORD: 12345 (ADMIN)
+ -->
 
 <!-- for registering -->
-<!-- $query = "SELECT * FROM users WHERE email=? LIMIT 1";
+<!-- if (isset($_POST['login-btn'])) {
+
+	$email = $_POST['email'];
+	$password = $_POST['password'];
+
+	$query = "SELECT * FROM users WHERE email=? LIMIT 1";
 	$stmt = $db_conn->prepare($query);
 	$stmt->bind_param('s', $email);
 	$stmt->execute();
@@ -926,10 +956,16 @@ if (isset($_GET['logout'])) {
 		$errors['email'] = "Email already exits";
 	}
 
+	if (empty($password)) {
+		$errors['password'] = "Password is required";
+	}
+
 	if (count($errors) === 0) {
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		$token = bin2hex(random_bytes(50));
 	}
+
+		
 
 	$sql = "INSERT INTO users (email, token, password) VALUES (?, ?, ?)";
 	$stmt = $db_conn->prepare($sql);
@@ -946,7 +982,9 @@ if (isset($_GET['logout'])) {
 
 	} else {
 		$errors['db_error'] = "Database error: failed to register";
-	} -->
+	}
+
+} -->
 
 <!-- for retaining answers of users no need to enter answers again
 if (isset($_POST['ques1']) && $_POST['ques1'] == "public") {

@@ -8,7 +8,7 @@
 			bottom:0;
 			width:100%;
 			color:#ffffff;
-			background-color:#385723;
+			background-color:#0e6022;
 			font-size:12pt;
 			padding-left: 2%;
 			padding-top: .5%;

@@ -2,14 +2,22 @@
 
 // prevent back to login
 if (isset($_SESSION['email'])) {
-	if ($_SESSION['role'] === 0) {
+	if ($user['role_id'] === $ALUMNI_ROLE_ID) {
 		header('location: alum_survey.php');
 		exit();
 	}
-	elseif ($_SESSION['role'] === 1) {
+	elseif ($user['role_id'] === $EMPLOYER_ROLE_ID) {
 		header('location: emp_survey.php');
 		exit();
 	}
+	elseif ($user['role_id'] === $ALUM_EMP_ROLE_ID) {
+		header('location: alum_emp.php');
+		exit();
+	}
+	// elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
+	// 	header('location: admin.php');
+	// 	exit();
+	// }
 }
 ?>
 
@@ -30,7 +38,7 @@ if (isset($_SESSION['email'])) {
 		header{
 			z-index: 2;
 			position: fixed;
-			background-image: linear-gradient(to right, #8e0000, #385723);
+			background-image: linear-gradient(to right, #840038, #385723);
 			padding-bottom: 1%;
 			padding-top: 1%;
 			width: 100%;
@@ -78,7 +86,7 @@ if (isset($_SESSION['email'])) {
 			bottom:0;
 			width:100%;
 			color:#ffffff;
-			background-color:#385723;
+			background-color:#0e6022;
 			font-size:12pt;
 			padding-left: 2%;
 			padding-top: .5%;

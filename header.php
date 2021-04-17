@@ -17,7 +17,7 @@
 		header{
 			z-index: 2;
 			position: fixed;
-			background-image: linear-gradient(to right, #8e0000, #385723);
+			background-image: linear-gradient(to right, #840038, #385723);
 			padding-bottom: 1%;
 			padding-top: 1%;
 			width: 100%;
@@ -58,8 +58,8 @@
 			float:right;
 			width:25px;
 			height:25px;
-			padding-right: 2%;
-			padding-top: 1%;
+			padding-right: 1.1%;
+			padding-top: 2%;
 			opacity:.7;
 		}
 		.log_out img:hover {
@@ -81,7 +81,7 @@
 			<h6>University of the Philippines Baguio</h6>
 		</div>
 		<div class="log_out">
-			<a href="header.php?logout=1" class="logout"><img src = "images/logout.png"></a>
+			<a href="header.php?logout=1" class="logout" title="Log out"><img src = "images/logout.png"></a>
 		</div>
 	</header>
 	</div>
