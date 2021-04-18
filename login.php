@@ -2,15 +2,15 @@
 
 // prevent back to login
 if (isset($_SESSION['email'])) {
-	if ($user['role_id'] === $ALUMNI_ROLE_ID) {
+	if ($_SESSION['role'] === $ALUMNI_ROLE_ID) {
 		header('location: alum_survey.php');
 		exit();
 	}
-	elseif ($user['role_id'] === $EMPLOYER_ROLE_ID) {
+	elseif ($_SESSION['role'] === $EMPLOYER_ROLE_ID) {
 		header('location: emp_survey.php');
 		exit();
 	}
-	elseif ($user['role_id'] === $ALUM_EMP_ROLE_ID) {
+	elseif ($_SESSION['role'] === $ALUM_EMP_ROLE_ID) {
 		header('location: alum_emp.php');
 		exit();
 	}
