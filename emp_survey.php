@@ -1,7 +1,7 @@
 
 <!-- Employer Satisfaction Survey Web Page-->
 <?php 
-include_once ('controller.php');
+include_once ('controllers/emp_submit.php');
 
 // if user is not logged in
 if (!isset($_SESSION['email'])) {

@@ -1,5 +1,6 @@
-<?php require_once 'controller.php'; 
+<?php //require_once 'controllers/authentication.php'; 
 
+session_start();
 // if user is not logged in
 if (!isset($_SESSION['email'])) {
 	header('location:login.php');
@@ -20,7 +21,6 @@ if (!isset($_SESSION['email'])) {
 	<title>Alumni & Employer Landing Page - UPB DMCS</title>
 	</head>
 		<?php include('header.php'); ?>
-		<!-- added container for header -->
 	<div class="container-login">
 		<div class = "container-info-ae">
 			<h3>
@@ -33,7 +33,7 @@ if (!isset($_SESSION['email'])) {
 				<!--<//?php if (count($errors) > 0): ?>
 					<div class="alert">
 						<?php //foreach ($errors as $error): ?>
-							<?php echo $error; ?><br>
+							<?php //echo $error; ?><br>
 						<?php //endforeach; ?>	
 					</div>
 				<//?php endif;?>-->

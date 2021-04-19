@@ -1,4 +1,4 @@
-<?php require_once 'controller.php'; 
+<?php require_once 'controllers/authentication.php'; 
 
 // prevent back to login
 if (isset($_SESSION['email'])) {
@@ -26,82 +26,6 @@ if (isset($_SESSION['email'])) {
   <head>    
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- header part of log in page -->
-	<style type="text/css">
-		body{
-			height: 100%;
-			font-family: Arial Nova, sans-serif;
-			font-size: 16pt;
-			background-color: #fff;
-			margin:0;
-		}
-		header{
-			z-index: 2;
-			position: fixed;
-			background-image: linear-gradient(to right, #840038, #385723);
-			padding-bottom: 1%;
-			padding-top: 1%;
-			width: 100%;
-			top: 0;
-		}
-		/* added this so that size of header will change
-			once window is resized */
-		.container-header {
-			position: fixed;
-			min-height: 100vh;
-		}
-		.logos img {
-			position: relative;
-			width: 4.5rem;
-			height: 4.5rem;
-			float: left;
-		}
-		/* added this to personalize the padding of each logo*/
-		#up {
-			padding-left: 2%;
-			padding-right: .5%;
-		}
-		#cs {
-			padding-right: .5%;
-			padding-left: .5%;
-		}
-		.banner_lines {
-			float: left;
-			width: 85%;
-		}
-		.banner_lines h3, h4, h6{
-			color: #fff;
-			margin: 0;
-			margin-left: 1%;
-			text-transform: uppercase;
-		}
-		/* footer part */
-		#footer-container {
-			position:fixed;
-			min-height:100vh;
-		}
-		footer {
-			position:fixed;
-			left:0;
-			bottom:0;
-			width:100%;
-			color:#ffffff;
-			background-color:#0e6022;
-			font-size:12pt;
-			padding-left: 2%;
-			padding-top: .5%;
-			padding-bottom: .5%;
-		}
-		.info {
-			float:left;
-		}
-		.icons{
-			float:right;
-			padding-right:3%;
-		}
-		/* end of footer stuff*/
-	</style>
-	<!-- end of header for log in -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" type="images/png" href="images/UP_seal.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
