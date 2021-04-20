@@ -1,11 +1,19 @@
-<?php //require_once 'controllers/authentication.php'; 
+<?php
 
-session_start();
+require ('controllers/user_del.php');
+
 // if user is not logged in
 if (!isset($_SESSION['email'])) {
     header('location: ../login.php');
     exit();
 }
+
+// if user is not an admin
+// if (isset($_SESSION['role']) != 0) {
+//     header('location: ../login.php');
+//     exit();
+// }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,41 +27,45 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Admin</title>
 </head>
-<body>
-    <header>
-        <div class = "logos">
-            <img src = "images/UP_seal.png" id="up">        
-            <img src = "images/CS_logo.png" id="cs">    
-        </div>      
-        <div class = "banner_lines">    
-            <h3>Department of Mathematics and Computer Science</h3>
-            <h4>College of Science</h4>
-            <h6>University of the Philippines Baguio</h6>
-        </div>
-        <div class="log_out">
-            <a href="header.php?logout=1" class="logout" title="Log out"><img src = "images/logout.png"></a>
-        </div>
-    </header>
+<?php include('header.php');  ?>
     <section>
-        <nav id="sidebar">
-            <ul>
-                <li><a href="#">Users</a></li>
-                <li><a href="#">Reports</a></li>
-            </ul>
-        </nav>
-        <article>
-            sajhdkjashdahsdkadhkad
-        </article>
+        <?php include('sidenav.php');  ?>
+        <div class="content-users">
+            <h4 id="title-users">List of Registered Users</h4>
+            <table id="table-users">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($row = mysqli_fetch_array($query)) {?>
+                        <tr>
+                            <td><?php echo $row['user_id']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['pass']; ?></td>
+                            <td>
+                                <?php if ($row['role_id'] == 0) { echo "ADMIN"; } ?>
+                                <?php if ($row['role_id'] == 1) { echo "ALUMNI"; } ?>
+                                <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
+                                <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
+                            </td>
+                            <td>
+                                <a href="user_edit.php?edit=<?php echo $row['user_id']; ?>">Edit</a>
+                                <a href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </section>
     
-    <footer>
-        <p class="info">Department of Mathematics and Computer Science <br>
-        College of Science <br> 
-        University of the Philippines Baguio</p>
-        <p class="icons">In case of technical problems, you may contact us through:
-        <a href="https://www.facebook.com/upbdmcs/" target="_blank" title="Department of Mathematics and Computer Science, University of the Philippines Baguio"><i class="fa fa-facebook"></i></a>
-        <a href="#" target="_blank" title="Email"><i class="fa fa-at"></i></a></p>
-    </footer>
+    <?php include('footer.php'); ?>
 
 </body>
 </html>

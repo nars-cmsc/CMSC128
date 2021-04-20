@@ -4,6 +4,11 @@ session_start();
 
 require ('config/connection.php');
 
+$ADMIN_ROLE_ID = 0;
+$ALUMNI_ROLE_ID = 1;
+$EMPLOYER_ROLE_ID = 2;
+$ALUM_EMP_ROLE_ID = 3;
+
 $errors = array();
 $error;
 $ques3_arr = array(
@@ -273,7 +278,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 
 	if (isset($_POST['ques13'])) {
 		$check13 = $_POST['ques13'];
-		$chk13;
+		$chk13 = false;
 		foreach ($check13 as $chk) {
 			if ($chk == 'other') {
 				$check13_other = $_POST['ques13_otxt'];
