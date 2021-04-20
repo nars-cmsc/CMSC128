@@ -62,10 +62,10 @@ if (isset($_POST['login-btn'])) {
 				header('location: alum_emp.php');
 				exit();
 			}
-			// elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
-			// 	header('location: admin.php');
-			// 	exit();
-			// }
+			elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
+				header('location: admin');
+				exit();
+			}
 			
 		}
 		else {

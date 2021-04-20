@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    font-family: Arial Nova, sans-serif;
+    font-size: 16pt;
+    background-color: #fff;
+    margin:0;
+}
+header{
+    z-index: 2;
+    position: fixed;
+    background-image: linear-gradient(to right, #840038, #385723);
+    padding-bottom: 1%;
+    padding-top: 1%;
+    width: 100%;
+    top: 0;
+}
+/* added this so that size of header will change
+    once window is resized */
+.container-header {
+    position: fixed;
+    min-height: 100vh;
+}
+.logos img {
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    float: left;
+}
+/* added this to personalize the padding of each logo*/
+#up {
+    padding-left: 2%;
+    padding-right: .5%;
+}
+#cs {
+    padding-right: .5%;
+    padding-left: .5%;
+}
+.banner_lines {
+    float: left;
+    width: 82%;
+}
+.banner_lines h3, h4, h6{
+    color: #fff;
+    margin: 0;
+    margin-left: 1%;
+    text-transform: uppercase;
+}
+.log_out img {
+    float:right;
+    width:25px;
+    height:25px;
+    padding-right: 1.1%;
+    padding-top: 2%;
+    opacity:.7;
+}
+.log_out img:hover {
+    opacity:1.0;
+}
+.ae-buttons {
+    margin-right: 15rem;
+    margin-left: 5rem;
+    padding-right: 8%;
+}
+
+
+#sidebar {
+    padding-top: 20vh;
+    position: fixed;
+    height: 100%;
+    width: 20%;
+    background-color: black;
+    min-width: 20vh;
+    float: left;
+}
+#sidebar ul{
+    list-style-type: none;
+}
+#sidebar li {
+    padding: 30px;
+    border-bottom: 1px solid gray;
+    text-align: center;
+}
+a:link {
+    color: green;
+    text-decoration: none;
+    font-size: 16pt;
+}
+
+article {
+    float: left;
+    width: 80%;
+}
+
+footer {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    color:#ffffff;
+    background-color:#0e6022;
+    font-size:12pt;
+    padding-left: 2%;
+    padding-top: .5%;
+    padding-bottom: .5%;
+
+}
+.info {
+    float:left;
+}
+.icons{
+    float:right;
+    padding-right:3%;
+}

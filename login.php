@@ -14,10 +14,10 @@ if (isset($_SESSION['email'])) {
 		header('location: alum_emp.php');
 		exit();
 	}
-	// elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
-	// 	header('location: admin.php');
-	// 	exit();
-	// }
+	elseif ($_SESSION['role'] === $ADMIN_ROLE_ID) {
+		header('location: admin');
+		exit();
+	}
 }
 ?>
 
