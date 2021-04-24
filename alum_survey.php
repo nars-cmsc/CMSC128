@@ -1,6 +1,6 @@
 <!-- University of the Philippines Baguio Department of Mathematics and Computer Science Alumni Survey-->
 <?php 
-include_once ('controller.php');
+include_once  ('controllers/alum_submit.php');
 
 // if user is not logged in
 if (!isset($_SESSION['email'])) {
@@ -8,7 +8,6 @@ if (!isset($_SESSION['email'])) {
 	exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -520,53 +519,16 @@ if (!isset($_SESSION['email'])) {
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 						
-		<!-- Employer Contact Information -->
-		
-		<p> Thank you for your feedback! We greatly appreciate your time.</p>
-		
-		<p>Please spare a few more minutes to provide us with contact information regarding your employer for the Employer Satisfaction Survey. This will be additional help to further improve feedback regarding our degree programs. You can wish to opt out from this part of the survey. </p>
 
-		
-		<h2>CONTACT INFORMATION OF EMPLOYER</h2>
-		
-		<div class="entry">
-				<input type="hidden" name="companyname" value="companyname">
-				<p class="ques_title">Company Name:</p>
-			</div>
-						<textarea id="" name="emp1" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		<div class="entry">
-				<input type="hidden" name="contactperson" value="contactperson">
-				<p class="ques_title">Contact Person:</p>
-			</div>
-						<textarea id="" name="emp2" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		<div class="entry">
-				<input type="hidden" name="contactnumber" value="contactnumber">
-				<p class="ques_title">Contact Number:</p>
-			</div>
-						<textarea id="" name="emp3" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		<div class="entry">
-				<input type="hidden" name="contactemail" value="contactemail">
-				<p class="ques_title">Email:</p>
-			</div>
-						<textarea id="" name="emp4" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		
-		<p> Thank you for your feedback! We greatly appreciate your time. </p>
 				
 			<!-- submit button -->
+			<!--a href="contactemp_ques.php"-->
 			<input type="submit" name="submit-alum" value="Submit"/>
 			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 			<input type="hidden" name="submitted" value="1"/> 
+			<!--/a-->
 			</form>
-			
-	</form>	
+				
 		<!-- for footer/ contact details -->
 		<?php include('footer.php'); ?>
 	</div>
