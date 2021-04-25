@@ -1,17 +1,12 @@
-<!--<//?php require_once 'controller.php'; 
+<?php //require_once 'controllers/authentication.php'; 
 
-// prevent back to login
-if (isset($_SESSION['email'])) {
-	if ($_SESSION['role'] === 0) {
-		header('location: alum_survey.php');
-		exit();
-	}
-	elseif ($_SESSION['role'] === 1) {
-		header('location: emp_survey.php');
-		exit();
-	}
+session_start();
+// if user is not logged in
+if (!isset($_SESSION['email'])) {
+	header('location:login.php');
+	exit();
 }
-?>-->
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +21,6 @@ if (isset($_SESSION['email'])) {
 	<title>Alumni & Employer Landing Page - UPB DMCS</title>
 	</head>
 		<?php include('header.php'); ?>
-		<!-- added container for header -->
 	<div class="container-login">
 		<div class = "container-info-ae">
 			<h3>
@@ -38,13 +32,13 @@ if (isset($_SESSION['email'])) {
 				<!-- added this area for error messages -->
 				<!--<//?php if (count($errors) > 0): ?>
 					<div class="alert">
-						<?php foreach ($errors as $error): ?>
-							<?php echo $error; ?><br>
-						<?php endforeach; ?>	
+						<?php //foreach ($errors as $error): ?>
+							<?php //echo $error; ?><br>
+						<?php //endforeach; ?>	
 					</div>
 				<//?php endif;?>-->
-				<a href="alum_survey.php" class="ae-choices" name="alumni">Alumni</a><br><br><br><br>
-				<a href="emp_survey.php" class="ae-choices" name="employer">Employer</a>
+				<a href="alum_survey.php" class="ae-choices" name="alumni" title="Alumni Survey">Alumni</a><br><br><br><br>
+				<a href="emp_survey.php" class="ae-choices" name="employer" title="Employer Satisfaction Survey">Employer</a>
 			</form>
 		</div>
 	</div>
