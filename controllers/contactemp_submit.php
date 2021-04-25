@@ -44,73 +44,67 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 	
 	// variables for each question
 	//Contact Information
-	if (isset($_POST['emp1'])) {
-		$companyname = $_POST['emp1'];
+	
+	if (isset($_POST['contactemp_yon'])) {
+		$contactemp = $_POST['contactemp_yon'];
+		if ($contactemp == 'Yes') {
+			$companyname = $_POST['emp1'];
+			$contactperson = $_POST['emp2'];
+			$contactnumber = $_POST['emp3'];
+			$contactemail = $_POST['emp4'];
+		}
 	}
-	if (isset($_POST['emp2'])) {
-		$contactperson = $_POST['emp2'];
-	}
-	if (isset($_POST['emp3'])) {
-		$contactnumber = $_POST['emp3'];
-	}
-	if (isset($_POST['emp4'])) {
-		$contactemail = $_POST['emp4'];
-	}
+	
 	
 	// VALIDATION / ERROR HANDLING
 
 	// ERROR: required fields are empty or only white spaces
 	
-	if (empty($companyname) && $user_exist == false) {
+	if (isset($_POST['contactemp_yon']) && $contactemp == 'Yes' && (empty($companyname) || strlen(trim($companyname)) <= 0) && (empty($contactperson) || strlen(trim($contactperson)) <= 0) && (empty($contactnumber) || strlen(trim($contactnumber)) <= 0) && (empty($contactemail) || strlen(trim($contactemail)) <= 0) && $user_exist == false) {
 		$errors['es_emp1'] = "Need to answer company name. Field cannot be empty.";
-		$error = true;
-	}
-		if (empty($contactperson) && $user_exist == false) {
 		$errors['es_emp2'] = "Need to answer contact person. Field cannot be empty.";
-		$error = true;
-	}
-		if (empty($contactnumber) && $user_exist == false) {
 		$errors['es_emp3'] = "Need to answer contact number. Field cannot be empty.";
-		$error = true;
-	}
-		if (empty($contactemail) && $user_exist == false) {
-		$errors['es_emp4'] = "Need to answer contact email. Field cannot be empty.";
+		$errors['es_emp4'] = "Need to answer contact email. Field cannot be empty.";		
 		$error = true;
 	}
 	
 	// if there are no errors store answers to db
+
+		
 	if ($error == false) {
-	// EMPLOYER CONTACT INFO 1
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['companyname']);
+		
+		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactemp']);
+		$contactemp = mysqli_real_escape_string($db_conn, $_POST['contactemp_yon']);
 		$companyname = mysqli_real_escape_string($db_conn, $_POST['emp1']);
+		$contactperson = mysqli_real_escape_string($db_conn, $_POST['emp2']);
+		$contactnumber = mysqli_real_escape_string($db_conn, $_POST['emp3']);
+		$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
+
+		// if other is selected
+		if ($contactemp == 'Yes') {
+			$companyname = mysqli_real_escape_string($db_conn, $_POST['emp1']);
+			$contactperson = mysqli_real_escape_string($db_conn, $_POST['emp2']);
+			$contactnumber = mysqli_real_escape_string($db_conn, $_POST['emp3']);
+			$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
+		} else {
+			$companyname = $contactemp;
+			$contactperson = $contactemp;
+			$contactnumber = $contactemp;
+			$contactemail = $contactemp;
+		}
 
 		// store to db
 	    $sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$companyname')";
 		mysqli_query($db_conn, $sql);
-		
-		// EMPLOYER CONTACT INFO 2
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactperson']);
-		$contactperson = mysqli_real_escape_string($db_conn, $_POST['emp2']);
-
-		// store to db
-	    $sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactperson')";
+		$sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactperson')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactnumber')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactemail')";
 		mysqli_query($db_conn, $sql);
 		
-		// EMPLOYER CONTACT INFO 3
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactnumber']);
-		$contactnumber = mysqli_real_escape_string($db_conn, $_POST['emp3']);
 
-		// store to db
-	    $sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactnumber')";
-		mysqli_query($db_conn, $sql);
-		
-		// EMPLOYER CONTACT INFO 4
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactemail']);
-		$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
-
-		// store to db
-	    $sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactemail')";
-		mysqli_query($db_conn, $sql);
+	
 	}
 }//end of submit-contactemp
 

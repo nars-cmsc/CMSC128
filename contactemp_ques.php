@@ -47,41 +47,52 @@ if (!isset($_SESSION['email'])) {
 		<h2>CONTACT INFORMATION OF EMPLOYER</h2>
 		
 		<div class="entry">
-				<input type="hidden" name="companyname" value="companyname">
-				<p class="ques_title">Company Name:</p>
+				<input type="hidden" name="contactemp" value="contactemp"/>
+				<h3 class="ques_title">Do you wish to answer the employer's contact information?</h3>
 			</div>
+			
+			<input type="radio" name="contactemp_yon" class="options" id="contactemp_y" onclick="$('#companyname, #contactperson, #contactnumber, #contactemail').show();" value="Yes"/>
+					<label class="option" for="contactemp_y">Yes</label>
+				<input type="radio" name="contactemp_yon" class="options" id="contactemp_n" onclick="$('#companyname, #contactperson, #contactnumber, #contactemail').hide();" value="No"/>
+					<label class="option" for="contactemp_n">No</label>
+				<br>
+		
+		
+		
+						<div id="companyname" style="display: none;">
+						<p class="ques_title">Company Name:</p>
 						<textarea id="" name="emp1" rows="3" cols="40" style="resize: none;" 
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		<div class="entry">
-				<input type="hidden" name="contactperson" value="contactperson">
-				<p class="ques_title">Contact Person:</p>
-			</div>
+						</div>
+	
+						<div id="contactperson" style="display: none;">
+						<p class="ques_title">Contact Person:</p>
 						<textarea id="" name="emp2" rows="3" cols="40" style="resize: none;" 
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		<div class="entry">
-				<input type="hidden" name="contactnumber" value="contactnumber">
-				<p class="ques_title">Contact Number:</p>
-			</div>
+						</div>
+						
+						<div id="contactnumber" style="display: none;">
+						<p class="ques_title">Contact Number:</p>
 						<textarea id="" name="emp3" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
+						placeholder="Type here... (Enter NA if the information is not available)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
-		<div class="entry">
-				<input type="hidden" name="contactemail" value="contactemail">
-				<p class="ques_title">Email:</p>
-			</div>
-						<textarea id="" name="emp4" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
+						</div>
 		
+						<div id="contactemail" style="display: none;">
+						<p class="ques_title">Email:</p>
+						<textarea id="" name="emp4" rows="3" cols="40" style="resize: none;" 
+						placeholder="Type here... (Enter NA if the information is not available)"
+						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
+						</div>
 		
 <!-- submit button -->
-			<a href = "thankyou.php">
+
 			<input type="submit" name="submit-contactemp" value="Submit"/>
 			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 			<input type="hidden" name="submitted" value="1"/> 
-			</a>
+			
 			</form>
 				
 	</div>
