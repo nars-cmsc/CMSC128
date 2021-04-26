@@ -120,7 +120,7 @@ if (!isset($_SESSION['email'])) {
 						<input class="options" type="radio" name="ques5_2" id="fiveb2" value="No">
 							<label class="option" for="fiveb2">No</label>
 						</div>
-		<!-- QUESTION # 5.c (Hindi lumalabas iyong others textbox.)--> 
+		<!-- QUESTION # 5.c --> 
 			<div id="five_c" style="display: none;">
 			<h3 class="ques_title">If you answered 5.a., which industry best describes your employer or occupation? Drop-down menu of the following choices	</h3>
 				<select name="ques5c" id="ques5c" onchange="other_txt5();">
@@ -138,8 +138,6 @@ if (!isset($_SESSION['email'])) {
 				placeholder="Type other industry and business here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
 				minlength="7" />
 				</div>
-				
-
 
 		<!-- QUESTION # 6 -->
 			<div class="entry">
