@@ -123,7 +123,7 @@ if (!isset($_SESSION['email'])) {
 		<!-- QUESTION # 5.c (Hindi lumalabas iyong others textbox.)--> 
 			<div id="five_c" style="display: none;">
 			<h3 class="ques_title">If you answered 5.a., which industry best describes your employer or occupation? Drop-down menu of the following choices	</h3>
-				<select name="ques5c" id="ques5c" onchange="other_txt();">
+				<select name="ques5c" id="ques5c" onchange="other_txt5();">
 					<option value="none" selected disabled >
 						Select industry and business
 					</option>
