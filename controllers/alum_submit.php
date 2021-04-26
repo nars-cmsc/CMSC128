@@ -7,6 +7,40 @@ require ('config/connection.php');
 $errors = array();
 $error;
 
+$ques5c_arr = array(
+	"Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use",
+	"Activities of International Organizations and Bodies",
+	"Administrative and Support Service Activities", "Agriculture, Forestry and Fishing", "Arts, Entertainment and Recreation",
+	"Construction", "Education", "Electricity, Gas, Steam and Air Conditioning Supply", "Finance, Banks, and Insurance", 
+	"Hotel/Accommodation, and Restaurant and Food Service", "Human Health and Social Work Activities", "Information Technology", 
+	"Manufacturing", "Media and Communication", "Mining and Quarrying", "Other Service Activities", 
+	"Professional, Scientific and Technical Activities", "Public Administration and Defense; Compulsory Social Security", 
+	"Real Estate Activities", "Transportation and Storage", "Water Supply; Sewerage, Waste Management and Remediation Activities", 
+	"Wholesale and Retail Trade"
+);
+
+$ques8_arr = array (
+	"Armed Forces Occupations", "Clerical Support Workers", 
+	"Craft and Related Trade Workers", "Elementary Occupations (e.g. laborers and unskilled workers, domestic helpers, etc.)", 
+	"Managers", "Plant and Machine Operators, and Assemblers", "Professionals", "Service and Sales Workers",
+	"Skilled Agricultural, Forestry and Fishery Workers", "Technicians and Associate Professionals"
+);
+
+$ques18_arr = array(
+	"Possess the skills and mindset to improve human life", 
+	"Commit to the freedom and welfare of all",
+	"Demonstrate mastery of knowledge in your specific discipline",
+	"Possess breadth of mind",
+	"Possess strength of character",
+	"Possess generosity of spirit",
+	"Inclusively engage with society and the world at large",
+	"Be mindful of the needs and capabilities of people",
+	"Be sensitive to the challenges and opportunities of national development and global change",
+	"Think critically",
+	"Demonstrate discernment"
+);
+
+
 if(isset($_POST["submit-alum"]))
 {
 	?>
@@ -55,17 +89,19 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques4'])) {
 		$four = $_POST['ques4'];
 	}
+	
 	if (isset($_POST['ques5'])) {
 		$five = $_POST['ques5'];
-	}
-	if (isset($_POST['ques5_1'])) {
-		$five_a = $_POST['ques5_1'];
-	}
-	if (isset($_POST['ques5_2'])) {
-		$five_b = $_POST['ques5_2'];
-	}
-	if (isset($_POST['ques5_3'])) {
-		$five_c = $_POST['ques5_3'];
+		if ($five == 'Yes') {
+			$five_a = $_POST['ques5_1'];
+			$five_c = $_POST['ques5_3'];
+			if ($five_c == 'other') {
+			$five_c_other = $_POST['ques5c_other'];
+			}
+		}
+		else {
+			$five_b = $_POST['ques5_2'];
+		}	
 	}
 	if (isset($_POST['ques6'])) {
 		$six = $_POST['ques6'];
@@ -167,26 +203,35 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q4'] = "Need to answer #4. Field cannot be empty.";
 		$error = true;
 	}
+
+	
 		if (empty($five) && $user_exist == false) {
 		$errors['es_q5'] = "Need to answer #5. Field cannot be empty.";
 		$error = true;
-	}
-			if (empty($five_a) && $user_exist == false) {
-			$errors['es_q5.1'] = "Need to answer #5.1. Field cannot be empty.";
+		}
+		if (isset($_POST['ques5_1']) && $five == 'Yes' && $user_exist == false) {
+			$errors['es_q5_1'] = "Need to answer #5.1. Field cannot be empty.";
 			$error = true;
 		}
-		if (empty($five_b) && $user_exist == false) {
-			$errors['es_q5.2'] = "Need to answer #5.2. Field cannot be empty.";
+		if (isset($_POST['ques5_2']) && $five == 'No' && $user_exist == false) {
+			$errors['es_q5_2'] = "Need to answer #5.2. Field cannot be empty.";
 			$error = true;
 		}
-		if (empty($five_c) && $user_exist == false) {
-			$errors['es_q5.3'] = "Need to answer #5.3. Field cannot be empty.";
+		if (isset($_POST['ques5_3']) && $five == 'Yes' && $user_exist == false) {
+			$errors['es_q5_3'] = "Need to answer #5.3. Field cannot be empty.";
 			$error = true;
 		}
+	//	if (isset($_POST['ques5c']) && $five_c == 'other' && (empty($fivec_other) || strlen(trim($fivec_other)) <= 0) && $user_exist == false) {
+	//	$errors['es_q5_3_other'] = "Need to answer #5c. 'Others' field cannot be empty.";
+	//	$error = true;
+	//	}
+		
+		
 		if (empty($six) && $user_exist == false) {
 		$errors['es_q6'] = "Need to answer #6. Field cannot be empty.";
 		$error = true;
 	}
+	
 		if (empty($seven) && $user_exist == false) {
 		$errors['es_q7'] = "Need to answer #7. Field cannot be empty.";
 		$error = true;
@@ -324,37 +369,31 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$four')";
 	    mysqli_query($db_conn, $sql);
 		
+		
 		// QUESTION NUMBER 5
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five']);
 		$five = mysqli_real_escape_string($db_conn, $_POST['ques5']);
-
+		$five_a = mysqli_real_escape_string($db_conn, $_POST['ques5_1']);
+		$five_b = mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
+		$five_c = mysqli_real_escape_string($db_conn, $_POST['ques5_3']);
+		
+		if ($five == 'Yes') {
+			$five_a = mysqli_real_escape_string($db_conn, $_POST['ques5_1']);
+			$five_c = mysqli_real_escape_string($db_conn, $_POST['ques5_3']);
+		} else {
+			$five_b = mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
+		}
+		
 		// store to db
 	    $sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five')";
-	    mysqli_query($db_conn, $sql);
-		
-		// QUESTION NUMBER 5.a
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five_a']);
-		$five_a = mysqli_real_escape_string($db_conn, $_POST['ques5_1']);
-
-		// store to db
-	    $sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five_a')";
-	    mysqli_query($db_conn, $sql);
-		
-		// QUESTION NUMBER 5.b
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five_b']);
-		$five_b = mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
-
-		// store to db
-	    $sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five_b')";
-	    mysqli_query($db_conn, $sql);
-		
-		// QUESTION NUMBER 5.c
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five_c']);
-		$five_c = mysqli_real_escape_string($db_conn, $_POST['ques5_3']);
-
-		// store to db
-	    $sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five_c')";
-	    mysqli_query($db_conn, $sql);
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five_a')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five_b')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five_c')";
+		mysqli_query($db_conn, $sql);
+			
 		
 		// QUESTION NUMBER 6
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['six']);
