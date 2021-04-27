@@ -844,6 +844,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		}
 		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
 			header('location: alum_emp.php');
+			echo '<script> alert("Thank you for completing the survey!"); </script>'
 		}
 	    
 

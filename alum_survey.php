@@ -138,6 +138,8 @@ if (!isset($_SESSION['email'])) {
 				placeholder="Type other industry and business here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
 				minlength="7" />
 				</div>
+				
+
 
 		<!-- QUESTION # 6 -->
 			<div class="entry">
@@ -156,7 +158,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="six5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques6" id="six6" onclick="$('#sixothers').hide(); $('#sixacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="six6">Doctoral degree </label><br>
-						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value=""> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="six7">Others (e,g. training, certifications):</label> <br>
 								
 						<div id="sixacademicfield" style="display: none;">
@@ -190,7 +192,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="seven5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques7" id="seven6" onclick="$('#sevenothers').hide(); $('#sevenacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="seven6">Doctoral degree</label><br>
-						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value=""> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="seven7">Others (e,g. training, certifications):</label><br>
 						
 						<div id="sevenacademicfield" style="display: none;">
@@ -436,13 +438,13 @@ if (!isset($_SESSION['email'])) {
 				<input type="hidden" name="nineteen" value="19">
 				<h3 class="ques_title">19. Would you like to elaborate on how UP DMCS helped you acquire the competencies you needed?</h3>
 			</div>
-						<input class="options" type="radio" name="ques11" id="eleven1" onclick="$('#nineteen_txt').show();" value="Yes">
+						<input class="options" type="radio" name="ques19" id="eleven1" onclick="$('#nineteen_txt').show();" value="Yes">
 							<label class="option" for="nineteen1">Yes</label>
-						<input class="options" type="radio" name="ques11" id="eleven2" onclick="$('#nineteen_txt').hide();"value="No">
+						<input class="options" type="radio" name="ques19" id="eleven2" onclick="$('#nineteen_txt').hide();"value="No">
 							<label class="option" for="nineteen2">No</label>
 							
 				<div id="nineteen_txt" style="display: none;">
-						<textarea id="" name="ques19" rows="4" cols="50" style="resize: none;" 
+						<textarea id="" name="ques19_ytxt" rows="4" cols="50" style="resize: none;" 
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 						</div>
