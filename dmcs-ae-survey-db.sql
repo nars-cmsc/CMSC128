@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2021 at 02:06 PM
--- Server version: 10.4.16-MariaDB
--- PHP Version: 7.4.12
+-- Generation Time: May 06, 2021 at 04:06 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,6 +28,19 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `alum_survey` (
+  `answer_id` int(11) NOT NULL,
+  `question_num` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `answer_body` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contactemp_ques`
+--
+
+CREATE TABLE `contactemp_ques` (
   `answer_id` int(11) NOT NULL,
   `question_num` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -83,6 +96,13 @@ ALTER TABLE `alum_survey`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `contactemp_ques`
+--
+ALTER TABLE `contactemp_ques`
+  ADD PRIMARY KEY (`answer_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `emp_survey`
 --
 ALTER TABLE `emp_survey`
@@ -104,13 +124,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `alum_survey`
 --
 ALTER TABLE `alum_survey`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=440;
+
+--
+-- AUTO_INCREMENT for table `contactemp_ques`
+--
+ALTER TABLE `contactemp_ques`
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `emp_survey`
 --
 ALTER TABLE `emp_survey`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5847;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5921;
 
 --
 -- AUTO_INCREMENT for table `users`
