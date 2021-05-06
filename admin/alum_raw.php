@@ -1,19 +1,13 @@
 <?php
 
-require ('controllers/user_del.php');
+require ('controllers/alum_db.php');
 
 // if user is not logged in
 if (!isset($_SESSION['email'])) {
     header('location: ../login.php');
     exit();
 }
-
-// if user is not an admin
-// if (isset($_SESSION['role']) != 0) {
-//     header('location: ../login.php');
-//     exit();
-// }
-
+  
 ?>
 
 <!DOCTYPE html>
@@ -30,33 +24,26 @@ if (!isset($_SESSION['email'])) {
 <?php include('header.php');  ?>
     <section>
         <?php include('sidenav.php');  ?>
-        <div class="content-users">
-            <h4 id="title-users">List of Registered Users</h4>
-            <table id="table-users">
+        <div class="content-emp-raw">
+            <h4 id="title-emp-raw">Raw Data</h4>
+            <h6 id="subtitle-emp-raw">Alumni Survey</h6>
+            <table id="table-emp-raw">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Role</th>
+                        <th>Question Number</th>
+                        <th>User</th>
+                        <th>Answer</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while ($row = mysqli_fetch_array($query)) {?>
                         <tr>
+                            <td><?php echo $row['answer_id']; ?></td>
+                            <td><?php echo $row['question_num']; ?></td>
                             <td><?php echo $row['user_id']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['pass']; ?></td>
-                            <td>
-                                <?php if ($row['role_id'] == 0) { echo "ADMIN"; } ?>
-                                <?php if ($row['role_id'] == 1) { echo "ALUMNI"; } ?>
-                                <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
-                                <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
-                            </td>
-                            <td>
-                                <a href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
-                            </td>
+                            <td><?php echo $row['answer_body']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

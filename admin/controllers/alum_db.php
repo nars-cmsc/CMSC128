@@ -1,10 +1,10 @@
 <?php
-// display emp survey raw data from db
+// display alum survey raw data from db
 session_start();
 
 require ('config/connection.php');
 
-$query = mysqli_query($db_conn, "SELECT * FROM emp_survey");
+$query = mysqli_query($db_conn, "SELECT * FROM alum_survey");
 $errors = array();
 $error;
 $email = "";

@@ -62,3 +62,13 @@ function make_subreg(value) {
 	}
 }
 
+// for select to display textbox alum survey #5c
+function other_txt5() {
+    var selectBox = document.getElementById("ques5c");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    if (selectedValue == "other") {
+        $('#ques5c_other').show();
+    } else {
+        $('#ques5c_other').hide();
+    }
+}

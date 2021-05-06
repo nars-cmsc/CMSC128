@@ -1,3 +1,68 @@
+* {box-sizing:border-box}
+.questions-container {
+	max-width: 70%;
+	position:relative;
+	margin:auto;
+}
+.Slides {
+	display:none;
+	background-color:#f5f5f5;
+	padding-left:8%;
+	padding-right:8%;
+	padding-top:3%;
+	padding-bottom:5%;
+	border-radius: 50px 50px 50px 50px;
+}
+.previous, .next {
+	cursor:pointer;
+	position:absolute;
+	top:50%;
+	width:auto;
+	margin-top:-22px;
+	padding:16px;
+	background-color:#ffad0d;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:18pt;
+	transition:0.3s ease;
+	border-radius:0 10px 10px 0;
+	user-select:none;
+	opacity:.5;
+}
+.next {
+	right:0;
+	border-radius:10px 0 0 10px;
+}
+.previous:hover, .next:hover{
+	background-color:#840038;
+	opacity:1.0;
+}
+.numbertext {
+	color:#000000;
+	font-size:10pt;
+	padding:8px 12px;
+	position:absolute;
+	bottom:0;
+	right:30px;
+}
+.dot-navigation {
+	text-align:center;
+}
+.dot {
+	cursor:pointer;
+	height:15px;
+	width:15px;
+	margin:0 2px;
+	background-color:#ffad0d;
+	border-radius:50%;
+	display:inline-block;
+	transition: 0.3s ease;
+	opacity:.5;
+}
+.active, .dot:hover {
+	background-color:#840038;
+	opacity:1.0;
+}
 body{
 	height: 100%;
 	font-family: Arial Nova, sans-serif;
@@ -17,27 +82,22 @@ header{
 /* added this so that size of header will change
 	once window is resized */
 .container-header {
-	position: fixed;
+	position: sticky;
 	min-height: 100vh;
+}
+.logos {
+	margin-left: 1%;
 }
 .logos img {
 	position: relative;
 	width: 4.5rem;
 	height: 4.5rem;
 	float: left;
-}
-/* added this to personalize the padding of each logo*/
-#up {
-	padding-left: 2%;
-	padding-right: .5%;
-}
-#cs {
-	padding-right: .5%;
-	padding-left: .5%;
+	margin-right: .5rem;
 }
 .banner_lines {
 	float: left;
-	width: 82%;
+	width: 87%;
 }
 .banner_lines h3, h4, h6{
 	color: #fff;
@@ -46,11 +106,8 @@ header{
 	text-transform: uppercase;
 }
 .log_out img {
-	float:right;
-	width:25px;
-	height:25px;
-	padding-right: 1.1%;
-	padding-top: 2%;
+	width:1.5rem;
+	height:1.5rem;
 	opacity:.7;
 }
 .log_out img:hover {
@@ -117,7 +174,7 @@ form {
 }
 .ae-choices{
 	width:300px;
-	height:50px;
+	height:60px;
 	font-weight:bold;
 	color:#ffffff;
 	border-radius: 100px 100px 100px 100px;
@@ -127,11 +184,12 @@ form {
 	text-transform: uppercase;
 	text-align:center;
 	padding-top:20px;
+	padding-bottom: 20px;
 	text-decoration:none;
 }
 .ae-choices:hover{
 	width:300px;
-	height:50px;
+	height:60px;
 	font-weight:bold;
 	color:#ffffff;
 	border-radius: 100px 100px 100px 100px;
@@ -141,7 +199,26 @@ form {
 	text-transform: uppercase;
 	text-align:center;
 	padding-top:20px;
+	padding-bottom: 20px;
 	text-decoration:none;
+}
+select {
+	width:300px;
+	height:25px;
+	color:#000000;
+	border-radius: 5px 5px 5px 5px;
+}
+input[type=text]{
+	width:300px;
+	height:25px;
+	color:#000000;
+	border-radius: 5px 5px 5px 5px;
+}
+input[type=number]{
+	width:250px;
+	height:25px;
+	color:#000000;
+	border-radius: 5px 5px 5px 5px;
 }
 input[type=email]{
 	width:300px;
@@ -177,71 +254,68 @@ input[type=submit]:hover{
 	float:right;
 	text-transform: uppercase;
 }
-.fa {
-	padding:15px;
-	font-size:30px;
-	width:20px;
+th {
+	font-size:14pt;
+	padding-bottom:2%;
+	padding-top:2%;
+	padding-right:3%;
+}
+td {
 	text-align:center;
-	text-decoration:none;
-	border-radius:50%;
-	margin-top:0;
-	margin-bottom:10px;
-	margin-left:20px;
-	margin-right:20px;
-}
-.fa:hover {
-	background:#840038;	
-}
-.fa-facebook {
-	background:#ffad0d;
-	color:#ffffff;
-}
-.fa-at {
-	background:#ffad0d;
-	color:#ffffff;
+	padding-bottom:2%;
+	padding-top:2%;
+	padding-left:1%;
+	padding-right:5%;
+	border-top:1px solid black;
 }
 p {
 	font-size:12pt;
 }
 .content-alum {
-	/*margin-top:140px;*/
 	margin-top: 5rem;
 	padding-left:50px;
 	padding-right:50px;
 	position: relative; /* added this*/
-	/*min-height: 100%;*/
 	display: block;
 	overflow: auto;
 	padding-bottom: 25rem;
 }
 .content-emp {
-	/*margin-top:140px;*/
-	margin-top: 5rem;
+	margin-top: 0.5rem;
 	padding-left:50px;
 	padding-right:50px;
 	position: relative; /* added this*/
-	/*min-height: 100%;*/
 	display: block;
 	overflow: auto;
 	padding-bottom: 25rem;
 }
 .content-alum h1 {
 	font-size:22pt;
+	text-transform:uppercase;
 }
 .content-alum h2 {
 	font-size:18pt;
 }
 .content-emp h1{
-	font-size:22pt;
+	font-size:20pt;
+	color:#840038;
+	text-transform:uppercase;
 }
 .content-emp h2{
-	font-size:18pt;
+	font-size:15pt;
 }
 .ques_title {
-	font-size:16pt;
+	font-size:14pt;
 }
 .subques {
-	font-size:14pt;
+	font-size:12pt;
+}
+.q7, .q8, .q11, .q12 {
+	font-size:12pt;
+	width:100%;
+}
+.options {
+	text-align:center;
 }
 label {
 	font-size:12pt;
@@ -249,8 +323,14 @@ label {
 .submit-button {
 	float:right;
 }
+.thanks {
+	padding:50%;
+	font-size: 16pt;
+	top:100px;
+	float:right;
+}
 footer {
-	position:fixed;
+	position:absolute;
 	left:0;
 	bottom:0;
 	width:100%;
@@ -268,4 +348,26 @@ footer {
 .icons{
 	float:right;
 	padding-right:3%;
+}
+.fa {
+  width:50px;
+  height: 50px;
+  text-align:center;
+  text-decoration:none;
+  border-radius:50%;
+  vertical-align: middle;
+  text-align: center;
+  padding-top: 15px;
+  margin-left: 20px;
+}
+.fa:hover {
+  background:#840038; 
+}
+.fa-facebook {
+  background:#ffad0d;
+  color:#ffffff;
+}
+.fa-at {
+  background:#ffad0d;
+  color:#ffffff;
 }
