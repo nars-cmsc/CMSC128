@@ -7,6 +7,16 @@ require ('config/connection.php');
 $errors = array();
 $error;
 
+if(isset($_POST["submit-alum"]))
+{
+	?>
+	<script type="text/javascript">
+	window.location="contactemp_ques.php";
+	</script>
+
+<?php
+}
+
 $ques5c_arr = array(
 	"Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use",
 	"Activities of International Organizations and Bodies",
