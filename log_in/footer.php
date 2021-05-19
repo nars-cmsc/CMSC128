@@ -7,7 +7,7 @@
 			min-height:100vh;
 		}
 		footer {
-			position:absolute;
+			position:fixed;
 			left:0;
 			bottom:0;
 			width:100%;
