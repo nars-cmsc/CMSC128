@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	// ques 1 other option display textbox
     $("input[name='ques1']").change(function() {
-        if ($(this).val() == "other") {
+        if ($(this).val() == "Other") {
             $("#ques1_otxt").show();
-        } else if (($(this).val() == "public") || ($(this).val() == "private")) {
+        } else if (($(this).val() == "Public") || ($(this).val() == "Private")) {
             $("#ques1_otxt").hide();
         }
     });
@@ -11,9 +11,9 @@ $(document).ready(function() {
     // ques 2 abroad option display ques2.1
     $("input[name='ques2']").change(function() {
         // abroad option to display question # 2.1
-        if ($(this).val() == "abroad") {
+        if ($(this).val() == "Abroad") {
             $("#q2_1").show();
-        } else if ($(this).val() == "philippines") {
+        } else if ($(this).val() == "Philippines") {
             $("#q2_1").hide();
         }
     });

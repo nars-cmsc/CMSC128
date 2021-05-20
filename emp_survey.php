@@ -61,11 +61,11 @@ if (!isset($_SESSION['email'])) {
 					<input type="hidden" name="one" value="1"/>
 					<h3 class="ques_title">1. Which sector of economy does your company/organization belong to?</h3>
 				</div>
-					<input class="options" type="radio" name="ques1"  id="ques1_1"value="public" />
+					<input class="options" type="radio" name="ques1"  id="ques1_1"value="Public" />
 						<label for="ques1_1" class="option">Public</label> 
-					<input class="options" type="radio" name="ques1"  id="ques1_2"value="private"/>
+					<input class="options" type="radio" name="ques1"  id="ques1_2"value="Private"/>
 						<label for="ques1_2" class="option">Private</label> 
-					<input class="options" type="radio" name="ques1"  id="ques1_other"value="other"/>
+					<input class="options" type="radio" name="ques1"  id="ques1_other"value="Other"/>
 						<label for="ques1_other" class="option">Others, please specify:</label>
 						<input type="text" name="ques1_otxt" id="ques1_otxt"  style="display:none;"
 						placeholder="Type other sector here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
@@ -76,9 +76,9 @@ if (!isset($_SESSION['email'])) {
 					<input type="hidden" name="two" value="2"/>
 					<h3 class="ques_title">2. Where is your company/organization located?</h3>
 				</div>
-					<input class="options" type="radio" name="ques2" value="philippines" id="ques2_1"/>
+					<input class="options" type="radio" name="ques2" value="Philippines" id="ques2_1"/>
 						<label for="ques2_1" class="option">Philippines</label>
-					<input class="options" type="radio" name="ques2" value="abroad" id="ques2_2"/>
+					<input class="options" type="radio" name="ques2" value="Abroad" id="ques2_2"/>
 						<label for="ques2_2" class="option">Abroad</label>
 
 
