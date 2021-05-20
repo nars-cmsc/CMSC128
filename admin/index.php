@@ -55,7 +55,7 @@ if (!isset($_SESSION['email'])) {
                                 <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
                             </td>
                             <td>
-                                <a href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
+                                <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
