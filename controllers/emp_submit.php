@@ -844,8 +844,12 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 
 
 		if ($_SESSION['role'] == $EMPLOYER_ROLE_ID) {
-			header('location: emp_survey.php');
-			echo '<script> alert("Thank you for completing the survey!"); </script>';
+			// update time of response
+			$sql_time = "UPDATE emp_survey set date_response=now() where user_id=".$_SESSION['id'];
+			$rs = mysqli_query($db_conn, $sql_time);
+
+			header('location: thankyou.php');
+			// echo '<script> alert("Thank you for completing the survey!"); </script>';
 		}
 		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
 			header('location: alum_emp.php');
