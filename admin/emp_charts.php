@@ -56,6 +56,24 @@ if (!isset($_SESSION['email'])) {
                 <h6 id="subtitle-emp-charts">Question No. 6</h6>
                 <canvas id="mycanvas6"></canvas>
             </div>
+
+
+
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 9</h6>
+                <canvas id="mycanvas9"></canvas>
+            </div>
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 10</h6>
+                <canvas id="mycanvas10"></canvas>
+            </div>
+
+
+
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 14</h6>
+                <canvas id="mycanvas14"></canvas>
+            </div>
         </div>
     </section>
     <!-- QUESTION # 1 -->
@@ -215,6 +233,105 @@ if (!isset($_SESSION['email'])) {
             title: {
               display: true,
               text: "Question # 6"
+            }
+          }
+        });
+    </script>
+
+
+
+
+    <!-- QUESTION # 9 -->
+    <script type="text/javascript">
+        var xValues = ["Very Unlikely", "Unlikely",
+                       "Likely", "Very Likely"
+                      ];
+        var yValues = [<?php echo $ct_9vu;?>, <?php echo $ct_9u;?>, <?php echo $ct_9l;?>, <?php echo $ct_9vl;?>];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#1e7145"
+        ];
+
+        new Chart("mycanvas9", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Question # 9"
+            }
+          }
+        });
+    </script>
+
+    <!-- QUESTION # 10 -->
+    <script type="text/javascript">
+        var xValues = ["Very Unlikely", "Unlikely",
+                       "Likely", "Very Likely"
+                      ];
+        var yValues = [<?php echo $ct_10vu;?>, <?php echo $ct_10u;?>, <?php echo $ct_10l;?>, <?php echo $ct_10vl;?>];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#1e7145"
+        ];
+
+        new Chart("mycanvas10", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Question # 10"
+            }
+          }
+        });
+    </script>
+
+
+
+
+    <!-- QUESTION # 14 -->
+    <script type="text/javascript">
+        var xValues = ["Unimportant", "Of Little Importance",
+                       "Moderately part Important", "Important"
+                      ];
+        var yValues = [<?php echo $ct_un;?>, <?php echo $ct_of;?>, <?php echo $ct_mod;?>, <?php echo $ct_im;?>];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#1e7145"
+        ];
+
+        new Chart("mycanvas14", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Question # 14"
             }
           }
         });

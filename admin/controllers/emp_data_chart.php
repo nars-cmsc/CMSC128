@@ -627,4 +627,143 @@ require ('config/connection.php');
 
 
 
+######## QUESTION #9 ##########
+
+	// counters/containers for likely/unlikely
+	$ct_9vu = 0;
+	$ct_9u = 0;
+	$ct_9l = 0;
+	$ct_9vl = 0;
+
+	// get data from table (very unlikely)
+	$query = "SELECT user_id FROM emp_survey_q9 WHERE answer_body='Very Unlikely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_9vu++;
+	}
+
+	// get data from table (unlikely)
+	$query = "SELECT user_id FROM emp_survey_q9 WHERE answer_body='Unlikely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_9u++;
+	}
+
+	// get data from table (likely)
+	$query = "SELECT user_id FROM emp_survey_q9 WHERE answer_body='Likely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_9l++;
+	}
+
+	// get data from table (very likely)
+	$query = "SELECT user_id FROM emp_survey_q9 WHERE answer_body='Very Likely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_9vl++;
+	}
+
+######## QUESTION #10 ##########
+
+	// counters/containers for likely/unlikely
+	$ct_10vu = 0;
+	$ct_10u = 0;
+	$ct_10l = 0;
+	$ct_10vl = 0;
+
+	// get data from table (very unlikely)
+	$query = "SELECT user_id FROM emp_survey_q10 WHERE answer_body='Very Unlikely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_10vu++;
+	}
+
+	// get data from table (unlikely)
+	$query = "SELECT user_id FROM emp_survey_q10 WHERE answer_body='Unlikely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_10u++;
+	}
+
+	// get data from table (likely)
+	$query = "SELECT user_id FROM emp_survey_q10 WHERE answer_body='Likely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_10l++;
+	}
+
+	// get data from table (very likely)
+	$query = "SELECT user_id FROM emp_survey_q10 WHERE answer_body='Very Likely'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_10vl++;
+	}
+
+
+
+
+
+
+######## QUESTION #14 ##########
+
+	// counters/containers for importance
+	$ct_un = 0;
+	$ct_of = 0;
+	$ct_mod = 0;
+	$ct_im = 0;
+
+	// get data from table (very unlikely)
+	$query = "SELECT user_id FROM emp_survey_q14 WHERE answer_body='Unimportant'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_un++;
+	}
+
+	// get data from table (unlikely)
+	$query = "SELECT user_id FROM emp_survey_q14 WHERE answer_body='Of Little Importance'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_of++;
+	}
+
+	// get data from table (likely)
+	$query = "SELECT user_id FROM emp_survey_q14 WHERE answer_body='Moderately part Important'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_mod++;
+	}
+
+	// get data from table (very likely)
+	$query = "SELECT user_id FROM emp_survey_q14 WHERE answer_body='Important'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_im++;
+	}
+
+
+
 ?>
