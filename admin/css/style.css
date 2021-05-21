@@ -16,8 +16,8 @@ header {
   background-image: linear-gradient(to right, #840038, #385723);
   padding: 30px;
   display: flex;
-  position: -webkit-sticky; /* for safari */
-  position: sticky;
+  /*position: -webkit-sticky;
+  position: sticky;*/
   top: 0;
   color: white;
 }
@@ -81,10 +81,76 @@ a {
 #table-users {
   text-align: center;
 }
+
+/* content in user_reg.php */
+.content-reg-users {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+
 /* content emp_raw.php */
+.content-emp-raw {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+#title-emp-raw {
+  color: gray;
+}
+#subtitle-emp-raw {
+  color: gray;
+}
 #table-emp-raw {
   text-align: center;
 }
+
+/* content alum_raw.php */
+.content-alum-raw {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+#title-alum-raw {
+  color: gray;
+}
+#subtitle-alum-raw {
+  color: gray;
+}
+#table-alum-raw {
+  text-align: center;
+}
+
+/* content emp_charts.php */
+.content-emp-charts {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+#title-emp-charts {
+  color: gray;
+}
+#subtitle-emp-charts {
+  color: gray;
+}
+#table-emp-charts {
+  text-align: center;
+}
+/* for chart container */
+#chart-container {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
 /* for alert message */
 .alert {
   text-align: left;
@@ -93,15 +159,6 @@ a {
   color: white;
   margin-bottom: 1rem;
   width: 16rem;
-}
-
-
-.content-reg-users {
-  float: left;
-  padding: 20px;
-  width: 70%;
-  min-height: 100vh;
-  background-color: #f1f1f1;
 }
 
 /* Clear floats after the columns */
@@ -146,8 +203,8 @@ footer {
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  nav, article {
+  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts {
     width: 100%;
-    height: auto;
+    /*height: auto;*/
   }
 }
