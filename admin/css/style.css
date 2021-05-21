@@ -9,6 +9,10 @@ body {
   font-family: Arial Nova, sans-serif;
   font-size: 16pt;
   background-color: #fff;
+<<<<<<< HEAD
+=======
+  margin: 0;
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 }
 
 /* Style the header */
@@ -16,8 +20,13 @@ header {
   background-image: linear-gradient(to right, #840038, #385723);
   padding: 30px;
   display: flex;
+<<<<<<< HEAD
   /*position: -webkit-sticky;
   position: sticky;*/
+=======
+  /*position: -webkit-sticky; /* for safari */
+  /*position: sticky;*/
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
   top: 0;
   color: white;
 }
@@ -43,6 +52,7 @@ header {
     opacity:1.0;
 }
 
+<<<<<<< HEAD
 /* Create two columns/boxes that floats next to each other */
 nav {
   float: left;
@@ -159,6 +169,145 @@ a {
   color: white;
   margin-bottom: 1rem;
   width: 16rem;
+=======
+.sidenav {
+  width:23rem;
+  position:fixed;
+  z-index:1;
+  top: 10rem;
+  left: 1rem;
+  overflow-x:hidden;
+  padding:1rem;
+}
+.sidenav a {
+  padding: 20px 30px 20px 30px;
+  margin:-.5rem;
+  text-decoration: none;
+  font-size: 18px;
+  color: #ffffff;
+  background-color:#a99a86;
+  text-align:center;
+  border-radius:100px 100px 100px 100px;
+  display: block;
+}
+.sidenav a:hover {
+  background-color:#385723;
+}
+.delete {
+  color:#ffad0d;
+}
+.delete:hover {
+  color:red;
+}
+/* content index.php */
+.content-users {
+  float: left;
+  margin-left:25rem;
+  padding: 2%;
+  width: 70%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-users {
+  color: gray;
+  padding: 2%;
+}
+#table-users {
+  text-align: center;
+  margin:3%;
+  width:100%;
+  font-size:14pt;
+}
+
+th{
+  border-bottom:1px solid black;
+  padding-bottom:3px;
+}
+
+/* content emp_raw.php */
+#table-emp-raw {
+  text-align: center;
+  font-size:14pt;
+}
+/* for alert message */
+.alert {
+  text-align: left;
+  padding: 1rem;
+  background-color: #db7c6b; /* Red */
+  color: white;
+  margin-bottom: 1rem;
+  width: 16rem;
+}
+form{
+  margin:2rem;
+}
+.content-reg-users {
+  float: left;
+  margin-left:25rem;
+  padding: 2%;
+  width: 70%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+select {
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 5px 5px 5px 5px;
+}
+input[type=email]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=text]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+  width:130px;
+  height:50px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+}
+input[type=submit]:hover{
+  background-color:#840038;
+}
+button{
+  width:180px;
+  height:40px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  margin-left:1rem;
+}
+button:hover{
+  background-color:#840038;
+}
+
+.content-emp-raw {
+  float:left;
+  margin-left:25rem;	
+}
+
+.content-alum-raw {
+  float:left;
+  margin-left:25rem;	
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 }
 
 /* Clear floats after the columns */
@@ -171,10 +320,18 @@ section::after {
 /* Style the footer */
 footer {
   background-color:#0e6022;
+<<<<<<< HEAD
   padding: 1%;
   font-size:12pt;
   color: white;
   display: flex;
+=======
+  padding: 1.5%;
+  font-size:12pt;
+  color: white;
+  display: flex;
+  opacity:0.9;
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 }
 .info {
     flex-grow: 10;
@@ -192,19 +349,29 @@ footer {
 .fa:hover {
   background:#840038; 
 }
+<<<<<<< HEAD
 .fa-facebook {
   background:#ffad0d;
   color:#ffffff;
 }
 .fa-at {
+=======
+.fa-facebook, .fa-at {
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
   background:#ffad0d;
   color:#ffffff;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
+<<<<<<< HEAD
   nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts {
     width: 100%;
     /*height: auto;*/
+=======
+  nav, article {
+    width: 100%;
+    height: auto;
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
   }
 }

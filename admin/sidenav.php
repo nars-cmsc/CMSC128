@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <nav id="sidebar">
             <ul>
                 <li><a href="index.php">Users</a></li>
@@ -14,3 +15,11 @@
                 </ul>
             </ul>
         </nav>
+=======
+	<div class="sidenav">
+		<a href="index.php">Users</a><br>
+		<a href="user_reg.php">Register New Users</a><br>
+		<a href="alum_raw.php">Alumni Survey (Raw Data)</a><br>
+		<a href="emp_raw.php">Employer Satisfaction Survey (Raw Data)</a>
+	</div>
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0

@@ -2,6 +2,7 @@
 
 session_start();
 
+<<<<<<< HEAD
 use PHPMailer\PHPMailer\PHPMailer;
 
 require ('config/connection.php');
@@ -10,12 +11,19 @@ require_once ('phpmailer/Exception.php');
 require_once ('phpmailer/PHPMailer.php');
 require_once ('phpmailer/SMTP.php');
 
+=======
+require ('config/connection.php');
+
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 $query = mysqli_query($db_conn, "SELECT * FROM users");
 $errors = array();
 $error;
 $email = "";
 $role  = "";
+<<<<<<< HEAD
 $mail = new PHPMailer(true);
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 
 function password_generate($chars) {
   $data = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
@@ -25,7 +33,10 @@ function password_generate($chars) {
 // for registering
 if (isset($_POST['reg-btn'])) {
 
+<<<<<<< HEAD
 	// check value of variables
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 	if (isset($_POST['email'])) {
 		$email = mysqli_real_escape_string($db_conn, $_POST['email']);
 	}
@@ -57,7 +68,10 @@ if (isset($_POST['reg-btn'])) {
 	$user_count = $result->num_rows;
 	$stmt->close();
 
+<<<<<<< HEAD
 	// error checking
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 	if ($user_count > 0) {
 		$errors['email'] = "Email already exits";
 	}
@@ -73,7 +87,10 @@ if (isset($_POST['reg-btn'])) {
 		$errors['role'] = "Role is required";
 	}
 
+<<<<<<< HEAD
 	// no errors, proceed create new user
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 	if (count($errors) === 0) {
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		$token = bin2hex(random_bytes(50));
@@ -83,6 +100,7 @@ if (isset($_POST['reg-btn'])) {
 		mysqli_query($db_conn, $sql);
 		$_SESSION['message'] = "User successfully added to the database!";
 
+<<<<<<< HEAD
 		// sending email to newly registered users
 		// try {
 		// 	$mail->isSMTP();
@@ -105,6 +123,8 @@ if (isset($_POST['reg-btn'])) {
 		// 	$errors = $e->getMessage();
 		// }
 
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
 		header('location: index.php');
 	 	exit();
 	} else {
