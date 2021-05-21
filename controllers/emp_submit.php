@@ -53,7 +53,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
   	$result = mysqli_query($db_conn, $user_check_query);
   	$user = mysqli_fetch_assoc($result);
 
- 	// if user already answered the survey
+ 	// if user already answered the survey (emp_survey table)
 	if($user){ 
 	    if ($user['user_id'] == $id) {
 		    $errors['user'] = "Feedback from user already exists";
@@ -64,6 +64,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$error = false;
 		$user_exist = false;
 	} // end of else user does not exist
+
 
 	// variables for each question
 	if (isset($_POST['ques1'])){

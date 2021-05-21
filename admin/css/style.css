@@ -9,7 +9,6 @@ body {
   font-family: Arial Nova, sans-serif;
   font-size: 16pt;
   background-color: #fff;
-  margin: 0;
 }
 
 /* Style the header */
@@ -17,8 +16,8 @@ header {
   background-image: linear-gradient(to right, #840038, #385723);
   padding: 30px;
   display: flex;
-  /*position: -webkit-sticky; /* for safari */
-  /*position: sticky;*/
+  /*position: -webkit-sticky;
+  position: sticky;*/
   top: 0;
   color: white;
 }
@@ -44,65 +43,114 @@ header {
     opacity:1.0;
 }
 
-.sidenav {
-  width:23rem;
-  position:fixed;
-  z-index:1;
-  top: 10rem;
-  left: 1rem;
-  overflow-x:hidden;
-  padding:1rem;
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  min-height: 100vh;
+  background: #ccc;
 }
-.sidenav a {
-  padding: 20px 30px 20px 30px;
-  margin:-.5rem;
-  text-decoration: none;
-  font-size: 18px;
-  color: #ffffff;
-  background-color:#a99a86;
-  text-align:center;
-  border-radius:100px 100px 100px 100px;
-  display: block;
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
 }
-.sidenav a:hover {
-  background-color:#385723;
+nav li {
+    padding: 30px;
+    border-bottom: 1px solid gray;
+    text-align: center;
 }
-.delete {
-  color:#ffad0d;
+a {
+    color: green;
+    text-decoration: none;
+    font-size: 16pt;
 }
-.delete:hover {
-  color:red;
-}
+
 /* content index.php */
 .content-users {
   float: left;
-  margin-left:25rem;
-  padding: 2%;
+  padding: 20px;
   width: 70%;
   min-height: 100vh;
-  font-size:14pt;
+  background-color: #f1f1f1;
 }
 #title-users {
   color: gray;
-  padding: 2%;
 }
 #table-users {
   text-align: center;
-  margin:3%;
-  width:100%;
-  font-size:14pt;
 }
 
-th{
-  border-bottom:1px solid black;
-  padding-bottom:3px;
+/* content in user_reg.php */
+.content-reg-users {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
 }
 
 /* content emp_raw.php */
+.content-emp-raw {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+#title-emp-raw {
+  color: gray;
+}
+#subtitle-emp-raw {
+  color: gray;
+}
 #table-emp-raw {
   text-align: center;
-  font-size:14pt;
 }
+
+/* content alum_raw.php */
+.content-alum-raw {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+#title-alum-raw {
+  color: gray;
+}
+#subtitle-alum-raw {
+  color: gray;
+}
+#table-alum-raw {
+  text-align: center;
+}
+
+/* content emp_charts.php */
+.content-emp-charts {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  min-height: 100vh;
+  background-color: #f1f1f1;
+}
+#title-emp-charts {
+  color: gray;
+}
+#subtitle-emp-charts {
+  color: gray;
+}
+#table-emp-charts {
+  text-align: center;
+}
+/* for chart container */
+#chart-container {
+  float: left;
+  width: 25%;
+  height: auto;
+}
+
 /* for alert message */
 .alert {
   text-align: left;
@@ -111,76 +159,6 @@ th{
   color: white;
   margin-bottom: 1rem;
   width: 16rem;
-}
-form{
-  margin:2rem;
-}
-.content-reg-users {
-  float: left;
-  margin-left:25rem;
-  padding: 2%;
-  width: 70%;
-  min-height: 100vh;
-  font-size:14pt;
-}
-select {
-  margin-top:5px;
-  width:300px;
-  height:30px;
-  color:#000000;
-  border-radius: 5px 5px 5px 5px;
-}
-input[type=email]{
-  margin-top:5px;
-  width:300px;
-  height:30px;
-  color:#000000;
-  border-radius: 10px 10px 10px 10px;
-}
-input[type=text]{
-  margin-top:5px;
-  width:300px;
-  height:30px;
-  color:#000000;
-  border-radius: 10px 10px 10px 10px;
-}
-input[type=submit]{
-  width:130px;
-  height:50px;
-  font-weight:bold;
-  color:#ffffff;
-  border-radius: 100px 100px 100px 100px;
-  border:0;
-  background-color:#ffad0d;
-  text-transform: uppercase;
-  float:right;
-}
-input[type=submit]:hover{
-  background-color:#840038;
-}
-button{
-  width:180px;
-  height:40px;
-  font-weight:bold;
-  color:#ffffff;
-  border-radius: 100px 100px 100px 100px;
-  border:0;
-  background-color:#ffad0d;
-  text-transform: uppercase;
-  margin-left:1rem;
-}
-button:hover{
-  background-color:#840038;
-}
-
-.content-emp-raw {
-  float:left;
-  margin-left:25rem;	
-}
-
-.content-alum-raw {
-  float:left;
-  margin-left:25rem;	
 }
 
 /* Clear floats after the columns */
@@ -193,11 +171,10 @@ section::after {
 /* Style the footer */
 footer {
   background-color:#0e6022;
-  padding: 1.5%;
+  padding: 1%;
   font-size:12pt;
   color: white;
   display: flex;
-  opacity:0.9;
 }
 .info {
     flex-grow: 10;
@@ -215,15 +192,19 @@ footer {
 .fa:hover {
   background:#840038; 
 }
-.fa-facebook, .fa-at {
+.fa-facebook {
+  background:#ffad0d;
+  color:#ffffff;
+}
+.fa-at {
   background:#ffad0d;
   color:#ffffff;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  nav, article {
+  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts {
     width: 100%;
-    height: auto;
+    /*height: auto;*/
   }
 }

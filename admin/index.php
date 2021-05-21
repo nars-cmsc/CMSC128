@@ -39,8 +39,6 @@ if (!isset($_SESSION['email'])) {
                         <th>Email</th>
                         <th>Password</th>
                         <th>Role</th>
-                        <th>Time Created</th>
-                        <th>Last Log In</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -56,10 +54,8 @@ if (!isset($_SESSION['email'])) {
                                 <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
                                 <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
                             </td>
-                            <td><?php echo $row['time_created']; ?></td>
-                            <td><?php echo $row['last_login']; ?></td>
                             <td>
-                                <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
+                                <a href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>

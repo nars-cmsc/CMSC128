@@ -194,16 +194,16 @@ if (!isset($_SESSION['email'])) {
 								<?php echo $skill; ?>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Unimportant';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Unimportant';?>" id=""/>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Of Little Importance';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Of Little Importance';?>" id=""/>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Important';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Important';?>" id=""/>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo $skill.'_Very Important';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Very Important';?>" id=""/>
 							</td>
 						<tr>
 						<?php endforeach; ?>
@@ -232,16 +232,16 @@ if (!isset($_SESSION['email'])) {
 								<?php echo $skill; ?>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Very Unsatisfied';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Very Unsatisfied';?>" id=""/>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Unsatisfied';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Unsatisfied';?>" id=""/>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Satisfied';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Satisfied';?>" id=""/>
 							</td>
 							<td>
-								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo $skill.'_Very Satisfied';?>" id=""/>
+								<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Very Satisfied';?>" id=""/>
 							</td>
 						<tr>
 						<?php endforeach; ?>
@@ -302,16 +302,16 @@ if (!isset($_SESSION['email'])) {
 							<?php echo $skill; ?>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Unimportant';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Unimportant';?>" id=""/>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Of Little Importance';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Of Little Importance';?>" id=""/>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Important';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Important';?>" id=""/>
 						</td style="width:10%;">
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo $skill.'_Very Important';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Very Important';?>" id=""/>
 						</td>
 					<tr>
 					<?php endforeach; ?>
@@ -340,16 +340,16 @@ if (!isset($_SESSION['email'])) {
 							<?php echo $skill; ?>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Very Unsatisfied';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Very Unsatisfied';?>" id=""/>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Unsatisfied';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Unsatisfied';?>" id=""/>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Satisfied';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Satisfied';?>" id=""/>
 						</td>
 						<td style="width:10%;">
-							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo $skill.'_Very Satisfied';?>" id=""/>
+							<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Very Satisfied';?>" id=""/>
 						</td>
 					<tr>
 					<?php endforeach; ?>
