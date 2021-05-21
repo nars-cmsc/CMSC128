@@ -30,11 +30,7 @@ if (isset($_POST['login-btn'])) {
 		$errors['password'] = "Password is required";
 	}
 
-	// add these two once there is admin control to add new users
-	// admin page
-	#$password = password_hash($password, PASSWORD_DEFAULT);
-	#$token = bin2hex(random_bytes(50));
-
+	// if there are no errors
 	if (count($errors) == 0) {
 		$sql = "SELECT * FROM users WHERE email=? LIMIT 1";
 		$stmt = $db_conn->prepare($sql);
@@ -48,6 +44,10 @@ if (isset($_POST['login-btn'])) {
 			$_SESSION['id'] = $user['user_id'];
 			$_SESSION['email'] = $user['email'];
 			$_SESSION['role'] = $user['role_id'];
+
+			// update date and time of last login
+			$sql_time = "UPDATE users set last_login=now() where user_id=".$_SESSION['id'];
+			$rs = mysqli_query($db_conn, $sql_time);
 
 			// check role of the user
 			if ($user['role_id'] === $ALUMNI_ROLE_ID) {

@@ -34,6 +34,10 @@ if (!isset($_SESSION['email'])) {
                         <th>Question Number</th>
                         <th>User</th>
                         <th>Answer</th>
+<<<<<<< HEAD
+                        <th>Date of Response</th>
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
                         <th></th>
                     </tr>
                 </thead>
@@ -44,6 +48,10 @@ if (!isset($_SESSION['email'])) {
                             <td><?php echo $row['question_num']; ?></td>
                             <td><?php echo $row['user_id']; ?></td>
                             <td><?php echo $row['answer_body']; ?></td>
+<<<<<<< HEAD
+                            <td><?php echo $row['date_response']; ?></td>
+=======
+>>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
                         </tr>
                     <?php } ?>
                 </tbody>
