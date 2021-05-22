@@ -61,28 +61,28 @@ if (!isset($_SESSION['email'])) {
 		
 						<div id="companyname" style="display: none;">
 						<p class="ques_title">Company Name:</p>
-						<textarea id="" name="emp1" rows="3" cols="40" style="resize: none;" 
+						<textarea id="" name="emp1" value="1" rows="3" cols="40" style="resize: none;" 
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
 						</div>
 	
 						<div id="contactperson" style="display: none;">
 						<p class="ques_title">Contact Person:</p>
-						<textarea id="" name="emp2" rows="3" cols="40" style="resize: none;" 
+						<textarea id="" name="emp2" value="2" rows="3" cols="40" style="resize: none;" 
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
 						</div>
 						
 						<div id="contactnumber" style="display: none;">
 						<p class="ques_title">Contact Number:</p>
-						<textarea id="" name="emp3" rows="3" cols="40" style="resize: none;" 
+						<textarea id="" name="emp3" value="3" rows="3" cols="40" style="resize: none;" 
 						placeholder="Type here... (Enter NA if the information is not available)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
 						</div>
 		
 						<div id="contactemail" style="display: none;">
 						<p class="ques_title">Email:</p>
-						<textarea id="" name="emp4" rows="3" cols="40" style="resize: none;" 
+						<textarea id="" name="emp4" value="4" rows="3" cols="40" style="resize: none;" 
 						placeholder="Type here... (Enter NA if the information is not available)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
 						</div>

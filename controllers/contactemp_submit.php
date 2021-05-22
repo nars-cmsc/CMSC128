@@ -86,25 +86,28 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 			$contactperson = mysqli_real_escape_string($db_conn, $_POST['emp2']);
 			$contactnumber = mysqli_real_escape_string($db_conn, $_POST['emp3']);
 			$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
+			
+		// store to db
+	    $sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Company Name', '$id', '$companyname')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Person', '$id', '$contactperson')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Number', '$id', '$contactnumber')";
+		mysqli_query($db_conn, $sql);
+		$sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Email', '$id', '$contactemail')";
+		mysqli_query($db_conn, $sql);
+			
+			
 		} else {
 			$companyname = $contactemp;
 			$contactperson = $contactemp;
 			$contactnumber = $contactemp;
 			$contactemail = $contactemp;
-		}
-
+			
 		// store to db
-	    $sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$companyname')";
+	    $sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Information', '$id', '$contactemp')";
 		mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactperson')";
-		mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactnumber')";
-		mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO contactemp_ques (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$contactemail')";
-		mysqli_query($db_conn, $sql);
-		
-
-	
+		}
 	}
 }//end of submit-contactemp
 

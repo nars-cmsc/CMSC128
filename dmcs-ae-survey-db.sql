@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 01:21 PM
+-- Generation Time: May 22, 2021 at 03:24 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -290,7 +290,7 @@ CREATE TABLE `alum_survey_q19` (
 
 CREATE TABLE `contactemp_ques` (
   `answer_id` int(11) NOT NULL,
-  `question_num` int(11) NOT NULL,
+  `contact_info_ques` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
   `answer_body` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -1398,7 +1398,7 @@ ALTER TABLE `alum_survey_q19`
 -- AUTO_INCREMENT for table `contactemp_ques`
 --
 ALTER TABLE `contactemp_ques`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `emp_survey`

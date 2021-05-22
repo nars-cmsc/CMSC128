@@ -104,7 +104,6 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques4'])) {
 		$four = $_POST['ques4'];
 	}
-	//Five Under construction
 	if (isset($_POST['ques5'])) {
 		$five = $_POST['ques5'];
 		if ($five == 'Yes') {
@@ -134,7 +133,6 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 			$five_b = $_POST['ques5_2'];
 		}	
 	}
-	//End Under construction
 	if (isset($_POST['ques6'])) {
 		$six = $_POST['ques6'];
 		if ($six == 'Associate’s degree') {
