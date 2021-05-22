@@ -22,6 +22,7 @@ if (!isset($_SESSION['email'])) {
     <!-- for charts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <title>Admin</title>
 </head>
@@ -56,9 +57,14 @@ if (!isset($_SESSION['email'])) {
                 <h6 id="subtitle-emp-charts">Question No. 6</h6>
                 <canvas id="mycanvas6"></canvas>
             </div>
-
-
-
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 7</h6>
+                <canvas id="mycanvas7"></canvas>
+            </div>
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 8</h6>
+                <canvas id="mycanvas8"></canvas>
+            </div>
             <div id="chart-container">
                 <h6 id="subtitle-emp-charts">Question No. 9</h6>
                 <canvas id="mycanvas9"></canvas>
@@ -66,6 +72,14 @@ if (!isset($_SESSION['email'])) {
             <div id="chart-container">
                 <h6 id="subtitle-emp-charts">Question No. 10</h6>
                 <canvas id="mycanvas10"></canvas>
+            </div>
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 11</h6>
+                <canvas id="mycanvas11"></canvas>
+            </div>
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 12</h6>
+                <canvas id="mycanvas12"></canvas>
             </div>
 
 
@@ -238,8 +252,149 @@ if (!isset($_SESSION['email'])) {
         });
     </script>
 
+    <!-- QUESTION # 7 -->
+    <script type="text/javascript">
 
+        var barChartData = {
+            labels: ["Reading Comprehension", "Active Listening", "Writing Skills", "Verbal Communication", "Mathematics Skills", "Scientific Literacy", "Digital Literacy", "Critical Thinking", "Participatory Learning", "Creative and Innovation", "Leadership Skills", "Social Awareness", "Service Orientation", "Time Management", "Complex Problem Solving Skills", "Judgment and Decision Making", "Systems Analysis and Evaluation"],
+            datasets: [{
+                label: 'Unimportant',
+                backgroundColor: "gray",
+                yAxisID: "y-axis-1",
+                data: [<?php echo $ct_read_un;?>, <?php echo $ct_list_un;?>,
+                       <?php echo $ct_writ_un;?>, <?php echo $ct_verb_un;?>,
+                       <?php echo $ct_math_un;?>, <?php echo $ct_sci_un;?>,
+                       <?php echo $ct_dig_un;?>, <?php echo $ct_crit_un;?>,
+                       <?php echo $ct_part_un;?>, <?php echo $ct_crea_un;?>,
+                       <?php echo $ct_lead_un;?>, <?php echo $ct_soca_un;?>,
+                       <?php echo $ct_serv_un;?>, <?php echo $ct_time_un;?>,
+                       <?php echo $ct_prob_un;?>, <?php echo $ct_judg_un;?>,
+                       <?php echo $ct_sys_un;?>]
+            }, {
+                label: 'Of Little Importance',
+                backgroundColor: "rgba(151,187,205,0.5)",
+                yAxisID: "y-axis-2",
+                data: [<?php echo $ct_read_ofl;?>, <?php echo $ct_list_ofl;?>,
+                       <?php echo $ct_writ_ofl;?>, <?php echo $ct_verb_ofl;?>,
+                       <?php echo $ct_math_ofl;?>, <?php echo $ct_sci_ofl;?>,
+                       <?php echo $ct_dig_ofl;?>, <?php echo $ct_crit_ofl;?>,
+                       <?php echo $ct_part_ofl;?>, <?php echo $ct_crea_ofl;?>,
+                       <?php echo $ct_lead_ofl;?>, <?php echo $ct_soca_ofl;?>,
+                       <?php echo $ct_serv_ofl;?>, <?php echo $ct_time_ofl;?>,
+                       <?php echo $ct_prob_ofl;?>, <?php echo $ct_judg_ofl;?>,
+                       <?php echo $ct_sys_ofl;?>]
+            }, {
+                label: 'Important',
+                backgroundColor: "#99d8d0",
+                yAxisID: "y-axis-3",
+                data: [<?php echo $ct_read_im;?>, <?php echo $ct_list_im;?>,
+                       <?php echo $ct_writ_im;?>, <?php echo $ct_verb_im;?>,
+                       <?php echo $ct_math_im;?>, <?php echo $ct_sci_im;?>,
+                       <?php echo $ct_dig_im;?>, <?php echo $ct_crit_im;?>,
+                       <?php echo $ct_part_im;?>, <?php echo $ct_crea_im;?>,
+                       <?php echo $ct_lead_im;?>, <?php echo $ct_soca_im;?>,
+                       <?php echo $ct_serv_im;?>, <?php echo $ct_time_im;?>,
+                       <?php echo $ct_prob_im;?>, <?php echo $ct_judg_im;?>,
+                       <?php echo $ct_sys_im;?>]
+            }, {
+                label: 'Very Important',
+                backgroundColor: "#009f8b",
+                yAxisID: "y-axis-4",
+                data: [<?php echo $ct_read_vim;?>, <?php echo $ct_list_vim;?>,
+                       <?php echo $ct_writ_vim;?>, <?php echo $ct_verb_vim;?>,
+                       <?php echo $ct_math_vim;?>, <?php echo $ct_sci_vim;?>,
+                       <?php echo $ct_dig_vim;?>, <?php echo $ct_crit_vim;?>,
+                       <?php echo $ct_part_vim;?>, <?php echo $ct_crea_vim;?>,
+                       <?php echo $ct_lead_vim;?>, <?php echo $ct_soca_vim;?>,
+                       <?php echo $ct_serv_vim;?>, <?php echo $ct_time_vim;?>,
+                       <?php echo $ct_prob_vim;?>, <?php echo $ct_judg_vim;?>,
+                       <?php echo $ct_sys_vim;?>]
+            }]
+        }
 
+        new Chart("mycanvas7", {
+          type: "bar",
+          data: barChartData,
+          options: {
+            title: {
+              display: true,
+              text: "Question # 7"
+            }
+          }
+        });
+    </script>
+
+    <!-- QUESTION # 8 -->
+    <script type="text/javascript">
+
+        var barChartData = {
+            labels: ["Reading Comprehension", "Active Listening", "Writing Skills", "Verbal Communication", "Mathematics Skills", "Scientific Literacy", "Digital Literacy", "Critical Thinking", "Participatory Learning", "Creative and Innovation", "Leadership Skills", "Social Awareness", "Service Orientation", "Time Management", "Complex Problem Solving Skills", "Judgment and Decision Making", "Systems Analysis and Evaluation"],
+            datasets: [{
+                label: 'Very Unsatisfied',
+                backgroundColor: "gray",
+                yAxisID: "y-axis-1",
+                data: [<?php echo $ct_read_vu;?>, <?php echo $ct_list_vu;?>,
+                       <?php echo $ct_writ_vu;?>, <?php echo $ct_verb_vu;?>,
+                       <?php echo $ct_math_vu;?>, <?php echo $ct_sci_vu;?>,
+                       <?php echo $ct_dig_vu;?>, <?php echo $ct_crit_vu;?>,
+                       <?php echo $ct_part_vu;?>, <?php echo $ct_crea_vu;?>,
+                       <?php echo $ct_lead_vu;?>, <?php echo $ct_soca_vu;?>,
+                       <?php echo $ct_serv_vu;?>, <?php echo $ct_time_vu;?>,
+                       <?php echo $ct_prob_vu;?>, <?php echo $ct_judg_vu;?>,
+                       <?php echo $ct_sys_vu;?>]
+            }, {
+                label: 'Unsatisfied',
+                backgroundColor: "rgba(151,187,205,0.5)",
+                yAxisID: "y-axis-2",
+                data: [<?php echo $ct_read_us;?>, <?php echo $ct_list_us;?>,
+                       <?php echo $ct_writ_us;?>, <?php echo $ct_verb_us;?>,
+                       <?php echo $ct_math_us;?>, <?php echo $ct_sci_us;?>,
+                       <?php echo $ct_dig_us;?>, <?php echo $ct_crit_us;?>,
+                       <?php echo $ct_part_us;?>, <?php echo $ct_crea_us;?>,
+                       <?php echo $ct_lead_us;?>, <?php echo $ct_soca_us;?>,
+                       <?php echo $ct_serv_us;?>, <?php echo $ct_time_us;?>,
+                       <?php echo $ct_prob_us;?>, <?php echo $ct_judg_us;?>,
+                       <?php echo $ct_sys_us;?>]
+            }, {
+                label: 'Satisfied',
+                backgroundColor: "#99d8d0",
+                yAxisID: "y-axis-3",
+                data: [<?php echo $ct_read_sa;?>, <?php echo $ct_list_sa;?>,
+                       <?php echo $ct_writ_sa;?>, <?php echo $ct_verb_sa;?>,
+                       <?php echo $ct_math_sa;?>, <?php echo $ct_sci_sa;?>,
+                       <?php echo $ct_dig_sa;?>, <?php echo $ct_crit_sa;?>,
+                       <?php echo $ct_part_sa;?>, <?php echo $ct_crea_sa;?>,
+                       <?php echo $ct_lead_sa;?>, <?php echo $ct_soca_sa;?>,
+                       <?php echo $ct_serv_sa;?>, <?php echo $ct_time_sa;?>,
+                       <?php echo $ct_prob_sa;?>, <?php echo $ct_judg_sa;?>,
+                       <?php echo $ct_sys_sa;?>]
+            }, {
+                label: 'Very Satisfied',
+                backgroundColor: "#009f8b",
+                yAxisID: "y-axis-4",
+                data: [<?php echo $ct_read_vs;?>, <?php echo $ct_list_vs;?>,
+                       <?php echo $ct_writ_vs;?>, <?php echo $ct_verb_vs;?>,
+                       <?php echo $ct_math_vs;?>, <?php echo $ct_sci_vs;?>,
+                       <?php echo $ct_dig_vs;?>, <?php echo $ct_crit_vs;?>,
+                       <?php echo $ct_part_vs;?>, <?php echo $ct_crea_vs;?>,
+                       <?php echo $ct_lead_vs;?>, <?php echo $ct_soca_vs;?>,
+                       <?php echo $ct_serv_vs;?>, <?php echo $ct_time_vs;?>,
+                       <?php echo $ct_prob_vs;?>, <?php echo $ct_judg_vs;?>,
+                       <?php echo $ct_sys_vs;?>]
+            }]
+        }
+
+        new Chart("mycanvas8", {
+          type: "bar",
+          data: barChartData,
+          options: {
+            title: {
+              display: true,
+              text: "Question # 8"
+            }
+          }
+        });
+    </script>
 
     <!-- QUESTION # 9 -->
     <script type="text/javascript">
@@ -299,6 +454,210 @@ if (!isset($_SESSION['email'])) {
               display: true,
               text: "Question # 10"
             }
+          }
+        });
+    </script>
+
+    <!-- QUESTION # 11 -->
+    <script type="text/javascript">
+
+        var barChartData = {
+            // labels: ["Willing to undergo training and/or further education", "Has strong and professional work ethic", "Willing to share knowledge and expertise within the company and/or community", "Willing and has a positive attitude towards working with others", "Is able to learn quickly the basic company operations", "Is able to provide solutions and contribute to the growth of the company", "Is able to master company operations", "Effective in both oral and written communication", "Computer and Technical Literate", "Effective and efficient in accomplishing tasks", "Able to provide innovative ideas to the company"],
+            labels: ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8", "Skill 9", "Skill 10", "Skill 11"],
+            datasets: [{
+                label: 'Unimportant',
+                backgroundColor: "gray",
+                yAxisID: "y-axis-1",
+                data: [<?php echo $ct_dmcs1_un;?>, <?php echo $ct_dmcs2_un;?>,
+                       <?php echo $ct_dmcs3_un;?>, <?php echo $ct_dmcs4_un;?>,
+                       <?php echo $ct_dmcs5_un;?>, <?php echo $ct_dmcs6_un;?>,
+                       <?php echo $ct_dmcs7_un;?>, <?php echo $ct_dmcs8_un;?>,
+                       <?php echo $ct_dmcs9_un;?>, <?php echo $ct_dmcs10_un;?>,
+                       <?php echo $ct_dmcs11_un;?>]
+            }, {
+                label: 'Of Little Importance',
+                backgroundColor: "rgba(151,187,205,0.5)",
+                yAxisID: "y-axis-2",
+                data: [<?php echo $ct_dmcs1_ofl;?>, <?php echo $ct_dmcs2_ofl;?>,
+                       <?php echo $ct_dmcs3_ofl;?>, <?php echo $ct_dmcs4_ofl;?>,
+                       <?php echo $ct_dmcs5_ofl;?>, <?php echo $ct_dmcs6_ofl;?>,
+                       <?php echo $ct_dmcs7_ofl;?>, <?php echo $ct_dmcs8_ofl;?>,
+                       <?php echo $ct_dmcs9_ofl;?>, <?php echo $ct_dmcs10_ofl;?>,
+                       <?php echo $ct_dmcs11_ofl;?>]
+            }, {
+                label: 'Important',
+                backgroundColor: "#99d8d0",
+                yAxisID: "y-axis-3",
+                data: [<?php echo $ct_dmcs1_im;?>, <?php echo $ct_dmcs2_im;?>,
+                       <?php echo $ct_dmcs3_im;?>, <?php echo $ct_dmcs4_im;?>,
+                       <?php echo $ct_dmcs5_im;?>, <?php echo $ct_dmcs6_im;?>,
+                       <?php echo $ct_dmcs7_im;?>, <?php echo $ct_dmcs8_im;?>,
+                       <?php echo $ct_dmcs9_im;?>, <?php echo $ct_dmcs10_im;?>,
+                       <?php echo $ct_dmcs11_im;?>]
+            }, {
+                label: 'Very Important',
+                backgroundColor: "#009f8b",
+                yAxisID: "y-axis-4",
+                data: [<?php echo $ct_dmcs1_vim;?>, <?php echo $ct_dmcs2_vim;?>,
+                       <?php echo $ct_dmcs3_vim;?>, <?php echo $ct_dmcs4_vim;?>,
+                       <?php echo $ct_dmcs5_vim;?>, <?php echo $ct_dmcs6_vim;?>,
+                       <?php echo $ct_dmcs7_vim;?>, <?php echo $ct_dmcs8_vim;?>,
+                       <?php echo $ct_dmcs9_vim;?>, <?php echo $ct_dmcs10_vim;?>,
+                       <?php echo $ct_dmcs11_vim;?>]
+            }]
+        }
+
+        new Chart("mycanvas11", {
+          type: "bar",
+          data: barChartData,
+          options: {
+            plugins: {
+                 title: {
+                  display: true,
+                  text: "Question # 11"
+                }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-1": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-2": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-3": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-4": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }
+           
+          }
+        });
+    </script>
+
+    <!-- QUESTION # 12 -->
+    <script type="text/javascript">
+
+        var barChartData = {
+            // labels: ["Willing to undergo training and/or further education", "Has strong and professional work ethic", "Willing to share knowledge and expertise within the company and/or community", "Willing and has a positive attitude towards working with others", "Is able to learn quickly the basic company operations", "Is able to provide solutions and contribute to the growth of the company", "Is able to master company operations", "Effective in both oral and written communication", "Computer and Technical Literate", "Effective and efficient in accomplishing tasks", "Able to provide innovative ideas to the company"],
+            labels: ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8", "Skill 9", "Skill 10", "Skill 11"],
+            datasets: [{
+                label: 'Very Unsatisfied',
+                backgroundColor: "gray",
+                yAxisID: "y-axis-1",
+                data: [<?php echo $ct_dmcs1_vu;?>, <?php echo $ct_dmcs2_vu;?>,
+                       <?php echo $ct_dmcs3_vu;?>, <?php echo $ct_dmcs4_vu;?>,
+                       <?php echo $ct_dmcs5_vu;?>, <?php echo $ct_dmcs6_vu;?>,
+                       <?php echo $ct_dmcs7_vu;?>, <?php echo $ct_dmcs8_vu;?>,
+                       <?php echo $ct_dmcs9_vu;?>, <?php echo $ct_dmcs10_vu;?>,
+                       <?php echo $ct_dmcs11_vu;?>]
+            }, {
+                label: 'Unsatisfied',
+                backgroundColor: "rgba(151,187,205,0.5)",
+                yAxisID: "y-axis-2",
+                data: [<?php echo $ct_dmcs1_us;?>, <?php echo $ct_dmcs2_us;?>,
+                       <?php echo $ct_dmcs3_us;?>, <?php echo $ct_dmcs4_us;?>,
+                       <?php echo $ct_dmcs5_us;?>, <?php echo $ct_dmcs6_us;?>,
+                       <?php echo $ct_dmcs7_us;?>, <?php echo $ct_dmcs8_us;?>,
+                       <?php echo $ct_dmcs9_us;?>, <?php echo $ct_dmcs10_us;?>,
+                       <?php echo $ct_dmcs11_us;?>]
+            }, {
+                label: 'Satisfied',
+                backgroundColor: "#99d8d0",
+                yAxisID: "y-axis-3",
+                data: [<?php echo $ct_dmcs1_sa;?>, <?php echo $ct_dmcs2_sa;?>,
+                       <?php echo $ct_dmcs3_sa;?>, <?php echo $ct_dmcs4_sa;?>,
+                       <?php echo $ct_dmcs5_sa;?>, <?php echo $ct_dmcs6_sa;?>,
+                       <?php echo $ct_dmcs7_sa;?>, <?php echo $ct_dmcs8_sa;?>,
+                       <?php echo $ct_dmcs9_sa;?>, <?php echo $ct_dmcs10_sa;?>,
+                       <?php echo $ct_dmcs11_sa;?>]
+            }, {
+                label: 'Very Satisfied',
+                backgroundColor: "#009f8b",
+                yAxisID: "y-axis-4",
+                data: [<?php echo $ct_dmcs1_vs;?>, <?php echo $ct_dmcs2_vs;?>,
+                       <?php echo $ct_dmcs3_vs;?>, <?php echo $ct_dmcs4_vs;?>,
+                       <?php echo $ct_dmcs5_vs;?>, <?php echo $ct_dmcs6_vs;?>,
+                       <?php echo $ct_dmcs7_vs;?>, <?php echo $ct_dmcs8_vs;?>,
+                       <?php echo $ct_dmcs9_vs;?>, <?php echo $ct_dmcs10_vs;?>,
+                       <?php echo $ct_dmcs11_vs;?>]
+            }]
+        }
+
+        new Chart("mycanvas12", {
+          type: "bar",
+          data: barChartData,
+          options: {
+            plugins: {
+                 title: {
+                  display: true,
+                  text: "Question # 12"
+                }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-1": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-2": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-3": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-4": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
+            }
+           
           }
         });
     </script>
