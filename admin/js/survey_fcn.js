@@ -1,9 +1,9 @@
 $(document).ready(function() {
 	// ques 1 other option display textbox
     $("input[name='ques1']").change(function() {
-        if ($(this).val() == "Other") {
+        if ($(this).val() == "other") {
             $("#ques1_otxt").show();
-        } else if (($(this).val() == "Public") || ($(this).val() == "Private")) {
+        } else if (($(this).val() == "public") || ($(this).val() == "private")) {
             $("#ques1_otxt").hide();
         }
     });
@@ -11,9 +11,9 @@ $(document).ready(function() {
     // ques 2 abroad option display ques2.1
     $("input[name='ques2']").change(function() {
         // abroad option to display question # 2.1
-        if ($(this).val() == "Abroad") {
+        if ($(this).val() == "abroad") {
             $("#q2_1").show();
-        } else if ($(this).val() == "Philippines") {
+        } else if ($(this).val() == "philippines") {
             $("#q2_1").hide();
         }
     });
@@ -62,13 +62,3 @@ function make_subreg(value) {
 	}
 }
 
-// for select to display textbox alum survey #5c
-function other_txt5() {
-    var selectBox = document.getElementById("ques5c");
-    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    if (selectedValue == "other") {
-        $('#ques5c_other').show();
-    } else {
-        $('#ques5c_other').hide();
-    }
-}
