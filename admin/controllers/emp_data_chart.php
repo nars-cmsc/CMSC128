@@ -9,6 +9,7 @@ require ('config/connection.php');
 	// counters/containers for public and private
 	$ct_pub = 0;
 	$ct_priv = 0;
+	$ct_other1 = 0;
 
 	// get data from table (public)
 	$query = "SELECT user_id FROM emp_survey_q1 WHERE answer_body='Public'";
@@ -26,6 +27,15 @@ require ('config/connection.php');
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_priv++;
+	}
+
+	// get data from table (private)
+	$query = "SELECT user_id FROM emp_survey_q1 WHERE answer_body='Other'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_other1++;
 	}
 
 ######## QUESTION #2 ##########
@@ -331,6 +341,7 @@ require ('config/connection.php');
 	$ct_ind20 = 0;
 	$ct_ind21 = 0;
 	$ct_ind22 = 0;
+	$ct_other3 = 0;
 	$ct_ind_other = '';
 
 	// get data from table (industries)
@@ -529,6 +540,15 @@ require ('config/connection.php');
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_ind22++;
+	}
+
+	// get data from table (industries)
+	$query = "SELECT user_id FROM emp_survey_q3 WHERE answer_body='other'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_other3++;
 	}
 
 ######## QUESTION #4 ##########
@@ -2463,8 +2483,59 @@ require ('config/connection.php');
 			$ct_dmcs11_vs++;
 		}
 
+######## QUESTION #13 ##########
 
+	// counters/containers for actions
+	$ct_des = 0;
+	$ct_prac = 0;
+	$ct_sec = 0;
+	$ct_post = 0;
+	$ct_other13 = 0;
 
+	// get data from table (design)
+	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='Design courses that are more relevant to the needs of employers'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_des++;
+	}
+
+	// get data from table (practical)
+	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='Include practical experience as part of the academic programs'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_prac++;
+	}
+
+	// get data from table (sector)
+	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='Include sector specific job placements as an integral part of the degree program'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_sec++;
+	}
+
+	// get data from table (post-grad)
+	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='Provide better post-graduation support (facilitate relations between graduates and companies/organizations)'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_post++;
+	}
+
+	// get data from table (post-grad)
+	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='other'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_other13++;
+	}
 
 ######## QUESTION #14 ##########
 
@@ -2510,6 +2581,54 @@ require ('config/connection.php');
 		$ct_im++;
 	}
 
+######## QUESTION #15 ##########
+
+	// counters/containers for comments
+	$ct_yes15 = '';
+	$string15 = '';
+
+	// get data from table
+	$query = "SELECT answer_yes FROM emp_survey_q15 WHERE answer_body='Yes'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$string15 = $row['answer_yes'] . ', ' . $string15;
+		$ct_yes15 = rtrim($string15, ', ');
+	}
+	
+
+######## QUESTION #16 ##########
+
+	// counters/containers for feedback
+	$ct_yes16 = '';
+	$string16 = '';
+
+	// get data from table
+	$query = "SELECT answer_yes FROM emp_survey_q16 WHERE answer_body='Yes'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$string16 = $row['answer_yes'] . ', ' . $string16;
+		$ct_yes16 = rtrim($string16, ', ');
+	}
+
+######## QUESTION #17 ##########
+
+	// counters/containers for strengths
+	$ct_yes17 = '';
+	$string17 = '';
+
+	// get data from table
+	$query = "SELECT answer_yes FROM emp_survey_q17 WHERE answer_body='Yes'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$string17 = $row['answer_yes'] . ', ' . $string17;
+		$ct_yes17 = rtrim($string17, ', ');
+	}
 
 
 ?>

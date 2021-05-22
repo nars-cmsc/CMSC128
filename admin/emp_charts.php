@@ -81,19 +81,32 @@ if (!isset($_SESSION['email'])) {
                 <h6 id="subtitle-emp-charts">Question No. 12</h6>
                 <canvas id="mycanvas12"></canvas>
             </div>
-
-
-
+            <div id="chart-container">
+                <h6 id="subtitle-emp-charts">Question No. 13</h6>
+                <canvas id="mycanvas13"></canvas>
+            </div>
             <div id="chart-container">
                 <h6 id="subtitle-emp-charts">Question No. 14</h6>
                 <canvas id="mycanvas14"></canvas>
+            </div>
+            <div id="temp-container">
+                <h6 id="subtitle-emp-charts">Question No. 15</h6>
+                <h3>COMMENTS/SUGGESTIONS: <?php echo $ct_yes15 ; ?></h1>
+            </div>
+            <div id="temp-container">
+                <h6 id="subtitle-emp-charts">Question No. 16</h6>
+                <h3>NEGATIVE FEEDBACK: <?php echo $ct_yes16 ; ?></h1>
+            </div>
+            <div id="temp-container">
+                <h6 id="subtitle-emp-charts">Question No. 17</h6>
+                <h3>SPECIFIC STRENGTHS: <?php echo $ct_yes17 ; ?></h1>
             </div>
         </div>
     </section>
     <!-- QUESTION # 1 -->
     <script type="text/javascript">
         var xValues = ["Public", "Private", "Others"];
-        var yValues = [<?php echo $ct_pub;?>, <?php echo $ct_priv;?>, 0];
+        var yValues = [<?php echo $ct_pub;?>, <?php echo $ct_priv;?>, <?php echo $ct_other1;?>,];
         var barColors = [
           "#b91d47",
           "#00aba9",
@@ -152,7 +165,7 @@ if (!isset($_SESSION['email'])) {
                        "Industry 9", "Industry 10", "Industry 11", "Industry 12", 
                        "Industry 13", "Industry 14", "Industry 15", "Industry 16", 
                        "Industry 17", "Industry 18", "Industry 19", "Industry 20", 
-                       "Industry 21", "Industry 22"
+                       "Industry 21", "Industry 22", "Others"
         ];
         var yValues = [<?php echo $ct_ind1;?>, <?php echo $ct_ind2;?>,
                        <?php echo $ct_ind3;?>, <?php echo $ct_ind4;?>,
@@ -164,14 +177,15 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_ind15;?>, <?php echo $ct_ind16;?>,
                        <?php echo $ct_ind17;?>, <?php echo $ct_ind18;?>,
                        <?php echo $ct_ind19;?>, <?php echo $ct_ind20;?>,
-                       <?php echo $ct_ind21;?>, <?php echo $ct_ind22;?> 
+                       <?php echo $ct_ind21;?>, <?php echo $ct_ind22;?>,
+                       <?php echo $ct_other3;?> 
         ];
         var barColors = [
           "#ffffff", "#e5f5f3", "#ccebe7", "#b2e2dc", "#99d8d0",
           "#7fcfc5", "#66c5b9", "#4cbbad", "#32b2a2", "#19a896",
           "#00b9a1", "#009f8b", "#008f7d", "#007f6f", "#006f61",
           "#005f53", "#004f45", "#003f37", "#002f29", "#001f1b",
-          "#000f0d", "#000000"
+          "#000f0d", "#000000", "green"
         ];
 
         new Chart("mycanvas3", {
@@ -662,8 +676,36 @@ if (!isset($_SESSION['email'])) {
         });
     </script>
 
+    <!-- QUESTION # 13 -->
+    <script type="text/javascript">
+        var xValues = ["Design courses that are more relevant to the needs of employers", "Include practical experience as part of the academic programs", "Include sector specific job placements as an integral part of the degree program", "Provide better post-graduation support (facilitate relations between graduates and companies/organizations)", "Others"
+                      ];
+        var yValues = [<?php echo $ct_des;?>, <?php echo $ct_prac;?>, <?php echo $ct_sec;?>, <?php echo $ct_post;?>, <?php echo $ct_other13;?>];
+        var barColors = [
+          "#b91d47",
+          "#00aba9",
+          "#2b5797",
+          "#1e7145",
+          "pink"
+        ];
 
-
+        new Chart("mycanvas13", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            title: {
+              display: true,
+              text: "Question # 13"
+            }
+          }
+        });
+    </script>
 
     <!-- QUESTION # 14 -->
     <script type="text/javascript">
