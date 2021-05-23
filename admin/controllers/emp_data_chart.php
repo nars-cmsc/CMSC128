@@ -10,6 +10,8 @@ require ('config/connection.php');
 	$ct_pub = 0;
 	$ct_priv = 0;
 	$ct_other1 = 0;
+	$ct_other1txt = '';
+	$string1 = '';
 
 	// get data from table (public)
 	$query = "SELECT user_id FROM emp_survey_q1 WHERE answer_body='Public'";
@@ -29,13 +31,17 @@ require ('config/connection.php');
 		$ct_priv++;
 	}
 
-	// get data from table (private)
-	$query = "SELECT user_id FROM emp_survey_q1 WHERE answer_body='Other'";
+	// get data from table (others)
+	$query = "SELECT user_id, answer_others FROM emp_survey_q1 WHERE answer_body='Other'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_other1++;
+
+		// for other answers
+		$string1 = $string1 . ', ' . $row['answer_others'];
+		$ct_other1txt = ltrim($string1, ', ');
 	}
 
 ######## QUESTION #2 ##########
@@ -317,6 +323,17 @@ require ('config/connection.php');
 			}
 
 ######## QUESTION #3 ##########
+	$ques3_arr = array(
+		"Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use",
+		"Activities of International Organizations and Bodies",
+		"Administrative and Support Service Activities", "Agriculture, Forestry and Fishing", "Arts, Entertainment and Recreation",
+		"Construction", "Education", "Electricity, Gas, Steam and Air Conditioning Supply", "Finance, Banks, and Insurance", 
+		"Hotel/Accommodation, and Restaurant and Food Service", "Human Health and Social Work Activities", "Information Technology", 
+		"Manufacturing", "Media and Communication", "Mining and Quarrying", "Other Service Activities", 
+		"Professional, Scientific and Technical Activities", "Public Administration and Defense; Compulsory Social Security", 
+		"Real Estate Activities", "Transportation and Storage", "Water Supply; Sewerage, Waste Management and Remediation Activities", 
+		"Wholesale and Retail Trade"
+	);
 
 	// counters/containers for industries
 	$ct_ind1 = 0;
@@ -343,6 +360,8 @@ require ('config/connection.php');
 	$ct_ind22 = 0;
 	$ct_other3 = 0;
 	$ct_ind_other = '';
+	$string3 = '';
+
 
 	// get data from table (industries)
 	$query = "SELECT user_id FROM emp_survey_q3 WHERE answer_body='Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use'";
@@ -543,12 +562,16 @@ require ('config/connection.php');
 	}
 
 	// get data from table (industries)
-	$query = "SELECT user_id FROM emp_survey_q3 WHERE answer_body='other'";
+	$query = "SELECT user_id, answer_others FROM emp_survey_q3 WHERE answer_body='other'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_other3++;
+
+		// for other answers
+		$string3 = $string3 . ', ' . $row['answer_others'];
+		$ct_ind_other = ltrim($string3, ', ');
 	}
 
 ######## QUESTION #4 ##########
@@ -644,6 +667,14 @@ require ('config/connection.php');
 	}
 
 ######## QUESTION #7 ##########
+	$skills_arr = array(
+		"Reading Comprehension", "Active Listening", "Writing Skills", 
+		"Verbal Communication", "Mathematics Skills", "Scientific Literacy", 
+		"Digital Literacy", "Critical Thinking", "Participatory Learning", 
+		"Creative and Innovation", "Leadership Skills", "Social Awareness", 
+		"Service Orientation", "Time Management", "Complex Problem Solving Skills", 
+		"Judgment and Decision Making", "Systems Analysis and Evaluation"
+	);
 
 	// counters/containers for skill/importance
 		$ct_read_un = 0; $ct_read_ofl = 0; $ct_read_im = 0; $ct_read_vim = 0;
@@ -1795,6 +1826,20 @@ require ('config/connection.php');
 
 ######## QUESTION #11 ##########
 
+	$dmcs_skills_arr = array(
+		"Willing to undergo training and/or further education", 
+		"Has strong and professional work ethic", 
+		"Willing to share knowledge and expertise within the company and/or community", 
+		"Willing and has a positive attitude towards working with others", 
+		"Is able to learn quickly the basic company operations", 
+		"Is able to provide solutions and contribute to the growth of the company", 
+		"Is able to master company operations", 
+		"Effective in both oral and written communication", 
+		"Computer and Technical Literate", 
+		"Effective and efficient in accomplishing tasks", 
+		"Able to provide innovative ideas to the company"
+	);
+	
 	// counters/containers for dmcs skill/importance
 		$ct_dmcs1_un = 0; $ct_dmcs1_ofl = 0; $ct_dmcs1_im = 0; $ct_dmcs1_vim = 0;
 		$ct_dmcs2_un = 0; $ct_dmcs2_ofl = 0; $ct_dmcs2_im = 0; $ct_dmcs2_vim = 0;
@@ -2491,6 +2536,8 @@ require ('config/connection.php');
 	$ct_sec = 0;
 	$ct_post = 0;
 	$ct_other13 = 0;
+	$ct_other13txt = '';
+	$string13 = '';
 
 	// get data from table (design)
 	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='Design courses that are more relevant to the needs of employers'";
@@ -2528,13 +2575,17 @@ require ('config/connection.php');
 		$ct_post++;
 	}
 
-	// get data from table (post-grad)
-	$query = "SELECT user_id FROM emp_survey_q13 WHERE answer_body='other'";
+	// get data from table (other)
+	$query = "SELECT user_id, answer_others FROM emp_survey_q13 WHERE answer_body='other'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_other13++;
+		
+		// for other answers
+		$string13 = $string13 . ', ' . $row['answer_others'];
+		$ct_other13txt = ltrim($string13, ', ');
 	}
 
 ######## QUESTION #14 ##########
@@ -2593,8 +2644,8 @@ require ('config/connection.php');
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
-		$string15 = $row['answer_yes'] . ', ' . $string15;
-		$ct_yes15 = rtrim($string15, ', ');
+		$string15 = $string15 . ', ' . $row['answer_yes'];
+		$ct_yes15 = ltrim($string15, ', ');
 	}
 	
 
@@ -2610,8 +2661,8 @@ require ('config/connection.php');
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
-		$string16 = $row['answer_yes'] . ', ' . $string16;
-		$ct_yes16 = rtrim($string16, ', ');
+		$string16 = $string16 . ', ' . $row['answer_yes'];
+		$ct_yes16 = ltrim($string16, ', ');
 	}
 
 ######## QUESTION #17 ##########
@@ -2626,8 +2677,8 @@ require ('config/connection.php');
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
-		$string17 = $row['answer_yes'] . ', ' . $string17;
-		$ct_yes17 = rtrim($string17, ', ');
+		$string17 = $string17 . ', ' . $row['answer_yes'];
+		$ct_yes17 = ltrim($string17, ', ');
 	}
 
 

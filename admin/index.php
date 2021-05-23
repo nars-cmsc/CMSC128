@@ -39,12 +39,14 @@ if (!isset($_SESSION['email'])) {
                         <th>Email</th>
                         <th>Password</th>
                         <th>Role</th>
+                        <th>Time Created</th>
+                        <th>Last Login</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php while ($row = mysqli_fetch_array($query)) {?>
-                        <tr>
+                        <tr class="user-row">
                             <td><?php echo $row['user_id']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['pass']; ?></td>
@@ -54,8 +56,10 @@ if (!isset($_SESSION['email'])) {
                                 <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
                                 <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
                             </td>
+                            <td><?php echo $row['time_created']; ?></td>
+                            <td><?php echo $row['last_login']; ?></td>
                             <td>
-                                <a href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
+                                <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>

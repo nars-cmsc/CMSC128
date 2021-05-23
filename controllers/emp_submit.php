@@ -901,17 +901,17 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		    	mysqli_query($db_conn, $sql);
 			}
 			else {
-				$thirteen = implode('; ', $check13);			}
+				$thirteen = implode('; ', $check13);
+
+			// store to db (emp_survey_q13)
+		    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$chk', now())";
+	    	mysqli_query($db_conn, $sql);
+				}
 		}
 
 		// store to db
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$thirteen')";
 	    mysqli_query($db_conn, $sql);
-
-		// store to db (emp_survey_q13)
-	    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$chk', now())";
-    	mysqli_query($db_conn, $sql);
-
 
 
 

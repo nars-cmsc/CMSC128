@@ -31,7 +31,7 @@ if (!isset($_SESSION['email'])) {
         <?php include('sidenav.php');  ?>
         <div class="content-emp-charts">
             <h4 id="title-emp-charts">Chart Generation</h4>
-            <h5 id="subtitle-emp-charts">Employer Satisfaction Survey</h6>
+            <h6 id="subtitle-emp-charts">Employer Satisfaction Survey</h6>
                 <br>
             <div id="chart-container">
                 <h6 id="subtitle-emp-charts">Question No. 1</h6>
@@ -330,9 +330,49 @@ if (!isset($_SESSION['email'])) {
           type: "bar",
           data: barChartData,
           options: {
-            title: {
-              display: true,
-              text: "Question # 7"
+            plugins: {
+                 title: {
+                  display: true,
+                  text: "Question # 7"
+                }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-1": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-2": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-3": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-4": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
             }
           }
         });
@@ -402,9 +442,49 @@ if (!isset($_SESSION['email'])) {
           type: "bar",
           data: barChartData,
           options: {
-            title: {
-              display: true,
-              text: "Question # 8"
+            plugins: {
+                 title: {
+                  display: true,
+                  text: "Question # 8"
+                }
+            },
+            scales: {
+                y: {
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-1": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-2": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-3": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                },
+                "y-axis-4": {
+                    display: false,
+                    ticks: {
+                        display: false
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 10
+                }
             }
           }
         });
