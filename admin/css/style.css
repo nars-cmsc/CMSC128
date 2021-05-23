@@ -95,7 +95,7 @@ a {
   color:red;
 }
 
-/* table headers */
+/* all table headers */
 th {
   border-bottom:1px solid black;
   padding-bottom:3px;
@@ -224,6 +224,30 @@ button:hover{
   height: auto;
 }
 
+/* content alum_charts.php */
+.content-alum-charts {
+  float: left;
+  padding: 2%;
+  width: 70%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-alum-charts {
+  color: gray;
+}
+#subtitle-alum-charts {
+  color: gray;
+}
+#table-alum-charts {
+  text-align: center;
+}
+/* for chart container */
+#chart-container-alum {
+  float: left;
+  width: 50%;
+  height: auto;
+}
+
 /* content emp_tables.php */
 .content-emp-table {
   float: left;
@@ -239,6 +263,24 @@ button:hover{
   color: gray;
 }
 #table-emp-table1 {
+  text-align: center;
+}
+
+/* content alum_tables.php */
+.content-alum-table {
+  float: left;
+  padding: 2%;
+  width: 70%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-alum-table {
+  color: gray;
+}
+#subtitle-alum-table {
+  color: gray;
+}
+#table-alum-table1 {
   text-align: center;
 }
 
