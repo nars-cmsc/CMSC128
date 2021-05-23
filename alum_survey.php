@@ -185,7 +185,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="six5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques6" id="six6" onclick="$('#sixothers').hide(); $('#sixacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="six6">Doctoral degree </label><br>
-						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="Other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="six7">Others (e,g. training, certifications):</label> <br>
 								
 						<div id="sixacademicfield" style="display: none;">
@@ -222,7 +222,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="seven5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques7" id="seven6" onclick="$('#sevenothers').hide(); $('#sevenacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="seven6">Doctoral degree</label><br>
-						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="Other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="seven7">Others (e,g. training, certifications):</label><br>
 						
 						<div id="sevenacademicfield" style="display: none;">

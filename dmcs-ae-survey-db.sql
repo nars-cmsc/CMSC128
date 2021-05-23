@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 03:24 PM
+-- Generation Time: May 23, 2021 at 05:25 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -47,6 +47,13 @@ CREATE TABLE `alum_survey_q1` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q1`
+--
+
+INSERT INTO `alum_survey_q1` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Female', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -59,6 +66,13 @@ CREATE TABLE `alum_survey_q2` (
   `answer_body` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q2`
+--
+
+INSERT INTO `alum_survey_q2` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Philippines', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -73,6 +87,13 @@ CREATE TABLE `alum_survey_q3` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q3`
+--
+
+INSERT INTO `alum_survey_q3` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Very Satisfied', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -86,6 +107,13 @@ CREATE TABLE `alum_survey_q4` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q4`
+--
+
+INSERT INTO `alum_survey_q4` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'I got a job while still in college', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -95,9 +123,19 @@ CREATE TABLE `alum_survey_q4` (
 CREATE TABLE `alum_survey_q5` (
   `answer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
+  `Employed` mediumtext NOT NULL,
+  `Characterized` mediumtext NOT NULL,
+  `Industry` mediumtext NOT NULL,
+  `Applying` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q5`
+--
+
+INSERT INTO `alum_survey_q5` (`answer_id`, `user_id`, `Employed`, `Characterized`, `Industry`, `Applying`, `date_response`) VALUES
+(16, 2, 'Yes', 'Full time (40 hours/week)', 'Media and Communication', 'NA', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -108,9 +146,17 @@ CREATE TABLE `alum_survey_q5` (
 CREATE TABLE `alum_survey_q6` (
   `answer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
+  `Level` mediumtext NOT NULL,
+  `Field` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q6`
+--
+
+INSERT INTO `alum_survey_q6` (`answer_id`, `user_id`, `Level`, `Field`, `date_response`) VALUES
+(1, 2, 'Bachelor’s degree', 'Computer Sayang', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -121,9 +167,17 @@ CREATE TABLE `alum_survey_q6` (
 CREATE TABLE `alum_survey_q7` (
   `answer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
+  `Level` mediumtext NOT NULL,
+  `Field` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q7`
+--
+
+INSERT INTO `alum_survey_q7` (`answer_id`, `user_id`, `Level`, `Field`, `date_response`) VALUES
+(1, 2, 'Bachelor’s degree', 'Computer Sayang', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -138,6 +192,13 @@ CREATE TABLE `alum_survey_q8` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q8`
+--
+
+INSERT INTO `alum_survey_q8` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Professionals', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -151,6 +212,13 @@ CREATE TABLE `alum_survey_q9` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q9`
+--
+
+INSERT INTO `alum_survey_q9` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Yes, it is related to my major/s', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -160,9 +228,21 @@ CREATE TABLE `alum_survey_q9` (
 CREATE TABLE `alum_survey_q10` (
   `answer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
+  `Job` mediumtext NOT NULL,
+  `Percent` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q10`
+--
+
+INSERT INTO `alum_survey_q10` (`answer_id`, `user_id`, `Job`, `Percent`, `date_response`) VALUES
+(1, 2, 'Country Roads', '20', '2021-05-23'),
+(2, 2, 'Take Me Home', '20', '2021-05-23'),
+(3, 2, 'To the Place', '20', '2021-05-23'),
+(4, 2, 'I belooooong', '20', '2021-05-23'),
+(5, 2, 'West Virginiaaaa', '20', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -173,9 +253,17 @@ CREATE TABLE `alum_survey_q10` (
 CREATE TABLE `alum_survey_q11` (
   `answer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
+  `Volunteer` mediumtext NOT NULL,
+  `Characterized` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q11`
+--
+
+INSERT INTO `alum_survey_q11` (`answer_id`, `user_id`, `Volunteer`, `Characterized`, `date_response`) VALUES
+(1, 2, 'Yes', 'Full time (40 hours/week)', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -186,9 +274,17 @@ CREATE TABLE `alum_survey_q11` (
 CREATE TABLE `alum_survey_q12` (
   `answer_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
+  `Experience` mediumtext NOT NULL,
+  `Necessity` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q12`
+--
+
+INSERT INTO `alum_survey_q12` (`answer_id`, `user_id`, `Experience`, `Necessity`, `date_response`) VALUES
+(34, 2, 'Less than one (1) year', 'Mountain Mamaaaa', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -203,6 +299,13 @@ CREATE TABLE `alum_survey_q13` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q13`
+--
+
+INSERT INTO `alum_survey_q13` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Very well', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -215,6 +318,13 @@ CREATE TABLE `alum_survey_q14` (
   `answer_body` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q14`
+--
+
+INSERT INTO `alum_survey_q14` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Executive level (except Chief Executive)', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -229,6 +339,13 @@ CREATE TABLE `alum_survey_q15` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q15`
+--
+
+INSERT INTO `alum_survey_q15` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Some of my time (up to 25% of my time)', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -242,6 +359,13 @@ CREATE TABLE `alum_survey_q16` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q16`
+--
+
+INSERT INTO `alum_survey_q16` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Limited or indirect supervision of one or more people. Responsible for day-to-day work direction, not responsible for employment decisions.', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -254,6 +378,13 @@ CREATE TABLE `alum_survey_q17` (
   `answer_body` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q17`
+--
+
+INSERT INTO `alum_survey_q17` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Generally satisfied', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -269,6 +400,23 @@ CREATE TABLE `alum_survey_q18` (
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `alum_survey_q18`
+--
+
+INSERT INTO `alum_survey_q18` (`answer_id`, `user_id`, `ques18_arr`, `answer_body`, `date_response`) VALUES
+(1, 2, 'Possess the skills and mindset to improve human life', 'Very well', '2021-05-23'),
+(2, 2, 'Commit to the freedom and welfare of all', 'Very well', '2021-05-23'),
+(3, 2, 'Demonstrate mastery of knowledge in your specific discipline', 'Very well', '2021-05-23'),
+(4, 2, 'Possess breadth of mind', 'Very well', '2021-05-23'),
+(5, 2, 'Possess strength of character', 'Very well', '2021-05-23'),
+(6, 2, 'Possess generosity of spirit', 'Very well', '2021-05-23'),
+(7, 2, 'Inclusively engage with society and the world at large', 'Very well', '2021-05-23'),
+(8, 2, 'Be mindful of the needs and capabilities of people', 'Very well', '2021-05-23'),
+(9, 2, 'Be sensitive to the challenges and opportunities of national development and global change', 'Very well', '2021-05-23'),
+(10, 2, 'Think critically', 'Very well', '2021-05-23'),
+(11, 2, 'Demonstrate discernment', 'Very well', '2021-05-23');
+
 -- --------------------------------------------------------
 
 --
@@ -281,6 +429,13 @@ CREATE TABLE `alum_survey_q19` (
   `answer_body` mediumtext NOT NULL,
   `date_response` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `alum_survey_q19`
+--
+
+INSERT INTO `alum_survey_q19` (`answer_id`, `user_id`, `answer_body`, `date_response`) VALUES
+(37, 2, 'Take me hooooome', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -1284,115 +1439,115 @@ ALTER TABLE `alum_survey`
 -- AUTO_INCREMENT for table `alum_survey_q1`
 --
 ALTER TABLE `alum_survey_q1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q2`
 --
 ALTER TABLE `alum_survey_q2`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q3`
 --
 ALTER TABLE `alum_survey_q3`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q4`
 --
 ALTER TABLE `alum_survey_q4`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q5`
 --
 ALTER TABLE `alum_survey_q5`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q6`
 --
 ALTER TABLE `alum_survey_q6`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q7`
 --
 ALTER TABLE `alum_survey_q7`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q8`
 --
 ALTER TABLE `alum_survey_q8`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q9`
 --
 ALTER TABLE `alum_survey_q9`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q10`
 --
 ALTER TABLE `alum_survey_q10`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q11`
 --
 ALTER TABLE `alum_survey_q11`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q12`
 --
 ALTER TABLE `alum_survey_q12`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q13`
 --
 ALTER TABLE `alum_survey_q13`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q14`
 --
 ALTER TABLE `alum_survey_q14`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q15`
 --
 ALTER TABLE `alum_survey_q15`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q16`
 --
 ALTER TABLE `alum_survey_q16`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q17`
 --
 ALTER TABLE `alum_survey_q17`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q18`
 --
 ALTER TABLE `alum_survey_q18`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q19`
 --
 ALTER TABLE `alum_survey_q19`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `contactemp_ques`

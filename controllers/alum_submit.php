@@ -147,7 +147,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		if ($six == 'Doctoral degree') {
 			$sixacademicfield = $_POST['ques6_acadfield'];
 		}
-		else if ($six == 'other'){
+		else if ($six == 'Other'){
 			$sixothers = $_POST['ques6_others'];
 		}	
 	}
@@ -165,7 +165,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		if ($seven == 'Doctoral degree') {
 			$sevenacademicfield = $_POST['ques7_acadfield'];
 		}
-		else if ($seven == 'other'){
+		else if ($seven == 'Other'){
 			$sevenothers = $_POST['ques7_others'];
 		}	
 	}
@@ -290,7 +290,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 
 	// ERROR: required fields are empty or only white spaces
 	
-/*		if (empty($one) && $user_exist == false) {
+		if (empty($one) && $user_exist == false) {
 		$errors['es_q1'] = "Need to answer #1. Field cannot be empty.";
 		$error = true;
 	}
@@ -350,7 +350,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 				$errors['es_q6'] = "Need to answer #6. Field cannot be empty.";
 				$error = true;
 			}
-		if (isset($_POST['ques6']) && $six == 'other'
+		if (isset($_POST['ques6']) && $six == 'Other'
 		&& (empty($sixothers) || strlen(trim($sixothers)) <= 0) && $user_exist == false) {
 				$errors['es_q6'] = "Need to answer #6. Field cannot be empty.";
 				$error = true;
@@ -379,7 +379,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 				$errors['es_q7'] = "Need to answer #7. Field cannot be empty.";
 				$error = true;
 			}
-		if (isset($_POST['ques7']) && $seven == 'other'
+		if (isset($_POST['ques7']) && $seven == 'Other'
 		&& (empty($sevenothers) || strlen(trim($sevenothers)) <= 0) && $user_exist == false) {
 				$errors['es_q7'] = "Need to answer #7. Field cannot be empty.";
 				$error = true;
@@ -507,7 +507,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q19'] = "Need to answer #19. 'Yes' field cannot be empty.";
 		$error = true;
 	}	
-	*/
+	
 	
 	// if there are no errors store answers to db
 	if ($error == false) {
@@ -563,32 +563,41 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		// QUESTION NUMBER 5 
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five']);
 		$five = mysqli_real_escape_string($db_conn, $_POST['ques5']);
+		$five_a = mysqli_real_escape_string($db_conn, $_POST['ques5_1']);
+		$five_b = mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
 		$five_c = mysqli_real_escape_string($db_conn, $_POST['ques5c']);
 		$fivec_other = mysqli_real_escape_string($db_conn, $_POST['ques5c_other']);
 
 		
 		if ($five == 'Yes') {
 				if ($five_a == 'Full time (40 hours/week)') {
-						if ($five_c == 'other'){
-						$five_field = "Yes_Full time (40 hours/week)_Other_" . mysqli_real_escape_string($db_conn, $fivec_other);
+						if ($five_c == 'other'){						
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$fivec_other', 'NA', now())";
+							mysqli_query($db_conn, $sql);
 						} else {
-						$five_field = "Yes_Full time (40 hours/week)_" . mysqli_real_escape_string($db_conn, $five_c);
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', 'NA', now())";
+							mysqli_query($db_conn, $sql);
 						}
 				} else if ($five_a == 'Part time') {
-						if ($five_c == 'other'){
-						$five_field = "Yes_Part time_Other_" . mysqli_real_escape_string($db_conn, $fivec_other);
+						if ($five_c == 'other'){						
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$fivec_other', 'NA', now())";
+							mysqli_query($db_conn, $sql);
 						} else {
-						$five_field = "Yes_Part time_" . mysqli_real_escape_string($db_conn, $five_c);
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry,Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', 'NA', now())";
+							mysqli_query($db_conn, $sql);
 						}
 				} else if ($five_a == 'Self-employed') {
-						if ($five_c == 'other'){
-						$five_field = "Yes_Self-employed_Other_" . mysqli_real_escape_string($db_conn, $fivec_other);
+						if ($five_c == 'other'){						
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$fivec_other', 'NA', now())";
+							mysqli_query($db_conn, $sql);
 						} else {
-						$five_field = "Yes_Self-employed_" . mysqli_real_escape_string($db_conn,  $five_c);
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', 'NA', now())";
+							mysqli_query($db_conn, $sql);
 						}
 				}
 		} else if ($five == 'No') {
-			$five_field = "No_" . mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
+			$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', 'NA', 'NA', '$five_b', now())";
+			mysqli_query($db_conn, $sql);
 		} else {
 			$five_field = $five;
 		}
@@ -599,26 +608,38 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		//mysqli_query($db_conn, $sql);
 
 		// store to db (alum_survey_q5 table)
-		$sql = "INSERT INTO alum_survey_q5 (user_id, answer_body, date_response) VALUES ('$id', '$five_field', now())";
-	    mysqli_query($db_conn, $sql);
+		//$sql = "INSERT INTO alum_survey_q5 (user_id, answer_body, date_response) VALUES ('$id', '$five_field', now())";
+	    //mysqli_query($db_conn, $sql);
+		
+
+
 				
 		// QUESTION NUMBER 6
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['six']);
 		$six = mysqli_real_escape_string($db_conn, $_POST['ques6']);
+		$sixacademicfield = mysqli_real_escape_string($db_conn, $_POST['ques6_acadfield']);
+		$sixothers = mysqli_real_escape_string($db_conn, $_POST['ques6_others']);
+		
 
 		
 		if ($six == 'Associate’s degree') {
-			$sixfield = "Associate’s degree_" . mysqli_real_escape_string($db_conn, $_POST['ques6_acadfield']);
+			$sql = "INSERT INTO alum_survey_q6 (user_id, Level, Field, date_response) VALUES ('$id', '$six', '$sixacademicfield', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($six == 'Bachelor’s degree') {
-			$sixfield = "Bachelor’s degree_" . mysqli_real_escape_string($db_conn, $_POST['ques6_acadfield']);
+			$sql = "INSERT INTO alum_survey_q6 (user_id, Level, Field, date_response) VALUES ('$id', '$six', '$sixacademicfield', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($six == 'Master’s degree') {
-			$sixfield = "Master’s degree_" . mysqli_real_escape_string($db_conn, $_POST['ques6_acadfield']);
+			$sql = "INSERT INTO alum_survey_q6 (user_id, Level, Field, date_response) VALUES ('$id', '$six', '$sixacademicfield', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($six == 'Doctoral degree') {
-			$sixfield = "Doctoral degree_" . mysqli_real_escape_string($db_conn, $_POST['ques6_acadfield']);
-		} else if ($six == 'other'){
-			$sixfield =  "Other_" . mysqli_real_escape_string($db_conn, $_POST['ques6_others']);
+			$sql = "INSERT INTO alum_survey_q6 (user_id, Level, Field, date_response) VALUES ('$id', '$six', '$sixacademicfield', now())";
+			mysqli_query($db_conn, $sql);
+		} else if ($six == 'Other'){
+			$sql = "INSERT INTO alum_survey_q6 (user_id, Level, Field, date_response) VALUES ('$id', '$six', '$sixothers', now())";
+			mysqli_query($db_conn, $sql);
 		} else {
-			$sixfield = $six;
+			$sql = "INSERT INTO alum_survey_q6 (user_id, Level, Field, date_response) VALUES ('$id', '$six', 'NA', now())";
+			mysqli_query($db_conn, $sql);
 		}
 		
 
@@ -627,26 +648,35 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	    //mysqli_query($db_conn, $sql);
 		
 		// store to db (alum_survey_q6 table)
-		$sql = "INSERT INTO alum_survey_q6 (user_id, answer_body, date_response) VALUES ('$id', '$sixfield', now())";
-	    mysqli_query($db_conn, $sql);
+		//$sql = "INSERT INTO alum_survey_q6 (user_id, answer_body, date_response) VALUES ('$id', '$sixfield', now())";
+	    //mysqli_query($db_conn, $sql);
 		
 		// QUESTION NUMBER 7
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['seven']);
 		$seven = mysqli_real_escape_string($db_conn, $_POST['ques7']);
+		$sevenacademicfield = mysqli_real_escape_string($db_conn, $_POST['ques7_acadfield']);
+		$sevenothers = mysqli_real_escape_string($db_conn, $_POST['ques7_others']);
+		
 
 		
 		if ($seven == 'Associate’s degree') {
-			$sevenfield = "Associate’s degree_" . mysqli_real_escape_string($db_conn, $_POST['ques7_acadfield']);
+			$sql = "INSERT INTO alum_survey_q7 (user_id, Level, Field, date_response) VALUES ('$id', '$seven', '$sevenacademicfield', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($seven == 'Bachelor’s degree') {
-			$sevenfield = "Bachelor’s degree_" . mysqli_real_escape_string($db_conn, $_POST['ques7_acadfield']);
+			$sql = "INSERT INTO alum_survey_q7 (user_id, Level, Field, date_response) VALUES ('$id', '$seven', '$sevenacademicfield', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($seven == 'Master’s degree') {
-			$sevenfield = "Master’s degree_" . mysqli_real_escape_string($db_conn, $_POST['ques7_acadfield']);
+			$sql = "INSERT INTO alum_survey_q7 (user_id, Level, Field, date_response) VALUES ('$id', '$seven', '$sevenacademicfield', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($seven == 'Doctoral degree') {
-			$sevenfield = "Doctoral degree_" . mysqli_real_escape_string($db_conn, $_POST['ques7_acadfield']);
-		} else if ($seven == 'other'){
-			$sevenfield =  "Other_" . mysqli_real_escape_string($db_conn, $_POST['ques7_others']);
+			$sql = "INSERT INTO alum_survey_q7 (user_id, Level, Field, date_response) VALUES ('$id', '$seven', '$sevenacademicfield', now())";
+			mysqli_query($db_conn, $sql);
+		} else if ($seven == 'Other'){
+			$sql = "INSERT INTO alum_survey_q7 (user_id, Level, Field, date_response) VALUES ('$id', '$seven', '$sevenothers', now())";
+			mysqli_query($db_conn, $sql);
 		} else {
-			$sevenfield = $seven;
+			$sql = "INSERT INTO alum_survey_q7 (user_id, Level, Field, date_response) VALUES ('$id', '$seven', 'NA', now())";
+			mysqli_query($db_conn, $sql);
 		}
 	
 		// store to db (alum_survey table)
@@ -654,8 +684,8 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	    // mysqli_query($db_conn, $sql);
 		
 		// store to db (alum_survey_q7 table)
-		$sql = "INSERT INTO alum_survey_q7 (user_id, answer_body, date_response) VALUES ('$id', '$sevenfield', now())";
-	    mysqli_query($db_conn, $sql);
+		//$sql = "INSERT INTO alum_survey_q7 (user_id, answer_body, date_response) VALUES ('$id', '$sevenfield', now())";
+	    //mysqli_query($db_conn, $sql);
 		
 		// QUESTION NUMBER 8
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['eight']);
@@ -694,34 +724,16 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$ten_4 = mysqli_real_escape_string($db_conn, $_POST['ques10_4']);
 		$ten_5 = mysqli_real_escape_string($db_conn, $_POST['ques10_5']);
 		
-		$ten_a1 = mysqli_real_escape_string($db_conn, $ten_a) ."_". mysqli_real_escape_string($db_conn, $ten_1);
-		$ten_b2 = mysqli_real_escape_string($db_conn, $ten_b) ."_". mysqli_real_escape_string($db_conn, $ten_2);
-		$ten_c3 = mysqli_real_escape_string($db_conn, $ten_c) ."_". mysqli_real_escape_string($db_conn, $ten_3);
-		$ten_d4 = mysqli_real_escape_string($db_conn, $ten_d) ."_". mysqli_real_escape_string($db_conn, $ten_4);
-		$ten_e5 = mysqli_real_escape_string($db_conn, $ten_e) ."_". mysqli_real_escape_string($db_conn, $ten_5);
-
-		/*//store to db (alum_survey table)
-	    $sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$ten_a1')";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$ten_b2')";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$ten_c3')";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$ten_d4')";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$ten_e5')";
-	    mysqli_query($db_conn, $sql);*/
-		
 		// store to db (alum_survey_q10 table)
-		$sql = "INSERT INTO alum_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten_a1', now())";
+		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_a', '$ten_1', now())";
 	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten_b2', now())";
+		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_b', '$ten_2', now())";
 	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten_c3', now())";
+		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_c', '$ten_3', now())";
 	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten_d4', now())";
+		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_d', '$ten_4', now())";
 	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten_e5', now())";
+		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_e', '$ten_5', now())";
 	    mysqli_query($db_conn, $sql);
 		
 
@@ -729,44 +741,37 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		// QUESTION NUMBER 11
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['eleven']);
 		$eleven = mysqli_real_escape_string($db_conn, $_POST['ques11']);
+		$eleven_field = mysqli_real_escape_string($db_conn, $_POST['ques11_1']);
 		
 		if ($eleven == 'Yes') {
-			$eleven_field = "Yes_" . mysqli_real_escape_string($db_conn, $_POST['ques11_1']);
+			$sql = "INSERT INTO alum_survey_q11 (user_id, Volunteer, Characterized, date_response) VALUES ('$id', '$eleven', '$eleven_field', now())";
+			mysqli_query($db_conn, $sql);
 		} else {
-			$eleven_field = $eleven;
+			$sql = "INSERT INTO alum_survey_q11 (user_id, Volunteer, Characterized, date_response) VALUES ('$id', '$eleven', 'NA', now())";
+			mysqli_query($db_conn, $sql);
 		}
-		// store to db (alum_survey table)
-	    //$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$eleven_field')";
-	    //mysqli_query($db_conn, $sql);
-		
-		// store to db (alum_survey_q11 table)
-		$sql = "INSERT INTO alum_survey_q11 (user_id, answer_body, date_response) VALUES ('$id', '$eleven_field', now())";
-	    mysqli_query($db_conn, $sql);
-	
 		
 		// QUESTION NUMBER 12
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['twelve']);
 		$twelve = mysqli_real_escape_string($db_conn, $_POST['ques12']);
+		$twelve_field = mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
 		
 		if ($twelve == 'No experience') {
-			$twelve_field = "No experience_" . mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
+			$sql = "INSERT INTO alum_survey_q12 (user_id, Experience, Necessity, date_response) VALUES ('$id', '$twelve', '$twelve_field', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($twelve == 'Less than one (1) year') {
-			$twelve_field = "Less than one (1) year_" . mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
+			$sql = "INSERT INTO alum_survey_q12 (user_id, Experience, Necessity, date_response) VALUES ('$id', '$twelve', '$twelve_field', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($twelve == 'One (1) to three (3) years') {
-			$twelve_field = "One (1) to three (3) years_" . mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
+			$sql = "INSERT INTO alum_survey_q12 (user_id, Experience, Necessity, date_response) VALUES ('$id', '$twelve', '$twelve_field', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($twelve == 'Three (3) to six (6) years') {
-			$twelve_field = "Three (3) to six (6) years_" . mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
+			$sql = "INSERT INTO alum_survey_q12 (user_id, Experience, Necessity, date_response) VALUES ('$id', '$twelve', '$twelve_field', now())";
+			mysqli_query($db_conn, $sql);
 		} else if ($twelve == 'More than six (6+) years') {
-			$twelve_field = "More than six (6+) years_" . mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
+			$sql = "INSERT INTO alum_survey_q12 (user_id, Experience, Necessity, date_response) VALUES ('$id', '$twelve', '$twelve_field', now())";
+			mysqli_query($db_conn, $sql);
 		}
-	
-		// store to db (alum_survey table)
-	    //$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$twelve_field')";
-	    //mysqli_query($db_conn, $sql);
-		
-		// store to db (alum_survey_q12 table)
-		$sql = "INSERT INTO alum_survey_q12 (user_id, answer_body, date_response) VALUES ('$id', '$twelve_field', now())";
-	    mysqli_query($db_conn, $sql);
 	
 		
 		// QUESTION NUMBER 13
@@ -893,18 +898,12 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 
 		// if other is selected
 		if ($nineteen == 'Yes') {
-			$nineteen_field = mysqli_real_escape_string($db_conn, $nineteen_txt);
+			$sql = "INSERT INTO alum_survey_q19 (user_id, answer_body, date_response) VALUES ('$id', '$nineteen_txt', now())";
+			mysqli_query($db_conn, $sql);
 		} else {
-			$nineteen_field = $nineteen;
+			$sql = "INSERT INTO alum_survey_q19 (user_id, answer_body, date_response) VALUES ('$id', '$nineteen', now())";
+			mysqli_query($db_conn, $sql);
 		}
-
-		// store to db (alum_survey table)
-	    //$sql = "INSERT INTO alum_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$nineteen_field')";
-	    //mysqli_query($db_conn, $sql);
-		
-		// store to db (alum_survey_q19 table)
-		$sql = "INSERT INTO alum_survey_q19 (user_id, answer_body, date_response) VALUES ('$id', '$nineteen_field', now())";
-	    mysqli_query($db_conn, $sql);
 		
 	}
 }//end of submit-alum
