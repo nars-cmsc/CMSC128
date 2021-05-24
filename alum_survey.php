@@ -478,6 +478,7 @@ if (!isset($_SESSION['email'])) {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/survey_fcn.js"></script>
+	<script type="text/javascript" src="js/slideshow.js"></script>
 	<title>Alumni Survey - UPB DMCS</title>
 </head>
 	<!-- for header/ navbar    -->
@@ -485,39 +486,58 @@ if (!isset($_SESSION['email'])) {
 	<!-- label class = option; radio bttn class = options -->
 
 	<div class="content-alum">
-		<div class="content-survey">
 		<form class="alum-form" action="alum_survey.php" method="post">
-		<h1>Alumni Survey</h1>
-		<h2>Please make sure to fill in answers to all the questions.</h2>
-		<!-- error alert -->
-		<?php if (count($errors) > 0): ?>
-			<div class="alert">
-				<?php foreach ($errors as $error): ?>
-					<?php echo $error; ?><br>
-				<?php endforeach; ?>	
-			</div>
-		<?php endif;?>
-		<!-- QUESTION # 1 -->
-			<div class="entry">
-				<input type="hidden" name="one" value="1">
-				<h3 class="ques_title">1. Sex at birth: </h3>
-			</div>
+			<h1>Alumni Survey</h1>
+			<h2>Please make sure to fill in answers to all the questions.</h2>
+			<!-- error alert -->
+			<?php if (count($errors) > 0): ?>
+				<div class="alert">
+					<?php foreach ($errors as $error): ?>
+						<?php echo $error; ?><br>
+					<?php endforeach; ?>	
+				</div>
+			<?php endif;?>
+
+			<div class="questions-container">
+				<div class="dot-navigation">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+					<span class="dot" onclick="currentSlide(5)"></span>
+					<span class="dot" onclick="currentSlide(6)"></span>
+					<span class="dot" onclick="currentSlide(7)"></span>
+					<span class="dot" onclick="currentSlide(8)"></span>
+					<span class="dot" onclick="currentSlide(9)"></span>
+					<span class="dot" onclick="currentSlide(10)"></span>
+					<span class="dot" onclick="currentSlide(11)"></span>
+				</div>
+
+				<div class="Slides" style="display:block;">
+					<div class="numbertext">1 / 11</div>
+					<!-- QUESTION # 1 -->
+					<div class="entry">
+						<input type="hidden" name="one" value="1">
+						<h3 class="ques_title">1. Sex at birth: </h3>
+					</div>
 					<input class="options" type="radio" name="ques1" id="one1" value="Female">
 						<label class="option" for="one1">Female</label>
 					<input class="options" type="radio" name="ques1" id="one2" value="Male">
 						<label class="option" for="one2">Male</label>	
 						
-		<!-- QUESTION # 2 (Balak kong i-enter first letter shit dito tas ilalagay iyong 195 countries.)-->
-			<div class="entry">
-				<input type="hidden" name="two" value="2">
-				<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
-			</div>
+					<!-- QUESTION # 2 -->
+					<div class="entry">
+						<input type="hidden" name="two" value="2">
+						<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
+					</div>
 						<textarea id="" name="ques2" rows="4" cols="50" style="resize: none;" 
 						placeholder="Type the country here... (Use letters only)"
 						onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"></textarea> <!-- Letters and space -->
-
+				</div>	
 			
-			</div>				
+		
+	<div class="Slides">
+		<div class="numbertext">2 / 11</div>	
 		<!-- QUESTION # 3 -->
 			<div class="entry">
 				<input type="hidden" name="three" value="3">
@@ -550,6 +570,11 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="four6">More than 2 years</label><br>
 						<input class="options" type="radio" name="ques4" id="four7" value="I am not sure">
 							<label class="option" for="four7">I am not sure</label><br>
+	</div>	
+
+
+	<div class="Slides">
+		<div class="numbertext">3 / 11</div>
 		<!-- QUESTION # 5 -->
 			<div class="entry">
 				<input type="hidden" name="five" value="5">
@@ -597,9 +622,11 @@ if (!isset($_SESSION['email'])) {
 				placeholder="Type other industry and business here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
 				minlength="7" />
 				</div>
-				
+	</div>
 
 
+	<div class="Slides">
+		<div class="numbertext">4 / 11</div>
 		<!-- QUESTION # 6 -->
 			<div class="entry">
 				<input type="hidden" name="six" value="6">
@@ -617,7 +644,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="six5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques6" id="six6" onclick="$('#sixothers').hide(); $('#sixacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="six6">Doctoral degree </label><br>
-						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="Other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="six7">Others (e,g. training, certifications):</label> <br>
 								
 						<div id="sixacademicfield" style="display: none;">
@@ -632,8 +659,11 @@ if (!isset($_SESSION['email'])) {
 						placeholder="Type here... (Use letters only)"
 						onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"></textarea>
 						</div>
-						
-						
+	</div>
+				
+	
+	<div class="Slides">
+		<div class="numbertext">5 / 11</div>
 		<!-- QUESTION # 7 -->
 			<div class="entry">
 				<input type="hidden" name="seven" value="7">
@@ -651,7 +681,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="seven5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques7" id="seven6" onclick="$('#sevenothers').hide(); $('#sevenacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="seven6">Doctoral degree</label><br>
-						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="Other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="seven7">Others (e,g. training, certifications):</label><br>
 						
 						<div id="sevenacademicfield" style="display: none;">
@@ -666,7 +696,11 @@ if (!isset($_SESSION['email'])) {
 						placeholder="Type here... (Use letters only)"
 						onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"></textarea>
 						</div>
-						
+	</div>
+		
+	
+	<div class="Slides">
+		<div class="numbertext">5 / 11</div>
 		<!-- QUESTION # 8 -->
 			<div class="entry">
 				<input type="hidden" name="eight" value="8">
@@ -693,63 +727,64 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="nine2">Yes, it is related to my major/s</label><br>
 						<input class="options" type="radio" name="ques9" id="nine3" value="No, it is not related">
 							<label class="option" for="nine3">No, it is not related</label><br>
+	</div>
+
+
+	<div class="Slides">
+				<div class="numbertext">6 / 11</div>
 		<!-- QUESTION # 10 Fucked up pa number 10--> 
 			<div class="entry">
 				<input type="hidden" name="ten" value="10">
-				<h3 class="ques_title">10. In the order of importance, list your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
+				<h3 class="ques_title">10. In the order of importance, list 5 of your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
 			</div>
 				<table border="0">
 					
 					<tr>
 						<td>
-							1.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_a" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							2.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
-						</td>
-						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_1" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							3.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_b" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							4.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
-						</td>
-						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_2" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							5.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_c" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_3" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							6.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_d" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_4" placeholder="Input must not exceed to 100 %"/><br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+									<input type="text" name="ques10_e" placeholder="Type your major job duties here"/><br>
+						</td>
+						<td>
+									<input type="number" min="0" step="1" name="ques10_5" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 				</table>
-		
+	</div>
+
+
+	<div class="Slides">
+		<div class="numbertext">7 / 11</div>
 		<!-- QUESTION # 11 -->
 			<div class="entry">
 				<input type="hidden" name="eleven" value="11">
@@ -791,6 +826,11 @@ if (!isset($_SESSION['email'])) {
 						placeholder="Type your thoughts here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 				</div>
+	</div>
+
+
+	<div class="Slides">
+		<div class="numbertext">8 / 11</div>
 		<!-- QUESTION # 13 -->
 			<div class="entry">
 				<input type="hidden" name="thirteen" value="13">
@@ -817,6 +857,11 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="fourteen3">Executive level (except Chief Executive)</label><br>
 						<input class="options" type="radio" name="ques14" id="fourteen4" value="Chief Executive (CEO, COO, CFO, GM, or principal in  Managerial a business or organization)">
 							<label class="option" for="fourteen4">Chief Executive (CEO, COO, CFO, GM, or principal in  Managerial a business or organization)</label><br>
+	</div>
+		
+		
+	<div class="Slides">
+				<div class="numbertext">9 / 11</div>
 		<!-- QUESTION # 15 -->
 			<div class="entry">
 				<input type="hidden" name="fifteen" value="15">
@@ -842,7 +887,7 @@ if (!isset($_SESSION['email'])) {
 						<input class="options" type="radio" name="ques16" id="sixteen3" value="Direct supervision of one or more people.">
 							<label class="option" for="sixteen3">Direct supervision of one or more people. </label><br>
 						<input class="options" type="radio" name="ques16" id="sixteen4" value="Direct supervision over a unit or department, involving responsibility for results in terms of budget management, methods of work, policy development and personnel issues.">
-							<label class="option" for="sixteen4">Direct supervision over a unit or department, involving responsibility for results in terms of budget management, methods of work, policy development and personnel issues. </label>
+							<label class="option" for="sixteen4">Direct supervision over a unit or department, involving responsibility for results in terms of budget management, methods of work, policy development and personnel issues. </label>	
 		<!-- QUESTION # 17 -->
 			<div class="entry">
 				<input type="hidden" name="seventeen" value="17">
@@ -856,6 +901,11 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="seventeen3">Generally satisfied</label><br>
 						<input class="options" type="radio" name="ques17" id="seventeen4" value="Very satisfied">
 							<label class="option" for="seventeen4">Very satisfied</label><br>
+	</div>
+
+
+<div class="Slides">
+		<div class="numbertext">10 / 11</div>
 		<!-- QUESTION # 18 -->
 			<div class="entry">
 				<input type="hidden" name="eighteen" value="18">
@@ -872,27 +922,34 @@ if (!isset($_SESSION['email'])) {
 					<?php $i = 0; foreach ($ques18_arr as $ques18_to): ?>
 					<tr>
 						<?php $i++; ?>
-						<td>
+						<td style="text-align:left;width:40%;">
 							<?php echo $ques18_to; ?>
 						</td>
-						<td>
-							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo $ques18_to.'_Very poorly';?>" id=""/>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'Very poorly';?>" id=""/>
 						</td>
-						<td>
-							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo $ques18_to.'_Less than adequately';?>" id=""/>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'Less than adequately';?>" id=""/>
 						</td>
-						<td>
-							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo $ques18_to.'_More than adequately';?>" id=""/>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'More than adequately';?>" id=""/>
 						</td>
-						<td>
-							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo $ques18_to.'_Very well';?>" id=""/>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'Very well';?>" id=""/>
 						</td>
 					<tr>
 					<?php endforeach; ?>
 				</table>
-					
+	</div>		
+	
+	
+	<div class="Slides">
+		<div class="numbertext">11 / 11</div>
 		<!-- QUESTION # 19 -->
-		
 			<div class="entry">
 				<input type="hidden" name="nineteen" value="19">
 				<h3 class="ques_title">19. Would you like to elaborate on how UP DMCS helped you acquire the competencies you needed?</h3>
@@ -907,7 +964,11 @@ if (!isset($_SESSION['email'])) {
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 						</div>
+		</div>
 
+			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
 				
 			<!-- submit button -->
 			<!--a href="contactemp_ques.php"-->
@@ -915,11 +976,13 @@ if (!isset($_SESSION['email'])) {
 			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 			<input type="hidden" name="submitted" value="1"/> 
 			<!--/a-->
-			</form>
-				
-		<!-- for footer/ contact details -->
-		<?php include('footer.php'); ?>
+			
+		</form>		
+			<!-- for footer/ contact details -->
+			<?php include('footer.php'); ?>
 	</div>
+
+
 </body>
 </html>
 >>>>>>> 4e9336206caf4e399e03fc07ea7b9f443aa63676

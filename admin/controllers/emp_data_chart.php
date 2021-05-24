@@ -4,7 +4,7 @@ session_start();
 // connect to db
 require ('config/connection.php');
 
-######## QUESTION #1 ##########
+###################### QUESTION #1 ######################
 
 	// counters/containers for public and private
 	$ct_pub = 0;
@@ -44,7 +44,7 @@ require ('config/connection.php');
 		$ct_other1txt = ltrim($string1, ', ');
 	}
 
-######## QUESTION #2 ##########
+###################### QUESTION #2 ######################
 
 	// counters/containers for ph or abroad (region/subregion)
 	$ct_ph = 0;
@@ -322,7 +322,7 @@ require ('config/connection.php');
 				$ct_reg_oc_mel++;
 			}
 
-######## QUESTION #3 ##########
+###################### QUESTION #3 ######################
 	$ques3_arr = array(
 		"Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use",
 		"Activities of International Organizations and Bodies",
@@ -574,7 +574,7 @@ require ('config/connection.php');
 		$ct_ind_other = ltrim($string3, ', ');
 	}
 
-######## QUESTION #4 ##########
+###################### QUESTION #4 ######################
 
 	// counters/containers for job level
 	$ct_chief = 0;
@@ -608,7 +608,7 @@ require ('config/connection.php');
 		$ct_rank++;
 	}
 
-######## QUESTION #5 ##########
+###################### QUESTION #5 ######################
 
 	// counters/containers for number of UP hires
 	$ct_up_hire = 0;
@@ -622,7 +622,7 @@ require ('config/connection.php');
 		$ct_up_hire = $ct_up_hire + $row['answer_body'];
 	}
 
-######## QUESTION #6 ##########
+###################### QUESTION #6 ######################
 
 	// counters/containers for agree/disagree
 	$ct_sd = 0;
@@ -666,7 +666,7 @@ require ('config/connection.php');
 		$ct_sa++;
 	}
 
-######## QUESTION #7 ##########
+###################### QUESTION #7 ######################
 	$skills_arr = array(
 		"Reading Comprehension", "Active Listening", "Writing Skills", 
 		"Verbal Communication", "Mathematics Skills", "Scientific Literacy", 
@@ -1205,7 +1205,7 @@ require ('config/connection.php');
 			$ct_sys_vim++;
 		}
 
-######## QUESTION #8 ##########
+###################### QUESTION #8 ######################
 
 	// counters/containers for skill/satisfaction
 		$ct_read_vu = 0; $ct_read_us = 0; $ct_read_sa = 0; $ct_read_vs = 0;
@@ -1736,7 +1736,7 @@ require ('config/connection.php');
 			$ct_sys_vs++;
 		}
 
-######## QUESTION #9 ##########
+###################### QUESTION #9 ######################
 
 	// counters/containers for likely/unlikely
 	$ct_9vu = 0;
@@ -1780,7 +1780,7 @@ require ('config/connection.php');
 		$ct_9vl++;
 	}
 
-######## QUESTION #10 ##########
+###################### QUESTION #10 ######################
 
 	// counters/containers for likely/unlikely
 	$ct_10vu = 0;
@@ -1824,7 +1824,7 @@ require ('config/connection.php');
 		$ct_10vl++;
 	}
 
-######## QUESTION #11 ##########
+###################### QUESTION #11 ######################
 
 	$dmcs_skills_arr = array(
 		"Willing to undergo training and/or further education", 
@@ -2183,7 +2183,7 @@ require ('config/connection.php');
 			$ct_dmcs11_vim++;
 		}
 
-######## QUESTION #12 ##########
+###################### QUESTION #12 ######################
 
 	// counters/containers for dmcs skill/satisfaction
 		$ct_dmcs1_vu = 0; $ct_dmcs1_us = 0; $ct_dmcs1_sa = 0; $ct_dmcs1_vs = 0;
@@ -2528,7 +2528,7 @@ require ('config/connection.php');
 			$ct_dmcs11_vs++;
 		}
 
-######## QUESTION #13 ##########
+###################### QUESTION #13 ######################
 
 	// counters/containers for actions
 	$ct_des = 0;
@@ -2588,7 +2588,7 @@ require ('config/connection.php');
 		$ct_other13txt = ltrim($string13, ', ');
 	}
 
-######## QUESTION #14 ##########
+###################### QUESTION #14 ######################
 
 	// counters/containers for importance
 	$ct_un = 0;
@@ -2632,7 +2632,7 @@ require ('config/connection.php');
 		$ct_im++;
 	}
 
-######## QUESTION #15 ##########
+###################### QUESTION #15 ######################
 
 	// counters/containers for comments
 	$ct_yes15 = '';
@@ -2649,7 +2649,7 @@ require ('config/connection.php');
 	}
 	
 
-######## QUESTION #16 ##########
+###################### QUESTION #16 ######################
 
 	// counters/containers for feedback
 	$ct_yes16 = '';
@@ -2665,7 +2665,7 @@ require ('config/connection.php');
 		$ct_yes16 = ltrim($string16, ', ');
 	}
 
-######## QUESTION #17 ##########
+###################### QUESTION #17 ######################
 
 	// counters/containers for strengths
 	$ct_yes17 = '';
