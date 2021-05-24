@@ -39,7 +39,7 @@ if (!isset($_SESSION['email'])) {
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 2</h6>
-                <h3>COUNTRIES ALUMNI WORK IN/FOR: <?php echo $country ; ?></h1>
+                <h3>COUNTRIES ALUMNI WORK IN/FOR: <?php echo $country ; ?></h3>
             </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 3</h6>
@@ -49,8 +49,22 @@ if (!isset($_SESSION['email'])) {
                 <h6 id="subtitle-alum-charts">Question No. 4</h6>
                 <canvas id="alum_canvas4"></canvas>
             </div>
-
-
+            <div id="chart-container-alum">
+                <h6 id="subtitle-alum-charts">Question No. 5</h6>
+                <canvas id="alum_canvas5"></canvas>
+            </div>
+              <div id="chart-container-alum">
+                  <h6 id="subtitle-alum-charts">Question No. 5a</h6>
+                  <canvas id="alum_canvas5a"></canvas>
+              </div>
+              <div id="chart-container-alum">
+                  <h6 id="subtitle-alum-charts">Question No. 5a-1</h6>
+                  <canvas id="alum_canvas5a-1"></canvas>
+              </div>
+              <div id="chart-container-alum">
+                  <h6 id="subtitle-alum-charts">Question No. 5b</h6>
+                  <canvas id="alum_canvas5b"></canvas>
+              </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 6</h6>
                 <canvas id="alum_canvas6"></canvas>
@@ -67,8 +81,14 @@ if (!isset($_SESSION['email'])) {
                 <h6 id="subtitle-alum-charts">Question No. 9</h6>
                 <canvas id="alum_canvas9"></canvas>
             </div>
-
-
+            <div id="temp-container">
+                <h6 id="subtitle-emp-charts">Question No. 10</h6>
+                <?php $i = 0; $j = 0; foreach ($data10 as $data) { ?>
+                  <h3>JOB DUTY (TIME): <?php echo $data['Job']; ?>
+                  (<?php echo $data['Percent']; ?>%)</h3>
+                <?php } ; ?>
+                
+            </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 11</h6>
                 <canvas id="alum_canvas11"></canvas>
@@ -103,7 +123,7 @@ if (!isset($_SESSION['email'])) {
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 19</h6>
-                <h3>HOW DID UPB DMCS HELP YOU? <?php echo $ct_yes19 ; ?></h1>
+                <h3>HOW DID UPB DMCS HELP YOU? <?php echo $ct_yes19 ; ?></h3>
             </div>
         </div>
     </section>
@@ -204,8 +224,139 @@ if (!isset($_SESSION['email'])) {
         });
     </script>
 
+    <!-- QUESTION # 5 -->
+    <script type="text/javascript">
+        var xValues = ["Yes", "No"];
+        var yValues = [<?php echo $ct_emp_yes5;?>, <?php echo $ct_emp_no5;?>];
+        var barColors = [
+          "#b91d47",
+          "#00aba9"
+        ];
 
+        new Chart("alum_canvas5", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+                 title: {
+                  display: true,
+                  text: "Question # 5"
+                }
+            }
+          }
+        });
+    </script>
+      <!-- QUESTION # 5a -->
+      <script type="text/javascript">
+          var xValues = ["Full time (40 hours/week)", "Part time", "Self-employed"
+          ];
+          var yValues = [<?php echo $ct_yes_full5;?>, <?php echo $ct_yes_part5;?>, <?php echo $ct_yes_self5;?>];
+          var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797"
+          ];
 
+          new Chart("alum_canvas5a", {
+            type: "pie",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              plugins: {
+                   title: {
+                    display: true,
+                    text: "Question # 5a"
+                  }
+              }
+            }
+          });
+      </script>
+      <!-- QUESTION # 5a-1 -->
+      <script type="text/javascript">
+          var xValues = ["Industry 1", "Industry 2", "Industry 3", "Industry 4", 
+                         "Industry 5", "Industry 6", "Industry 7", "Industry 8", 
+                         "Industry 9", "Industry 10", "Industry 11", "Industry 12", 
+                         "Industry 13", "Industry 14", "Industry 15", "Industry 16", 
+                         "Industry 17", "Industry 18", "Industry 19", "Industry 20", 
+                         "Industry 21", "Industry 22", "Others"
+          ];
+          var yValues = [<?php echo $ct_yes_ind1;?>, <?php echo $ct_yes_ind2;?>,
+                         <?php echo $ct_yes_ind3;?>, <?php echo $ct_yes_ind4;?>,
+                         <?php echo $ct_yes_ind5;?>, <?php echo $ct_yes_ind6;?>,
+                         <?php echo $ct_yes_ind7;?>, <?php echo $ct_yes_ind8;?>,
+                         <?php echo $ct_yes_ind9;?>, <?php echo $ct_yes_ind10;?>,
+                         <?php echo $ct_yes_ind11;?>, <?php echo $ct_yes_ind12;?>,
+                         <?php echo $ct_yes_ind13;?>, <?php echo $ct_yes_ind14;?>,
+                         <?php echo $ct_yes_ind15;?>, <?php echo $ct_yes_ind16;?>,
+                         <?php echo $ct_yes_ind17;?>, <?php echo $ct_yes_ind18;?>,
+                         <?php echo $ct_yes_ind19;?>, <?php echo $ct_yes_ind20;?>,
+                         <?php echo $ct_yes_ind21;?>, <?php echo $ct_yes_ind22;?>,
+                         <?php echo $ct_yes_other5;?> 
+          ];
+          var barColors = [
+            "#ffffff", "#e5f5f3", "#ccebe7", "#b2e2dc", "#99d8d0",
+            "#7fcfc5", "#66c5b9", "#4cbbad", "#32b2a2", "#19a896",
+            "#00b9a1", "#009f8b", "#008f7d", "#007f6f", "#006f61",
+            "#005f53", "#004f45", "#003f37", "#002f29", "#001f1b",
+            "#000f0d", "#000000", "green"
+          ];
+
+          new Chart("alum_canvas5a-1", {
+            type: "pie",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: "Question # 5a-1"
+              }
+            }
+          });
+      </script>
+      <!-- QUESTION # 5b -->
+      <script type="text/javascript">
+          var xValues = ["Yes", "No"];
+          var yValues = [<?php echo $ct_look_yes5;?>, <?php echo $ct_look_no5;?>];
+          var barColors = [
+            "#b91d47",
+            "#00aba9"
+          ];
+
+          new Chart("alum_canvas5b", {
+            type: "pie",
+            data: {
+              labels: xValues,
+              datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+              }]
+            },
+            options: {
+              plugins: {
+                   title: {
+                    display: true,
+                    text: "Question # 5b"
+                  }
+              }
+            }
+          });
+      </script>
 
     <!-- QUESTION # 6 -->
     <script type="text/javascript">
@@ -345,9 +496,6 @@ if (!isset($_SESSION['email'])) {
           }
         });
     </script>
-
-
-
 
     <!-- QUESTION # 11 -->
     <script type="text/javascript">

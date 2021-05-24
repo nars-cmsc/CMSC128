@@ -158,7 +158,301 @@ require ('config/connection.php');
 		$ct_nots++;
 	}
 
-###################### QUESTION # 5 (skipped first) ######################
+###################### QUESTION # 5 ######################
+
+	$ques5c_arr = array(
+		"Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use",
+		"Activities of International Organizations and Bodies",
+		"Administrative and Support Service Activities", "Agriculture, Forestry and Fishing", "Arts, Entertainment and Recreation",
+		"Construction", "Education", "Electricity, Gas, Steam and Air Conditioning Supply", "Finance, Banks, and Insurance", 
+		"Hotel/Accommodation, and Restaurant and Food Service", "Human Health and Social Work Activities", "Information Technology", 
+		"Manufacturing", "Media and Communication", "Mining and Quarrying", "Other Service Activities", 
+		"Professional, Scientific and Technical Activities", "Public Administration and Defense; Compulsory Social Security", 
+		"Real Estate Activities", "Transportation and Storage", "Water Supply; Sewerage, Waste Management and Remediation Activities", 
+		"Wholesale and Retail Trade"
+	);
+
+	$ct_emp_yes5 = 0;
+		$ct_yes_full5 = 0; $ct_yes_part5 = 0; $ct_yes_self5 = 0;
+		$ct_yes_ind1 = 0; $ct_yes_ind2 = 0; $ct_yes_ind3 = 0; $ct_yes_ind4 = 0;
+		$ct_yes_ind5 = 0; $ct_yes_ind6 = 0; $ct_yes_ind7 = 0; $ct_yes_ind8 = 0;
+		$ct_yes_ind9 = 0; $ct_yes_ind10 = 0; $ct_yes_ind11 = 0; $ct_yes_ind12 = 0;
+		$ct_yes_ind13 = 0; $ct_yes_ind14 = 0; $ct_yes_ind15 = 0; $ct_yes_ind16 = 0;
+		$ct_yes_ind17 = 0; $ct_yes_ind18 = 0; $ct_yes_ind19 = 0; $ct_yes_ind20 = 0;
+		$ct_yes_ind21 = 0; $ct_yes_ind22 = 0; $ct_yes_other5 = 0;
+		$ct_yes_ind_other = ''; $string5 = '';
+	$ct_emp_no5 = 0;
+		$ct_look_yes5 = 0; $ct_look_no5 = 0;
+
+
+	// get data from table (yes)
+	$query = "SELECT user_id FROM alum_survey_q5 WHERE Employed='Yes'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_emp_yes5++;
+	}
+		// get data from table (full)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Characterized='Full time (40 hours/week)'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_full5++;
+		}
+		// get data from table (parttime)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Characterized='Part time'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_part5++;
+		}
+		// get data from table (self)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Characterized='Self-employed'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_self5++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Activities of Households as Employers; Undifferentiated Goods-and Services-producing Activities of Households for Own Use'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind1++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Activities of International Organizations and Bodies'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind2++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Administrative and Support Service Activities'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind3++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Agriculture, Forestry and Fishing'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind4++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Arts, Entertainment and Recreation'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind5++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Construction'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind6++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Education'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind7++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Electricity, Gas, Steam and Air Conditioning Supply'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind8++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Finance, Banks, and Insurance'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind9++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Hotel/Accommodation, and Restaurant and Food Service'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind10++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Human Health and Social Work Activities'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind11++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Information Technology'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind12++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Manufacturing'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind13++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Media and Communication'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind14++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Mining and Quarrying'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind15++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Other Service Activities'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind16++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Professional, Scientific and Technical Activities'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind17++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Public Administration and Defense; Compulsory Social Security'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind18++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Real Estate Activities'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind19++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Transportation and Storage'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind20++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Water Supply; Sewerage, Waste Management and Remediation Activities'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind21++;
+		}
+
+		// get data from table (industries)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Industry='Wholesale and Retail Trade'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_yes_ind22++;
+		}
+
+		// get data from table (other industries)
+		$query = "SELECT user_id, Applying FROM alum_survey_q5 WHERE Industry='other'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_other3++;
+
+			// for other answers
+			$string5 = $string5 . ', ' . $row['Applying'];
+			$ct_yes_ind_other = ltrim($string5, ', ');
+		}
+
+	// get data from table (no)
+	$query = "SELECT user_id FROM alum_survey_q5 WHERE Employed='No'";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	while ($row = mysqli_fetch_array($result)) {
+		$ct_emp_no5++;
+	}
+		// get data from table (yes)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Applying='Yes'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_look_yes5++;
+		}
+		// get data from table (no)
+		$query = "SELECT user_id FROM alum_survey_q5 WHERE Applying='No'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ct_look_no5++;
+		}
 
 ###################### QUESTION # 6 ######################
 
@@ -169,8 +463,9 @@ require ('config/connection.php');
 	$ct_md6 = 0;
 	$ct_dd6 = 0;
 	$ct_other6 = 0;
-	$ct_other6txt = '';
-	$string6 = '';
+
+	$alum_other6txt = '';
+	$alum_string6 = '';
 
 	// get data from table (option1)
 	$query = "SELECT user_id FROM alum_survey_q6 WHERE Level='High school'";
@@ -226,13 +521,16 @@ require ('config/connection.php');
 		$ct_dd6++;
 	}
 
-	// get data from table (option7)
-	$query = "SELECT user_id FROM alum_survey_q6 WHERE Level='Other'";
+	// get data from table (other)
+	$query = "SELECT user_id, Field FROM alum_survey_q6 WHERE Level='Other'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_other6++;
+
+		$alum_string6 = $alum_string6 . ', ' . $row['Field'];
+		$alum_other6txt = ltrim($alum_string6, ', ');
 	}
 
 ###################### QUESTION # 7 ######################
@@ -244,8 +542,8 @@ require ('config/connection.php');
 	$ct_md7 = 0;
 	$ct_dd7 = 0;
 	$ct_other7 = 0;
-	$ct_other7txt = '';
-	$string7 = '';
+	$alum_other7txt = '';
+	$alum_string7 = '';
 
 	// get data from table (option1)
 	$query = "SELECT user_id FROM alum_survey_q7 WHERE Level='High school'";
@@ -301,13 +599,16 @@ require ('config/connection.php');
 		$ct_dd7++;
 	}
 
-	// get data from table (option7)
-	$query = "SELECT user_id FROM alum_survey_q7 WHERE Level='Other'";
+	// get data from table (other)
+	$query = "SELECT user_id, Field FROM alum_survey_q7 WHERE Level='Other'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_other7++;
+
+		$alum_string7 = $alum_string7 . ', ' . $row['Field'];
+		$alum_other7txt = ltrim($alum_string7, ', ');
 	}
 
 ###################### QUESTION # 8 ######################
@@ -453,7 +754,18 @@ require ('config/connection.php');
 		$ct_nr++;
 	}
 
-###################### QUESTION # 10 (skipped first) ######################
+###################### QUESTION # 10 ######################
+
+	$data10 = array();
+
+	// get userid data from table
+	$query = "SELECT Job, Percent FROM alum_survey_q10 ORDER BY user_id";
+	// execute query
+	$result = mysqli_query($db_conn, $query);
+	// loop through returned data
+	foreach ($result as $row) {
+		$data10[] = $row;
+	}
 
 ###################### QUESTION # 11 ######################
 	
