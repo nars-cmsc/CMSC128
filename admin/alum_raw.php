@@ -24,17 +24,10 @@ if (!isset($_SESSION['email'])) {
 <?php include('header.php');  ?>
     <section>
         <?php include('sidenav.php');  ?>
-<<<<<<< HEAD
-        <div class="content-alum-raw">
-            <h4 id="title-alum-raw">Raw Data</h4>
-            <h6 id="subtitle-alum-raw">Alumni Survey</h6>
-            <table id="table-alum-raw">
-=======
         <div class="content-emp-raw">
             <h4 id="title-emp-raw">Raw Data</h4>
             <h6 id="subtitle-emp-raw">Alumni Survey</h6>
             <table id="table-emp-raw">
->>>>>>> a6c22e9bfd0faa917178551838d485839dd9bac0
                 <thead>
                     <tr>
                         <th>ID</th>
