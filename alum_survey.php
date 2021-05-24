@@ -28,6 +28,7 @@ if (!isset($_SESSION['email'])) {
 	<!-- label class = option; radio bttn class = options -->
 
 	<div class="content-alum">
+<<<<<<< HEAD
 		<div class="content-survey"> 
 		<form class="alum-form" action="alum_survey.php" method="post">
 		<h1>Alumni Survey</h1>
@@ -64,21 +65,61 @@ if (!isset($_SESSION['email'])) {
 				<input type="hidden" name="one" value="1">
 				<h3 class="ques_title">1. Sex at birth: </h3>
 			</div>
+=======
+		<form class="alum-form" action="alum_survey.php" method="post">
+			<h1>Alumni Survey</h1>
+			<h2>Please make sure to fill in answers to all the questions.</h2>
+			<!-- error alert -->
+			<?php if (count($errors) > 0): ?>
+				<div class="alert">
+					<?php foreach ($errors as $error): ?>
+						<?php echo $error; ?><br>
+					<?php endforeach; ?>	
+				</div>
+			<?php endif;?>
+
+			<div class="questions-container">
+				<div class="dot-navigation">
+					<span class="dot" onclick="currentSlide(1)"></span>
+					<span class="dot" onclick="currentSlide(2)"></span>
+					<span class="dot" onclick="currentSlide(3)"></span>
+					<span class="dot" onclick="currentSlide(4)"></span>
+					<span class="dot" onclick="currentSlide(5)"></span>
+					<span class="dot" onclick="currentSlide(6)"></span>
+					<span class="dot" onclick="currentSlide(7)"></span>
+					<span class="dot" onclick="currentSlide(8)"></span>
+					<span class="dot" onclick="currentSlide(9)"></span>
+					<span class="dot" onclick="currentSlide(10)"></span>
+					<span class="dot" onclick="currentSlide(11)"></span>
+				</div>
+
+				<div class="Slides" style="display:block;">
+					<div class="numbertext">1 / 11</div>
+					<!-- QUESTION # 1 -->
+					<div class="entry">
+						<input type="hidden" name="one" value="1">
+						<h3 class="ques_title">1. Sex at birth: </h3>
+					</div>
+>>>>>>> b5cd7fed630b77ce3b0a153755057e2376da27eb
 					<input class="options" type="radio" name="ques1" id="one1" value="Female">
 						<label class="option" for="one1">Female</label>
 					<input class="options" type="radio" name="ques1" id="one2" value="Male">
 						<label class="option" for="one2">Male</label>	
 						
-		<!-- QUESTION # 2 (Balak kong i-enter first letter shit dito tas ilalagay iyong 195 countries.)-->
-			<div class="entry">
-				<input type="hidden" name="two" value="2">
-				<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
-			</div>
+					<!-- QUESTION # 2 -->
+					<div class="entry">
+						<input type="hidden" name="two" value="2">
+						<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
+					</div>
 						<textarea id="" name="ques2" rows="4" cols="50" style="resize: none;" 
 						placeholder="Type the country here... (Use letters only)"
 						onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"></textarea> <!-- Letters and space -->
+<<<<<<< HEAD
 				</div>
 	</div>		
+=======
+				</div>	
+>>>>>>> b5cd7fed630b77ce3b0a153755057e2376da27eb
 			
 		
 	<div class="Slides">
@@ -189,7 +230,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="six5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques6" id="six6" onclick="$('#sixothers').hide(); $('#sixacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="six6">Doctoral degree </label><br>
-						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques6" id="six7" onclick="$('#sixothers').show(); $('#sixacademicfield').hide();" value="Other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="six7">Others (e,g. training, certifications):</label> <br>
 								
 						<div id="sixacademicfield" style="display: none;">
@@ -226,7 +267,7 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="seven5">Master’s degree</label><br>
 						<input class="options" type="radio" name="ques7" id="seven6" onclick="$('#sevenothers').hide(); $('#sevenacademicfield').show();" value="Doctoral degree">
 							<label class="option" for="seven6">Doctoral degree</label><br>
-						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="other"> <!-- Kung ano mang value nito. Search it. -->
+						<input class="options" type="radio" name="ques7" id="seven7" onclick="$('#sevenothers').show(); $('#sevenacademicfield').hide();" value="Other"> <!-- Kung ano mang value nito. Search it. -->
 							<label class="option" for="seven7">Others (e,g. training, certifications):</label><br>
 						
 						<div id="sevenacademicfield" style="display: none;">
@@ -280,56 +321,48 @@ if (!isset($_SESSION['email'])) {
 		<!-- QUESTION # 10 Fucked up pa number 10--> 
 			<div class="entry">
 				<input type="hidden" name="ten" value="10">
-				<h3 class="ques_title">10. In the order of importance, list your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
+				<h3 class="ques_title">10. In the order of importance, list 5 of your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
 			</div>
 				<table border="0">
 					
 					<tr>
 						<td>
-							1.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_a" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							2.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
-						</td>
-						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_1" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							3.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_b" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							4.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
-						</td>
-						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_2" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							5.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_c" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_3" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							6.		<textarea id="" name="ques10" rows="2" cols="50"></textarea><br>
+									<input type="text" name="ques10_d" placeholder="Type your major job duties here"/><br>
 						</td>
 						<td>
-									<textarea id="" name="ques10" rows="2" cols="50"></textarea>		%<br>
+									<input type="number" min="0" step="1" name="ques10_4" placeholder="Input must not exceed to 100 %"/><br>
+						</td>
+					</tr>
+					<tr>
+						<td>
+									<input type="text" name="ques10_e" placeholder="Type your major job duties here"/><br>
+						</td>
+						<td>
+									<input type="number" min="0" step="1" name="ques10_5" placeholder="Input must not exceed to 100 %"/><br>
 						</td>
 					</tr>
 				</table>
@@ -480,6 +513,7 @@ if (!isset($_SESSION['email'])) {
 						</td>
 
 						<td style="width:10%;">
+<<<<<<< HEAD
 							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo $ques18_to.'_Very poorly';?>" id=""/>
 						</td>
 
@@ -493,6 +527,21 @@ if (!isset($_SESSION['email'])) {
 
 						<td style="width:10%;">
 							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo $ques18_to.'_Very well';?>" id=""/>
+=======
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'Very poorly';?>" id=""/>
+						</td>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'Less than adequately';?>" id=""/>
+						</td>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'More than adequately';?>" id=""/>
+						</td>
+
+						<td style="width:10%;">
+							<input class="options" type="radio" name="<?php echo 'ques18_'.$i; ?>" value="<?php echo 'Very well';?>" id=""/>
+>>>>>>> b5cd7fed630b77ce3b0a153755057e2376da27eb
 						</td>
 					<tr>
 					<?php endforeach; ?>
@@ -517,12 +566,20 @@ if (!isset($_SESSION['email'])) {
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 						</div>
+<<<<<<< HEAD
 	</div>
 
 		<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
 		<a class="next" onclick="plusSlides(1)">&#10095;</a>
 	</div>
 	
+=======
+		</div>
+
+			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+>>>>>>> b5cd7fed630b77ce3b0a153755057e2376da27eb
 				
 			<!-- submit button -->
 			<!--a href="contactemp_ques.php"-->
@@ -531,9 +588,15 @@ if (!isset($_SESSION['email'])) {
 			<input type="hidden" name="submitted" value="1"/> 
 			<!--/a-->
 			
+<<<<<<< HEAD
 	</form>		
 		<!-- for footer/ contact details -->
 		<?php include('footer.php'); ?>
+=======
+		</form>		
+			<!-- for footer/ contact details -->
+			<?php include('footer.php'); ?>
+>>>>>>> b5cd7fed630b77ce3b0a153755057e2376da27eb
 	</div>
 
 
