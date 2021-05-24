@@ -47,7 +47,7 @@ if (!isset($_SESSION['email'])) {
 				</select><br><br>
 				<label for="password">Password:</label><br>
 				<input type="text" placeholder="Random password..." name="password" value="<?php echo password_generate(8); ?>">
-				<button>Random Password</button>
+				<button class="rand-pass">Random Password</button>
 				<br><br>
 				<input type="submit" value="Register" name="reg-btn">
             </form>
