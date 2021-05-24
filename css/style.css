@@ -88,6 +88,7 @@ body{
 	font-size: 16pt;
 	background-color: #fff;
 	margin:0;
+	/*position: relative; */
 }
 header{
 	background-image: linear-gradient(to right, #840038, #385723);
@@ -98,10 +99,21 @@ header{
 	color: white;
 	padding: 20px;
 }
+
+/* for login.php para footer stays sa bottom*/
+.main-container {
+	min-height: 100vh;
+	/*overflow: hidden;*/
+	display: block;
+	position: relative;
+	padding-bottom: 100px; /* for size ng footer daw*/
+}
+
+
 /* added this so that size of header will change
 	once window is resized */
 #container-header {
-	position: sticky;
+	/*position: sticky;*/
 	height: 10%;
 	padding: 20px;
 }
