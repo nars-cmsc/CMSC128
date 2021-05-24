@@ -96,13 +96,14 @@ header{
 	/*position: -webkit-sticky; /* for safari 
 	position: sticky;*/
 	color: white;
-	padding: 30px;
+	padding: 20px;
 }
 /* added this so that size of header will change
 	once window is resized */
-.container-header {
+#container-header {
 	position: sticky;
-	min-height: 100vh;
+	height: 10%;
+	padding: 20px;
 }
 .logos {
 	margin-left: 1%;
@@ -137,21 +138,24 @@ header{
 }
 .container-login{
 	display: flex;
-	padding-bottom:15rem;
+	/*padding-bottom:15rem;*/
 	width: 100%;
-	min-height: 100vh;
+	/*min-height: 100vh;*/
 }
 .container-login > div{
-  	margin-top: 11.5rem;
-  	/*margin-bottom: 15rem;*/
-	padding-bottom:15rem;
+  	margin-top: 3.5%;
+  	margin-bottom: 3%;
+	/*padding-bottom:15rem;*/
+	height: 70%;
 }
 .container-info {
-	margin-left: 10rem;
-	margin-right: 5rem;
-	padding-right: 11rem;
+	margin-left: 10%;
+	/*margin-right: 5%;*/
+	padding-right: 5%;
 	text-align:justify;
-	border-right-style: solid;	
+	border-right-style: solid;
+	height: 50vh;
+	width: 50%;	
 }
 .container-info h3{
 	color:#8e0000;
@@ -161,7 +165,8 @@ header{
 .login-form {
 	margin-right: 10rem;
 	margin-left: 5rem;
-	padding-right: 10%;
+	width: 40%;
+	/*padding-right: 10%;*/
 }
 form {
 	font-size:16pt;
@@ -402,9 +407,9 @@ footer {
 	color:#ffffff;
 	background-color:#0e6022;
 	font-size:12pt;
-	padding-left: 1.5rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-left: 1.25rem;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
 }
 .info {
 	float:left;
