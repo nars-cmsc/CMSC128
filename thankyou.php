@@ -14,6 +14,17 @@
 	<script src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/survey_fcn.js"></script>
 	<title>Thank You!</title>
+	<style>
+	img {
+  		display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+		}
+
+	div.text {
+  text-align: center;
+	}
+	</style>
 	</head>
 		<!-- for header/ navbar    -->
 	<?php include('header.php'); ?>
@@ -24,7 +35,18 @@
 	<br>
 	<br>
 	<br>
-	<p> Thank you for your feedback! We greatly appreciate your time. </p>
+	<br>
+
+    <img src="images/check.png" alt="check mark" style="width:100px;height: 100px;px" />
+
+	<br>
+	<br>
+
+	<div class="text">
+		<h2>Thank you for your feedback!</h2>
+		<h3> We greatly appreciate your time. </h3>
+	</div>
+	
 	
 	<!-- for footer/ contact details -->
 		<?php include('footer.php'); ?>

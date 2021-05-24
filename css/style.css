@@ -23,7 +23,6 @@
 	top:50%;
 	width:auto;
 	height:auto;
-	margin-top:-22px;
 	padding:16px;
 	background-color:#ffad0d;
 	color:#ffffff;
@@ -52,6 +51,7 @@
 }
 .dot-navigation {
 	text-align:center;
+	padding:1rem;
 }
 .dot {
 	cursor:pointer;
@@ -317,6 +317,7 @@ p {
 	border-right-style: solid;	
 	border-right-color:#000000;
 	padding-top:15rem;
+	padding-bottom:10rem;
 	color:#8e0000;
 	text-transform: uppercase;
 	text-align: justify;
@@ -470,18 +471,12 @@ footer {
   text-align: center;
   padding-top: 1rem;
   margin-left: 0.25rem;
+  background:#ffad0d;
+  color:#ffffff;
 }
 .fa:hover {
   background:#840038;
   transition:0.3s ease; 
-}
-.fa-facebook {
-  background:#ffad0d;
-  color:#ffffff;
-}
-.fa-at {
-  background:#ffad0d;
-  color:#ffffff;
 }
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
