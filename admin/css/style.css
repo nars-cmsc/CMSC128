@@ -80,34 +80,106 @@ a {
 /* content index.php */
 .content-users {
   float: left;
-  padding: 20px;
+  padding: 2%;
   width: 70%;
   min-height: 100vh;
-  background-color: #f1f1f1;
+  font-size:14pt;
 }
 #title-users {
   color: gray;
+  /*padding: 2%;*/
 }
 #table-users {
   text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+}
+.delete {
+  color: #ffad0d;
+}
+.delete:hover {
+  color:red;
+}
+.user-row:hover {
+  color:red;
+}
+
+/* table headers */
+th {
+  border-bottom:1px solid black;
+  padding-bottom:3px;
 }
 
 /* content in user_reg.php */
 .content-reg-users {
   float: left;
-  padding: 20px;
+  /*margin-left:25rem;*/
+  padding: 2%;
   width: 70%;
   min-height: 100vh;
-  background-color: #f1f1f1;
+  font-size:14pt;
+}
+form { /* user reg form */
+  margin:2rem;
+}
+select { /* for roles */
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 5px 5px 5px 5px;
+}
+input[type=email]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=text]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+  width:130px;
+  height:50px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+}
+input[type=submit]:hover{
+  background-color:#840038;
+}
+button{
+  width:180px;
+  height:40px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  margin-left:1rem;
+}
+button:hover{
+  background-color:#840038;
 }
 
 /* content emp_raw.php */
 .content-emp-raw {
   float: left;
-  padding: 20px;
+  padding: 2%;
   width: 70%;
   min-height: 100vh;
-  background-color: #f1f1f1;
+  font-size:14pt;
 }
 #title-emp-raw {
   color: gray;
@@ -117,15 +189,16 @@ a {
 }
 #table-emp-raw {
   text-align: center;
+  font-size:14pt;
 }
 
 /* content alum_raw.php */
 .content-alum-raw {
   float: left;
-  padding: 20px;
+  padding: 2%;
   width: 70%;
   min-height: 100vh;
-  background-color: #f1f1f1;
+  font-size:14pt;
 }
 #title-alum-raw {
   color: gray;
@@ -140,10 +213,10 @@ a {
 /* content emp_charts.php */
 .content-emp-charts {
   float: left;
-  padding: 20px;
+  padding: 2%;
   width: 70%;
   min-height: 100vh;
-  background-color: #f1f1f1;
+  font-size:14pt;
 }
 #title-emp-charts {
   color: gray;
@@ -157,8 +230,26 @@ a {
 /* for chart container */
 #chart-container {
   float: left;
-  width: 25%;
+  width: 50%;
   height: auto;
+}
+
+/* content emp_tables.php */
+.content-emp-table {
+  float: left;
+  padding: 2%;
+  width: 70%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-table {
+  color: gray;
+}
+#subtitle-emp-table {
+  color: gray;
+}
+#table-emp-table1 {
+  text-align: center;
 }
 
 /* for alert message */
