@@ -83,7 +83,7 @@ if (!isset($_SESSION['email'])) {
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 10</h6>
-                <?php $i = 0; $j = 0; foreach ($data10 as $data) { ?>
+                <?php foreach ($data10 as $data) { ?>
                   <h3>JOB DUTY (TIME): <?php echo $data['Job']; ?>
                   (<?php echo $data['Percent']; ?>%)</h3>
                 <?php } ; ?>

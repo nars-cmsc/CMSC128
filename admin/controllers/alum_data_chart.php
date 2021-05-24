@@ -184,6 +184,10 @@ require ('config/connection.php');
 	$ct_emp_no5 = 0;
 		$ct_look_yes5 = 0; $ct_look_no5 = 0;
 
+	$ct_ind_arr5 = array();
+	$alum_string5 = '';
+	$ct_yes_ind_other = '';
+
 
 	// get data from table (yes)
 	$query = "SELECT user_id FROM alum_survey_q5 WHERE Employed='Yes'";
@@ -422,12 +426,14 @@ require ('config/connection.php');
 		$result = mysqli_query($db_conn, $query);
 		// loop through returned data
 		while ($row = mysqli_fetch_array($result)) {
-			$ct_other3++;
+			$ct_yes_other5++;
 
 			// for other answers
-			$string5 = $string5 . ', ' . $row['Applying'];
-			$ct_yes_ind_other = ltrim($string5, ', ');
+			$alum_string5 = $alum_string5 . ', ' . $row['Applying'];
+			$ct_yes_ind_other = ltrim($alum_string5, ', ');
 		}
+
+		$ct_ind_arr5 = [$ct_yes_ind1, $ct_yes_ind2, $ct_yes_ind3, $ct_yes_ind4, $ct_yes_ind5, $ct_yes_ind6, $ct_yes_ind7, $ct_yes_ind8, $ct_yes_ind9, $ct_yes_ind10, $ct_yes_ind11, $ct_yes_ind12, $ct_yes_ind13, $ct_yes_ind14, $ct_yes_ind15, $ct_yes_ind16, $ct_yes_ind17, $ct_yes_ind18, $ct_yes_ind19, $ct_yes_ind20, $ct_yes_ind21, $ct_yes_ind22];
 
 	// get data from table (no)
 	$query = "SELECT user_id FROM alum_survey_q5 WHERE Employed='No'";
@@ -467,6 +473,9 @@ require ('config/connection.php');
 	$alum_other6txt = '';
 	$alum_string6 = '';
 
+	$ad_field6 = array(); $bd_field6 = array();
+	$md_field6 = array(); $dd_field6 = array();
+
 	// get data from table (option1)
 	$query = "SELECT user_id FROM alum_survey_q6 WHERE Level='High school'";
 	// execute query
@@ -493,6 +502,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_ad6++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q6 WHERE Level='Associate’s degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ad_field6[] = $row;
+		}
 
 	// get data from table (option6)
 	$query = "SELECT user_id FROM alum_survey_q6 WHERE Level='Bachelor’s degree'";
@@ -502,6 +519,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_bd6++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q6 WHERE Level='Bachelor’s degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$bd_field6[] = $row;
+		}
 
 	// get data from table (option7)
 	$query = "SELECT user_id FROM alum_survey_q6 WHERE Level='Master’s degree'";
@@ -511,6 +536,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_md6++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q6 WHERE Level='Master’s degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$md_field6[] = $row;
+		}
 
 	// get data from table (option6)
 	$query = "SELECT user_id FROM alum_survey_q6 WHERE Level='Doctoral degree'";
@@ -520,6 +553,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_dd6++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q6 WHERE Level='Doctoral degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$dd_field6[] = $row;
+		}
 
 	// get data from table (other)
 	$query = "SELECT user_id, Field FROM alum_survey_q6 WHERE Level='Other'";
@@ -544,6 +585,9 @@ require ('config/connection.php');
 	$ct_other7 = 0;
 	$alum_other7txt = '';
 	$alum_string7 = '';
+
+	$ad_field7 = array(); $bd_field7 = array();
+	$md_field7 = array(); $dd_field7 = array();
 
 	// get data from table (option1)
 	$query = "SELECT user_id FROM alum_survey_q7 WHERE Level='High school'";
@@ -571,6 +615,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_ad7++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q7 WHERE Level='Associate’s degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$ad_field7[] = $row;
+		}
 
 	// get data from table (option6)
 	$query = "SELECT user_id FROM alum_survey_q7 WHERE Level='Bachelor’s degree'";
@@ -580,6 +632,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_bd7++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q7 WHERE Level='Bachelor’s degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$bd_field7[] = $row;
+		}
 
 	// get data from table (option7)
 	$query = "SELECT user_id FROM alum_survey_q7 WHERE Level='Master’s degree'";
@@ -589,6 +649,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_md7++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q7 WHERE Level='Master’s degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$md_field7[] = $row;
+		}
 
 	// get data from table (option6)
 	$query = "SELECT user_id FROM alum_survey_q7 WHERE Level='Doctoral degree'";
@@ -598,6 +666,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_dd7++;
 	}
+		// get data from table (option5)
+		$query = "SELECT Level, Field FROM alum_survey_q7 WHERE Level='Doctoral degree'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$dd_field7[] = $row;
+		}
 
 	// get data from table (other)
 	$query = "SELECT user_id, Field FROM alum_survey_q7 WHERE Level='Other'";
@@ -630,6 +706,8 @@ require ('config/connection.php');
 	$ct_occ8 = 0;
 	$ct_occ9 = 0;
 	$ct_occ10 = 0;
+
+	$ct_occ_array = array();
 
 	// get data from table (option1)
 	$query = "SELECT user_id FROM alum_survey_q8 WHERE answer_body='Armed Forces Occupations'";
@@ -720,6 +798,8 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_occ10++;
 	}
+
+	$ct_occ_array = [$ct_occ1, $ct_occ2, $ct_occ3, $ct_occ4, $ct_occ5, $ct_occ6, $ct_occ7, $ct_occ8, $ct_occ9, $ct_occ10];
 
 ###################### QUESTION # 9 ######################
 	
