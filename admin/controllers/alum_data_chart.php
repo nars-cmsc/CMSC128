@@ -891,6 +891,10 @@ require ('config/connection.php');
 	$ct_noex = 0; $ct_3to6 = 0; 
 	$ct_less1 = 0; $ct_more6 = 0;
 	$ct_1to3 = 0;
+
+	$noex_array = array(); $3to6_array = array();
+	$less1_array = array(); $more6_array = array();
+	$1to3_array = array();
 	
 	// get data from table (No experience)
 	$query = "SELECT user_id FROM alum_survey_q12 WHERE Experience='No experience'";
@@ -900,6 +904,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_noex++;
 	}
+		// get data from table (No experience)
+		$query = "SELECT Experience, Necessity FROM alum_survey_q12 WHERE Experience='No experience'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$noex_array[] = $row;
+		}
 
 	// get data from table (Less than one (1) year)
 	$query = "SELECT user_id FROM alum_survey_q12 WHERE Experience='Less than one (1) year'";
@@ -909,6 +921,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_less1++;
 	}
+		// get data from table (Less than one (1) year)
+		$query = "SELECT Experience, Necessity FROM alum_survey_q12 WHERE Experience='Less than one (1) year'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$less1_array[] = $row;
+		}
 
 	// get data from table (One (1) to three (3) years)
 	$query = "SELECT user_id FROM alum_survey_q12 WHERE Experience='One (1) to three (3) years'";
@@ -918,6 +938,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_1to3++;
 	}
+		// get data from table (One (1) to three (3) years)
+		$query = "SELECT Experience, Necessity FROM alum_survey_q12 WHERE Experience='One (1) to three (3) years'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$1to3_array[] = $row;
+		}
 
 	// get data from table (Three (3) to six (6) years)
 	$query = "SELECT user_id FROM alum_survey_q12 WHERE Experience='Three (3) to six (6) years'";
@@ -927,6 +955,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_3to6++;
 	}
+		// get data from table (Three (3) to six (6) years)
+		$query = "SELECT Experience, Necessity FROM alum_survey_q12 WHERE Experience='Three (3) to six (6) years'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$3to6_array[] = $row;
+		}
 
 	// get data from table (More than six (6+) years)
 	$query = "SELECT user_id FROM alum_survey_q12 WHERE Experience='More than six (6+) years'";
@@ -936,6 +972,14 @@ require ('config/connection.php');
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_more6++;
 	}
+		// get data from table (More than six (6+) years)
+		$query = "SELECT Experience, Necessity FROM alum_survey_q12 WHERE Experience='More than six (6+) years'";
+		// execute query
+		$result = mysqli_query($db_conn, $query);
+		// loop through returned data
+		while ($row = mysqli_fetch_array($result)) {
+			$more6_array[] = $row;
+		}
 
 ###################### QUESTION # 13 ######################
 
