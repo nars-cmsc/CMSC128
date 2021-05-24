@@ -457,6 +457,11 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		// if other is selected
 		if ($one == 'Other') {
 			$one_field = "other_" . mysqli_real_escape_string($db_conn, $_POST['ques1_otxt']);
+			$one_other = mysqli_real_escape_string($db_conn, $_POST['ques1_otxt']);
+
+			// store to db (emp_survey_q1 table)
+			$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, answer_others,  date_response) VALUES ('$id', '$one', '$one_other', now())";
+		    mysqli_query($db_conn, $sql);
 		} else {
 			$one_field = $one;
 		}
@@ -466,7 +471,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    mysqli_query($db_conn, $sql);
 
 		// store to db (emp_survey_q1 table)
-		$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, date_response) VALUES ('$id', '$one_field', now())";
+		$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, date_response) VALUES ('$id', '$one', now())";
 	    mysqli_query($db_conn, $sql);
 		
 
@@ -515,6 +520,9 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		
 		if ($three == 'other') {
 			$industry = "other_" . mysqli_real_escape_string($db_conn, $three_other);
+			// store to db (emp_survey_q3 table)
+			$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, answer_others,  date_response) VALUES ('$id', '$three', '$three_other', now())";
+		    mysqli_query($db_conn, $sql);
 		}
 		else {
 			$industry = mysqli_real_escape_string($db_conn, $three);
@@ -525,7 +533,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q3 table)
-		$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, date_response) VALUES ('$id', '$industry', now())";
+		$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, date_response) VALUES ('$id', '$three', now())";
 	    mysqli_query($db_conn, $sql);
 
 
@@ -889,16 +897,16 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 				$thirteen = implode('; ', $check13).'_'.$check13_other;
 
 				// store to db (emp_survey_q13)
-			    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$check13_other', now())";
+			    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, answer_others, date_response) VALUES ('$id', '$chk', '$check13_other', now())";
 		    	mysqli_query($db_conn, $sql);
 			}
 			else {
 				$thirteen = implode('; ', $check13);
 
-				// store to db (emp_survey_q13)
-			    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$chk', now())";
-		    	mysqli_query($db_conn, $sql);
-			}
+			// store to db (emp_survey_q13)
+		    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$chk', now())";
+	    	mysqli_query($db_conn, $sql);
+				}
 		}
 
 		// store to db
@@ -931,7 +939,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 			$fifteen_field = mysqli_real_escape_string($db_conn, $fifteen_txt);
 
 			// store to db (emp_survey_q15)
-		    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, date_response) VALUES ('$id', '$fifteen_txt', now())";
+		    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, answer_yes, date_response) VALUES ('$id', '$fifteen', '$fifteen_txt', now())";
 	    	mysqli_query($db_conn, $sql);
 		} else {
 			$fifteen_field = $fifteen;
@@ -940,6 +948,10 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		// store to db
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$fifteen_field')";
 	    mysqli_query($db_conn, $sql);
+
+	    // store to db (emp_survey_q15)
+	    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, date_response) VALUES ('$id', '$fifteen', now())";
+    	mysqli_query($db_conn, $sql);
 
 
 
@@ -953,7 +965,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 			$sixteen_field = mysqli_real_escape_string($db_conn, $sixteen_txt);
 
 			// store to db (emp_survey_q16)
-		    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, date_response) VALUES ('$id', '$sixteen_txt', now())";
+		    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, answer_yes, date_response) VALUES ('$id', '$sixteen', '$sixteen_txt', now())";
 	    	mysqli_query($db_conn, $sql);
 		} else {
 			$sixteen_field = $sixteen;
@@ -962,6 +974,10 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		// store to db
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$sixteen_field')";
 	    mysqli_query($db_conn, $sql);
+
+	    // store to db (emp_survey_q16)
+	    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, date_response) VALUES ('$id', '$sixteen', now())";
+    	mysqli_query($db_conn, $sql);
 
 
 
@@ -975,7 +991,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 			$seventeen_field = mysqli_real_escape_string($db_conn, $seventeen_txt);
 
 			// store to db (emp_survey_q17)
-		    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, date_response) VALUES ('$id', '$seventeen_txt', now())";
+		    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, answer_yes, date_response) VALUES ('$id', '$seventeen', '$seventeen_txt', now())";
 	    	mysqli_query($db_conn, $sql);
 		} else {
 			$seventeen_field = $seventeen;
@@ -984,6 +1000,10 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		// store to db
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$seventeen_field')";
 	    mysqli_query($db_conn, $sql);
+
+	    // store to db (emp_survey_q17)
+	    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, date_response) VALUES ('$id', '$seventeen', now())";
+    	mysqli_query($db_conn, $sql);
 
 
 		if ($_SESSION['role'] == $EMPLOYER_ROLE_ID) {
