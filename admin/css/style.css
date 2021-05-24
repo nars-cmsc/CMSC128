@@ -318,6 +318,21 @@ input[type=submit]:hover{
   text-align: center;
 }
 
+/* content contact_emp.php */
+.content-contact {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-contact {
+  color: gray;
+}
+#table-contact {
+  text-align: center;
+}
+
 /* for alert message */
 .alert {
   text-align: left;
@@ -376,7 +391,7 @@ footer {
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts {
+  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts, .content-alum-charts, .content-emp-table, .content-alum-table, .content-contact {
     width: 100%;
     /*height: auto;*/
   }

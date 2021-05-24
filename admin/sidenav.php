@@ -19,7 +19,7 @@
                 <a href="emp_charts.php">Employer Satisfaction Survey</a>
             </div>
     </div>
-        
+    <a href="contact_emp.php">Employer Contacts</a>
 </nav>
         <script>
         /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
