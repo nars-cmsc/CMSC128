@@ -51,7 +51,7 @@ if (!isset($_SESSION['email'])) {
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 5</h6>
-                <h3>NUMBER OF UP HIRES: <?php echo $ct_up_hire ; ?></h1>
+                <h3>NUMBER OF UP HIRES: <?php echo $ct_up_hire ; ?></h3>
             </div>
             <div id="chart-container">
                 <h6 id="subtitle-emp-charts">Question No. 6</h6>
@@ -91,15 +91,15 @@ if (!isset($_SESSION['email'])) {
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 15</h6>
-                <h3>COMMENTS/SUGGESTIONS: <?php echo $ct_yes15 ; ?></h1>
+                <h3>COMMENTS/SUGGESTIONS: <?php echo $ct_yes15 ; ?></h3>
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 16</h6>
-                <h3>NEGATIVE FEEDBACK: <?php echo $ct_yes16 ; ?></h1>
+                <h3>NEGATIVE FEEDBACK: <?php echo $ct_yes16 ; ?></h3>
             </div>
             <div id="temp-container">
                 <h6 id="subtitle-emp-charts">Question No. 17</h6>
-                <h3>SPECIFIC STRENGTHS: <?php echo $ct_yes17 ; ?></h1>
+                <h3>SPECIFIC STRENGTHS: <?php echo $ct_yes17 ; ?></h3>
             </div>
         </div>
     </section>
