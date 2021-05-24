@@ -9,8 +9,10 @@
                 </ul>
                <!--  <li><a href="#">Reports</a></li> -->
                 <ul>
-                    <li><a href="#">Alumni Survey</a></li>
+                    <li><a href="alum_charts.php">Alumni Survey (Charts)</a></li>
                     <li><a href="emp_charts.php">Employer Satisfaction Survey (Charts)</a></li>
+                    <li><a href="alum_tables.php">Alumni Survey (Tables)</a></li>
+                    <li><a href="emp_tables.php">Employer Satisfaction Survey (Tables)</a></li>
                 </ul>
             </ul>
         </nav>
