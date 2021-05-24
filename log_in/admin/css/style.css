@@ -1,0 +1,387 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: Arial Nova, sans-serif;
+  font-size: 16pt;
+  background-color: #fff;
+}
+
+/* Style the header */
+header {
+  background-image: linear-gradient(to right, #840038, #385723);
+  padding: 30px;
+  display: flex;
+  /*position: -webkit-sticky;
+  position: sticky;*/
+  top: 0;
+  color: white;
+}
+.logos img {
+    width: 4.5rem;
+    height: 4.5rem;
+}
+.banner_lines {
+    flex-grow: 5;
+}
+.banner_lines h3, h4, h6{
+    color: #fff;
+    margin-left: 1%;
+    text-transform: uppercase;
+}
+.log_out img {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity:.7;
+    vertical-align: middle;
+}
+.log_out img:hover {
+    opacity:1.0;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 20%;
+  background: #f1f1f1;
+
+  padding-top: 5px;
+  overflow-x: hidden;
+}
+.sidebar a, .drop-bttn {
+    padding: 6px 8px 6px 16px;
+    color: green;
+    text-decoration: none;
+    display: block;
+    font-size: 16pt;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+.sidebar .active {
+  background-color: #840038;
+  color: white;
+}
+.sidebar a:hover:not(.active), .drop-bttn:hover {
+  background-color: #0e6022;
+  color: white;
+}
+.dropdown-menu {
+  display: none;
+  background: #f1f1f1;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+/* content index.php */
+.content-users {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-users {
+  color: gray;
+  /*padding: 2%;*/
+}
+#table-users {
+  text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+  overflow-wrap: all;
+}
+.delete {
+  color: #ffad0d;
+}
+.delete:hover {
+  color:red;
+}
+.user-row:hover {
+  color:red;
+}
+
+/* all table headers */
+th {
+  border-bottom:1px solid black;
+  padding-bottom:3px;
+}
+
+/* content in user_reg.php */
+.content-reg-users {
+  float: left;
+  /*margin-left:25rem;*/
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+form { /* user reg form */
+  margin:2rem;
+}
+select { /* for roles */
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 5px 5px 5px 5px;
+}
+input[type=email]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=text]{
+  margin-top:5px;
+  width:300px;
+  height:30px;
+  color:#000000;
+  border-radius: 10px 10px 10px 10px;
+}
+input[type=submit]{
+  width:130px;
+  height:50px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+}
+input[type=submit]:hover{
+  background-color:#840038;
+}
+.rand-pass{
+  width:180px;
+  height:40px;
+  font-weight:bold;
+  color:#ffffff;
+  border-radius: 100px 100px 100px 100px;
+  border:0;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  margin-left:1rem;
+}
+.rand-pass:hover{
+  background-color:#840038;
+}
+
+/* content emp_raw.php */
+.content-emp-raw {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-raw {
+  color: gray;
+}
+#subtitle-emp-raw {
+  color: gray;
+}
+#table-emp-raw {
+  text-align: center;
+  font-size:14pt;
+  width:100%;
+}
+#table-emp-raw thead{
+  color:#ffad0d;
+}
+#table-emp-raw td{
+  width:20%;
+}
+
+/* content alum_raw.php */
+.content-alum-raw {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-alum-raw {
+  color: gray;
+}
+#subtitle-alum-raw {
+  color: gray;
+}
+#table-alum-raw {
+  text-align: center;
+  font-size:14pt;
+  width:100%;
+}
+#table-alum-raw thead{
+  color:#ffad0d;
+}
+#table-alum-raw td{
+  width:20%;
+}
+
+/* content emp_charts.php */
+.content-emp-charts {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-charts {
+  color: gray;
+}
+#subtitle-emp-charts {
+  color: gray;
+}
+#table-emp-charts {
+  text-align: center;
+}
+/* for chart container */
+#chart-container, #temp-container {
+  float: left;
+  width: 50%;
+  height: auto;
+  padding:2rem;
+  border:1px solid black;
+}
+
+/* content alum_charts.php */
+.content-alum-charts {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-alum-charts {
+  color: gray;
+}
+#subtitle-alum-charts {
+  color: gray;
+}
+#table-alum-charts {
+  text-align: center;
+}
+/* for chart container */
+#chart-container-alum {
+  float: left;
+  width: 50%;
+  height: auto;
+  padding:2rem;
+  border:1px solid black;
+}
+
+/* content emp_tables.php */
+.content-emp-table {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-emp-table {
+  color: gray;
+}
+#subtitle-emp-table {
+  color: gray;
+}
+#table-emp-table1 {
+  text-align: center;
+  width:100%;
+}
+#table-emp-table1 thead{
+  color:#ffad0d;
+}
+
+/* content alum_tables.php */
+.content-alum-table {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-alum-table {
+  color: gray;
+}
+#subtitle-alum-table {
+  color: gray;
+}
+#table-alum-table1 {
+  text-align: center;
+  width:100%;
+}
+#table-alum-table1 thead{
+  color:#ffad0d;
+}
+
+/* for alert message */
+.alert {
+  text-align: left;
+  padding: 1rem;
+  background-color: #db7c6b; /* Red */
+  color: white;
+  margin-bottom: 1rem;
+  width: 16rem;
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+footer {
+  background-color:#0e6022;
+  left:0;
+  bottom:0;
+  padding-left: 1.25rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size:12pt;
+  color: white;
+  display: flex;
+}
+.info {
+    flex-grow: 10;
+}
+.copyright {
+	text-align:center;
+	right:0;
+	font-size: 9pt;
+	margin-right:1rem;
+}
+.copyright a {
+	color:#ffffff;
+	text-decoration: none;
+	text-transform:uppercase;
+	transition:0.3s ease; 
+}
+.copyright a:hover {
+	color:#ffad0d;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts {
+    width: 100%;
+    /*height: auto;*/
+  }
+}

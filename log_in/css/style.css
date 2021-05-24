@@ -23,7 +23,6 @@
 	top:50%;
 	width:auto;
 	height:auto;
-	margin-top:-22px;
 	padding:16px;
 	background-color:#ffad0d;
 	color:#ffffff;
@@ -48,10 +47,11 @@
 	padding:8px 12px;
 	position:absolute;
 	bottom:0;
-	right:3rem;
+	right:5rem;
 }
 .dot-navigation {
 	text-align:center;
+	padding:1rem;
 }
 .dot {
 	cursor:pointer;
@@ -88,6 +88,7 @@ body{
 	font-size: 16pt;
 	background-color: #fff;
 	margin:0;
+	/*position: relative; */
 }
 header{
 	background-image: linear-gradient(to right, #840038, #385723);
@@ -96,13 +97,25 @@ header{
 	/*position: -webkit-sticky; /* for safari 
 	position: sticky;*/
 	color: white;
-	padding: 30px;
+	padding: 20px;
 }
+
+/* for login.php para footer stays sa bottom*/
+.main-container {
+	min-height: 100vh;
+	/*overflow: hidden;*/
+	display: block;
+	position: relative;
+	padding-bottom: 100px; /* for size ng footer daw*/
+}
+
+
 /* added this so that size of header will change
 	once window is resized */
-.container-header {
-	position: sticky;
-	min-height: 100vh;
+#container-header {
+	/*position: sticky;*/
+	height: 10%;
+	padding: 20px;
 }
 .logos {
 	margin-left: 1%;
@@ -137,21 +150,24 @@ header{
 }
 .container-login{
 	display: flex;
-	padding-bottom:15rem;
+	/*padding-bottom:15rem;*/
 	width: 100%;
-	min-height: 100vh;
+	/*min-height: 100vh;*/
 }
 .container-login > div{
-  	margin-top: 11.5rem;
-  	/*margin-bottom: 15rem;*/
-	padding-bottom:15rem;
+  	margin-top: 3.5%;
+  	margin-bottom: 3%;
+	/*padding-bottom:15rem;*/
+	height: 70%;
 }
 .container-info {
-	margin-left: 10rem;
-	margin-right: 5rem;
-	padding-right: 11rem;
+	margin-left: 10%;
+	/*margin-right: 5%;*/
+	padding-right: 5%;
 	text-align:justify;
-	border-right-style: solid;	
+	border-right-style: solid;
+	height: 50vh;
+	width: 50%;	
 }
 .container-info h3{
 	color:#8e0000;
@@ -161,12 +177,18 @@ header{
 .login-form {
 	margin-right: 10rem;
 	margin-left: 5rem;
-	padding-right: 10%;
+	width: 40%;
+	/*padding-right: 10%;*/
 }
 form {
 	font-size:16pt;
 	padding-top: 7rem;
 }
+/* for see password */
+.password-container {
+  display: flex;
+}
+
 .content {
 	font-size:14pt;
 }
@@ -241,11 +263,12 @@ input[type=email]{
 	color:#000000;
 	border-radius: 10px 10px 10px 10px;
 }
-input[type=password]{
+input[type=password], #pass{
 	width:300px;
 	height:30px;
 	color:#000000;
 	border-radius: 10px 10px 10px 10px;
+	margin: 0;
 }
 input[type=submit]{
 	width:100px;
@@ -293,7 +316,8 @@ p {
 	padding-right: 11rem;
 	border-right-style: solid;	
 	border-right-color:#000000;
-	padding-top:15rem;
+	padding-top:10rem;
+	padding-bottom:10rem;
 	color:#8e0000;
 	text-transform: uppercase;
 	text-align: justify;
@@ -301,7 +325,7 @@ p {
 .ae-buttons {
 	margin-right: 15rem;
 	margin-left: 5rem;
-	padding-top:3%;
+	padding-top:0.25rem;
 }
 .content-alum {
 	padding-top: 0.5rem;
@@ -396,9 +420,9 @@ footer {
 	color:#ffffff;
 	background-color:#0e6022;
 	font-size:12pt;
-	padding-left: 1.5rem;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-left: 1.25rem;
+	padding-top: .75rem;
+	padding-bottom: .75rem;
 }
 .info {
 	float:left;
@@ -447,18 +471,12 @@ footer {
   text-align: center;
   padding-top: 1rem;
   margin-left: 0.25rem;
+  background:#ffad0d;
+  color:#ffffff;
 }
 .fa:hover {
   background:#840038;
   transition:0.3s ease; 
-}
-.fa-facebook {
-  background:#ffad0d;
-  color:#ffffff;
-}
-.fa-at {
-  background:#ffad0d;
-  color:#ffffff;
 }
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
