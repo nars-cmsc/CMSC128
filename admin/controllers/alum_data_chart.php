@@ -892,9 +892,9 @@ require ('config/connection.php');
 	$ct_less1 = 0; $ct_more6 = 0;
 	$ct_1to3 = 0;
 
-	$noex_array = array(); $3to6_array = array();
+	$noex_array = array(); $c3to6_array = array();
 	$less1_array = array(); $more6_array = array();
-	$1to3_array = array();
+	$c1to3_array = array();
 	
 	// get data from table (No experience)
 	$query = "SELECT user_id FROM alum_survey_q12 WHERE Experience='No experience'";
@@ -944,7 +944,7 @@ require ('config/connection.php');
 		$result = mysqli_query($db_conn, $query);
 		// loop through returned data
 		while ($row = mysqli_fetch_array($result)) {
-			$1to3_array[] = $row;
+			$c1to3_array[] = $row;
 		}
 
 	// get data from table (Three (3) to six (6) years)
@@ -961,7 +961,7 @@ require ('config/connection.php');
 		$result = mysqli_query($db_conn, $query);
 		// loop through returned data
 		while ($row = mysqli_fetch_array($result)) {
-			$3to6_array[] = $row;
+			$c3to6_array[] = $row;
 		}
 
 	// get data from table (More than six (6+) years)
