@@ -19,6 +19,15 @@ $(document).ready(function() {
     });
 });
 
+// display password login
+function showPass() {
+  var x = document.getElementById("pass");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
 
 // for other option in checkbox to display textbox
 function show_hide(other) {

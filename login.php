@@ -30,6 +30,7 @@ if (isset($_SESSION['email'])) {
 	<link rel="icon" type="images/png" href="images/UP_seal.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/survey_fcn.js"></script>
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
 	</head>
 	<body>
@@ -77,7 +78,10 @@ if (isset($_SESSION['email'])) {
 				<label for="email">E-mail:</label><br>
 				<input type="email" placeholder="Type your email address here..." name="email" value="<?php echo $email; ?>"><br><br>
 				<label for="password">Password:</label><br>
-				<input type="password" placeholder="Type your password here..." name="password"><br><br>
+				<input type="password" placeholder="Type your password here..." name="password" id="pass">
+				<input type="checkbox" onclick="showPass()" name="show_check">
+				<label for="show_check">Show Password</label>
+				<br><br>
 				<input type="submit" value="Log in" name="login-btn">
 			</form>
 		</div>
