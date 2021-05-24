@@ -898,10 +898,10 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 
 		// if other is selected
 		if ($nineteen == 'Yes') {
-			$sql = "INSERT INTO alum_survey_q19 (user_id, answer_body, date_response) VALUES ('$id', '$nineteen_txt', now())";
+			$sql = "INSERT INTO alum_survey_q19 (user_id, Elaborate, answer_body, date_response) VALUES ('$id', '$nineteen', '$nineteen_txt', now())";
 			mysqli_query($db_conn, $sql);
 		} else {
-			$sql = "INSERT INTO alum_survey_q19 (user_id, answer_body, date_response) VALUES ('$id', '$nineteen', now())";
+			$sql = "INSERT INTO alum_survey_q19 (user_id, Elaborate, answer_body, date_response) VALUES ('$id', '$nineteen', 'NA', now())";
 			mysqli_query($db_conn, $sql);
 		}
 		

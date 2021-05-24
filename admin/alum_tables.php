@@ -983,8 +983,14 @@ if (!isset($_SESSION['email'])) {
                     <!-- QUESTION # 19 -->
                         <tr>
                             <td>Other comments/suggestions how UPB DMCS helped aqcuire competencies needed: </td>
-                            <td><?php echo $ct_yes19; ?></td>
+                            <td></td>
                         </tr>
+                        <?php foreach ($alum_string19_array as $data) { ?>
+                        <tr>
+                            <td></td>
+                            <td><?php echo $data['answer_body']; ?></td>
+                        </tr>
+                    <?php } ; ?>
                 </tbody>
             </table>
         </div>
