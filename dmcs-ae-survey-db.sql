@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 02:52 PM
+-- Generation Time: May 25, 2021 at 08:26 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -744,10 +744,30 @@ INSERT INTO `alum_survey_q19` (`answer_id`, `user_id`, `Elaborate`, `answer_body
 
 CREATE TABLE `contactemp_ques` (
   `answer_id` int(11) NOT NULL,
-  `contact_info_ques` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL
+  `companyname` mediumtext NOT NULL,
+  `contactperson` mediumtext NOT NULL,
+  `contactnumber` mediumtext NOT NULL,
+  `contactemail` mediumtext NOT NULL,
+  `date_response` date NOT NULL,
+  `contacted` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contactemp_ques`
+--
+
+INSERT INTO `contactemp_ques` (`answer_id`, `user_id`, `companyname`, `contactperson`, `contactnumber`, `contactemail`, `date_response`, `contacted`) VALUES
+(42, 12, 'Google', 'Joanna', '09000000000', 'joana@mail.com', '2021-05-25', 'No'),
+(43, 13, 'Yahoo', 'Mark', '705000', 'mark@mail.com', '2021-05-25', 'Yes'),
+(44, 14, 'Jollibee', 'Julie', '87000', 'julie@jolly.com', '2021-05-25', 'No'),
+(45, 15, 'Kahit saan', 'Jack', '09340902200', 'jack@mail.com', '2021-05-25', 'No'),
+(46, 16, 'UPB', 'Ashley', '09897646589', 'ashley@up.edu.ph', '2021-05-25', 'No'),
+(47, 17, 'BPI', 'Anna', '', 'anna@mail.com', '2021-05-25', 'Yes'),
+(48, 18, 'DepEd', 'June', '6361663', '', '2021-05-25', 'No'),
+(49, 19, 'Smol Company', 'Mila', '', 'mila@mail.com', '2021-05-25', 'No'),
+(50, 20, 'Some company', 'Sam Ting Wong', '2345678', 'samtingwong@mail.com', '2021-05-25', 'No'),
+(51, 21, 'RPDR', 'Yekaterina Petrovna Zamolodchikova', '', 'katya_zamo@mail.com', '2021-05-25', 'No');
 
 -- --------------------------------------------------------
 
@@ -2544,8 +2564,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`, `time_created`, `last_login`) VALUES
 (2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-05-24 18:50:11'),
-(3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-05-24 18:50:53'),
-(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-05-24 19:01:41'),
+(3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-05-25 09:23:41'),
+(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-05-25 13:16:20'),
 (5, 'juan@gmail.com', '7c61c8b92cfeb880d8d99b58533e324c07cc461d3e573b17369f2a377ef1f2dbb47629ea4b1511290a91319a6d5f7944cb78', '$2y$10$MiSINz5TurNhGjk0sIbzKu9eaOepd9WkQ0XD/uw3j9hryuTtZYuke', '12345', 3, '2021-05-20 09:51:01', '2021-05-24 18:51:06'),
 (6, 'jen@gmail.com', 'e81e1502f327062b08945aa5be675c4488af8a411baedd922657ef346d1e73dee7aa19618a4572c0e898107677eeb64f72a8', '$2y$10$qTvg/EBRTtcpi.aHX5tFyegP/C3BO.b.y3HAvt.herwmej3URnK.q', 'ZDxyt3kL', 2, '2021-05-21 06:43:37', '2021-05-21 06:50:57'),
 (7, 'admin2@mail.com', '26c1731abfdaa3d0c9efe3a99af10d1de301119324548f3707149281a3eb21ca1517321df1945b15de4d1e8eddf454a5875d', '$2y$10$nCAYW6LBthx9kBH8ropAreufnByt/O6AC02iMDAUHCqCaByN2WG.G', 'HE1nKkNg', 0, '2021-05-21 06:44:13', '2021-05-21 06:44:13'),
@@ -2568,7 +2588,7 @@ INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`,
 (27, 'employer_cuatro@gmail.com', '2067593993e9a1d56b30f34f97fe11b1b2535f44bab2884032345fc440cfaf6f10c955e0d5f6b5d73c723829efa1932dc340', '$2y$10$VODjPDxkYKdNEQhe03fRtOphqAgE3E2gbrxOZY5rdJ69S5psZgSRy', 'emp4', 2, '2021-05-23 21:41:13', '2021-05-24 14:09:23'),
 (28, 'employer_cinco@gmail.com', '1388827c75ecdc6eccec45f16d559b55bd41b059a3511a1c1021134a7754469ec669c5f3282bedb60b338a0092fa0ec12687', '$2y$10$kCwtQI0/OPEsmZat3WI4re9SIaqrgvJ1miZBRf8cCFYbg07/L1E5W', 'emp5', 2, '2021-05-23 21:42:56', '2021-05-24 14:10:42'),
 (29, 'employer_seis@gmail.com', '7fe276fc33223b4660cb3a185780db9750f981afa13f52c849fbdca27e6cf2c7b6819ab8b85a399831bd43651c29c4f427b7', '$2y$10$.ICdv7u11bYRkebXGzrhEep5B/4NKVKHOknanHIqqlevql/tWL6y2', 'emp6', 2, '2021-05-23 21:43:22', '2021-05-24 14:13:26'),
-(31, 'employer_siete@gmail.com', 'd4c2065311c6c9a46b68f0862f999b0b00bee75fb52b9cc1351a53929067187fc1e40b9e976d86ab294bd1b2936da537ebac', '$2y$10$34d2YeXfdOpaAJOvLqwX/OfksUl21nILQFDp2gr4xx41JUB9KbCZe', 'emp7', 2, '2021-05-23 21:44:26', '2021-05-24 14:15:13'),
+(31, 'employer_siete@gmail.com', 'd4c2065311c6c9a46b68f0862f999b0b00bee75fb52b9cc1351a53929067187fc1e40b9e976d86ab294bd1b2936da537ebac', '$2y$10$34d2YeXfdOpaAJOvLqwX/OfksUl21nILQFDp2gr4xx41JUB9KbCZe', 'emp7', 2, '2021-05-23 21:44:26', '2021-05-25 09:34:18'),
 (32, 'employer_ocho@gmail.com', 'e13be7b69f4d2de928b00ce707f639758fac95b6dfe59491d0823317ef91ef933449f29953259d866fdf52eebaee4460e7a6', '$2y$10$zK563wUsbOiVoKU7rkpMs.F/GN1eB6GJuTn90ftGa8W0bkmSLxNgu', 'emp8', 2, '2021-05-23 21:44:49', '2021-05-24 14:18:01'),
 (33, 'employer_nueve@gmail.com', 'da5646599de973b0868c4a7c4e83a38aa57d0c5959d7d787707e9e636178316fe66c1ab75e430d6755ea72da2772bd97c906', '$2y$10$7MS3eTmw9liv/2UYBORiMeLWR35RzaQT2/GszYyThUUb8319qlkS2', 'emp9', 2, '2021-05-23 21:45:14', '2021-05-24 14:19:48'),
 (34, 'employer_diez@gmail.com', 'a78349451bf5637c2a3c5da4a5182c18ce4b0a80c7aec670ba4cfee4354dc35ff328680659db718e106413a558eb254703e9', '$2y$10$h1fuD0NPsOr2gxXdl6tVU.wE1mxuc1zwu6Eaa4kK0X9cv5gZVcvk6', 'emp10', 2, '2021-05-23 21:45:49', '2021-05-24 14:21:14');
@@ -2720,7 +2740,8 @@ ALTER TABLE `alum_survey_q19`
 -- Indexes for table `contactemp_ques`
 --
 ALTER TABLE `contactemp_ques`
-  ADD PRIMARY KEY (`answer_id`);
+  ADD PRIMARY KEY (`answer_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `emp_survey`
@@ -2990,7 +3011,7 @@ ALTER TABLE `alum_survey_q19`
 -- AUTO_INCREMENT for table `contactemp_ques`
 --
 ALTER TABLE `contactemp_ques`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `emp_survey`
