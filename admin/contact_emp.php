@@ -33,27 +33,36 @@ if (!isset($_SESSION['email'])) {
         <?php include('sidenav.php');  ?>
         <div class="content-contact">
             <h4 id="title-contact">List of Employer Contacts</h4>
-            <table id="table-contact">
-                <thead>
-                    <tr>
-                        <th>Company Name</th>
-                        <th>Contact Person</th>
-                        <th>Contact Number</th>
-                        <th>Contact Email</th>
-                        <th>Contacted?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($contact_array as $contact) { ?>
+            <form action="contact_emp.php" method="POST">
+                <table id="table-contact">
+                    <thead>
                         <tr>
-                            <td><?php echo $contact['answer_body'];?></td>
-                            <td><?php echo $contact['answer_body'];?></td>
-                            <td><?php echo $contact['answer_body'];?></td>
-                            <td><?php echo $contact['answer_body'];?></td>
-                        </tr> 
-                    <?php } ?>
-                </tbody>
-            </table>
+                            <th>Company Name</th>
+                            <th>Contact Person</th>
+                            <th>Contact Number</th>
+                            <th>Contact Email</th>
+                            <th>Contacted?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = mysqli_fetch_array($result)) {?>
+                            <tr class="contact-row">
+                                <td><?php echo $row['companyname']; ?></td>
+                                <td><?php echo $row['contactperson']; ?></td>
+                                <td><?php echo $row['contactnumber']; ?></td>
+                                <td><?php echo $row['contactemail']; ?></td>
+                                <td>
+                                    <label class="check-option">
+                                        <input type="checkbox" name="contact-check[]" value="Yes" <?php echo ($row['contacted']=='Yes' ? 'checked' : '');?> id="contact-check">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <!-- <input type="checkbox" name="contact-check"> -->
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </form>
         </div>
     </section>
     
