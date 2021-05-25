@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2021 at 11:50 AM
+-- Generation Time: May 25, 2021 at 07:06 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -61,8 +61,7 @@ INSERT INTO `alum_survey_q1` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 18, 'Female', '2021-05-23'),
 (8, 19, 'Male', '2021-05-23'),
 (9, 20, 'Male', '2021-05-23'),
-(10, 21, 'Female', '2021-05-23'),
-(11, 2, 'Female', '2021-05-24');
+(10, 21, 'Female', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -91,8 +90,7 @@ INSERT INTO `alum_survey_q2` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 18, 'Vilaggereyy', '2021-05-23'),
 (8, 19, 'Hogwarts', '2021-05-23'),
 (9, 20, 'Swwwwiizzerrrlond', '2021-05-23'),
-(10, 21, 'Philippines', '2021-05-23'),
-(11, 2, 'Phiiwfe', '2021-05-24');
+(10, 21, 'Philippines', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -121,8 +119,7 @@ INSERT INTO `alum_survey_q3` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 18, 'Generally Dissatisfied', '2021-05-23'),
 (8, 19, 'Very Satisfied', '2021-05-23'),
 (9, 20, 'Generally Satisfied', '2021-05-23'),
-(10, 21, 'Generally Dissatisfied', '2021-05-23'),
-(11, 2, 'Generally Dissatisfied', '2021-05-24');
+(10, 21, 'Generally Dissatisfied', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -151,8 +148,7 @@ INSERT INTO `alum_survey_q4` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 18, 'I am not sure', '2021-05-23'),
 (8, 19, 'I got a job while still in college', '2021-05-23'),
 (9, 20, '3 to 6 months', '2021-05-23'),
-(10, 21, '1 to 2 years', '2021-05-23'),
-(11, 2, '3 to 6 months', '2021-05-24');
+(10, 21, '1 to 2 years', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -184,8 +180,7 @@ INSERT INTO `alum_survey_q5` (`answer_id`, `user_id`, `Employed`, `Characterized
 (7, 18, 'Yes', 'Part time', 'Mining and Quarrying', 'NA', '2021-05-23'),
 (8, 19, 'Yes', 'Full time (40 hours/week)', 'Real Estate Activities', 'NA', '2021-05-23'),
 (9, 20, 'No', 'NA', 'NA', 'Yes', '2021-05-23'),
-(10, 21, 'No', 'NA', 'NA', 'Yes', '2021-05-23'),
-(11, 2, 'No', 'NA', 'NA', 'Yes', '2021-05-24');
+(10, 21, 'No', 'NA', 'NA', 'Yes', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -215,8 +210,7 @@ INSERT INTO `alum_survey_q6` (`answer_id`, `user_id`, `Level`, `Field`, `date_re
 (7, 18, 'High school', 'NA', '2021-05-23'),
 (8, 19, 'Some college', 'NA', '2021-05-23'),
 (9, 20, 'Associate’s degree', 'Xerffcv', '2021-05-23'),
-(10, 21, 'Master’s degree', 'KNLSNL', '2021-05-23'),
-(11, 2, 'Associate’s degree', 'Fooooorrrrrr', '2021-05-24');
+(10, 21, 'Master’s degree', 'KNLSNL', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -246,8 +240,7 @@ INSERT INTO `alum_survey_q7` (`answer_id`, `user_id`, `Level`, `Field`, `date_re
 (7, 18, 'Master’s degree', 'Dentistry', '2021-05-23'),
 (8, 19, 'Other', 'asdxsxaa', '2021-05-23'),
 (9, 20, 'Master’s degree', 'Swddefr', '2021-05-23'),
-(10, 21, 'High school', 'NA', '2021-05-23'),
-(11, 2, 'Some college', 'NA', '2021-05-24');
+(10, 21, 'High school', 'NA', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -276,8 +269,7 @@ INSERT INTO `alum_survey_q8` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 18, 'Technicians and Associate Professionals', '2021-05-23'),
 (8, 19, 'Professionals', '2021-05-23'),
 (9, 20, 'Plant and Machine Operators, and Assemblers', '2021-05-23'),
-(10, 21, 'Managers', '2021-05-23'),
-(11, 2, 'Craft and Related Trade Workers', '2021-05-24');
+(10, 21, 'Managers', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -306,8 +298,7 @@ INSERT INTO `alum_survey_q9` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 18, 'Yes, it is related to my major/s', '2021-05-23'),
 (8, 19, 'No, it is not related', '2021-05-23'),
 (9, 20, 'No, it is not related', '2021-05-23'),
-(10, 21, 'Yes, it is related to my major/s', '2021-05-23'),
-(11, 2, 'No, it is not related', '2021-05-24');
+(10, 21, 'Yes, it is related to my major/s', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -377,12 +368,7 @@ INSERT INTO `alum_survey_q10` (`answer_id`, `user_id`, `Job`, `Percent`, `date_r
 (47, 21, 'Mmmm', '20', '2021-05-23'),
 (48, 21, 'Ssss', '10', '2021-05-23'),
 (49, 21, 'Qqqq', '30', '2021-05-23'),
-(50, 21, 'Tttt', '10', '2021-05-23'),
-(51, 2, 'Ffff', '20', '2021-05-24'),
-(52, 2, 'Dddd', '20', '2021-05-24'),
-(53, 2, 'Eeee', '20', '2021-05-24'),
-(54, 2, 'Qqqq', '20', '2021-05-24'),
-(55, 2, 'Fffff', '20', '2021-05-24');
+(50, 21, 'Tttt', '10', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -412,8 +398,7 @@ INSERT INTO `alum_survey_q11` (`answer_id`, `user_id`, `Volunteer`, `Characteriz
 (7, 18, 'Yes', 'Full time (40 hours/week)', '2021-05-23'),
 (8, 19, 'No', 'NA', '2021-05-23'),
 (9, 20, 'Yes', 'Full time (40 hours/week)', '2021-05-23'),
-(10, 21, 'No', 'NA', '2021-05-23'),
-(11, 2, 'No', 'NA', '2021-05-24');
+(10, 21, 'No', 'NA', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -443,8 +428,7 @@ INSERT INTO `alum_survey_q12` (`answer_id`, `user_id`, `Experience`, `Necessity`
 (7, 18, 'Less than one (1) year', 'Cesdrfsdvxc', '2021-05-23'),
 (8, 19, 'Three (3) to six (6) years', 'aasassadsa', '2021-05-23'),
 (9, 20, 'More than six (6+) years', 'fdrgergeger', '2021-05-23'),
-(10, 21, 'Three (3) to six (6) years', 'adasxas', '2021-05-23'),
-(11, 2, 'Less than one (1) year', 'Fffororr', '2021-05-24');
+(10, 21, 'Three (3) to six (6) years', 'adasxas', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -473,8 +457,7 @@ INSERT INTO `alum_survey_q13` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 18, 'Very well', '2021-05-23'),
 (8, 19, 'Very well', '2021-05-23'),
 (9, 20, 'Less than adequately', '2021-05-23'),
-(10, 21, 'Very well', '2021-05-23'),
-(11, 2, 'More than adequately', '2021-05-24');
+(10, 21, 'Very well', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -503,8 +486,7 @@ INSERT INTO `alum_survey_q14` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 18, 'Chief Executive (CEO, COO, CFO, GM, or principal in  Managerial a business or organization)', '2021-05-23'),
 (8, 19, 'Executive level (except Chief Executive)', '2021-05-23'),
 (9, 20, 'Supervisory', '2021-05-23'),
-(10, 21, 'Executive level (except Chief Executive)', '2021-05-23'),
-(11, 2, 'Entry-level', '2021-05-24');
+(10, 21, 'Executive level (except Chief Executive)', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -533,8 +515,7 @@ INSERT INTO `alum_survey_q15` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 18, 'Half my time (50%)', '2021-05-23'),
 (8, 19, 'Half my time (50%)', '2021-05-23'),
 (9, 20, 'Some of my time (up to 25% of my time)', '2021-05-23'),
-(10, 21, 'Half my time (50%)', '2021-05-23'),
-(11, 2, 'Most of my time (75% of my time)', '2021-05-24');
+(10, 21, 'Half my time (50%)', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -563,8 +544,7 @@ INSERT INTO `alum_survey_q16` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 18, 'Direct supervision of one or more people.', '2021-05-23'),
 (8, 19, 'Limited or indirect supervision of one or more people. Responsible for day-to-day work direction, not responsible for employment decisions.', '2021-05-23'),
 (9, 20, 'Direct supervision over a unit or department, involving responsibility for results in terms of budget management, methods of work, policy development and personnel issues.', '2021-05-23'),
-(10, 21, 'No supervisory or lead responsibilities.', '2021-05-23'),
-(11, 2, 'Limited or indirect supervision of one or more people. Responsible for day-to-day work direction, not responsible for employment decisions.', '2021-05-24');
+(10, 21, 'No supervisory or lead responsibilities.', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -593,8 +573,7 @@ INSERT INTO `alum_survey_q17` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 18, 'Generally satisfied', '2021-05-23'),
 (8, 19, 'Generally satisfied', '2021-05-23'),
 (9, 20, 'Very satisfied', '2021-05-23'),
-(10, 21, 'Very dissatisfied ', '2021-05-23'),
-(11, 2, 'Very dissatisfied ', '2021-05-24');
+(10, 21, 'Very dissatisfied ', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -724,18 +703,7 @@ INSERT INTO `alum_survey_q18` (`answer_id`, `user_id`, `ques18_arr`, `answer_bod
 (107, 21, 'Be mindful of the needs and capabilities of people', 'Less than adequately', '2021-05-23'),
 (108, 21, 'Be sensitive to the challenges and opportunities of national development and global change', 'Very poorly', '2021-05-23'),
 (109, 21, 'Think critically', 'Very poorly', '2021-05-23'),
-(110, 21, 'Demonstrate discernment', 'Less than adequately', '2021-05-23'),
-(111, 2, 'Possess the skills and mindset to improve human life', 'Very poorly', '2021-05-24'),
-(112, 2, 'Commit to the freedom and welfare of all', 'Less than adequately', '2021-05-24'),
-(113, 2, 'Demonstrate mastery of knowledge in your specific discipline', 'Very poorly', '2021-05-24'),
-(114, 2, 'Possess breadth of mind', 'More than adequately', '2021-05-24'),
-(115, 2, 'Possess strength of character', 'Very well', '2021-05-24'),
-(116, 2, 'Possess generosity of spirit', 'More than adequately', '2021-05-24'),
-(117, 2, 'Inclusively engage with society and the world at large', 'Less than adequately', '2021-05-24'),
-(118, 2, 'Be mindful of the needs and capabilities of people', 'Less than adequately', '2021-05-24'),
-(119, 2, 'Be sensitive to the challenges and opportunities of national development and global change', 'Very poorly', '2021-05-24'),
-(120, 2, 'Think critically', 'Less than adequately', '2021-05-24'),
-(121, 2, 'Demonstrate discernment', 'Less than adequately', '2021-05-24');
+(110, 21, 'Demonstrate discernment', 'Less than adequately', '2021-05-23');
 
 -- --------------------------------------------------------
 
@@ -776,10 +744,30 @@ INSERT INTO `alum_survey_q19` (`answer_id`, `user_id`, `Elaborate`, `answer_body
 
 CREATE TABLE `contactemp_ques` (
   `answer_id` int(11) NOT NULL,
-  `contact_info_ques` varchar(20) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL
+  `companyname` mediumtext NOT NULL,
+  `contactperson` mediumtext NOT NULL,
+  `contactnumber` mediumtext NOT NULL,
+  `contactemail` mediumtext NOT NULL,
+  `date_response` date NOT NULL,
+  `contacted` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `contactemp_ques`
+--
+
+INSERT INTO `contactemp_ques` (`answer_id`, `user_id`, `companyname`, `contactperson`, `contactnumber`, `contactemail`, `date_response`, `contacted`) VALUES
+(42, 12, 'Sgdujnencjheba', 'Ajnsjneenf', 'Sskjrijfp', 'JNmcwkowksow', '2021-05-25', ''),
+(43, 13, 'GVwiswijsw', 'Pjnwjnwid', 'Kxbuwdniwdmow', 'owkpjdjwbdh', '2021-05-25', ''),
+(44, 14, 'Bhbuxnwd', 'JNjiuwnwiud', 'POwnuwnduw', 'OKOjwidbwjd', '2021-05-25', ''),
+(45, 15, 'Pnwwnidwd', 'Pnwjwnid', 'MIwdmwidn', 'Nwndiwdwi', '2021-05-25', ''),
+(46, 16, 'IIwdiwwd', 'KNwkowdiwnd', 'Kwindwidn', 'Pqsoqkslq', '2021-05-25', ''),
+(47, 17, 'KMkwmdwdwd', 'LMwkdmwidmw', 'KMwkmdiwd', 'Pqkmsqksmqs', '2021-05-25', ''),
+(48, 18, 'sdqdqwdd', 'aswpqdkwq', 'Lwsiwsws', 'Pwiwsiww', '2021-05-25', ''),
+(49, 19, 'iiuniuniu', 'jjniuniuniu', 'minoiunoin', 'ioioioionoi', '2021-05-25', ''),
+(50, 20, 'JNjndoeidweoid', 'Kmwiwimswi', 'Kxmkwmdoiwdm', 'Kkwndiwndiw', '2021-05-25', ''),
+(51, 21, 'kmaXKMWDOIWE', 'dkcmwoiemwe', 'kewmdwemdoew', 'wedmwedmwemwed', '2021-05-25', '');
 
 -- --------------------------------------------------------
 
@@ -2575,25 +2563,25 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`, `time_created`, `last_login`) VALUES
-(2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-05-24 17:46:34'),
-(3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-05-23 16:05:45'),
-(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-05-24 14:26:43'),
-(5, 'juan@gmail.com', '7c61c8b92cfeb880d8d99b58533e324c07cc461d3e573b17369f2a377ef1f2dbb47629ea4b1511290a91319a6d5f7944cb78', '$2y$10$MiSINz5TurNhGjk0sIbzKu9eaOepd9WkQ0XD/uw3j9hryuTtZYuke', '12345', 3, '2021-05-20 09:51:01', '2021-05-21 09:04:27'),
+(2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-05-25 12:51:38'),
+(3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-05-25 12:56:17'),
+(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-05-24 19:01:41'),
+(5, 'juan@gmail.com', '7c61c8b92cfeb880d8d99b58533e324c07cc461d3e573b17369f2a377ef1f2dbb47629ea4b1511290a91319a6d5f7944cb78', '$2y$10$MiSINz5TurNhGjk0sIbzKu9eaOepd9WkQ0XD/uw3j9hryuTtZYuke', '12345', 3, '2021-05-20 09:51:01', '2021-05-24 18:51:06'),
 (6, 'jen@gmail.com', 'e81e1502f327062b08945aa5be675c4488af8a411baedd922657ef346d1e73dee7aa19618a4572c0e898107677eeb64f72a8', '$2y$10$qTvg/EBRTtcpi.aHX5tFyegP/C3BO.b.y3HAvt.herwmej3URnK.q', 'ZDxyt3kL', 2, '2021-05-21 06:43:37', '2021-05-21 06:50:57'),
 (7, 'admin2@mail.com', '26c1731abfdaa3d0c9efe3a99af10d1de301119324548f3707149281a3eb21ca1517321df1945b15de4d1e8eddf454a5875d', '$2y$10$nCAYW6LBthx9kBH8ropAreufnByt/O6AC02iMDAUHCqCaByN2WG.G', 'HE1nKkNg', 0, '2021-05-21 06:44:13', '2021-05-21 06:44:13'),
 (8, 'jiji@mail.com', 'acb0d136743deda5472f6d450f2576bd4827af42b55b86c7a74326ca1bc1e1ef413354ff3f91914faeea31c3c49be91d24b5', '$2y$10$/obFaBBGMHAq.mv2xSgMUuSn23a2rFhfAKX3bxrfU45VchTzTlX2a', '15VkWCFg', 3, '2021-05-21 06:44:46', '2021-05-21 09:07:54'),
 (9, 'jj@mail.com', '7e514e8836b1af412dfbbc5723b09f9d9fada2124e9790f369006eeb8459c5b0776cd8511f00052363889f56690c9bb7abc5', '$2y$10$yo8YoqxoQje3FAYYAFX8hOEiyynwqaPf0iTvo.AfrMuum7aZDFsAK', '72bD8ekW', 1, '2021-05-21 06:45:03', '2021-05-21 06:45:03'),
 (10, 'jon@mail.com', 'a4a36353b3de1d0c67830c919c322eb3c5ac8b3314c7a5c28bf78b2da17ca83373dfdc81e2c6ace045a6554ef8b6f321658a', '$2y$10$XPMpNskyE4DW86y/fIzAMO5ZjpRjvWI30JWFRrLTYPwSbmcJN5Cum', 'xVgyLp3w', 2, '2021-05-21 06:45:18', '2021-05-21 09:10:43'),
-(12, 'alumni_uno@gmail.com', '8d4a2fd0ccc964b32712bebc38abfe2fb2ca539720799964b9713043bf65acf971abb7a0065a68e1a7387e8cfc906f9eae36', '$2y$10$C/p1SEuPT/uw/6tro2xlLOBle/SGsFj5ZOggkJrKGh3.iw2AbE162', 'alumni1', 1, '2021-05-23 21:33:51', '2021-05-23 22:22:15'),
-(13, 'alumni_dos@gmail.com', 'caf0047c10fc6ef99d9ad6be4c752219b69080eb78fd04f1adb3d67962cf41ad8315d13310aa0627aa489fe6b1e2de33bc28', '$2y$10$y2bs0mR.OjrbiLAMYNSc0ePTuo0mrTWdJc5nx2ZmeQRL8LSS.RLNa', 'alumni2', 1, '2021-05-23 21:34:55', '2021-05-23 22:26:19'),
-(14, 'alumni_tres@gmail.com', '3045a6ce643cea3dbe55e4c7427de53ec9a7393d2ed75b1c9ff2f6b6aac79c9cb1ca74d862f9df14d50be2476f539fe922a3', '$2y$10$ru6YwKWZzjaJ0fWoMIUB.OBjLYePTL94eIlj/Bx/jo4F3LLX/Nanm', 'alumni3', 1, '2021-05-23 21:35:17', '2021-05-23 22:28:37'),
-(15, 'alumni_cuatro@gmail.com', '929124360a3db51dcc83ae4a5849fd1e6c2012fb5aa6f04b1facaeac75332b1682cde7a29ec6596fc528ffc8ecc894dd84ee', '$2y$10$hEEN8gWPSjmGmEHd0nW75.ko7qJOdE0cHD/ZnLyQBngLodlPE7pDm', 'alumni4', 1, '2021-05-23 21:35:39', '2021-05-23 22:30:39'),
-(16, 'alumni_cinco@gmail.com', '58cdc262d348c8f295ad5612ad60b8438d2b53df60b37e03e7d01b5f1bf94c81516ae5c2fa10aec7f33e48ea567cde4684c5', '$2y$10$mYyhrJa4iZ.MDDRA/bu70eDpRIUOm1xzLta1HYfhFIO4CuKTEW81m', 'alumni5', 1, '2021-05-23 21:36:03', '2021-05-23 22:35:24'),
-(17, 'alumni_seis@gmail.com', '8ad66622d7555db7361c364dc553abbabd7914dff7e929782a0e172d23f27ced737c741e6e463fe147161fb8777e8840cb09', '$2y$10$zDofRdoe/binIk8nGTUsQ.gaKb3L3p/ps9WHGJIIVaU0aYswYI6u6', 'alumni6', 1, '2021-05-23 21:36:20', '2021-05-23 22:38:03'),
-(18, 'alumni_siete@gmail.com', 'c18c1e1c100d836156e36423172c0efb5b9b3a156d9b7eea72b4c87329cedff9d25e8425067285182858c5992caacfe09349', '$2y$10$tUwflgCzuxLdeJ42XxHwcuZn8bu7HFLz2VobDz8RwhLkkHo8/LIc6', 'alumni7', 1, '2021-05-23 21:36:46', '2021-05-23 22:59:56'),
-(19, 'alumni_ocho@gmail.com', 'a2ca6b09a219e57c2ec09bcd45067df216264cd85eec9ee8e4fa3094af33db3d022cb452e81b65e515931a8990095718f0a7', '$2y$10$SWFDsk3zVD417SrEYUGlzuA8pjI2XKaUu8BfYDStqhzuaw9BLlBlm', 'alumni8', 1, '2021-05-23 21:37:37', '2021-05-23 23:08:49'),
-(20, 'alumni_nueve@gmail.com', 'd5d2626f1db74a2cd200bb8deed29268d7f7de61404eeca9283f3b11631ab578ecc77affdf790959bae04eb91ac29742fd72', '$2y$10$ovb1HldVUUFBsSDzxBRiBOpGXzsyH3G2ZQvrNvSz0qC8G/sIE0HZq', 'alumni9', 1, '2021-05-23 21:38:05', '2021-05-23 23:11:48'),
-(21, 'alumni_diez@gmail.com', '49904e95686861d4462b7acf2fa104d8db8a12217b69f095b4d387d4a7bf6fc48ada97d45de3dbb06eb06ae9d18a65d5edd1', '$2y$10$/CXlyrCics8.1D45t3o6D.IqS8oFGa9IbYfesQyMt8ZtzyhaHAWcC', 'alumni10', 1, '2021-05-23 21:38:26', '2021-05-23 23:39:29'),
+(12, 'alumni_uno@gmail.com', '8d4a2fd0ccc964b32712bebc38abfe2fb2ca539720799964b9713043bf65acf971abb7a0065a68e1a7387e8cfc906f9eae36', '$2y$10$C/p1SEuPT/uw/6tro2xlLOBle/SGsFj5ZOggkJrKGh3.iw2AbE162', 'alumni1', 1, '2021-05-23 21:33:51', '2021-05-25 12:59:32'),
+(13, 'alumni_dos@gmail.com', 'caf0047c10fc6ef99d9ad6be4c752219b69080eb78fd04f1adb3d67962cf41ad8315d13310aa0627aa489fe6b1e2de33bc28', '$2y$10$y2bs0mR.OjrbiLAMYNSc0ePTuo0mrTWdJc5nx2ZmeQRL8LSS.RLNa', 'alumni2', 1, '2021-05-23 21:34:55', '2021-05-25 13:00:29'),
+(14, 'alumni_tres@gmail.com', '3045a6ce643cea3dbe55e4c7427de53ec9a7393d2ed75b1c9ff2f6b6aac79c9cb1ca74d862f9df14d50be2476f539fe922a3', '$2y$10$ru6YwKWZzjaJ0fWoMIUB.OBjLYePTL94eIlj/Bx/jo4F3LLX/Nanm', 'alumni3', 1, '2021-05-23 21:35:17', '2021-05-25 13:01:14'),
+(15, 'alumni_cuatro@gmail.com', '929124360a3db51dcc83ae4a5849fd1e6c2012fb5aa6f04b1facaeac75332b1682cde7a29ec6596fc528ffc8ecc894dd84ee', '$2y$10$hEEN8gWPSjmGmEHd0nW75.ko7qJOdE0cHD/ZnLyQBngLodlPE7pDm', 'alumni4', 1, '2021-05-23 21:35:39', '2021-05-25 13:02:22'),
+(16, 'alumni_cinco@gmail.com', '58cdc262d348c8f295ad5612ad60b8438d2b53df60b37e03e7d01b5f1bf94c81516ae5c2fa10aec7f33e48ea567cde4684c5', '$2y$10$mYyhrJa4iZ.MDDRA/bu70eDpRIUOm1xzLta1HYfhFIO4CuKTEW81m', 'alumni5', 1, '2021-05-23 21:36:03', '2021-05-25 13:02:56'),
+(17, 'alumni_seis@gmail.com', '8ad66622d7555db7361c364dc553abbabd7914dff7e929782a0e172d23f27ced737c741e6e463fe147161fb8777e8840cb09', '$2y$10$zDofRdoe/binIk8nGTUsQ.gaKb3L3p/ps9WHGJIIVaU0aYswYI6u6', 'alumni6', 1, '2021-05-23 21:36:20', '2021-05-25 13:03:37'),
+(18, 'alumni_siete@gmail.com', 'c18c1e1c100d836156e36423172c0efb5b9b3a156d9b7eea72b4c87329cedff9d25e8425067285182858c5992caacfe09349', '$2y$10$tUwflgCzuxLdeJ42XxHwcuZn8bu7HFLz2VobDz8RwhLkkHo8/LIc6', 'alumni7', 1, '2021-05-23 21:36:46', '2021-05-25 13:04:21'),
+(19, 'alumni_ocho@gmail.com', 'a2ca6b09a219e57c2ec09bcd45067df216264cd85eec9ee8e4fa3094af33db3d022cb452e81b65e515931a8990095718f0a7', '$2y$10$SWFDsk3zVD417SrEYUGlzuA8pjI2XKaUu8BfYDStqhzuaw9BLlBlm', 'alumni8', 1, '2021-05-23 21:37:37', '2021-05-25 13:04:55'),
+(20, 'alumni_nueve@gmail.com', 'd5d2626f1db74a2cd200bb8deed29268d7f7de61404eeca9283f3b11631ab578ecc77affdf790959bae04eb91ac29742fd72', '$2y$10$ovb1HldVUUFBsSDzxBRiBOpGXzsyH3G2ZQvrNvSz0qC8G/sIE0HZq', 'alumni9', 1, '2021-05-23 21:38:05', '2021-05-25 13:05:42'),
+(21, 'alumni_diez@gmail.com', '49904e95686861d4462b7acf2fa104d8db8a12217b69f095b4d387d4a7bf6fc48ada97d45de3dbb06eb06ae9d18a65d5edd1', '$2y$10$/CXlyrCics8.1D45t3o6D.IqS8oFGa9IbYfesQyMt8ZtzyhaHAWcC', 'alumni10', 1, '2021-05-23 21:38:26', '2021-05-25 13:06:13'),
 (24, 'employer_uno@gmail.com', 'ccf7c5c792535fc3f932b76aad54baf9103a9ef952bb4b67b89f9c93fdca504bc324fb5c899c32aff9ef4f1262c7598b6e5a', '$2y$10$.nyv1dRDglYBuZo7LrObYe/3E/n0YMPMNWEYS7hB5.2NvNrLhEdhW', 'emp1', 2, '2021-05-23 21:40:12', '2021-05-24 13:18:38'),
 (25, 'employer_dos@gmail.com', 'bc443931cf2dce4706ae4b22fbcc93ee95639ad5625366d2dd29e228d41869db171c75f29cf8347b0944a582b0b8f9992dd1', '$2y$10$RJkBUzsFlPQv/uDuDj24zu0wHGWJHLjEvZSoAQGdX78lXSI6MF7HO', 'emp2', 2, '2021-05-23 21:40:39', '2021-05-24 13:59:55'),
 (26, 'employer_tres@gmail.com', '242b46ccc38769507fbd36ef52b8297d5344ecd93a7b509bc1bb4eaad977e9d1414bb26315cb4da1d8838cc552b80fb38e61', '$2y$10$JaPr5fe0ZRTsQStJVvOMV.bhqst9.Vx/J9vm49.XjHXkEKb0ZkCOG', 'emp3', 2, '2021-05-23 21:40:56', '2021-05-24 14:02:38'),
@@ -2752,7 +2740,8 @@ ALTER TABLE `alum_survey_q19`
 -- Indexes for table `contactemp_ques`
 --
 ALTER TABLE `contactemp_ques`
-  ADD PRIMARY KEY (`answer_id`);
+  ADD PRIMARY KEY (`answer_id`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `emp_survey`
@@ -2908,109 +2897,109 @@ ALTER TABLE `alum_survey`
 -- AUTO_INCREMENT for table `alum_survey_q1`
 --
 ALTER TABLE `alum_survey_q1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q2`
 --
 ALTER TABLE `alum_survey_q2`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q3`
 --
 ALTER TABLE `alum_survey_q3`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q4`
 --
 ALTER TABLE `alum_survey_q4`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q5`
 --
 ALTER TABLE `alum_survey_q5`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q6`
 --
 ALTER TABLE `alum_survey_q6`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q7`
 --
 ALTER TABLE `alum_survey_q7`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q8`
 --
 ALTER TABLE `alum_survey_q8`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q9`
 --
 ALTER TABLE `alum_survey_q9`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q10`
 --
 ALTER TABLE `alum_survey_q10`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q11`
 --
 ALTER TABLE `alum_survey_q11`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q12`
 --
 ALTER TABLE `alum_survey_q12`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q13`
 --
 ALTER TABLE `alum_survey_q13`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q14`
 --
 ALTER TABLE `alum_survey_q14`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q15`
 --
 ALTER TABLE `alum_survey_q15`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q16`
 --
 ALTER TABLE `alum_survey_q16`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q17`
 --
 ALTER TABLE `alum_survey_q17`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q18`
 --
 ALTER TABLE `alum_survey_q18`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q19`
@@ -3022,7 +3011,7 @@ ALTER TABLE `alum_survey_q19`
 -- AUTO_INCREMENT for table `contactemp_ques`
 --
 ALTER TABLE `contactemp_ques`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `emp_survey`
