@@ -310,6 +310,168 @@ td {
 p {
 	font-size:12pt;
 }
+
+/* for bigger radio buttons */
+.option {
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	/*margin-bottom: 12px;*/
+	cursor: pointer;
+	font-size: 12pt;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/*hide default radio button*/
+.option input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+/*customized radio button*/
+.checkbttn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 13pt;
+	width: 13pt;
+	background-color: white;
+	border-radius: 50%;
+	border: 1px solid #404040;
+}
+.option:hover input ~ .checkbttn {
+	background-color: #ccc;
+}
+.option input:checked ~.checkbttn {
+	background-color: #840038;
+}
+.checkbttn:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.checkbttn input:checked ~ .checkbttn:after {
+	display: inline-block;
+}
+.option .checkbttn:after {
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 70%;
+	background: white;
+}
+
+/* for radio buttons in a table */
+.skill_option {
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	margin-top: 25px;
+	margin-bottom: 50px;
+	cursor: pointer;
+	font-size: 12pt;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+/*hide default radio button*/
+.skill_option input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+}
+/*customized radio button*/
+.skill-checkbttn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25pt;
+	width: 25pt;
+	background-color: white;
+	border-radius: 50%;
+	border: 1px solid #404040;
+}
+.skill_option:hover input ~ .skill-checkbttn {
+	background-color: #ccc;
+}
+.skill_option input:checked ~.skill-checkbttn {
+	background-color: #840038;
+}
+.e-q7 td, .e-q8 td, .e-q11 td, .e-q12 td {
+	text-align:center;
+	padding: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	border-top:1px solid black;
+}
+.e-q7 th, .e-q8 th, .e-q11 th, .e-q12 th {
+	font-size:14pt;
+	padding-bottom:2%;
+	padding-top:2%;
+	padding-right:1.5%;
+	padding-left: 1.5%;
+}
+
+/* for bigger checkboxes */
+.check-option {
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	/*margin-bottom: 12px;*/
+	cursor: pointer;
+	font-size: 12pt;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.check-option input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+.checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 13pt;
+	width: 13pt;
+	background-color: white;
+	border: 1px solid #404040;
+}
+.check-option:hover input ~ .checkmark {
+	background-color: #ccc;
+}
+.check-option input:checked ~ .checkmark {
+	background-color: #840038;
+}
+.checkmark:after {
+	content: "";
+	position: absolute;
+	display: none;
+}
+.check-option input:checked ~ .checkmark:after {
+	display: block;
+}
+/* for check design inside box */
+.check-option .checkmark:after {
+	left: 4px;
+	top: 3px;
+	width: 4px;
+	height: 6px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
 .container-info-ae {
 	margin-left: 10rem;
 	margin-right:5rem;
