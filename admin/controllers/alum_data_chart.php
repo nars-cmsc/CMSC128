@@ -1561,14 +1561,19 @@ require ('config/connection.php');
 	$ct_yes19 = '';
 	$string19 = '';
 
+	$for_array19 = '';
+	$alum_string19_array = array();
+
 	// get data from table
-	$query = "SELECT answer_body FROM alum_survey_q19";
+	$query = "SELECT Elaborate, answer_body FROM alum_survey_q19 WHERE Elaborate='Yes'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$string19 = $string19 . ', ' . $row['answer_body'];
 		$ct_yes19 = ltrim($string19, ', ');
+
+		$alum_string19_array[] = $row;
 	}
 
 

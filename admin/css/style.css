@@ -45,33 +45,51 @@ header {
 
 /* Create two columns/boxes that floats next to each other */
 nav {
-  float: left;
-  width: 30%;
-  min-height: 100vh;
-  background: #ccc;
-}
-
-/* Style the list inside the menu */
-nav ul {
-  list-style-type: none;
+  margin: 0;
   padding: 0;
+  float: left;
+  width: 20%;
+  background: #f1f1f1;
+
+  padding-top: 20px;
+  overflow-x: hidden;
 }
-nav li {
-    padding: 30px;
-    border-bottom: 1px solid gray;
-    text-align: center;
-}
-a {
+.sidebar a, .drop-bttn {
+    padding: 6px 8px 6px 16px;
     color: green;
     text-decoration: none;
+    display: block;
     font-size: 16pt;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+}
+.sidebar .active {
+  background-color: #840038;
+  color: white;
+}
+.sidebar a:hover:not(.active), .drop-bttn:hover {
+  background-color: #0e6022;
+  color: white;
+}
+.dropdown-menu {
+  display: none;
+  background: #f1f1f1;
+  padding-left: 8px;
+}
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
 }
 
 /* content index.php */
 .content-users {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -84,6 +102,7 @@ a {
   margin:1%;
   width:100%;
   font-size:14pt;
+  overflow-wrap: all;
 }
 .delete {
   color: #ffad0d;
@@ -106,7 +125,7 @@ th {
   float: left;
   /*margin-left:25rem;*/
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -148,7 +167,7 @@ input[type=submit]{
 input[type=submit]:hover{
   background-color:#840038;
 }
-button{
+.rand-pass{
   width:180px;
   height:40px;
   font-weight:bold;
@@ -159,7 +178,7 @@ button{
   text-transform: uppercase;
   margin-left:1rem;
 }
-button:hover{
+.rand-pass:hover{
   background-color:#840038;
 }
 
@@ -167,7 +186,7 @@ button:hover{
 .content-emp-raw {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -180,13 +199,20 @@ button:hover{
 #table-emp-raw {
   text-align: center;
   font-size:14pt;
+  width:100%;
+}
+#table-emp-raw thead{
+  color:#ffad0d;
+}
+#table-emp-raw td{
+  width:20%;
 }
 
 /* content alum_raw.php */
 .content-alum-raw {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -198,13 +224,21 @@ button:hover{
 }
 #table-alum-raw {
   text-align: center;
+  font-size:14pt;
+  width:100%;
+}
+#table-alum-raw thead{
+  color:#ffad0d;
+}
+#table-alum-raw td{
+  width:20%;
 }
 
 /* content emp_charts.php */
 .content-emp-charts {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -222,13 +256,15 @@ button:hover{
   float: left;
   width: 50%;
   height: auto;
+  padding:2rem;
+  border:1px solid black;
 }
 
 /* content alum_charts.php */
 .content-alum-charts {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -246,13 +282,15 @@ button:hover{
   float: left;
   width: 50%;
   height: auto;
+  padding:2rem;
+  border:1px solid black;
 }
 
 /* content emp_tables.php */
 .content-emp-table {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -264,13 +302,17 @@ button:hover{
 }
 #table-emp-table1 {
   text-align: center;
+  width:100%;
+}
+#table-emp-table1 thead{
+  color:#ffad0d;
 }
 
 /* content alum_tables.php */
 .content-alum-table {
   float: left;
   padding: 2%;
-  width: 70%;
+  width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
@@ -281,6 +323,25 @@ button:hover{
   color: gray;
 }
 #table-alum-table1 {
+  text-align: center;
+  width:100%;
+}
+#table-alum-table1 thead{
+  color:#ffad0d;
+}
+
+/* content contact_emp.php */
+.content-contact {
+  float: left;
+  padding: 2%;
+  width: 80%;
+  min-height: 100vh;
+  font-size:14pt;
+}
+#title-contact {
+  color: gray;
+}
+#table-contact {
   text-align: center;
 }
 
@@ -304,7 +365,11 @@ section::after {
 /* Style the footer */
 footer {
   background-color:#0e6022;
-  padding: 1%;
+  left:0;
+  bottom:0;
+  padding-left: 1.25rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
   font-size:12pt;
   color: white;
   display: flex;
@@ -312,31 +377,25 @@ footer {
 .info {
     flex-grow: 10;
 }
-.fa {
-  width:50px;
-  height: 50px;
+.copyright {
   text-align:center;
-  text-decoration:none;
-  border-radius:50%;
-  vertical-align: middle;
-  text-align: center;
-  padding-top: 15px;
+  right:0;
+  font-size: 9pt;
+  margin-right:1rem;
 }
-.fa:hover {
-  background:#840038; 
-}
-.fa-facebook {
-  background:#ffad0d;
+.copyright a {
   color:#ffffff;
+  text-decoration: none;
+  text-transform:uppercase;
+  transition:0.3s ease; 
 }
-.fa-at {
-  background:#ffad0d;
-  color:#ffffff;
+.copyright a:hover {
+  color:#ffad0d;
 }
 
 /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
 @media (max-width: 600px) {
-  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts {
+  nav, .content-users, .content-reg-users, .content-emp-raw, .content-alum-raw, .content-emp-charts, .content-alum-charts, .content-emp-table, .content-alum-table, .content-contact {
     width: 100%;
     /*height: auto;*/
   }
