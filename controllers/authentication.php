@@ -30,6 +30,42 @@ if (isset($_POST['login-btn'])) {
 		$errors['password'] = "Password is required";
 	}
 
+	// getting associated id with email entered
+	$id_query = "SELECT user_id FROM users WHERE email='$email' LIMIT 1";
+  	$result = mysqli_query($db_conn, $id_query);
+  	$user = mysqli_fetch_assoc($result);
+
+	$id = $user['user_id'];
+
+	// if user already answered employer survey
+  	$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
+  	$result = mysqli_query($db_conn, $emp_check_query);
+  	$user_emp = mysqli_fetch_assoc($result);
+
+	if($user_emp){ 
+	    if ($user_emp['user_id'] == $id) {
+		    $errors['user'] = "Feedback from user already exists";
+		    $error = true;
+	    }
+	}else {
+		$error = false;
+	}
+
+	// if user already answered employer survey
+  	$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";
+  	$result = mysqli_query($db_conn, $alum_check_query);
+  	$user_alum = mysqli_fetch_assoc($result);
+
+	if($user_alum){ 
+	    if ($user_alum['user_id'] == $id) {
+		    $errors['user'] = "Feedback from user already exists";
+		    $error = true;
+	    }
+	}else {
+		$error = false;
+	}
+
+
 	// if there are no errors
 	if (count($errors) == 0) {
 		$sql = "SELECT * FROM users WHERE email=? LIMIT 1";
