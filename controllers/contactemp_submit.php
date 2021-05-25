@@ -75,10 +75,6 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 		
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactemp']);
 		$contactemp = mysqli_real_escape_string($db_conn, $_POST['contactemp_yon']);
-		$companyname = mysqli_real_escape_string($db_conn, $_POST['emp1']);
-		$contactperson = mysqli_real_escape_string($db_conn, $_POST['emp2']);
-		$contactnumber = mysqli_real_escape_string($db_conn, $_POST['emp3']);
-		$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
 
 		// if other is selected
 		if ($contactemp == 'Yes') {
@@ -88,25 +84,14 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 			$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
 			
 		// store to db
-	    $sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Company Name', '$id', '$companyname')";
-		mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Person', '$id', '$contactperson')";
-		mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Number', '$id', '$contactnumber')";
-		mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Email', '$id', '$contactemail')";
-		mysqli_query($db_conn, $sql);
-			
-			
+	    $sql = "INSERT INTO contactemp_ques (user_id, companyname, contactperson, contactnumber, contactemail, date_response, contacted) VALUES ('$id', '$companyname', '$contactperson', '$contactnumber', '$contactemail', now(), 'No')";
+		mysqli_query($db_conn, $sql);		
 		} else {
 			$companyname = $contactemp;
 			$contactperson = $contactemp;
 			$contactnumber = $contactemp;
 			$contactemail = $contactemp;
 			
-		// store to db
-	    $sql = "INSERT INTO contactemp_ques (contact_info_ques, user_id, answer_body) VALUES ('Contact Information', '$id', '$contactemp')";
-		mysqli_query($db_conn, $sql);
 		}
 	}
 }//end of submit-contactemp
