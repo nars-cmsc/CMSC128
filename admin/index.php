@@ -8,11 +8,21 @@ if (!isset($_SESSION['email'])) {
     exit();
 }
 
-// if user is not an admin
-// if (isset($_SESSION['role']) != 0) {
-//     header('location: ../login.php');
-//     exit();
-// }
+// if user is not an admin but alumni
+if ($_SESSION['role'] == 1) {
+    header('location: ../alum_survey.php');
+    exit();
+}
+// if user is not an admin but employer
+if ($_SESSION['role'] == 2) {
+    header('location: ../emp_survey.php');
+    exit();
+}
+// if user is not an admin but alum and employer
+if ($_SESSION['role'] == 3) {
+    header('location: ../alum_emp.php');
+    exit();
+}
 
 ?>
 
