@@ -6,6 +6,18 @@ if (!isset($_SESSION['email'])) {
 	header('location:login.php');
 	exit();
 }
+
+// if user is not an alum & emp but alumni only
+if ($_SESSION['role'] == 1) {
+    header('location: alum_survey.php');
+    exit();
+}
+// if user is not an alum & emp but employer only
+if ($_SESSION['role'] == 2) {
+    header('location: emp_survey.php');
+    exit();
+}
+
 ?>
 
 <!DOCTYPE html>

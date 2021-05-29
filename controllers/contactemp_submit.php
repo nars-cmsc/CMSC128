@@ -84,7 +84,7 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 			$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
 			
 		// store to db
-	    $sql = "INSERT INTO contactemp_ques (user_id, companyname, contactperson, contactnumber, contactemail, date_response, contacted) VALUES ('$id', '$companyname', '$contactperson', '$contactnumber', '$contactemail', now(), '$contacted')";
+	    $sql = "INSERT INTO contactemp_ques (user_id, companyname, contactperson, contactnumber, contactemail, date_response, contacted) VALUES ('$id', '$companyname', '$contactperson', '$contactnumber', '$contactemail', now(), 'No')";
 		mysqli_query($db_conn, $sql);		
 		} else {
 			$companyname = $contactemp;

@@ -7,6 +7,13 @@ if (!isset($_SESSION['email'])) {
 	header('location:login.php');
 	exit();
 }
+
+// if user is not an alum but an employer
+if ($_SESSION['role'] == 2) {
+    header('location: emp_survey.php');
+    exit();
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -52,10 +59,11 @@ if (!isset($_SESSION['email'])) {
 					<span class="dot" onclick="currentSlide(9)"></span>
 					<span class="dot" onclick="currentSlide(10)"></span>
 					<span class="dot" onclick="currentSlide(11)"></span>
+					<span class="dot" onclick="currentSlide(12)"></span>
 				</div>
 
 				<div class="Slides" style="display:block;">
-					<div class="numbertext">1 / 11</div>
+					<div class="numbertext">1 / 12</div>
 					<!-- QUESTION # 1 -->
 					<div class="entry">
 						<input type="hidden" name="one" value="1">
@@ -70,15 +78,22 @@ if (!isset($_SESSION['email'])) {
 					<div class="entry">
 						<input type="hidden" name="two" value="2">
 						<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
-					</div>
-						<textarea id="" name="ques2" rows="4" cols="50" style="resize: none;" 
-						placeholder="Type the country here... (Use letters only)"
-						onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"></textarea> <!-- Letters and space -->
-				</div>	
+					</div>						
+					<select name="ques2" id="ques2">
+					<option value="none" selected disabled >
+						Select country
+					</option>
+					<?php foreach ($ques2_arr as $ques2_el): ?>
+								<option value="<?php echo $ques2_el; ?>">
+									<?php echo $ques2_el; ?>
+							</option><br>
+							<?php endforeach; ?>
+					</select>
+				</div>
 			
 		
 	<div class="Slides">
-		<div class="numbertext">2 / 11</div>	
+		<div class="numbertext">2 / 12</div>	
 		<!-- QUESTION # 3 -->
 			<div class="entry">
 				<input type="hidden" name="three" value="3">
@@ -92,6 +107,11 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="three3">Generally Satisfied</label><br>
 						<input class="options" type="radio" name="ques3" id="three4" value="Very Satisfied">
 							<label class="option" for="three4">Very Satisfied</label><br>
+	</div>	
+
+
+	<div class="Slides">
+		<div class="numbertext">3 / 12</div>
 		<!-- QUESTION # 4 -->
 			<div class="entry">
 				<input type="hidden" name="four" value="4">
@@ -111,11 +131,6 @@ if (!isset($_SESSION['email'])) {
 							<label class="option" for="four6">More than 2 years</label><br>
 						<input class="options" type="radio" name="ques4" id="four7" value="I am not sure">
 							<label class="option" for="four7">I am not sure</label><br>
-	</div>	
-
-
-	<div class="Slides">
-		<div class="numbertext">3 / 11</div>
 		<!-- QUESTION # 5 -->
 			<div class="entry">
 				<input type="hidden" name="five" value="5">
@@ -167,7 +182,7 @@ if (!isset($_SESSION['email'])) {
 
 
 	<div class="Slides">
-		<div class="numbertext">4 / 11</div>
+		<div class="numbertext">4 / 12</div>
 		<!-- QUESTION # 6 -->
 			<div class="entry">
 				<input type="hidden" name="six" value="6">
@@ -204,7 +219,7 @@ if (!isset($_SESSION['email'])) {
 				
 	
 	<div class="Slides">
-		<div class="numbertext">5 / 11</div>
+		<div class="numbertext">5 / 12</div>
 		<!-- QUESTION # 7 -->
 			<div class="entry">
 				<input type="hidden" name="seven" value="7">
@@ -241,7 +256,7 @@ if (!isset($_SESSION['email'])) {
 		
 	
 	<div class="Slides">
-		<div class="numbertext">5 / 11</div>
+		<div class="numbertext">6 / 12</div>
 		<!-- QUESTION # 8 -->
 			<div class="entry">
 				<input type="hidden" name="eight" value="8">
@@ -272,13 +287,13 @@ if (!isset($_SESSION['email'])) {
 
 
 	<div class="Slides">
-				<div class="numbertext">6 / 11</div>
+				<div class="numbertext">7 / 12</div>
 		<!-- QUESTION # 10 Fucked up pa number 10--> 
 			<div class="entry">
 				<input type="hidden" name="ten" value="10">
 				<h3 class="ques_title">10. In the order of importance, list 5 of your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
 			</div>
-				<table border="0">
+				<table class="a-q10" border="0">
 					
 					<tr>
 						<td>
@@ -325,7 +340,7 @@ if (!isset($_SESSION['email'])) {
 
 
 	<div class="Slides">
-		<div class="numbertext">7 / 11</div>
+		<div class="numbertext">8 / 12</div>
 		<!-- QUESTION # 11 -->
 			<div class="entry">
 				<input type="hidden" name="eleven" value="11">
@@ -371,7 +386,7 @@ if (!isset($_SESSION['email'])) {
 
 
 	<div class="Slides">
-		<div class="numbertext">8 / 11</div>
+		<div class="numbertext">9 / 12</div>
 		<!-- QUESTION # 13 -->
 			<div class="entry">
 				<input type="hidden" name="thirteen" value="13">
@@ -402,7 +417,7 @@ if (!isset($_SESSION['email'])) {
 		
 		
 	<div class="Slides">
-				<div class="numbertext">9 / 11</div>
+				<div class="numbertext">10 / 12</div>
 		<!-- QUESTION # 15 -->
 			<div class="entry">
 				<input type="hidden" name="fifteen" value="15">
@@ -446,13 +461,13 @@ if (!isset($_SESSION['email'])) {
 
 
 <div class="Slides">
-		<div class="numbertext">10 / 11</div>
+		<div class="numbertext">11 / 12</div>
 		<!-- QUESTION # 18 -->
 			<div class="entry">
 				<input type="hidden" name="eighteen" value="18">
 				<h3 class="ques_title">18. Based on what you know now, how well do you think your undergraduate experience at UP DMCS prepared you to…</h3>
 			</div>
-			<table border="0">
+			<table class="a-q18" border="0">
 					<tr>
 						<th></th>
 						<th>Very poorly</th>
@@ -489,7 +504,7 @@ if (!isset($_SESSION['email'])) {
 	
 	
 	<div class="Slides">
-		<div class="numbertext">11 / 11</div>
+		<div class="numbertext">12 / 12</div>
 		<!-- QUESTION # 19 -->
 			<div class="entry">
 				<input type="hidden" name="nineteen" value="19">

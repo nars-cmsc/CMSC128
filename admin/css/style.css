@@ -343,6 +343,68 @@ input[type=submit]:hover{
 }
 #table-contact {
   text-align: center;
+  width: 100%;
+}
+.contact-row:hover {
+  color: #ffad0d;
+}
+
+/* for bigger checkboxes */
+.check-option {
+  display: inline-block;
+  position: relative;
+  padding-left: 25px;
+  /*margin-bottom: 12px;*/
+  margin-top: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 12pt;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.check-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 13pt;
+  width: 13pt;
+  background-color: white;
+  border: 1px solid #404040;
+}
+.check-option:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.check-option input:checked ~ .checkmark {
+  background-color: #ffad0d;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.check-option input:checked ~ .checkmark:after {
+  display: block;
+}
+/* for check design inside box */
+.check-option .checkmark:after {
+  left: 4px;
+  top: 3px;
+  width: 4px;
+  height: 6px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* for alert message */
