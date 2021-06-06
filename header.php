@@ -1,6 +1,7 @@
 <?php require_once 'controllers/logout.php'; ?>
 
 <body>
+<div class="main-container">
 	<header>
 		<div class = "logos">
 			<img src = "images/UP_seal.png" id="up">		

@@ -705,11 +705,11 @@ if ($_SESSION['role'] == 1) {
 				
 		
 			</form>	
-				<!-- for footer/ contact details -->
-				<?php include('footer.php'); ?>
+				
 		</div>
 	</section>
-	
+	<!-- for footer/ contact details -->
+	<?php include('footer.php'); ?>
 	
 </body>
 </html>

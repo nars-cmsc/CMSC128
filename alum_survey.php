@@ -33,6 +33,7 @@ if ($_SESSION['role'] == 2) {
 	<?php include('header.php'); ?>
 	<!-- label class = option; radio bttn class = options -->
 
+<section>
 	<div class="content-alum">
 		<form class="alum-form" action="alum_survey.php" method="post">
 			<h1>Alumni Survey</h1>
@@ -863,10 +864,11 @@ if ($_SESSION['role'] == 2) {
 			<!--/a-->
 			
 		</form>		
-			<!-- for footer/ contact details -->
-			<?php include('footer.php'); ?>
+			
 	</div>
-
+</section>
+<!-- for footer/ contact details -->
+<?php include('footer.php'); ?>
 
 </body>
 </html>
