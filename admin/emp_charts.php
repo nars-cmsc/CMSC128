@@ -7,6 +7,22 @@ if (!isset($_SESSION['email'])) {
     header('location: ../login.php');
     exit();
 }
+
+// if user is not an admin but alumni
+if ($_SESSION['role'] == 1) {
+    header('location: ../alum_survey.php');
+    exit();
+}
+// if user is not an admin but employer
+if ($_SESSION['role'] == 2) {
+    header('location: ../emp_survey.php');
+    exit();
+}
+// if user is not an admin but alum and employer
+if ($_SESSION['role'] == 3) {
+    header('location: ../alum_emp.php');
+    exit();
+}
   
 ?>
 
@@ -108,9 +124,9 @@ if (!isset($_SESSION['email'])) {
         var xValues = ["Public", "Private", "Others"];
         var yValues = [<?php echo $ct_pub;?>, <?php echo $ct_priv;?>, <?php echo $ct_other1;?>,];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797"
+          "#eccfcf",
+          "#d2a8a8",
+          "#543737"
         ];
 
         new Chart("mycanvas1", {
@@ -136,8 +152,8 @@ if (!isset($_SESSION['email'])) {
         var xValues = ["Philippines", "Abroad"];
         var yValues = [<?php echo $ct_ph;?>, <?php echo $ct_ab;?>];
         var barColors = [
-          "#e8c3b9",
-          "#1e7145"
+          "#eeddcc",
+          "#aa9999"
         ];
 
         new Chart("mycanvas2", {
@@ -181,11 +197,11 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_other3;?> 
         ];
         var barColors = [
-          "#ffffff", "#e5f5f3", "#ccebe7", "#b2e2dc", "#99d8d0",
-          "#7fcfc5", "#66c5b9", "#4cbbad", "#32b2a2", "#19a896",
-          "#00b9a1", "#009f8b", "#008f7d", "#007f6f", "#006f61",
-          "#005f53", "#004f45", "#003f37", "#002f29", "#001f1b",
-          "#000f0d", "#000000", "green"
+          "#fceee1", "#fde1d4", "#ffd3c5", "#efbbad", "#e1a782",
+           "#ffebd5", "#dfb9a6", "#d49f7c", "#b27255", "#ffeec2",
+           "#f0ae83", "#e5ab83", "#c0815b", "#b78b72", "#6d4d3a",
+           "#e9b0a2", "#c38673", "#ab766e", "#663d35", "#8f9da8",
+           "#929ca6", "#737074", "#353032"
         ];
 
         new Chart("mycanvas3", {
@@ -211,10 +227,9 @@ if (!isset($_SESSION['email'])) {
         var xValues = ["Chief", "Supervisory", "Rank and file"];
         var yValues = [<?php echo $ct_chief;?>, <?php echo $ct_sup;?>, <?php echo $ct_rank;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797"
-
+          "#eccfcf",
+          "#d2a8a8",
+          "#543737"
         ];
 
         new Chart("mycanvas4", {
@@ -242,10 +257,10 @@ if (!isset($_SESSION['email'])) {
                       ];
         var yValues = [<?php echo $ct_sd;?>, <?php echo $ct_d;?>, <?php echo $ct_a;?>, <?php echo $ct_sa;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("mycanvas6", {
@@ -273,7 +288,7 @@ if (!isset($_SESSION['email'])) {
             labels: ["Reading Comprehension", "Active Listening", "Writing Skills", "Verbal Communication", "Mathematics Skills", "Scientific Literacy", "Digital Literacy", "Critical Thinking", "Participatory Learning", "Creative and Innovation", "Leadership Skills", "Social Awareness", "Service Orientation", "Time Management", "Complex Problem Solving Skills", "Judgment and Decision Making", "Systems Analysis and Evaluation"],
             datasets: [{
                 label: 'Unimportant',
-                backgroundColor: "gray",
+                backgroundColor: "#443333",
                 yAxisID: "y-axis-1",
                 data: [<?php echo $ct_read_un;?>, <?php echo $ct_list_un;?>,
                        <?php echo $ct_writ_un;?>, <?php echo $ct_verb_un;?>,
@@ -286,7 +301,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_sys_un;?>]
             }, {
                 label: 'Of Little Importance',
-                backgroundColor: "rgba(151,187,205,0.5)",
+                backgroundColor: "#aa7766",
                 yAxisID: "y-axis-2",
                 data: [<?php echo $ct_read_ofl;?>, <?php echo $ct_list_ofl;?>,
                        <?php echo $ct_writ_ofl;?>, <?php echo $ct_verb_ofl;?>,
@@ -299,7 +314,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_sys_ofl;?>]
             }, {
                 label: 'Important',
-                backgroundColor: "#99d8d0",
+                backgroundColor: "#aa9999",
                 yAxisID: "y-axis-3",
                 data: [<?php echo $ct_read_im;?>, <?php echo $ct_list_im;?>,
                        <?php echo $ct_writ_im;?>, <?php echo $ct_verb_im;?>,
@@ -312,7 +327,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_sys_im;?>]
             }, {
                 label: 'Very Important',
-                backgroundColor: "#009f8b",
+                backgroundColor: "#ddbbaa",
                 yAxisID: "y-axis-4",
                 data: [<?php echo $ct_read_vim;?>, <?php echo $ct_list_vim;?>,
                        <?php echo $ct_writ_vim;?>, <?php echo $ct_verb_vim;?>,
@@ -385,7 +400,7 @@ if (!isset($_SESSION['email'])) {
             labels: ["Reading Comprehension", "Active Listening", "Writing Skills", "Verbal Communication", "Mathematics Skills", "Scientific Literacy", "Digital Literacy", "Critical Thinking", "Participatory Learning", "Creative and Innovation", "Leadership Skills", "Social Awareness", "Service Orientation", "Time Management", "Complex Problem Solving Skills", "Judgment and Decision Making", "Systems Analysis and Evaluation"],
             datasets: [{
                 label: 'Very Unsatisfied',
-                backgroundColor: "gray",
+                backgroundColor: "#443333",
                 yAxisID: "y-axis-1",
                 data: [<?php echo $ct_read_vu;?>, <?php echo $ct_list_vu;?>,
                        <?php echo $ct_writ_vu;?>, <?php echo $ct_verb_vu;?>,
@@ -398,7 +413,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_sys_vu;?>]
             }, {
                 label: 'Unsatisfied',
-                backgroundColor: "rgba(151,187,205,0.5)",
+                backgroundColor: "#aa7766",
                 yAxisID: "y-axis-2",
                 data: [<?php echo $ct_read_us;?>, <?php echo $ct_list_us;?>,
                        <?php echo $ct_writ_us;?>, <?php echo $ct_verb_us;?>,
@@ -411,7 +426,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_sys_us;?>]
             }, {
                 label: 'Satisfied',
-                backgroundColor: "#99d8d0",
+                backgroundColor: "#aa9999",
                 yAxisID: "y-axis-3",
                 data: [<?php echo $ct_read_sa;?>, <?php echo $ct_list_sa;?>,
                        <?php echo $ct_writ_sa;?>, <?php echo $ct_verb_sa;?>,
@@ -424,7 +439,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_sys_sa;?>]
             }, {
                 label: 'Very Satisfied',
-                backgroundColor: "#009f8b",
+                backgroundColor: "#ddbbaa",
                 yAxisID: "y-axis-4",
                 data: [<?php echo $ct_read_vs;?>, <?php echo $ct_list_vs;?>,
                        <?php echo $ct_writ_vs;?>, <?php echo $ct_verb_vs;?>,
@@ -497,10 +512,10 @@ if (!isset($_SESSION['email'])) {
                       ];
         var yValues = [<?php echo $ct_9vu;?>, <?php echo $ct_9u;?>, <?php echo $ct_9l;?>, <?php echo $ct_9vl;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("mycanvas9", {
@@ -528,10 +543,10 @@ if (!isset($_SESSION['email'])) {
                       ];
         var yValues = [<?php echo $ct_10vu;?>, <?php echo $ct_10u;?>, <?php echo $ct_10l;?>, <?php echo $ct_10vl;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("mycanvas10", {
@@ -560,7 +575,7 @@ if (!isset($_SESSION['email'])) {
             labels: ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8", "Skill 9", "Skill 10", "Skill 11"],
             datasets: [{
                 label: 'Unimportant',
-                backgroundColor: "gray",
+                backgroundColor: "#443333",
                 yAxisID: "y-axis-1",
                 data: [<?php echo $ct_dmcs1_un;?>, <?php echo $ct_dmcs2_un;?>,
                        <?php echo $ct_dmcs3_un;?>, <?php echo $ct_dmcs4_un;?>,
@@ -570,7 +585,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_dmcs11_un;?>]
             }, {
                 label: 'Of Little Importance',
-                backgroundColor: "rgba(151,187,205,0.5)",
+                backgroundColor: "#aa7766",
                 yAxisID: "y-axis-2",
                 data: [<?php echo $ct_dmcs1_ofl;?>, <?php echo $ct_dmcs2_ofl;?>,
                        <?php echo $ct_dmcs3_ofl;?>, <?php echo $ct_dmcs4_ofl;?>,
@@ -580,7 +595,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_dmcs11_ofl;?>]
             }, {
                 label: 'Important',
-                backgroundColor: "#99d8d0",
+                backgroundColor: "#aa9999",
                 yAxisID: "y-axis-3",
                 data: [<?php echo $ct_dmcs1_im;?>, <?php echo $ct_dmcs2_im;?>,
                        <?php echo $ct_dmcs3_im;?>, <?php echo $ct_dmcs4_im;?>,
@@ -590,7 +605,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_dmcs11_im;?>]
             }, {
                 label: 'Very Important',
-                backgroundColor: "#009f8b",
+                backgroundColor: "#ddbbaa",
                 yAxisID: "y-axis-4",
                 data: [<?php echo $ct_dmcs1_vim;?>, <?php echo $ct_dmcs2_vim;?>,
                        <?php echo $ct_dmcs3_vim;?>, <?php echo $ct_dmcs4_vim;?>,
@@ -662,7 +677,7 @@ if (!isset($_SESSION['email'])) {
             labels: ["Skill 1", "Skill 2", "Skill 3", "Skill 4", "Skill 5", "Skill 6", "Skill 7", "Skill 8", "Skill 9", "Skill 10", "Skill 11"],
             datasets: [{
                 label: 'Very Unsatisfied',
-                backgroundColor: "gray",
+                backgroundColor: "#443333",
                 yAxisID: "y-axis-1",
                 data: [<?php echo $ct_dmcs1_vu;?>, <?php echo $ct_dmcs2_vu;?>,
                        <?php echo $ct_dmcs3_vu;?>, <?php echo $ct_dmcs4_vu;?>,
@@ -672,7 +687,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_dmcs11_vu;?>]
             }, {
                 label: 'Unsatisfied',
-                backgroundColor: "rgba(151,187,205,0.5)",
+                backgroundColor: "#aa7766",
                 yAxisID: "y-axis-2",
                 data: [<?php echo $ct_dmcs1_us;?>, <?php echo $ct_dmcs2_us;?>,
                        <?php echo $ct_dmcs3_us;?>, <?php echo $ct_dmcs4_us;?>,
@@ -682,7 +697,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_dmcs11_us;?>]
             }, {
                 label: 'Satisfied',
-                backgroundColor: "#99d8d0",
+                backgroundColor: "#aa9999",
                 yAxisID: "y-axis-3",
                 data: [<?php echo $ct_dmcs1_sa;?>, <?php echo $ct_dmcs2_sa;?>,
                        <?php echo $ct_dmcs3_sa;?>, <?php echo $ct_dmcs4_sa;?>,
@@ -692,7 +707,7 @@ if (!isset($_SESSION['email'])) {
                        <?php echo $ct_dmcs11_sa;?>]
             }, {
                 label: 'Very Satisfied',
-                backgroundColor: "#009f8b",
+                backgroundColor: "#ddbbaa",
                 yAxisID: "y-axis-4",
                 data: [<?php echo $ct_dmcs1_vs;?>, <?php echo $ct_dmcs2_vs;?>,
                        <?php echo $ct_dmcs3_vs;?>, <?php echo $ct_dmcs4_vs;?>,
@@ -762,11 +777,11 @@ if (!isset($_SESSION['email'])) {
                       ];
         var yValues = [<?php echo $ct_des;?>, <?php echo $ct_prac;?>, <?php echo $ct_sec;?>, <?php echo $ct_post;?>, <?php echo $ct_other13;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145",
-          "pink"
+          "#f0e2e1",
+          "#dfc5c4",
+          "#d0a9a4",
+          "#bf8c88",
+          "#b06f69"
         ];
 
         new Chart("mycanvas13", {
@@ -794,10 +809,10 @@ if (!isset($_SESSION['email'])) {
                       ];
         var yValues = [<?php echo $ct_un;?>, <?php echo $ct_of;?>, <?php echo $ct_mod;?>, <?php echo $ct_im;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("mycanvas14", {
