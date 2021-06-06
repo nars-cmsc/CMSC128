@@ -53,10 +53,6 @@ if ($_SESSION['role'] == 3) {
                 <h6 id="subtitle-alum-charts">Question No. 1</h6>
                 <canvas id="alum_canvas1"></canvas>
             </div>
-            <div id="temp-container">
-                <h6 id="subtitle-emp-charts">Question No. 2</h6>
-                <h3>COUNTRIES ALUMNI WORK IN/FOR: <?php echo $country ; ?></h3>
-            </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 3</h6>
                 <canvas id="alum_canvas3"></canvas>
@@ -97,14 +93,6 @@ if ($_SESSION['role'] == 3) {
                 <h6 id="subtitle-alum-charts">Question No. 9</h6>
                 <canvas id="alum_canvas9"></canvas>
             </div>
-            <div id="temp-container">
-                <h6 id="subtitle-emp-charts">Question No. 10</h6>
-                <?php foreach ($data10 as $data) { ?>
-                  <h3>JOB DUTY (TIME): <?php echo $data['Job']; ?>
-                  (<?php echo $data['Percent']; ?>%)</h3>
-                <?php } ; ?>
-                
-            </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 11</h6>
                 <canvas id="alum_canvas11"></canvas>
@@ -136,10 +124,6 @@ if ($_SESSION['role'] == 3) {
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 18</h6>
                 <canvas id="alum_canvas18"></canvas>
-            </div>
-            <div id="temp-container">
-                <h6 id="subtitle-emp-charts">Question No. 19</h6>
-                <h3>HOW DID UPB DMCS HELP YOU? <?php echo $ct_yes19 ; ?></h3>
             </div>
         </div>
     </section>
