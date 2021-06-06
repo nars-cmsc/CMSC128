@@ -527,6 +527,11 @@
   .content-emp h2{
 	  font-size:15pt;
   }
+
+  .submit-survey {
+  	margin-top: 1rem;
+  	margin-bottom: 4rem;
+  }
   
   .content-contactemp {
 	padding-top: 0.5rem;

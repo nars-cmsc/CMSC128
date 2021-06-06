@@ -843,6 +843,12 @@ if ($_SESSION['role'] == 2) {
 						placeholder="Type here... (Use letters only)"
 						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
 						</div>
+
+				<div class="submit-survey">
+					<input type="submit" name="submit-alum" value="Submit"/>
+				</div>
+
+				
 		</div>
 
 			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
@@ -851,7 +857,7 @@ if ($_SESSION['role'] == 2) {
 				
 			<!-- submit button -->
 			<!--a href="contactemp_ques.php"-->
-			<input type="submit" name="submit-alum" value="Submit"/>
+			
 			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 			<input type="hidden" name="submitted" value="1"/> 
 			<!--/a-->

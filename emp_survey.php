@@ -685,6 +685,10 @@ if ($_SESSION['role'] == 1) {
 							<textarea rows="4" cols="50" style="resize: none;" name="ques17_ytxt"
 								placeholder="Type strengths you appreciate here... (Use letters only)" 
 								onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
+						</div>
+
+						<div class="submit-survey">
+							<input type="submit" name="submit-emp" value="Submit"/>
 						</div>		
 					</div>
 					
@@ -695,7 +699,7 @@ if ($_SESSION['role'] == 1) {
 			
 				<!-- <?php //echo $_POST['ques2_1_2']; ?> -->
 				<!-- submit button -->
-				<input type="submit" name="submit-emp" value="Submit"/>
+				<!-- <input type="submit" name="submit-emp" value="Submit"/> -->
 				<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 				<input type="hidden" name="submitted" value="1"/> 
 				
