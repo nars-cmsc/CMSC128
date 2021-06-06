@@ -62,7 +62,7 @@ if ($_SESSION['role'] == 3) {
 					<option value="alum_emp">Alumni and Employer</option>
 				</select><br><br>
 				<label for="password">Password:</label><br>
-				<input type="text" placeholder="Random password..." name="password" value="<?php echo password_generate(8); ?>">
+				<input type="text" placeholder="Random password..." name="password" value="<?php echo password_generate(8); ?>" minlength="8">
 				<button class="rand-pass">Random Password</button>
 				<br><br>
 				<input type="submit" value="Register" name="reg-btn">
