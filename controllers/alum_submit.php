@@ -129,7 +129,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	}
 	if (isset($_POST['ques5'])) {
 		$five = $_POST['ques5'];
-		if ($five == 'Yes') {
+		if ($five == 'Yes' && isset($_POST['ques5_1'])) {
 			$five_a = $_POST['ques5_1'];
 			if ($five_a == 'Full time (40 hours/week)') {
 				$five_c = $_POST['ques5c'];
@@ -152,7 +152,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 				}
 			}
 		}
-		else if ($five == 'No'){
+		else if ($five == 'No' && isset($_POST['ques5_2'])){
 			$five_b = $_POST['ques5_2'];
 		}	
 	}
@@ -345,7 +345,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q5_2'] = "Need to answer #5.2. Field cannot be empty.";
 		$error = true;
 		}
-			if (isset($_POST['ques5c_other']) && $five_c == 'other' && (empty($fivec_other) || strlen(trim($fivec_other)) <= 0) && $user_exist == false) {
+			if (isset($_POST['ques5c_other']) && $_POST['ques5c_other'] == 'other' && (empty($fivec_other) || strlen(trim($fivec_other)) <= 0) && $user_exist == false) {
 				$errors['es_q5c_other'] = "Need to answer #5c. 'Others' field cannot be empty.";
 				$error = true; 
 			}	
