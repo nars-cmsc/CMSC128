@@ -78,11 +78,18 @@ if ($_SESSION['role'] == 2) {
 					<div class="entry">
 						<input type="hidden" name="two" value="2">
 						<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
-					</div>
-						<textarea id="" name="ques2" rows="4" cols="50" style="resize: none;" 
-						placeholder="Type the country here... (Use letters only)"
-						onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"></textarea> <!-- Letters and space -->
-				</div>	
+					</div>						
+					<select name="ques2" id="ques2">
+					<option value="none" selected disabled >
+						Select country
+					</option>
+					<?php foreach ($ques2_arr as $ques2_el): ?>
+								<option value="<?php echo $ques2_el; ?>">
+									<?php echo $ques2_el; ?>
+							</option><br>
+							<?php endforeach; ?>
+					</select>
+				</div>
 			
 		
 	<div class="Slides">
