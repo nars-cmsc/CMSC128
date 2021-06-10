@@ -74,15 +74,15 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Public
-								<input type="radio" name="ques1" id="ques1_1"value="Public" >
+								<input type="radio" name="ques1" id="ques1_1"value="Public" <?php if (isset($_POST['ques1']) && $_POST['ques1']=="Public") echo "checked";?>>
 								<span class="checkbttn"></span>
 							</label>
 							<label class="option">Private
-								<input type="radio" name="ques1" id="ques1_2"value="Private" >
+								<input type="radio" name="ques1" id="ques1_2"value="Private" <?php if (isset($_POST['ques1']) && $_POST['ques1']=="Private") echo "checked";?>>
 								<span class="checkbttn"></span>
 							</label>
 							<label class="option">Others, please specify:
-								<input type="radio" name="ques1" id="ques1_other"value="Other" >
+								<input type="radio" name="ques1" id="ques1_other"value="Other" <?php if (isset($_POST['ques1']) && $_POST['ques1']=="Other") echo "checked";?>>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -92,9 +92,9 @@ if ($_SESSION['role'] == 1) {
 								<label for="ques1_2" class="option">Private</label>  -->
 							<!-- <input class="options" type="radio" name="ques1"  id="ques1_other"value="Other"/>
 								<label for="ques1_other" class="option">Others, please specify:</label> -->
-							<input type="text" name="ques1_otxt" id="ques1_otxt"  style="display:none;"
+							<input type="text" name="ques1_otxt" id="ques1_otxt"  style="<?php echo (isset($_POST['ques1']) && $_POST['ques1']=="Other") ?  "display:inline;" : "display:none;" ?>"
 								placeholder="Type other sector here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
-								minlength="7" />
+								minlength="7" value="<?php echo isset($_POST['ques1_otxt']) ? $_POST['ques1_otxt'] : '' ?>" />
 								
 						<!-- QUESTION # 2 -->
 						<div class="entry">
@@ -103,11 +103,11 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Philippines
-								<input class="options" type="radio" name="ques2" value="Philippines" id="ques2_1"/>
+								<input class="options" type="radio" name="ques2" value="Philippines" id="ques2_1" <?php if (isset($_POST['ques2']) && $_POST['ques2']=="Philippines") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 							<label class="option">Abroad
-								<input class="options" type="radio" name="ques2" value="Abroad" id="ques2_2"/>
+								<input class="options" type="radio" name="ques2" value="Abroad" id="ques2_2" <?php if (isset($_POST['ques2']) && $_POST['ques2']=="Abroad") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -119,7 +119,7 @@ if ($_SESSION['role'] == 1) {
 
 						<!-- QUESTION # 2.1 -->
 						<input type="hidden" name="twopone" value="2"/>
-						<div id="q2_1" style="display: none;">
+						<div id="q2_1" style="<?php echo (isset($_POST['ques2']) && $_POST['ques2']=="Abroad") ?  "display:block;" : "display:none;" ?>">
 							<div class="entry">
 								<h3 class="ques_title">2.1. If you answered “Abroad”, please specify the region and sub-region based on the United Nations Geographic Regions:</h3>
 							</div>
@@ -128,17 +128,17 @@ if ($_SESSION['role'] == 1) {
 									<option value="" selected disabled >
 										Select a region
 									</option>
-									<option value="Africa">Africa</option>
-									<option value="America">America</option>
-									<option value="Antarctica">Antarctica</option>
-									<option value="Asia">Asia</option>
-									<option value="Europe">Europe</option>
-									<option value="Oceania">Oceania</option>
+									<option value="Africa" <?php echo (isset($_POST['ques2_1_1']) && $_POST['ques2_1_1'] === 'Africa') ? 'selected' : ''; ?>>Africa</option>
+									<option value="America" <?php echo (isset($_POST['ques2_1_1']) && $_POST['ques2_1_1'] === 'America') ? 'selected' : ''; ?>>America</option>
+									<option value="Antarctica" <?php echo (isset($_POST['ques2_1_1']) && $_POST['ques2_1_1'] === 'Antarctica') ? 'selected' : ''; ?>>Antarctica</option>
+									<option value="Asia" <?php echo (isset($_POST['ques2_1_1']) && $_POST['ques2_1_1'] === 'Asia') ? 'selected' : ''; ?>>Asia</option>
+									<option value="Europe" <?php echo (isset($_POST['ques2_1_1']) && $_POST['ques2_1_1'] === 'Europe') ? 'selected' : ''; ?>>Europe</option>
+									<option value="Oceania" <?php echo (isset($_POST['ques2_1_1']) && $_POST['ques2_1_1'] === 'Oceania') ? 'selected' : ''; ?>>Oceania</option>
 								</select>
 								<label for="ques2_1_2">Sub region: </label>
 								<select name="ques2_1_2" id="ques2_1_2">
-									<option value="" selected disabled >
-										Select a subregion
+									<option value="$_POST['ques2_1_2']" selected >
+										<?php echo (isset($_POST['ques2_1_2'])) ? $_POST['ques2_1_2'] : '' ; ?>
 									</option>
 								</select>
 						</div>		
@@ -156,15 +156,15 @@ if ($_SESSION['role'] == 1) {
 									Select industry and business
 								</option>
 								<?php foreach ($ques3_arr as $ques3_el): ?>
-									<option value="<?php echo $ques3_el; ?>">
+									<option value="<?php echo $ques3_el; ?>" <?php echo (isset($_POST['ques3']) && $_POST['ques3'] === $ques3_el) ? 'selected' : ''; ?>>
 										<?php echo $ques3_el; ?>
 									</option><br>
 									<?php endforeach; ?>
-								<option value="other">Others, please specify:</option>
+								<option value="other" <?php echo (isset($_POST['ques3']) && $_POST['ques3'] === 'other') ? 'selected' : ''; ?>>Others, please specify:</option>
 							</select>
-							<input type="text" name="ques3_other" id="ques3_other" style="display:none;"
+							<input type="text" name="ques3_other" id="ques3_other" style="<?php echo (isset($_POST['ques3']) && $_POST['ques3']=="other") ?  "display:inline;" : "display:none;" ?>"
 							placeholder="Type other industry and business here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
-							minlength="7" />
+							minlength="7" value="<?php echo isset($_POST['ques3_other']) ? $_POST['ques3_other'] : '' ?>"/>
 							
 							
 						<!-- QUESTION # 4 -->
@@ -174,15 +174,15 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Chief level – General Manager/President/CEO
-								<input class="options" type="radio" name="ques4" value="Chief level – General Manager/President/CEO" id="ques4_1"/>
+								<input class="options" type="radio" name="ques4" value="Chief level – General Manager/President/CEO" id="ques4_1" <?php if (isset($_POST['ques4']) && $_POST['ques4']=="Chief level – General Manager/President/CEO") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label><br>
 							<label class="option">Supervisory – Director/Managing Director/Supervisor
-								<input class="options" type="radio" name="ques4" value="Supervisory – Director/Managing Director/Supervisor" id="ques4_2"/>
+								<input class="options" type="radio" name="ques4" value="Supervisory – Director/Managing Director/Supervisor" id="ques4_2" <?php if (isset($_POST['ques4']) && $_POST['ques4']=="Supervisory – Director/Managing Director/Supervisor") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label><br>
 							<label class="option">Rank and file
-								<input class="options" type="radio" name="ques4" value="Rank and file" id="ques4_3"/>
+								<input class="options" type="radio" name="ques4" value="Rank and file" id="ques4_3" <?php if (isset($_POST['ques4']) && $_POST['ques4']=="Rank and file") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -203,7 +203,7 @@ if ($_SESSION['role'] == 1) {
 							<input type="hidden" name="five" value="5"/>
 							<h3 class="ques_title">5. How many UP graduates are employed in your company/organization?</h3>
 						</div>
-							<input type="number" min="0" step="1" name="ques5" id="ques5" placeholder="Type number of UP graduates here..."/>
+							<input type="number" min="0" step="1" name="ques5" id="ques5" placeholder="Type number of UP graduates here..." value="<?php echo isset($_POST['ques5']) ? $_POST['ques5'] : '' ?>"/>
 						
 						
 						<!-- QUESTION # 6 -->
@@ -213,19 +213,19 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Strongly Disagree
-								<input class="options" type="radio" name="ques6" value="Strongly Disagree" id="ques6_1"/>
+								<input class="options" type="radio" name="ques6" value="Strongly Disagree" id="ques6_1" <?php if (isset($_POST['ques6']) && $_POST['ques6']=="Strongly Disagree") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Disagree
-								<input class="options" type="radio" name="ques6" value="Disagree" id="ques6_2"/>
+								<input class="options" type="radio" name="ques6" value="Disagree" id="ques6_2" <?php if (isset($_POST['ques6']) && $_POST['ques6']=="Disagree") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Agree
-								<input class="options" type="radio" name="ques6" value="Agree" id="ques6_3"/>
+								<input class="options" type="radio" name="ques6" value="Agree" id="ques6_3" <?php if (isset($_POST['ques6']) && $_POST['ques6']=="Agree") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Strongly Agree
-								<input class="options" type="radio" name="ques6" value="Strongly Agree" id="ques6_4"/>
+								<input class="options" type="radio" name="ques6" value="Strongly Agree" id="ques6_4" <?php if (isset($_POST['ques6']) && $_POST['ques6']=="Strongly Agree") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -262,28 +262,28 @@ if ($_SESSION['role'] == 1) {
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Unimportant';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Unimportant';?>" id="" <?php if (isset($_POST['ques7_'.$i]) && $_POST['ques7_'.$i]=="Unimportant") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php #echo 'ques7_'.$i; ?>" value="<?php #echo 'Unimportant';?>" id=""/> -->
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Of Little Importance';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Of Little Importance';?>" id="" <?php if (isset($_POST['ques7_'.$i]) && $_POST['ques7_'.$i]=="Of Little Importance") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php #echo 'ques7_'.$i; ?>" value="<?php #echo 'Of Little Importance';?>" id=""/> -->
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Important';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Important';?>" id="" <?php if (isset($_POST['ques7_'.$i]) && $_POST['ques7_'.$i]=="Important") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php# echo 'ques7_'.$i; ?>" value="<?php# echo 'Important';?>" id=""/> -->
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Very Important';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques7_'.$i; ?>" value="<?php echo 'Very Important';?>" id="" <?php if (isset($_POST['ques7_'.$i]) && $_POST['ques7_'.$i]=="Very Important") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php #echo 'ques7_'.$i; ?>" value="<?php #echo 'Very Important';?>" id=""/> -->
@@ -316,28 +316,28 @@ if ($_SESSION['role'] == 1) {
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Very Unsatisfied';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Very Unsatisfied';?>" id="" <?php if (isset($_POST['ques8_'.$i]) && $_POST['ques8_'.$i]=="Very Unsatisfied") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php# echo 'ques8_'.$i; ?>" value="<?php #echo 'Very Unsatisfied';?>" id=""/> -->
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Unsatisfied';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Unsatisfied';?>" id="" <?php if (isset($_POST['ques8_'.$i]) && $_POST['ques8_'.$i]=="Unsatisfied") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php #echo 'ques8_'.$i; ?>" value="<?php #echo 'Unsatisfied';?>" id=""/> -->
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Satisfied';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Satisfied';?>" id="" <?php if (isset($_POST['ques8_'.$i]) && $_POST['ques8_'.$i]=="Satisfied") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php #echo 'ques8_'.$i; ?>" value="<?php #echo 'Satisfied';?>" id=""/> -->
 									</td>
 									<td>
 										<label class="skill_option">
-											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Very Satisfied';?>" id=""/>
+											<input class="options" type="radio" name="<?php echo 'ques8_'.$i; ?>" value="<?php echo 'Very Satisfied';?>" id="" <?php if (isset($_POST['ques8_'.$i]) && $_POST['ques8_'.$i]=="Very Satisfied") echo "checked";?>/>
 											<span class="skill-checkbttn"></span>
 										</label>
 										<!-- <input class="options" type="radio" name="<?php #echo 'ques8_'.$i; ?>" value="<?php #echo 'Very Satisfied';?>" id=""/> -->
@@ -356,19 +356,19 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Very Unlikely
-								<input class="options" type="radio" name="ques9" value="Very Unlikely" id="ques9_1"/>
+								<input class="options" type="radio" name="ques9" value="Very Unlikely" id="ques9_1" <?php if (isset($_POST['ques9']) && $_POST['ques9']=="Very Unlikely") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Unlikely
-								<input class="options" type="radio" name="ques9" value="Unlikely" id="ques9_2"/>
+								<input class="options" type="radio" name="ques9" value="Unlikely" id="ques9_2" <?php if (isset($_POST['ques9']) && $_POST['ques9']=="Unlikely") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Likely
-								<input class="options" type="radio" name="ques9" value="Likely" id="ques9_3"/>
+								<input class="options" type="radio" name="ques9" value="Likely" id="ques9_3" <?php if (isset($_POST['ques9']) && $_POST['ques9']=="Likely") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Very Likely
-								<input class="options" type="radio" name="ques9" value="Very Likely" id="ques9_4"/>
+								<input class="options" type="radio" name="ques9" value="Very Likely" id="ques9_4" <?php if (isset($_POST['ques9']) && $_POST['ques9']=="Very Likely") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -389,19 +389,19 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Very Unlikely
-								<input class="options" type="radio" name="ques10" value="Very Unlikely" id="ques10_1"/>
+								<input class="options" type="radio" name="ques10" value="Very Unlikely" id="ques10_1" <?php if (isset($_POST['ques10']) && $_POST['ques10']=="Very Unlikely") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Unlikely
-								<input class="options" type="radio" name="ques10" value="Unlikely" id="ques10_2"/>
+								<input class="options" type="radio" name="ques10" value="Unlikely" id="ques10_2" <?php if (isset($_POST['ques10']) && $_POST['ques10']=="Unlikely") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Likely
-								<input class="options" type="radio" name="ques10" value="Likely" id="ques10_3"/>
+								<input class="options" type="radio" name="ques10" value="Likely" id="ques10_3" <?php if (isset($_POST['ques10']) && $_POST['ques10']=="Likely") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Very Likely
-								<input class="options" type="radio" name="ques10" value="Very Likely" id="ques10_4"/>
+								<input class="options" type="radio" name="ques10" value="Very Likely" id="ques10_4" <?php if (isset($_POST['ques10']) && $_POST['ques10']=="Very Likely") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -438,28 +438,28 @@ if ($_SESSION['role'] == 1) {
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Unimportant';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Unimportant';?>" id="" <?php if (isset($_POST['ques11_'.$i]) && $_POST['ques11_'.$i]=="Unimportant") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques11_'.$i; ?>" value="<?php #echo 'Unimportant';?>" id=""/> -->
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Of Little Importance';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Of Little Importance';?>" id="" <?php if (isset($_POST['ques11_'.$i]) && $_POST['ques11_'.$i]=="Of Little Importance") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques11_'.$i; ?>" value="<?php #echo 'Of Little Importance';?>" id=""/> -->
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Important';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Important';?>" id="" <?php if (isset($_POST['ques11_'.$i]) && $_POST['ques11_'.$i]=="Important") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques11_'.$i; ?>" value="<?php #echo 'Important';?>" id=""/> -->
 								</td style="width:10%;">
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Very Important';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques11_'.$i; ?>" value="<?php echo 'Very Important';?>" id="" <?php if (isset($_POST['ques11_'.$i]) && $_POST['ques11_'.$i]=="Very Important") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques11_'.$i; ?>" value="<?php #echo 'Very Important';?>" id=""/> -->
@@ -492,28 +492,28 @@ if ($_SESSION['role'] == 1) {
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Very Unsatisfied';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Very Unsatisfied';?>" id="" <?php if (isset($_POST['ques12_'.$i]) && $_POST['ques12_'.$i]=="Very Unsatisfied") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques12_'.$i; ?>" value="<?php #echo 'Very Unsatisfied';?>" id=""/> -->
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Unsatisfied';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Unsatisfied';?>" id="" <?php if (isset($_POST['ques12_'.$i]) && $_POST['ques12_'.$i]=="Unsatisfied") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques12_'.$i; ?>" value="<?php #echo 'Unsatisfied';?>" id=""/> -->
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Satisfied';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Satisfied';?>" id="" <?php if (isset($_POST['ques12_'.$i]) && $_POST['ques12_'.$i]=="Satisfied") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques12_'.$i; ?>" value="<?php #echo 'Satisfied';?>" id=""/> -->
 								</td>
 								<td style="width:10%;">
 									<label class="skill_option">
-										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Very Satisfied';?>" id=""/>
+										<input class="options" type="radio" name="<?php echo 'ques12_'.$i; ?>" value="<?php echo 'Very Satisfied';?>" id="" <?php if (isset($_POST['ques12_'.$i]) && $_POST['ques12_'.$i]=="Very Satisfied") echo "checked";?>/>
 										<span class="skill-checkbttn"></span>
 									</label>
 									<!-- <input class="options" type="radio" name="<?php #echo 'ques12_'.$i; ?>" value="<?php #echo 'Very Satisfied';?>" id=""/> -->
@@ -532,23 +532,23 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="check-option">Design courses that are more relevant to the needs of employers
-								<input type="checkbox" id="ques13_1" name="ques13[]" value="Design courses that are more relevant to the needs of employers"/>
+								<input type="checkbox" id="ques13_1" name="ques13[]" value="Design courses that are more relevant to the needs of employers" <?php if (isset($_POST['ques13']) && in_array("Design courses that are more relevant to the needs of employers", $_POST['ques13'])) echo "checked='checked'";?>/>
 								<span class="checkmark"></span>
 							</label><br>
 							<label class="check-option">Include practical experience as part of the academic programs
-								<input type="checkbox" id="ques13_2" name="ques13[]" value="Include practical experience as part of the academic programs"/>
+								<input type="checkbox" id="ques13_2" name="ques13[]" value="Include practical experience as part of the academic programs" <?php if (isset($_POST['ques13']) && in_array("Include practical experience as part of the academic programs", $_POST['ques13'])) echo "checked='checked'";?>/>
 								<span class="checkmark"></span>
 							</label><br>
 							<label class="check-option">Include sector specific job placements as an integral part of the degree program
-								<input type="checkbox" id="ques13_3" name="ques13[]" value="Include sector specific job placements as an integral part of the degree program"/>
+								<input type="checkbox" id="ques13_3" name="ques13[]" value="Include sector specific job placements as an integral part of the degree program" <?php if (isset($_POST['ques13']) && in_array("Include sector specific job placements as an integral part of the degree program", $_POST['ques13'])) echo "checked='checked'";?>/>
 								<span class="checkmark"></span>
 							</label><br>
 							<label class="check-option">Provide better post-graduation support (facilitate relations between graduates and companies/organizations)
-								<input type="checkbox" id="ques13_4" name="ques13[]" value="Provide better post-graduation support (facilitate relations between graduates and companies/organizations)"/>
+								<input type="checkbox" id="ques13_4" name="ques13[]" value="Provide better post-graduation support (facilitate relations between graduates and companies/organizations)" <?php if (isset($_POST['ques13']) && in_array("Provide better post-graduation support (facilitate relations between graduates and companies/organizations)", $_POST['ques13'])) echo "checked='checked'";?>/>
 								<span class="checkmark"></span>
 							</label><br>
 							<label class="check-option">Others, please specify:
-								<input type="checkbox" id="ques13_other" name="ques13[]" value="other" onclick="show_hide(this);"/>
+								<input type="checkbox" id="ques13_other" name="ques13[]" value="other" onclick="show_hide(this);" <?php if (isset($_POST['ques13']) && in_array("other", $_POST['ques13'])) echo "checked='checked'";?>/>
 								<span class="checkmark"></span>
 							</label>
 
@@ -566,9 +566,9 @@ if ($_SESSION['role'] == 1) {
 								<br>
 							<input type="checkbox" id="ques13_other" name="ques13[]" value="other" onclick="show_hide(this);"/>
 								<label for="ques13_other">Others, please specify:</label> -->
-								<input type="text" name="ques13_otxt" id="ques13_otxt" style="display:none;"
+								<input type="text" name="ques13_otxt" id="ques13_otxt" style="<?php echo (isset($_POST['ques13']) && in_array("other", $_POST['ques13'])) ?  "display:inline;" : "display:none;" ?>"
 								placeholder="Type other actions here..." pattern="[a-zA-Z\s]+" title="Letters only (A-Z) or (a-z)"
-								minlength="7" />
+								minlength="7" value="<?php echo isset($_POST['ques13_otxt']) ? $_POST['ques13_otxt'] : '' ?>"/>
 								
 								
 								
@@ -579,19 +579,19 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Unimportant
-								<input class="options" type="radio" name="ques14" value="Unimportant" id="ques14_1"/>
+								<input class="options" type="radio" name="ques14" value="Unimportant" id="ques14_1" <?php if (isset($_POST['ques14']) && $_POST['ques14']=="Unimportant") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Of Little Importance
-								<input class="options" type="radio" name="ques14" value="Of Little Importance" id="ques14_2"/>
+								<input class="options" type="radio" name="ques14" value="Of Little Importance" id="ques14_2" <?php if (isset($_POST['ques14']) && $_POST['ques14']=="Of Little Importance") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Moderately part Important
-								<input class="options" type="radio" name="ques14" value="Moderately part Important" id="ques14_3"/>
+								<input class="options" type="radio" name="ques14" value="Moderately part Important" id="ques14_3" <?php if (isset($_POST['ques14']) && $_POST['ques14']=="Moderately part Important") echo "checked";?>/>
 								<span class="checkbttn"></span>
-							</label>
+							</label><br>
 							<label class="option">Important
-								<input class="options" type="radio" name="ques14" value="Important" id="ques14_4"/>
+								<input class="options" type="radio" name="ques14" value="Important" id="ques14_4" <?php if (isset($_POST['ques14']) && $_POST['ques14']=="Important") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -614,11 +614,11 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Yes
-								<input type="radio" name="ques15" class="options" id="ques15_y" onclick="$('#ques15_txt').show();" value="Yes"/>
+								<input type="radio" name="ques15" class="options" id="ques15_y" onclick="$('#ques15_txt').show();" value="Yes" <?php if (isset($_POST['ques15']) && $_POST['ques15']=="Yes") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 							<label class="option">No
-								<input type="radio" name="ques15" class="options" id="ques15_n" onclick="$('#ques15_txt').hide();" value="No"/>
+								<input type="radio" name="ques15" class="options" id="ques15_n" onclick="$('#ques15_txt').hide();" value="No" <?php if (isset($_POST['ques15']) && $_POST['ques15']=="No") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -627,10 +627,12 @@ if ($_SESSION['role'] == 1) {
 							<input type="radio" name="ques15" class="options" id="ques15_n" onclick="$('#ques15_txt').hide();" value="No"/>
 								<label class="option" for="ques15_n">No</label> -->
 							<br>
-						<div id="ques15_txt" style="display: none;">
+						<div id="ques15_txt" style="<?php echo (isset($_POST['ques15']) && $_POST['ques15']=="Yes") ?  "display:inline;" : "display:none;" ?>">
 							<textarea rows="4" cols="50" style="resize: none;" name="ques15_ytxt" 
 							placeholder="Type your comments or suggestions here... (Use letters only)" 
-							onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
+							onkeyup="this.value = this.value.replace(/[^\w .]/g, '')">
+								<?php echo isset($_POST['ques15_ytxt']) ? htmlspecialchars($_POST['ques15_ytxt']) : ''; ?>
+							</textarea> <!-- can still accept underscore and numbers -->
 						</div>
 
 
@@ -641,11 +643,11 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Yes
-								<input type="radio" name="ques16" class="options" id="ques16_y" onclick="$('#ques16_txt').show();" value="Yes"/>
+								<input type="radio" name="ques16" class="options" id="ques16_y" onclick="$('#ques16_txt').show();" value="Yes" <?php if (isset($_POST['ques16']) && $_POST['ques16']=="Yes") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 							<label class="option">No
-								<input type="radio" name="ques16" class="options" id="ques16_n" onclick="$('#ques16_txt').hide();" value="No"/>
+								<input type="radio" name="ques16" class="options" id="ques16_n" onclick="$('#ques16_txt').hide();" value="No" <?php if (isset($_POST['ques16']) && $_POST['ques16']=="No") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -654,10 +656,12 @@ if ($_SESSION['role'] == 1) {
 							<input type="radio" name="ques16" class="options" id="ques16_n" onclick="$('#ques16_txt').hide();" value="No"/>
 								<label class="option" for="ques16_n">No</label> -->
 							<br>
-						<div id="ques16_txt" style="display: none;">
+						<div id="ques16_txt" style="<?php echo (isset($_POST['ques16']) && $_POST['ques16']=="Yes") ?  "display:inline;" : "display:none;" ?>">
 							<textarea rows="4" cols="50" style="resize: none;" name="ques16_ytxt" 
 								placeholder="Type your negative feedback here... (Use letters only)" 
-								onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
+								onkeyup="this.value = this.value.replace(/[^\w .]/g, '')">
+									<?php echo isset($_POST['ques16_ytxt']) ? htmlspecialchars($_POST['ques16_ytxt']) : ''; ?>
+								</textarea> <!-- can still accept underscore and numbers -->
 						</div>
 
 
@@ -668,11 +672,11 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 							<label class="option">Yes
-								<input type="radio" name="ques17" class="options" id="ques17_y" onclick="$('#ques17_txt').show();" value="Yes"/>
+								<input type="radio" name="ques17" class="options" id="ques17_y" onclick="$('#ques17_txt').show();" value="Yes" <?php if (isset($_POST['ques17']) && $_POST['ques17']=="Yes") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 							<label class="option">No
-								<input type="radio" name="ques17" class="options" id="ques17_n" onclick="$('#ques17_txt').hide();" value="No"/>
+								<input type="radio" name="ques17" class="options" id="ques17_n" onclick="$('#ques17_txt').hide();" value="No" <?php if (isset($_POST['ques17']) && $_POST['ques17']=="No") echo "checked";?>/>
 								<span class="checkbttn"></span>
 							</label>
 
@@ -681,10 +685,12 @@ if ($_SESSION['role'] == 1) {
 							<input type="radio" name="ques17" class="options" id="ques17_n" onclick="$('#ques17_txt').hide();" value="No"/>
 								<label class="option" for="ques17_n">No</label> -->
 							<br>
-						<div id="ques17_txt" style="display: none;">
+						<div id="ques17_txt" style="<?php echo (isset($_POST['ques17']) && $_POST['ques17']=="Yes") ?  "display:inline;" : "display:none;" ?>">
 							<textarea rows="4" cols="50" style="resize: none;" name="ques17_ytxt"
 								placeholder="Type strengths you appreciate here... (Use letters only)" 
-								onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea> <!-- can still accept underscore and numbers -->
+								onkeyup="this.value = this.value.replace(/[^\w .]/g, '')">
+									<?php echo isset($_POST['ques17_ytxt']) ? htmlspecialchars($_POST['ques17_ytxt']) : ''; ?>
+								</textarea> <!-- can still accept underscore and numbers -->
 						</div>
 
 						<div class="submit-survey">
