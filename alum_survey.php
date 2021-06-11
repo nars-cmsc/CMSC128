@@ -47,22 +47,23 @@ if ($_SESSION['role'] == 2) {
 				</div>
 			<?php endif;?>
 
-			<div class="questions-container">
-				<div class="dot-navigation">
-					<span class="dot" onclick="currentSlide(1)"></span>
-					<span class="dot" onclick="currentSlide(2)"></span>
-					<span class="dot" onclick="currentSlide(3)"></span>
-					<span class="dot" onclick="currentSlide(4)"></span>
-					<span class="dot" onclick="currentSlide(5)"></span>
-					<span class="dot" onclick="currentSlide(6)"></span>
-					<span class="dot" onclick="currentSlide(7)"></span>
-					<span class="dot" onclick="currentSlide(8)"></span>
-					<span class="dot" onclick="currentSlide(9)"></span>
-					<span class="dot" onclick="currentSlide(10)"></span>
-					<span class="dot" onclick="currentSlide(11)"></span>
-					<span class="dot" onclick="currentSlide(12)"></span>
-				</div>
+			<br>
+			<div class="dot-navigation">
+				<span class="dot" onclick="currentSlide(1)"></span>
+				<span class="dot" onclick="currentSlide(2)"></span>
+				<span class="dot" onclick="currentSlide(3)"></span>
+				<span class="dot" onclick="currentSlide(4)"></span>
+				<span class="dot" onclick="currentSlide(5)"></span>
+				<span class="dot" onclick="currentSlide(6)"></span>
+				<span class="dot" onclick="currentSlide(7)"></span>
+				<span class="dot" onclick="currentSlide(8)"></span>
+				<span class="dot" onclick="currentSlide(9)"></span>
+				<span class="dot" onclick="currentSlide(10)"></span>
+				<span class="dot" onclick="currentSlide(11)"></span>
+				<span class="dot" onclick="currentSlide(12)"></span>
+			</div>
 
+			<div class="questions-container">
 				<div class="Slides" style="display:block;">
 					<div class="numbertext">1 / 12</div>
 					<!-- QUESTION # 1 -->
@@ -852,8 +853,17 @@ if ($_SESSION['role'] == 2) {
 				
 		</div>
 
-			<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<div class="previous" onclick="plusSlides(-1)">
+				<div class="prev">
+					&#10094;
+				</div>
+			</div>
+			<div class="next" onclick="plusSlides(1)">
+				<div class="nxt">
+					&#10095;
+				</div>
+			</div>
+
 		</div>
 				
 			<!-- submit button -->

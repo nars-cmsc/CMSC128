@@ -698,8 +698,17 @@ if ($_SESSION['role'] == 1) {
 						</div>		
 					</div>
 					
-					<a class="previous" onclick="plusSlides(-1)">&#10094;</a>
-					<a class="next" onclick="plusSlides(1)">&#10095;</a>
+					<div class="previous" onclick="plusSlides(-1)">
+						<div class="prev">
+							&#10094;
+						</div>
+					</div>
+					<div class="next" onclick="plusSlides(1)">
+						<div class="nxt">
+							&#10095;
+						</div>
+					</div>
+
 				</div>
 			
 			
