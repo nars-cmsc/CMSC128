@@ -95,6 +95,8 @@ nav {
 }
 #title-users {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
   /*padding: 2%;*/
 }
 #table-users {
@@ -192,9 +194,13 @@ input[type=submit]:hover{
 }
 #title-emp-raw {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #subtitle-emp-raw {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-emp-raw {
   text-align: center;
@@ -218,9 +224,13 @@ input[type=submit]:hover{
 }
 #title-alum-raw {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #subtitle-alum-raw {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-alum-raw {
   text-align: center;
@@ -244,9 +254,13 @@ input[type=submit]:hover{
 }
 #title-emp-charts {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #subtitle-emp-charts {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-emp-charts {
   text-align: center;
@@ -270,9 +284,13 @@ input[type=submit]:hover{
 }
 #title-alum-charts {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #subtitle-alum-charts {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-alum-charts {
   text-align: center;
@@ -296,9 +314,13 @@ input[type=submit]:hover{
 }
 #title-emp-table {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #subtitle-emp-table {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-emp-table1 {
   text-align: center;
@@ -318,9 +340,18 @@ input[type=submit]:hover{
 }
 #title-alum-table {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #subtitle-alum-table {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
+}
+#total-respondents {
+  color: black;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-alum-table1 {
   text-align: center;
@@ -340,6 +371,8 @@ input[type=submit]:hover{
 }
 #title-contact {
   color: gray;
+    margin-left: 1%;
+    text-transform: uppercase;
 }
 #table-contact {
   text-align: center;
