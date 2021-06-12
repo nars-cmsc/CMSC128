@@ -1,52 +1,19 @@
 <?php
 
-require ('controllers/alum_data_chart.php');
+require ('alum_data_chart.php');
 
-// if user is not logged in
-if (!isset($_SESSION['email'])) {
-    header('location: ../login.php');
-    exit();
-}
-
-// if user is not an admin but alumni
-if ($_SESSION['role'] == 1) {
-    header('location: ../alum_survey.php');
-    exit();
-}
-// if user is not an admin but employer
-if ($_SESSION['role'] == 2) {
-    header('location: ../emp_survey.php');
-    exit();
-}
-// if user is not an admin but alum and employer
-if ($_SESSION['role'] == 3) {
-    header('location: ../alum_emp.php');
-    exit();
-}
-  
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="images/png" href="images/UP_seal.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Admin</title>
+	<meta charset="utf-8">
+	<title></title>
 </head>
-<?php include('header.php');  ?>
-    <section>
-        <?php include('sidenav.php');  ?>
-        <div class="content-alum-table">
-            <h3 id="title-alum-table">Tables</h4>
-            <h4 id="subtitle-alum-table">Alumni Survey Results</h6><br>
-            <p id="total-respondents">Total Respondents: <?php echo $total ; ?></p>
-            
-            <a href="controllers/excel_alum_results.php">Export</a>
-            
+<body onload="<?php header("Content-Type: application/xls"); header("Content-Disposition: attachment; filename=alum_survey_results.xls"); ?>">
+		<h4>ALUMNI SURVEY SUMMARY OF RESULTS<br>
+            Total Respondents: <?php echo $total ; ?> <br>
+            Date of Generation: <?php echo date("m/d/Y"); ?></h4><br>
             <table id="table-alum-table1">
                 <thead>
                     <tr>
@@ -153,19 +120,6 @@ if ($_SESSION['role'] == 3) {
                         <td><?php echo $ct_nots ; ?></td>
                         <td><?php echo round(($ct_nots/$total*100),0) ; ?>%</td>
                     </tr>
-                </tbody>
-            </table>
-
-            <table id="table-alum-table1">
-                <thead>
-                    <tr>
-                        <th>Questions</th>
-                        <th>Answers</th>
-                        <th># of Respondents</th>
-                        <th>Percentage</th>
-                    </tr>
-                </thead>
-                <tbody>
                 <!-- QUESTION # 5 -->
                     <tr>
                         <td>5. Employed?</td>
@@ -1047,10 +1001,5 @@ if ($_SESSION['role'] == 3) {
                     <?php } ; ?>
                 </tbody>
             </table>
-        </div>
-    </section>
-    
-    <?php include('footer.php'); ?>
-
 </body>
 </html>
