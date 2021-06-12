@@ -41,8 +41,8 @@ if ($_SESSION['role'] == 3) {
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-alum-table">
-            <h3 id="title-alum-table">Tables</h4>
-            <h4 id="subtitle-alum-table">Alumni Survey Results</h6><br>
+            <h3 id="title-alum-table">Tables</h3>
+            <h4 id="subtitle-alum-table">Alumni Survey Results</h4><br>
             <p id="total-respondents">Total Respondents: <?php echo $total ; ?></p>
             
             <a href="controllers/excel_alum_results.php">Export</a>
