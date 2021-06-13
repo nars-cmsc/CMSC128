@@ -1,140 +1,114 @@
 <?php
 
-require ('controllers/alum_data_chart.php');
+require ('alum_data_chart.php');
 
-// if user is not logged in
-if (!isset($_SESSION['email'])) {
-    header('location: ../login.php');
-    exit();
-}
-
-// if user is not an admin but alumni
-if ($_SESSION['role'] == 1) {
-    header('location: ../alum_survey.php');
-    exit();
-}
-// if user is not an admin but employer
-if ($_SESSION['role'] == 2) {
-    header('location: ../emp_survey.php');
-    exit();
-}
-// if user is not an admin but alum and employer
-if ($_SESSION['role'] == 3) {
-    header('location: ../alum_emp.php');
-    exit();
-}
-  
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="images/png" href="images/UP_seal.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- for charts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-
-    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js'></script>
-    <title>Admin</title>
+    <style type="text/css">
+      #chart-container-alum {
+        float: left;
+        width: 25%;
+        height: auto;
+        padding:2rem;
+        border:1px solid black;
+      }
+    </style>
+	<title></title>
 </head>
-<?php include('header.php');  ?>
-    <section id="alum">
-        <?php include('sidenav.php');  ?>
-        <div class="content-alum-charts">
-            <h4 id="title-alum-charts">Chart Generation</h4>
-            <h6 id="subtitle-alum-charts">Alumni Survey</h6>
-                <br>
+<body onload='setTimeout(() => { window.print() }, 1000);setTimeout("window.close()", 2000);'>
+	<h1>ALUMNI SURVEY SUMMARY OF RESULTS<br>
+        Total Respondents: <?php echo $total ; ?> <br>
+        Date of Generation: <?php echo date("m/d/Y"); ?></h1><br>
 
-            <a href="controllers/pdf_alum_charts.php" id="" target="_blank">REPORT</a>
-            <div id="chart-container-alum-main">
-              <div id="chart-container-alum">
-                <h6 id="subtitle-alum-charts">Question No. 1</h6>
-                <canvas id="alum_canvas1"></canvas>
-              </div>
-              <div id="chart-container-alum">
-                  <h6 id="subtitle-alum-charts">Question No. 3</h6>
-                  <canvas id="alum_canvas3"></canvas>
-              </div>
-              <div id="chart-container-alum">
-                  <h6 id="subtitle-alum-charts">Question No. 4</h6>
-                  <canvas id="alum_canvas4"></canvas>
-              </div>
-              <div id="chart-container-alum">
-                  <h6 id="subtitle-alum-charts">Question No. 5</h6>
-                  <canvas id="alum_canvas5"></canvas>
-              </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 5a</h6>
-                    <canvas id="alum_canvas5a"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 5a-1</h6>
-                    <canvas id="alum_canvas5a-1"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 5b</h6>
-                    <canvas id="alum_canvas5b"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 6</h6>
-                    <canvas id="alum_canvas6"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 7</h6>
-                    <canvas id="alum_canvas7"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 8</h6>
-                    <canvas id="alum_canvas8"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 9</h6>
-                    <canvas id="alum_canvas9"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 11</h6>
-                    <canvas id="alum_canvas11"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 12</h6>
-                    <canvas id="alum_canvas12"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 13</h6>
-                    <canvas id="alum_canvas13"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 14</h6>
-                    <canvas id="alum_canvas14"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 15</h6>
-                    <canvas id="alum_canvas15"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 16</h6>
-                    <canvas id="alum_canvas16"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 17</h6>
-                    <canvas id="alum_canvas17"></canvas>
-                </div>
-                <div id="chart-container-alum">
-                    <h6 id="subtitle-alum-charts">Question No. 18</h6>
-                    <canvas id="alum_canvas18"></canvas>
-                </div>
-            </div>
-            
+    <div class="content-alum-charts">
+        <h4 id="title-alum-charts">Chart Generation</h4>
+        <h6 id="subtitle-alum-charts">Alumni Survey</h6>
+            <br>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 1</h6>
+            <canvas id="alum_canvas1"></canvas>
         </div>
-    </section>
-    <!-- QUESTION # 1 -->
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 3</h6>
+            <canvas id="alum_canvas3"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 4</h6>
+            <canvas id="alum_canvas4"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 5</h6>
+            <canvas id="alum_canvas5"></canvas>
+        </div>
+          <div id="chart-container-alum">
+              <h6 id="subtitle-alum-charts">Question No. 5a</h6>
+              <canvas id="alum_canvas5a"></canvas>
+          </div>
+          <div id="chart-container-alum">
+              <h6 id="subtitle-alum-charts">Question No. 5a-1</h6>
+              <canvas id="alum_canvas5a-1"></canvas>
+          </div>
+          <div id="chart-container-alum">
+              <h6 id="subtitle-alum-charts">Question No. 5b</h6>
+              <canvas id="alum_canvas5b"></canvas>
+          </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 6</h6>
+            <canvas id="alum_canvas6"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 7</h6>
+            <canvas id="alum_canvas7"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 8</h6>
+            <canvas id="alum_canvas8"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 9</h6>
+            <canvas id="alum_canvas9"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 11</h6>
+            <canvas id="alum_canvas11"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 12</h6>
+            <canvas id="alum_canvas12"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 13</h6>
+            <canvas id="alum_canvas13"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 14</h6>
+            <canvas id="alum_canvas14"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 15</h6>
+            <canvas id="alum_canvas15"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 16</h6>
+            <canvas id="alum_canvas16"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 17</h6>
+            <canvas id="alum_canvas17"></canvas>
+        </div>
+        <div id="chart-container-alum">
+            <h6 id="subtitle-alum-charts">Question No. 18</h6>
+            <canvas id="alum_canvas18"></canvas>
+        </div>
+    </div>
+        <!-- QUESTION # 1 -->
     <script type="text/javascript">
         var xValues = ["Female", "Male"];
         var yValues = [<?php echo $ct_fmale;?>, <?php echo $ct_male;?>];
@@ -834,8 +808,5 @@ if ($_SESSION['role'] == 3) {
           }
         });
     </script>
-
-    <?php include('footer.php'); ?>
-
 </body>
 </html>

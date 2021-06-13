@@ -1,110 +1,91 @@
 <?php
 
-require ('controllers/emp_data_chart.php');
+require ('emp_data_chart.php');
 
-// if user is not logged in
-if (!isset($_SESSION['email'])) {
-    header('location: ../login.php');
-    exit();
-}
-
-// if user is not an admin but alumni
-if ($_SESSION['role'] == 1) {
-    header('location: ../alum_survey.php');
-    exit();
-}
-// if user is not an admin but employer
-if ($_SESSION['role'] == 2) {
-    header('location: ../emp_survey.php');
-    exit();
-}
-// if user is not an admin but alum and employer
-if ($_SESSION['role'] == 3) {
-    header('location: ../alum_emp.php');
-    exit();
-}
-  
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="images/png" href="images/UP_seal.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- for charts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
-
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <title>Admin</title>
+    <style type="text/css">
+      #chart-container {
+        float: left;
+        width: 25%;
+        height: auto;
+        padding:2rem;
+        border:1px solid black;
+      }
+    </style>
+	<title></title>
+	<title></title>
 </head>
-<?php include('header.php');  ?>
-    <section>
-        <?php include('sidenav.php');  ?>
-        <div class="content-emp-charts">
-            <h4 id="title-emp-charts">Chart Generation</h4>
-            <h6 id="subtitle-emp-charts">Employer Satisfaction Survey</h6>
-                <br>
+<body onload='setTimeout(() => { window.print() }, 1000);setTimeout("window.close()", 2000);'>
+	<h1>EMPLOYER SATISFACTION SURVEY SUMMARY OF RESULTS<br>
+        Total Respondents: <?php echo $total ; ?> <br>
+        Date of Generation: <?php echo date("m/d/Y"); ?></h1><br>
 
-            <a href="controllers/pdf_emp_charts.php" id="" target="_blank">REPORT</a>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 1</h6>
-                <canvas id="mycanvas1"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 2</h6>
-                <canvas id="mycanvas2"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 3</h6>
-                <canvas id="mycanvas3"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 4</h6>
-                <canvas id="mycanvas4"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 6</h6>
-                <canvas id="mycanvas6"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 7</h6>
-                <canvas id="mycanvas7"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 8</h6>
-                <canvas id="mycanvas8"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 9</h6>
-                <canvas id="mycanvas9"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 10</h6>
-                <canvas id="mycanvas10"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 11</h6>
-                <canvas id="mycanvas11"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 12</h6>
-                <canvas id="mycanvas12"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 13</h6>
-                <canvas id="mycanvas13"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 14</h6>
-                <canvas id="mycanvas14"></canvas>
-            </div>
+    <div class="content-emp-charts">
+        <h4 id="title-emp-charts">Chart Generation</h4>
+        <h6 id="subtitle-emp-charts">Employer Satisfaction Survey</h6>
+            <br>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 1</h6>
+            <canvas id="mycanvas1"></canvas>
         </div>
-    </section>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 2</h6>
+            <canvas id="mycanvas2"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 3</h6>
+            <canvas id="mycanvas3"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 4</h6>
+            <canvas id="mycanvas4"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 6</h6>
+            <canvas id="mycanvas6"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 7</h6>
+            <canvas id="mycanvas7"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 8</h6>
+            <canvas id="mycanvas8"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 9</h6>
+            <canvas id="mycanvas9"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 10</h6>
+            <canvas id="mycanvas10"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 11</h6>
+            <canvas id="mycanvas11"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 12</h6>
+            <canvas id="mycanvas12"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 13</h6>
+            <canvas id="mycanvas13"></canvas>
+        </div>
+        <div id="chart-container">
+            <h6 id="subtitle-emp-charts">Question No. 14</h6>
+            <canvas id="mycanvas14"></canvas>
+        </div>
+    </div>
+
     <!-- QUESTION # 1 -->
     <script type="text/javascript">
         var xValues = ["Public", "Private", "Others"];
@@ -818,8 +799,6 @@ if ($_SESSION['role'] == 3) {
           }
         });
     </script>
-
-    <?php include('footer.php'); ?>
 
 </body>
 </html>
