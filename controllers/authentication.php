@@ -31,18 +31,19 @@ if (isset($_POST['login-btn'])) {
 	}
 
 	// getting associated id with email entered
-	$id_query = "SELECT user_id FROM users WHERE email='$email' LIMIT 1";
+	$id_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
   	$result = mysqli_query($db_conn, $id_query);
   	$user = mysqli_fetch_assoc($result);
 
 	$id = $user['user_id'];
+	$role_id = $user['role_id'];
 
 	// if user already answered employer survey
   	$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
-  	$result = mysqli_query($db_conn, $emp_check_query);
-  	$user_emp = mysqli_fetch_assoc($result);
+  	$result1 = mysqli_query($db_conn, $emp_check_query);
+  	$user_emp = mysqli_fetch_assoc($result1);
 
-	if($user_emp){ 
+	if($user_emp && $role_id==$EMPLOYER_ROLE_ID){ 
 	    if ($user_emp['user_id'] == $id) {
 		    $errors['user'] = "Feedback from user already exists";
 		    $error = true;
@@ -53,11 +54,20 @@ if (isset($_POST['login-btn'])) {
 
 	// if user already answered employer survey
   	$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";
-  	$result = mysqli_query($db_conn, $alum_check_query);
-  	$user_alum = mysqli_fetch_assoc($result);
+  	$result2 = mysqli_query($db_conn, $alum_check_query);
+  	$user_alum = mysqli_fetch_assoc($result2);
 
-	if($user_alum){ 
+	if($user_alum && $role_id==$ALUMNI_ROLE_ID){ 
 	    if ($user_alum['user_id'] == $id) {
+		    $errors['user'] = "Feedback from user already exists";
+		    $error = true;
+	    }
+	}else {
+		$error = false;
+	}
+
+	if($user_emp && $user_alum && $role_id==$ALUM_EMP_ROLE_ID){ 
+	    if ($user_alum['user_id'] == $id || $user_emp['user_id']) {
 		    $errors['user'] = "Feedback from user already exists";
 		    $error = true;
 	    }
