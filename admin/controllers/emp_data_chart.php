@@ -2,7 +2,15 @@
 session_start();
 
 // connect to db
-require ('config/connection.php');
+require ('../config/connection.php');
+
+// get total number of respondents
+$total = 0;
+$query = "SELECT user_id FROM emp_survey_q1";
+$result = mysqli_query($db_conn, $query);
+while ($row = mysqli_fetch_array($result)) {
+	$total++;
+}
 
 ###################### QUESTION #1 ######################
 
@@ -46,34 +54,41 @@ require ('config/connection.php');
 
 ###################### QUESTION #2 ######################
 
+	$abroad_array = array("Africa", "Northern Africa", "Eastern Africa", "Middle Africa", "Southern Africa", "Western Africa", 
+		"America", "North America", "Central America", "South America", "Antarctica",
+				"Asia", "Central Asia", "Eastern Asia", "South Asia", "Southeast Asia", "West Asia",
+				"Europe", "Eastern Europe", "Northern Europe", "Southern Europe", "Western Europe",
+				"Oceania", "Australia and New Zealand", "Melanesia, Micronesia, Polynesia"
+	);
+
 	// counters/containers for ph or abroad (region/subregion)
 	$ct_ph = 0;
 	$ct_ab = 0;
 		$ct_reg_afr = 0;
-			$ct_reg_afr_na = 0;
-			$ct_reg_afr_ea = 0;
-			$ct_reg_afr_ma = 0;
-			$ct_reg_afr_sa = 0;
-			$ct_reg_afr_wa = 0;
+			$ct_reg_afr_na = 0; $ct_rnd_afr_na = 0;
+			$ct_reg_afr_ea = 0; $ct_rnd_afr_ea = 0;
+			$ct_reg_afr_ma = 0; $ct_rnd_afr_ma = 0;
+			$ct_reg_afr_sa = 0; $ct_rnd_afr_sa = 0;
+			$ct_reg_afr_wa = 0; $ct_rnd_afr_wa = 0;
 		$ct_reg_am = 0;
-			$ct_reg_am_na = 0;
-			$ct_reg_am_ca = 0;
-			$ct_reg_am_sa = 0;
+			$ct_reg_am_na = 0; $ct_rnd_am_na = 0;
+			$ct_reg_am_ca = 0; $ct_rnd_am_ca = 0;
+			$ct_reg_am_sa = 0; $ct_rnd_am_sa = 0;
 		$ct_reg_ant = 0;
 		$ct_reg_asia = 0;
-			$ct_reg_asia_ca = 0;
-			$ct_reg_asia_ea = 0;
-			$ct_reg_asia_sa = 0;
-			$ct_reg_asia_sea = 0;
-			$ct_reg_asia_wa = 0;
+			$ct_reg_asia_ca = 0; $ct_rnd_asia_ca = 0;
+			$ct_reg_asia_ea = 0; $ct_rnd_asia_ea = 0;
+			$ct_reg_asia_sa = 0; $ct_rnd_asia_sa = 0;
+			$ct_reg_asia_sea = 0; $ct_rnd_asia_sea = 0;
+			$ct_reg_asia_wa = 0; $ct_rnd_asia_wa = 0;
 		$ct_reg_eu = 0;
-			$ct_reg_eu_ee = 0;
-			$ct_reg_eu_ne = 0;
-			$ct_reg_eu_se = 0;
-			$ct_reg_eu_we = 0;
+			$ct_reg_eu_ee = 0; $ct_rnd_eu_ee = 0;
+			$ct_reg_eu_ne = 0; $ct_rnd_eu_ne = 0;
+			$ct_reg_eu_se = 0; $ct_rnd_eu_se = 0;
+			$ct_reg_eu_we = 0; $ct_rnd_eu_we = 0;
 		$ct_reg_oc = 0;
-			$ct_reg_oc_aus = 0;
-			$ct_reg_oc_mel = 0;
+			$ct_reg_oc_aus = 0; $ct_rnd_oc_aus = 0;
+			$ct_reg_oc_mel = 0; $ct_rnd_oc_mel = 0;
 
 	// get data from table (philippines)
 	$query = "SELECT user_id FROM emp_survey_q2 WHERE answer_body='Philippines'";
@@ -321,6 +336,50 @@ require ('config/connection.php');
 			while ($row = mysqli_fetch_array($result)) {
 				$ct_reg_oc_mel++;
 			}
+
+	$ct_abroad_arr = array( $ct_reg_afr, $ct_reg_afr_na, $ct_reg_afr_ea, $ct_reg_afr_ma, $ct_reg_afr_sa, $ct_reg_afr_wa, 
+		$ct_reg_am, $ct_reg_am_na, $ct_reg_am_ca, $ct_reg_am_sa, $ct_reg_ant, 
+		$ct_reg_asia, $ct_reg_asia_ca, $ct_reg_asia_ea, $ct_reg_asia_sa, $ct_reg_asia_sea, $ct_reg_asia_wa, 
+		$ct_reg_eu, $ct_reg_eu_ee, $ct_reg_eu_ne, $ct_reg_eu_se, $ct_reg_eu_we, 
+		$ct_reg_oc, $ct_reg_oc_aus, $ct_reg_oc_mel
+	);
+
+	
+	if ($ct_reg_afr != 0) {
+		$ct_rnd_afr_na = round(($ct_reg_afr_na/$ct_reg_afr*100),0);
+		$ct_rnd_afr_ea = round(($ct_reg_afr_ea/$ct_reg_afr*100),0);
+		$ct_rnd_afr_ma = round(($ct_reg_afr_ma/$ct_reg_afr*100),0);
+		$ct_rnd_afr_sa = round(($ct_reg_afr_sa/$ct_reg_afr*100),0);
+		$ct_rnd_afr_wa = round(($ct_reg_afr_wa/$ct_reg_afr*100),0);
+	}
+	if ($ct_reg_am != 0) {
+		$ct_rnd_am_na = round(($ct_reg_am_na/$ct_reg_am*100),0);
+		$ct_rnd_am_ca = round(($ct_reg_am_ca/$ct_reg_am*100),0);
+		$ct_rnd_am_sa = round(($ct_reg_am_sa/$ct_reg_am*100),0);
+	}
+	if ($ct_reg_asia != 0) {
+		$ct_rnd_asia_ca = round(($ct_reg_asia_ca/$ct_reg_asia*100),0);
+		$ct_rnd_asia_ea = round(($ct_reg_asia_ea/$ct_reg_asia*100),0);
+		$ct_rnd_asia_sa = round(($ct_reg_asia_sa/$ct_reg_asia*100),0);
+		$ct_rnd_asia_sea = round(($ct_reg_asia_sea/$ct_reg_asia*100),0);
+		$ct_rnd_asia_wa = round(($ct_reg_asia_wa/$ct_reg_asia*100),0);
+	}
+	if ($ct_reg_eu != 0) {
+		$ct_rnd_eu_ee = round(($ct_reg_eu_ee/$ct_reg_eu*100),0);
+		$ct_rnd_eu_ne = round(($ct_reg_eu_ne/$ct_reg_eu*100),0);
+		$ct_rnd_eu_se = round(($ct_reg_eu_se/$ct_reg_eu*100),0);
+		$ct_rnd_eu_we = round(($ct_reg_eu_we/$ct_reg_eu*100),0);
+	}
+	if ($ct_reg_oc != 0) {
+		$ct_rnd_oc_aus = round(($ct_reg_oc_aus/$ct_reg_oc*100),0);
+		$ct_rnd_oc_mel = round(($ct_reg_oc_mel/$ct_reg_oc*100),0);
+	}
+	$ct_abroad_arr_percent = array( round(($ct_reg_afr/$ct_ab*100),0), $ct_rnd_afr_na, $ct_rnd_afr_ea, $ct_rnd_afr_ma, $ct_rnd_afr_sa, $ct_rnd_afr_wa, 
+		round(($ct_reg_am/$ct_ab*100),0), $ct_rnd_am_na, $ct_rnd_am_ca, $ct_rnd_am_sa, round(($ct_reg_ant/$ct_ab*100),0), 
+		round(($ct_reg_asia/$ct_ab*100),0), $ct_rnd_asia_ca, $ct_rnd_asia_ea, $ct_rnd_asia_sa, $ct_rnd_asia_sea, $ct_rnd_asia_wa, 
+		round(($ct_reg_eu/$ct_ab*100),0), $ct_rnd_eu_ee, $ct_rnd_eu_ne, $ct_rnd_eu_se, $ct_rnd_eu_we, 
+		round(($ct_reg_oc/$ct_ab*100),0), $ct_rnd_oc_aus, $ct_rnd_oc_mel
+	);
 
 ###################### QUESTION #3 ######################
 	$ques3_arr = array(
@@ -573,6 +632,11 @@ require ('config/connection.php');
 		$string3 = $string3 . ', ' . $row['answer_others'];
 		$ct_ind_other = ltrim($string3, ', ');
 	}
+
+	$ct_ind_arr = array($ct_ind1, $ct_ind2, $ct_ind3, $ct_ind4, $ct_ind5, $ct_ind6, $ct_ind7, $ct_ind8, $ct_ind9, $ct_ind10, $ct_ind11, $ct_ind12, $ct_ind13, $ct_ind14, $ct_ind15, $ct_ind16, $ct_ind17, $ct_ind18, $ct_ind19, $ct_ind20, $ct_ind21, $ct_ind22
+	);
+	$ct_ind_arr_percent = array(round(($ct_ind1/$total*100),0), round(($ct_ind2/$total*100),0), round(($ct_ind3/$total*100),0), round(($ct_ind4/$total*100),0), round(($ct_ind5/$total*100),0), round(($ct_ind6/$total*100),0), round(($ct_ind7/$total*100),0), round(($ct_ind8/$total*100),0), round(($ct_ind9/$total*100),0), round(($ct_ind10/$total*100),0), round(($ct_ind11/$total*100),0), round(($ct_ind12/$total*100),0), round(($ct_ind13/$total*100),0), round(($ct_ind14/$total*100),0), round(($ct_ind15/$total*100),0), round(($ct_ind16/$total*100),0), round(($ct_ind17/$total*100),0), round(($ct_ind18/$total*100),0), round(($ct_ind19/$total*100),0), round(($ct_ind20/$total*100),0), round(($ct_ind21/$total*100),0), round(($ct_ind22/$total*100),0)
+	);
 
 ###################### QUESTION #4 ######################
 
@@ -2638,14 +2702,18 @@ require ('config/connection.php');
 	$ct_yes15 = '';
 	$string15 = '';
 
+	$emp_string15_array = array();
+
 	// get data from table
 	$query = "SELECT answer_yes FROM emp_survey_q15 WHERE answer_body='Yes'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
-		$string15 = $string15 . ', ' . $row['answer_yes'];
-		$ct_yes15 = ltrim($string15, ', ');
+		$string15 = $string15 . '; ' . $row['answer_yes'];
+		$ct_yes15 = ltrim($string15, '; ');
+
+		$emp_string15_array[] = $row;
 	}
 	
 
@@ -2655,14 +2723,18 @@ require ('config/connection.php');
 	$ct_yes16 = '';
 	$string16 = '';
 
+	$emp_string16_array = array();
+
 	// get data from table
 	$query = "SELECT answer_yes FROM emp_survey_q16 WHERE answer_body='Yes'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
-		$string16 = $string16 . ', ' . $row['answer_yes'];
-		$ct_yes16 = ltrim($string16, ', ');
+		$string16 = $string16 . '; ' . $row['answer_yes'];
+		$ct_yes16 = ltrim($string16, '; ');
+
+		$emp_string16_array[] = $row;
 	}
 
 ###################### QUESTION #17 ######################
@@ -2671,14 +2743,18 @@ require ('config/connection.php');
 	$ct_yes17 = '';
 	$string17 = '';
 
+	$emp_string17_array = array();
+
 	// get data from table
 	$query = "SELECT answer_yes FROM emp_survey_q17 WHERE answer_body='Yes'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
-		$string17 = $string17 . ', ' . $row['answer_yes'];
-		$ct_yes17 = ltrim($string17, ', ');
+		$string17 = $string17 . '; ' . $row['answer_yes'];
+		$ct_yes17 = ltrim($string17, '; ');
+
+		$emp_string17_array[] = $row;
 	}
 
 

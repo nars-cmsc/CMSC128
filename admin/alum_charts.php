@@ -53,10 +53,6 @@ if ($_SESSION['role'] == 3) {
                 <h6 id="subtitle-alum-charts">Question No. 1</h6>
                 <canvas id="alum_canvas1"></canvas>
             </div>
-            <div id="temp-container">
-                <h6 id="subtitle-emp-charts">Question No. 2</h6>
-                <h3>COUNTRIES ALUMNI WORK IN/FOR: <?php echo $country ; ?></h3>
-            </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 3</h6>
                 <canvas id="alum_canvas3"></canvas>
@@ -97,14 +93,6 @@ if ($_SESSION['role'] == 3) {
                 <h6 id="subtitle-alum-charts">Question No. 9</h6>
                 <canvas id="alum_canvas9"></canvas>
             </div>
-            <div id="temp-container">
-                <h6 id="subtitle-emp-charts">Question No. 10</h6>
-                <?php foreach ($data10 as $data) { ?>
-                  <h3>JOB DUTY (TIME): <?php echo $data['Job']; ?>
-                  (<?php echo $data['Percent']; ?>%)</h3>
-                <?php } ; ?>
-                
-            </div>
             <div id="chart-container-alum">
                 <h6 id="subtitle-alum-charts">Question No. 11</h6>
                 <canvas id="alum_canvas11"></canvas>
@@ -137,10 +125,6 @@ if ($_SESSION['role'] == 3) {
                 <h6 id="subtitle-alum-charts">Question No. 18</h6>
                 <canvas id="alum_canvas18"></canvas>
             </div>
-            <div id="temp-container">
-                <h6 id="subtitle-emp-charts">Question No. 19</h6>
-                <h3>HOW DID UPB DMCS HELP YOU? <?php echo $ct_yes19 ; ?></h3>
-            </div>
         </div>
     </section>
     <!-- QUESTION # 1 -->
@@ -148,8 +132,8 @@ if ($_SESSION['role'] == 3) {
         var xValues = ["Female", "Male"];
         var yValues = [<?php echo $ct_fmale;?>, <?php echo $ct_male;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9"
+          "#eeddcc",
+          "#aa9999"
         ];
 
         new Chart("alum_canvas1", {
@@ -179,10 +163,10 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_vd3;?>, <?php echo $ct_gd3;?>, <?php echo $ct_gs3;?>, <?php echo $ct_vs3;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("alum_canvas3", {
@@ -211,13 +195,13 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_coll;?>, <?php echo $ct_2mos;?>, <?php echo $ct_6mos;?>, <?php echo $ct_7mos;?>, <?php echo $ct_1yr;?>, <?php echo $ct_2yrs;?>, <?php echo $ct_nots;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145",
-          "blue",
-          "pink",
-          "gray"
+          "#e5d7d4",
+          "#c3b4b5",
+          "#f5c7b0",
+          "#c48e74",
+          "#d1a18d",
+          "#d5c6b1",
+          "#747372"
         ];
 
         new Chart("alum_canvas4", {
@@ -245,8 +229,8 @@ if ($_SESSION['role'] == 3) {
         var xValues = ["Yes", "No"];
         var yValues = [<?php echo $ct_emp_yes5;?>, <?php echo $ct_emp_no5;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9"
+          "#eeddcc",
+          "#aa9999"
         ];
 
         new Chart("alum_canvas5", {
@@ -274,9 +258,9 @@ if ($_SESSION['role'] == 3) {
           ];
           var yValues = [<?php echo $ct_yes_full5;?>, <?php echo $ct_yes_part5;?>, <?php echo $ct_yes_self5;?>];
           var barColors = [
-            "#b91d47",
-            "#00aba9",
-            "#2b5797"
+            "#eccfcf",
+            "#d2a8a8",
+            "#543737"
           ];
 
           new Chart("alum_canvas5a", {
@@ -321,11 +305,11 @@ if ($_SESSION['role'] == 3) {
                          <?php echo $ct_yes_other5;?> 
           ];
           var barColors = [
-            "#ffffff", "#e5f5f3", "#ccebe7", "#b2e2dc", "#99d8d0",
-            "#7fcfc5", "#66c5b9", "#4cbbad", "#32b2a2", "#19a896",
-            "#00b9a1", "#009f8b", "#008f7d", "#007f6f", "#006f61",
-            "#005f53", "#004f45", "#003f37", "#002f29", "#001f1b",
-            "#000f0d", "#000000", "green"
+            "#fceee1", "#fde1d4", "#ffd3c5", "#efbbad", "#e1a782",
+            "#ffebd5", "#dfb9a6", "#d49f7c", "#b27255", "#ffeec2",
+            "#f0ae83", "#e5ab83", "#c0815b", "#b78b72", "#6d4d3a",
+            "#e9b0a2", "#c38673", "#ab766e", "#663d35", "#8f9da8",
+            "#929ca6", "#737074", "#353032"
           ];
 
           new Chart("alum_canvas5a-1", {
@@ -350,8 +334,8 @@ if ($_SESSION['role'] == 3) {
           var xValues = ["Yes", "No"];
           var yValues = [<?php echo $ct_look_yes5;?>, <?php echo $ct_look_no5;?>];
           var barColors = [
-            "#b91d47",
-            "#00aba9"
+            "#eeddcc",
+      "#aa9999"
           ];
 
           new Chart("alum_canvas5b", {
@@ -380,13 +364,13 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_hs6;?>, <?php echo $ct_coll6;?>, <?php echo $ct_ad6;?>, <?php echo $ct_bd6;?>, <?php echo $ct_md6;?>, <?php echo $ct_dd6;?>, <?php echo $ct_other6;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145",
-          "blue",
-          "pink",
-          "gray"
+          "#e9dcd6",
+          "#ebcdc3",
+          "#dabcb2",
+          "#ceaa9a",
+          "#b5927e",
+          "#a17a69",
+          "#747372"
         ];
 
         new Chart("alum_canvas6", {
@@ -415,13 +399,13 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_hs7;?>, <?php echo $ct_coll7;?>, <?php echo $ct_ad7;?>, <?php echo $ct_bd7;?>, <?php echo $ct_md7;?>, <?php echo $ct_dd7;?>, <?php echo $ct_other7;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145",
-          "blue",
-          "pink",
-          "gray"
+          "#e9dcd6",
+          "#ebcdc3",
+          "#dabcb2",
+          "#ceaa9a",
+          "#b5927e",
+          "#a17a69",
+          "#747372"
         ];
 
         new Chart("alum_canvas7", {
@@ -450,16 +434,16 @@ if ($_SESSION['role'] == 3) {
         ];
         var yValues = [<?php echo $ct_occ1;?>, <?php echo $ct_occ2;?>, <?php echo $ct_occ3;?>, <?php echo $ct_occ4;?>, <?php echo $ct_occ5;?>, <?php echo $ct_occ6;?>, <?php echo $ct_occ7;?>, <?php echo $ct_occ8;?>, <?php echo $ct_occ9;?>, <?php echo $ct_occ10;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145",
-          "blue",
-          "pink",
-          "gray",
-          "green",
-          "yellow",
-          "brown"
+          "#fceee1",
+          "#ffd3c5",
+          "#e1a782",
+          "#dfb9a6",
+          "#b27255",
+          "#f0ae83",
+          "#c0815b",
+          "#6d4d3a",
+          "#c38673",
+          "#929ca6"
         ];
 
         new Chart("alum_canvas8", {
@@ -488,9 +472,9 @@ if ($_SESSION['role'] == 3) {
         ];
         var yValues = [<?php echo $ct_sf;?>, <?php echo $ct_rf;?>, <?php echo $ct_nr;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797"
+          "#eccfcf",
+          "#d2a8a8",
+          "#543737"
         ];
 
         new Chart("alum_canvas9", {
@@ -519,9 +503,9 @@ if ($_SESSION['role'] == 3) {
         ];
         var yValues = [<?php echo $ct_yes11_part;?>, <?php echo $ct_yes11_full;?>, <?php echo $ct_no11;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797"
+          "#eccfcf",
+          "#d2a8a8",
+          "#543737"
         ];
 
         new Chart("alum_canvas11", {
@@ -550,11 +534,11 @@ if ($_SESSION['role'] == 3) {
         ];
         var yValues = [<?php echo $ct_noex;?>, <?php echo $ct_less1;?>, <?php echo $ct_1to3;?>, <?php echo $ct_3to6;?>, <?php echo $ct_more6;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145",
-          "blue",
+          "#f0e2e1",
+          "#dfc5c4",
+          "#d0a9a4",
+          "#bf8c88",
+          "#b06f69"
         ];
 
         new Chart("alum_canvas12", {
@@ -584,10 +568,10 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_vp13;?>, <?php echo $ct_la13;?>, <?php echo $ct_ma13;?>, <?php echo $ct_vw13;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("alum_canvas13", {
@@ -617,10 +601,10 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_entry14;?>, <?php echo $ct_sup14;?>, <?php echo $ct_exec14;?>, <?php echo $ct_chief14;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("alum_canvas14", {
@@ -650,10 +634,10 @@ if ($_SESSION['role'] == 3) {
         var yValues = [<?php echo $ct_non15;?>, <?php echo $ct_som15;?>, <?php echo $ct_half15;?>, <?php echo $ct_most15;?> 
         ];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("alum_canvas15", {
@@ -683,10 +667,10 @@ if ($_SESSION['role'] == 3) {
         var yValues = [<?php echo $ct_non16;?>, <?php echo $ct_lim16;?>, <?php echo $ct_dir16;?>, <?php echo $ct_unit16;?> 
         ];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("alum_canvas16", {
@@ -716,10 +700,10 @@ if ($_SESSION['role'] == 3) {
                       ];
         var yValues = [<?php echo $ct_vd17;?>, <?php echo $ct_gd17;?>, <?php echo $ct_gs17;?>, <?php echo $ct_vs17;?>];
         var barColors = [
-          "#b91d47",
-          "#00aba9",
-          "#2b5797",
-          "#1e7145"
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
         ];
 
         new Chart("alum_canvas17", {
@@ -750,7 +734,7 @@ if ($_SESSION['role'] == 3) {
             labels: ["Competency 1", "Competency 2", "Competency 3", "Competency 4", "Competency 5", "Competency 6", "Competency 7", "Competency 8", "Competency 9", "Competency 10", "Competency 11"],
             datasets: [{
                 label: 'Very Poorly',
-                backgroundColor: "gray",
+                backgroundColor: "#443333",
                 yAxisID: "y-axis-1",
                 data: [<?php echo $ct_dmcs1_vp;?>, <?php echo $ct_dmcs2_vp;?>,
                        <?php echo $ct_dmcs3_vp;?>, <?php echo $ct_dmcs4_vp;?>,
@@ -760,7 +744,7 @@ if ($_SESSION['role'] == 3) {
                        <?php echo $ct_dmcs11_vp;?>]
             }, {
                 label: 'Less than adequately',
-                backgroundColor: "rgba(151,187,205,0.5)",
+                backgroundColor: "#aa7766",
                 yAxisID: "y-axis-2",
                 data: [<?php echo $ct_dmcs1_la;?>, <?php echo $ct_dmcs2_la;?>,
                        <?php echo $ct_dmcs3_la;?>, <?php echo $ct_dmcs4_la;?>,
@@ -770,7 +754,7 @@ if ($_SESSION['role'] == 3) {
                        <?php echo $ct_dmcs11_la;?>]
             }, {
                 label: 'More than adequately',
-                backgroundColor: "#99d8d0",
+                backgroundColor: "#aa9999",
                 yAxisID: "y-axis-3",
                 data: [<?php echo $ct_dmcs1_ma;?>, <?php echo $ct_dmcs2_ma;?>,
                        <?php echo $ct_dmcs3_ma;?>, <?php echo $ct_dmcs4_ma;?>,
@@ -780,7 +764,7 @@ if ($_SESSION['role'] == 3) {
                        <?php echo $ct_dmcs11_ma;?>]
             }, {
                 label: 'Very well',
-                backgroundColor: "#009f8b",
+                backgroundColor: "#ddbbaa",
                 yAxisID: "y-axis-4",
                 data: [<?php echo $ct_dmcs1_vw;?>, <?php echo $ct_dmcs2_vw;?>,
                        <?php echo $ct_dmcs3_vw;?>, <?php echo $ct_dmcs4_vw;?>,

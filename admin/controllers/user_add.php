@@ -107,8 +107,6 @@ if (isset($_POST['reg-btn'])) {
 
 		header('location: index.php');
 	 	exit();
-	} else {
-		$errors['db_error'] = "Database error: failed to register";
 	}
 
 }
