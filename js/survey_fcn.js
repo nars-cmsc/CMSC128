@@ -17,6 +17,7 @@ $(document).ready(function() {
             $("#q2_1").hide();
         }
     });
+	
 });
 
 // display password login
