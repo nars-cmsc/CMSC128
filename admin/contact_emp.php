@@ -1,5 +1,5 @@
 <?php
-
+# onchange checkbox show 'save changes' button
 require ('controllers/contact_emp_db.php');
 
 // if user is not logged in
@@ -36,7 +36,7 @@ if ($_SESSION['role'] == 3) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/survey_fcn.js"></script>
+    <!-- <script type="text/javascript" src="js/survey_fcn.js"></script> -->
     <title>Admin</title>
 </head>
 
@@ -45,7 +45,7 @@ if ($_SESSION['role'] == 3) {
         <?php include('sidenav.php');  ?>
         <div class="content-contact">
             <h4 id="title-contact">List of Employer Contacts</h4>
-            <form action="contact_emp.php" method="POST" id="contact-emp-form">
+            <form action="contact_emp.php" method="POST" id="contact-emp-form" name="contact-emp-form">
                 <table id="table-contact">
                     <thead>
                         <tr>
@@ -57,7 +57,7 @@ if ($_SESSION['role'] == 3) {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $i=1; while ($row = mysqli_fetch_array($result)) {?>
+                        <?php while ($row = mysqli_fetch_array($result)) {?>
                             <tr class="contact-row">
                                 <td><?php echo $row['companyname']; ?></td>
                                 <td><?php echo $row['contactperson']; ?></td>
@@ -65,17 +65,17 @@ if ($_SESSION['role'] == 3) {
                                 <td><?php echo $row['contactemail']; ?></td>
                                 <td>
                                     <label class="check-option">
-                                        <input type="checkbox" name="contact-check[]" value="Yes" <?php echo ($row['contacted']=='Yes' ? 'checked' : '');?> id="<?php echo 'contact-check-'.$i; ?>">
+                                        <input type="checkbox" name="contact-check[]" value="<?php echo $row['answer_id']; ?>" onclick="$('#update-bttn').show();" <?php echo ($row['contacted']=='Yes' ? 'checked' : '');?>>
                                         <span class="checkmark"></span>
                                     </label>
-                                    <!-- <input type="checkbox" name="contact-check"> -->
                                 </td>
                             </tr>
-                        <?php $i++; } ?>
+                        <?php } ?>
                     </tbody>
                 </table>
-                <!-- <input type="checkbox" name="contact-check[]" value="Yes" id="contact-check" onchange=""> -->
+                <input type="submit" name="update-bttn" value="UPDATE" onclick="alert('Database updated successfully!')" id="update-bttn" style="display: none;">
             </form>
+            
         </div>
     </section>
     
