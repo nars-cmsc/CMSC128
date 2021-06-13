@@ -129,7 +129,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	}
 	if (isset($_POST['ques5'])) {
 		$five = $_POST['ques5'];
-		if ($five == 'Yes') {
+		if ($five == 'Yes' && isset($_POST['ques5_1'])) {
 			$five_a = $_POST['ques5_1'];
 			if ($five_a == 'Full time (40 hours/week)') {
 				$five_c = $_POST['ques5c'];
@@ -152,7 +152,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 				}
 			}
 		}
-		else if ($five == 'No'){
+		else if ($five == 'No' && isset($_POST['ques5_2'])){
 			$five_b = $_POST['ques5_2'];
 		}	
 	}
@@ -199,35 +199,11 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$nine = $_POST['ques9'];
 	}
 	//Ten Under construction
-	if (isset($_POST['ques10_a'])) {
-		$ten_a = $_POST['ques10_a'];
+	if (isset($_POST['jobduties'])) {
+		$jobduties = $_POST['jobduties'];
 	}
-	if (isset($_POST['ques10_1'])) {
-		$ten_1 = $_POST['ques10_1'];
-	}
-	if (isset($_POST['ques10_b'])) {
-		$ten_b = $_POST['ques10_b'];
-	}
-	if (isset($_POST['ques10_2'])) {
-		$ten_2 = $_POST['ques10_2'];
-	}
-	if (isset($_POST['ques10_c'])) {
-		$ten_c = $_POST['ques10_c'];
-	}
-	if (isset($_POST['ques10_3'])) {
-		$ten_3 = $_POST['ques10_3'];
-	}
-	if (isset($_POST['ques10_d'])) {
-		$ten_d = $_POST['ques10_d'];
-	}
-	if (isset($_POST['ques10_4'])) {
-		$ten_4 = $_POST['ques10_4'];
-	}
-	if (isset($_POST['ques10_e'])) {
-		$ten_e = $_POST['ques10_e'];
-	}
-	if (isset($_POST['ques10_5'])) {
-		$ten_5 = $_POST['ques10_5'];
+	if (isset($_POST['percentage'])) {
+		$percentage = $_POST['percentage'];	
 	}
 	
 	//End Under construction
@@ -312,7 +288,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	// VALIDATION / ERROR HANDLING
 
 	// ERROR: required fields are empty or only white spaces
-	
+	/*
 		if (empty($one) && $user_exist == false) {
 		$errors['es_q1'] = "Need to answer #1. Field cannot be empty.";
 		$error = true;
@@ -345,7 +321,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q5_2'] = "Need to answer #5.2. Field cannot be empty.";
 		$error = true;
 		}
-			if (isset($_POST['ques5c_other']) && $five_c == 'other' && (empty($fivec_other) || strlen(trim($fivec_other)) <= 0) && $user_exist == false) {
+			if (isset($_POST['ques5c_other']) && $_POST['ques5c_other'] == 'other' && (empty($fivec_other) || strlen(trim($fivec_other)) <= 0) && $user_exist == false) {
 				$errors['es_q5c_other'] = "Need to answer #5c. 'Others' field cannot be empty.";
 				$error = true; 
 			}	
@@ -531,7 +507,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$error = true;
 	}	
 	
-	
+	*/
 	// if there are no errors store answers to db
 	if ($error == false) {
 		// QUESTION NUMBER 1
@@ -736,29 +712,13 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		
 		// QUESTION NUMBER 10
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['ten']);
-		$ten_a = mysqli_real_escape_string($db_conn, $_POST['ques10_a']);
-		$ten_b = mysqli_real_escape_string($db_conn, $_POST['ques10_b']);
-		$ten_c = mysqli_real_escape_string($db_conn, $_POST['ques10_c']);
-		$ten_d = mysqli_real_escape_string($db_conn, $_POST['ques10_d']);
-		$ten_e = mysqli_real_escape_string($db_conn, $_POST['ques10_e']);
-		$ten_1 = mysqli_real_escape_string($db_conn, $_POST['ques10_1']);
-		$ten_2 = mysqli_real_escape_string($db_conn, $_POST['ques10_2']);
-		$ten_3 = mysqli_real_escape_string($db_conn, $_POST['ques10_3']);
-		$ten_4 = mysqli_real_escape_string($db_conn, $_POST['ques10_4']);
-		$ten_5 = mysqli_real_escape_string($db_conn, $_POST['ques10_5']);
+		//$jobduties = mysqli_real_escape_string($db_conn, $_POST['jobduties']);
+		//$percentage = mysqli_real_escape_string($db_conn, $_POST['percentage']);
 		
-		// store to db (alum_survey_q10 table)
-		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_a', '$ten_1', now())";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_b', '$ten_2', now())";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_c', '$ten_3', now())";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_d', '$ten_4', now())";
-	    mysqli_query($db_conn, $sql);
-		$sql = "INSERT INTO alum_survey_q10 (user_id, Job, Percent, date_response) VALUES ('$id', '$ten_e', '$ten_5', now())";
-	    mysqli_query($db_conn, $sql);
-		
+		foreach ($jobduties as $key => $value){
+			$sql = "INSERT INTO alum_survey_test10 (user_id, Job, Percent, date_response) VALUES ('$id', '".$value."', '".$percentage[$key]."', now())";
+			mysqli_query($db_conn, $sql);
+		}
 
 		
 		// QUESTION NUMBER 11
