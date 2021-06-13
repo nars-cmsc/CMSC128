@@ -49,6 +49,7 @@ if ($_SESSION['role'] == 3) {
                         <th>Email</th>
                         <th>Password</th>
                         <th>Role</th>
+                        <th>Finished Survey?</th>
                         <th>Time Created</th>
                         <th>Last Login</th>
                         <th></th>
@@ -56,6 +57,14 @@ if ($_SESSION['role'] == 3) {
                 </thead>
                 <tbody>
                     <?php while ($row = mysqli_fetch_array($query)) {?>
+                        <?php 
+                        $emp_check_query = 'SELECT * FROM emp_survey_q1 WHERE user_id='.$row['user_id'].' LIMIT 1';
+                        $result1 = mysqli_query($db_conn, $emp_check_query);
+                        $user_emp = mysqli_fetch_assoc($result1); 
+                        $alum_check_query = 'SELECT * FROM alum_survey_q1 WHERE user_id='.$row['user_id'].' LIMIT 1';
+                        $result2 = mysqli_query($db_conn, $alum_check_query);
+                        $user_alum = mysqli_fetch_assoc($result2);
+                        ?>
                         <tr class="user-row">
                             <td><?php echo $row['user_id']; ?></td>
                             <td><?php echo $row['email']; ?></td>
@@ -65,6 +74,12 @@ if ($_SESSION['role'] == 3) {
                                 <?php if ($row['role_id'] == 1) { echo "ALUMNI"; } ?>
                                 <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
                                 <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
+                            </td>
+                            <td>
+                                <?php if ($row['role_id'] == 0) { echo "-"; } ?>
+                                <?php if ($row['role_id'] == 1) { if ($user_alum && $user_alum['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }?>
+                                <?php if ($row['role_id'] == 2) { if ($user_emp && $user_emp['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }?>
+                                <?php if ($row['role_id'] == 3) { if ($user_alum && $user_alum['user_id'] == $row['user_id'] && !($user_emp)) { echo "ALUMNI ONLY"; } elseif ($user_emp && $user_emp['user_id'] == $row['user_id'] && !($user_alum)) { echo "EMPLOYER ONLY"; } elseif ($user_alum && $user_alum['user_id'] == $row['user_id'] && $user_emp && $user_emp['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }  ?>
                             </td>
                             <td><?php echo $row['time_created']; ?></td>
                             <td><?php echo $row['last_login']; ?></td>
