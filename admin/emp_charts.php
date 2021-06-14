@@ -36,8 +36,9 @@ if ($_SESSION['role'] == 3) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- for charts -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script> 
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <title>Admin</title>
@@ -46,61 +47,88 @@ if ($_SESSION['role'] == 3) {
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-emp-charts">
-            <h4 id="title-emp-charts">Chart Generation</h4>
-            <h6 id="subtitle-emp-charts">Employer Satisfaction Survey</h6>
+            <h2 id="title-emp-charts">Employer Satisfaction Survey Summary of Results</h2>
+            <h5 id="note-charts">To export to pdf, click the button. In the new window, change "Destination" to "Save as pdf"</h5>
                 <br>
             <?php  if($total != 0) { ?>
-                <a href="controllers/pdf_emp_charts.php" id="" target="_blank">REPORT</a>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 1</h6>
+                <div class="export-btn">
+                  <a href="controllers/pdf_emp_charts.php" id="" target="_blank" class="export-pdf">Export to pdf</a>
+                </div>
+                <div class="tab">
+                    <p class="tablinks" disabled="true">QUESTION: </button>
+                    <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques2')">2</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques3')">3</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques4')">4</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques5')">5</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques6')">6</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques7')">7</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques8')">8</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques9')">9</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques10')">10</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques11')">11</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques12')">12</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques13')">13</button>
+                </div>
+                <div id="ques1" class="tabcontent">
+                    <p id="subtitle-emp-charts">Which sector of economy does your company/organization belong to?</p>
                     <canvas id="mycanvas1"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 2</h6>
+                <div id="ques2" class="tabcontent">
+                    <p id="subtitle-emp-charts">Where is your company/organization located?</p>
                     <canvas id="mycanvas2"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 3</h6>
-                    <canvas id="mycanvas3"></canvas>
+                <div id="ques3" class="tabcontent">
+                    <p id="subtitle-emp-charts">Which industry and business does your company/organization belong to?</p>
+                    <canvas id="mycanvas3"></canvas><br>
+                    <?php foreach ($ques3_arr as $i => $industry) { ?>
+                        <p class="chart-legend"><strong><?php $i++; echo 'Industry '.$i.': ' ?></strong><?php echo $industry; ?></p>
+                    <?php } ?>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 4</h6>
+                <div id="ques4" class="tabcontent">
+                    <p id="subtitle-emp-charts">What is your position in your company/organization?</p>
                     <canvas id="mycanvas4"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 6</h6>
+                <div id="ques5" class="tabcontent">
+                    <p id="subtitle-emp-charts">“UP graduates recruited in the last three to five years have the skills to work in my company/organization.”</p>
                     <canvas id="mycanvas6"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 7</h6>
+                <div id="ques6" class="tabcontent">
+                    <p id="subtitle-emp-charts">Importance of each skill when hiring new staff</p>
                     <canvas id="mycanvas7"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 8</h6>
+                <div id="ques7" class="tabcontent">
+                    <p id="subtitle-emp-charts">Satisfaction on how well each skill is demonstrated by staff who are UP graduates</p>
                     <canvas id="mycanvas8"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 9</h6>
+                <div id="ques8" class="tabcontent">
+                    <p id="subtitle-emp-charts">How LIKELY are you to hire other graduates of UP?</p>
                     <canvas id="mycanvas9"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 10</h6>
+                <div id="ques9" class="tabcontent">
+                    <p id="subtitle-emp-charts">How likely are you going to keep the UP graduates in your company/organization?</p>
                     <canvas id="mycanvas10"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 11</h6>
-                    <canvas id="mycanvas11"></canvas>
+                <div id="ques10" class="tabcontent">
+                    <p id="subtitle-emp-charts">Importance of each skill to the successful performance of the job for which the staff, who are UP graduates, were hired</p>
+                    <canvas id="mycanvas11"></canvas><br>
+                    <?php foreach ($dmcs_skills_arr as $i => $skill) { ?>
+                        <p class="chart-legend"><strong><?php $i++; echo 'Skill '.$i.': ' ?></strong><?php echo $skill; ?></p>
+                    <?php } ?>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 12</h6>
+                <div id="ques11" class="tabcontent">
+                    <p id="subtitle-emp-charts">Satisfaction on how well each skill was demonstrated by hired UP graduates</p>
                     <canvas id="mycanvas12"></canvas>
+                    <?php foreach ($dmcs_skills_arr as $i => $skill) { ?>
+                        <p class="chart-legend"><strong><?php $i++; echo 'Skill '.$i.': ' ?></strong><?php echo $skill; ?></p>
+                    <?php } ?>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 13</h6>
+                <div id="ques12" class="tabcontent">
+                    <p id="subtitle-emp-charts">Which actions should UP take in order to improve the skill and competency set of its graduates?</p>
                     <canvas id="mycanvas13"></canvas>
                 </div>
-                <div id="chart-container">
-                    <h6 id="subtitle-emp-charts">Question No. 14</h6>
+                <div id="ques13" class="tabcontent">
+                    <p id="subtitle-emp-charts">How important is UP cooperation for your company/organization?</p>
                     <canvas id="mycanvas14"></canvas>
                 </div>
             <?php }?>
@@ -115,6 +143,7 @@ if ($_SESSION['role'] == 3) {
           "#d2a8a8",
           "#543737"
         ];
+        var ctx = document.getElementById("mycanvas1").getContext('2d');
 
         new Chart("mycanvas1", {
           type: "pie",
@@ -126,10 +155,30 @@ if ($_SESSION['role'] == 3) {
             }]
           },
           options: {
-            title: {
-              display: true,
-              text: "Question # 1"
-            }
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -142,6 +191,7 @@ if ($_SESSION['role'] == 3) {
           "#eeddcc",
           "#aa9999"
         ];
+        var ctx = document.getElementById("mycanvas2").getContext('2d');
 
         new Chart("mycanvas2", {
           type: "pie",
@@ -153,10 +203,30 @@ if ($_SESSION['role'] == 3) {
             }]
           },
           options: {
-            title: {
-              display: true,
-              text: "Question # 2"
-            }
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -190,6 +260,7 @@ if ($_SESSION['role'] == 3) {
            "#e9b0a2", "#c38673", "#ab766e", "#663d35", "#8f9da8",
            "#929ca6", "#737074", "#353032"
         ];
+        var ctx = document.getElementById("mycanvas3").getContext('2d');
 
         new Chart("mycanvas3", {
           type: "pie",
@@ -201,10 +272,30 @@ if ($_SESSION['role'] == 3) {
             }]
           },
           options: {
-            title: {
-              display: true,
-              text: "Question # 3"
-            }
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+                
+                  },
+                  color: '#fff',
+                  // anchor: 'end'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -218,6 +309,7 @@ if ($_SESSION['role'] == 3) {
           "#d2a8a8",
           "#543737"
         ];
+        var ctx = document.getElementById("mycanvas4").getContext('2d');
 
         new Chart("mycanvas4", {
           type: "pie",
@@ -229,10 +321,30 @@ if ($_SESSION['role'] == 3) {
             }]
           },
           options: {
-            title: {
-              display: true,
-              text: "Question # 4"
-            }
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -249,6 +361,7 @@ if ($_SESSION['role'] == 3) {
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("mycanvas6").getContext('2d');
 
         new Chart("mycanvas6", {
           type: "pie",
@@ -260,13 +373,248 @@ if ($_SESSION['role'] == 3) {
             }]
           },
           options: {
-            title: {
-              display: true,
-              text: "Question # 6"
-            }
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
+
+    
+
+    <!-- QUESTION # 9 -->
+    <script type="text/javascript">
+        var xValues = ["Very Unlikely", "Unlikely",
+                       "Likely", "Very Likely"
+                      ];
+        var yValues = [<?php echo $ct_9vu;?>, <?php echo $ct_9u;?>, <?php echo $ct_9l;?>, <?php echo $ct_9vl;?>];
+        var barColors = [
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
+        ];
+        var ctx = document.getElementById("mycanvas9").getContext('2d');
+
+        new Chart("mycanvas9", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+    </script>
+
+    <!-- QUESTION # 10 -->
+    <script type="text/javascript">
+        var xValues = ["Very Unlikely", "Unlikely",
+                       "Likely", "Very Likely"
+                      ];
+        var yValues = [<?php echo $ct_10vu;?>, <?php echo $ct_10u;?>, <?php echo $ct_10l;?>, <?php echo $ct_10vl;?>];
+        var barColors = [
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
+        ];
+        var ctx = document.getElementById("mycanvas10").getContext('2d');
+
+        new Chart("mycanvas10", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+    </script>
+
+    
+
+    <!-- QUESTION # 13 -->
+    <script type="text/javascript">
+        var xValues = ["Design courses that are more relevant to the needs of employers", "Include practical experience as part of the academic programs", "Include sector specific job placements as an integral part of the degree program", "Provide better post-graduation support (facilitate relations between graduates and companies/organizations)", "Others"
+                      ];
+        var yValues = [<?php echo $ct_des;?>, <?php echo $ct_prac;?>, <?php echo $ct_sec;?>, <?php echo $ct_post;?>, <?php echo $ct_other13;?>];
+        var barColors = [
+          "#f0e2e1",
+          "#dfc5c4",
+          "#d0a9a4",
+          "#bf8c88",
+          "#b06f69"
+        ];
+        var ctx = document.getElementById("mycanvas13").getContext('2d');
+
+        new Chart("mycanvas13", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+    </script>
+
+    <!-- QUESTION # 14 -->
+    <script type="text/javascript">
+        var xValues = ["Unimportant", "Of Little Importance",
+                       "Moderately part Important", "Important"
+                      ];
+        var yValues = [<?php echo $ct_un;?>, <?php echo $ct_of;?>, <?php echo $ct_mod;?>, <?php echo $ct_im;?>];
+        var barColors = [
+          "#443333",
+          "#aa7766",
+          "#aa9999",
+          "#ddbbaa"
+        ];
+        var ctx = document.getElementById("mycanvas14").getContext('2d');
+
+        new Chart("mycanvas14", {
+          type: "pie",
+          data: {
+            labels: xValues,
+            datasets: [{
+              backgroundColor: barColors,
+              data: yValues
+            }]
+          },
+          options: {
+            plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
+          }
+        });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
 
     <!-- QUESTION # 7 -->
     <script type="text/javascript">
@@ -332,12 +680,6 @@ if ($_SESSION['role'] == 3) {
           type: "bar",
           data: barChartData,
           options: {
-            plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 7"
-                }
-            },
             scales: {
                 y: {
                     suggestedMin: 0,
@@ -444,12 +786,6 @@ if ($_SESSION['role'] == 3) {
           type: "bar",
           data: barChartData,
           options: {
-            plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 8"
-                }
-            },
             scales: {
                 y: {
                     suggestedMin: 0,
@@ -491,69 +827,6 @@ if ($_SESSION['role'] == 3) {
           }
         });
     </script>
-
-    <!-- QUESTION # 9 -->
-    <script type="text/javascript">
-        var xValues = ["Very Unlikely", "Unlikely",
-                       "Likely", "Very Likely"
-                      ];
-        var yValues = [<?php echo $ct_9vu;?>, <?php echo $ct_9u;?>, <?php echo $ct_9l;?>, <?php echo $ct_9vl;?>];
-        var barColors = [
-          "#443333",
-          "#aa7766",
-          "#aa9999",
-          "#ddbbaa"
-        ];
-
-        new Chart("mycanvas9", {
-          type: "pie",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "Question # 9"
-            }
-          }
-        });
-    </script>
-
-    <!-- QUESTION # 10 -->
-    <script type="text/javascript">
-        var xValues = ["Very Unlikely", "Unlikely",
-                       "Likely", "Very Likely"
-                      ];
-        var yValues = [<?php echo $ct_10vu;?>, <?php echo $ct_10u;?>, <?php echo $ct_10l;?>, <?php echo $ct_10vl;?>];
-        var barColors = [
-          "#443333",
-          "#aa7766",
-          "#aa9999",
-          "#ddbbaa"
-        ];
-
-        new Chart("mycanvas10", {
-          type: "pie",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "Question # 10"
-            }
-          }
-        });
-    </script>
-
     <!-- QUESTION # 11 -->
     <script type="text/javascript">
 
@@ -607,12 +880,6 @@ if ($_SESSION['role'] == 3) {
           type: "bar",
           data: barChartData,
           options: {
-            plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 11"
-                }
-            },
             scales: {
                 y: {
                     suggestedMin: 0,
@@ -709,12 +976,6 @@ if ($_SESSION['role'] == 3) {
           type: "bar",
           data: barChartData,
           options: {
-            plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 12"
-                }
-            },
             scales: {
                 y: {
                     suggestedMin: 0,
@@ -758,69 +1019,26 @@ if ($_SESSION['role'] == 3) {
         });
     </script>
 
-    <!-- QUESTION # 13 -->
-    <script type="text/javascript">
-        var xValues = ["Design courses that are more relevant to the needs of employers", "Include practical experience as part of the academic programs", "Include sector specific job placements as an integral part of the degree program", "Provide better post-graduation support (facilitate relations between graduates and companies/organizations)", "Others"
-                      ];
-        var yValues = [<?php echo $ct_des;?>, <?php echo $ct_prac;?>, <?php echo $ct_sec;?>, <?php echo $ct_post;?>, <?php echo $ct_other13;?>];
-        var barColors = [
-          "#f0e2e1",
-          "#dfc5c4",
-          "#d0a9a4",
-          "#bf8c88",
-          "#b06f69"
-        ];
-
-        new Chart("mycanvas13", {
-          type: "pie",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "Question # 13"
-            }
-          }
-        });
-    </script>
-
-    <!-- QUESTION # 14 -->
-    <script type="text/javascript">
-        var xValues = ["Unimportant", "Of Little Importance",
-                       "Moderately part Important", "Important"
-                      ];
-        var yValues = [<?php echo $ct_un;?>, <?php echo $ct_of;?>, <?php echo $ct_mod;?>, <?php echo $ct_im;?>];
-        var barColors = [
-          "#443333",
-          "#aa7766",
-          "#aa9999",
-          "#ddbbaa"
-        ];
-
-        new Chart("mycanvas14", {
-          type: "pie",
-          data: {
-            labels: xValues,
-            datasets: [{
-              backgroundColor: barColors,
-              data: yValues
-            }]
-          },
-          options: {
-            title: {
-              display: true,
-              text: "Question # 14"
-            }
-          }
-        });
-    </script>
-
     <?php include('footer.php'); ?>
+
+    <script>
+        function openQues(evt, quesNum) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(quesNum).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+    </script>
 
 </body>
 </html>

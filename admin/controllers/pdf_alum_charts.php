@@ -8,16 +8,39 @@ require ('alum_data_chart.php');
 <html>
 <head>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script> 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.4.0/dist/chartjs-plugin-datalabels.min.js"></script> 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <style type="text/css">
-      #chart-container-alum {
-        float: left;
-        width: 25%;
-        height: auto;
-        padding:2rem;
-        border:1px solid black;
+      body {
+        font-family: Arial Nova, sans-serif;
+        font-size: 20pt;
+        background-color: #fff;
+      }
+      canvas {
+        min-height:30rem;
+        width: auto;
+        margin-left: 18%;
+      }
+      #alum_canvas5a-1 {
+        max-height: 45rem;
+        width: auto;
+      }
+      #alum_canvas18{
+        max-height: 40%;
+        width: auto;
+      }
+      .chart-legend {
+        font-size: 12pt;
+        padding-left: 500px;
+        margin: 0;
+      }
+      #subtitle-alum-charts{
+        color: #606060;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 5px;
       }
     </style>
 	<title></title>
@@ -27,88 +50,99 @@ require ('alum_data_chart.php');
         Total Respondents: <?php echo $total ; ?> <br>
         Date of Generation: <?php echo date("m/d/Y"); ?></h1><br>
 
-    <div class="content-alum-charts">
-        <h4 id="title-alum-charts">Chart Generation</h4>
-        <h6 id="subtitle-alum-charts">Alumni Survey</h6>
-            <br>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 1</h6>
-            <canvas id="alum_canvas1"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 3</h6>
-            <canvas id="alum_canvas3"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 4</h6>
-            <canvas id="alum_canvas4"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 5</h6>
-            <canvas id="alum_canvas5"></canvas>
-        </div>
-          <div id="chart-container-alum">
-              <h6 id="subtitle-alum-charts">Question No. 5a</h6>
-              <canvas id="alum_canvas5a"></canvas>
-          </div>
-          <div id="chart-container-alum">
-              <h6 id="subtitle-alum-charts">Question No. 5a-1</h6>
-              <canvas id="alum_canvas5a-1"></canvas>
-          </div>
-          <div id="chart-container-alum">
-              <h6 id="subtitle-alum-charts">Question No. 5b</h6>
-              <canvas id="alum_canvas5b"></canvas>
-          </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 6</h6>
-            <canvas id="alum_canvas6"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 7</h6>
-            <canvas id="alum_canvas7"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 8</h6>
-            <canvas id="alum_canvas8"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 9</h6>
-            <canvas id="alum_canvas9"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 11</h6>
-            <canvas id="alum_canvas11"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 12</h6>
-            <canvas id="alum_canvas12"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 13</h6>
-            <canvas id="alum_canvas13"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 14</h6>
-            <canvas id="alum_canvas14"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 15</h6>
-            <canvas id="alum_canvas15"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 16</h6>
-            <canvas id="alum_canvas16"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 17</h6>
-            <canvas id="alum_canvas17"></canvas>
-        </div>
-        <div id="chart-container-alum">
-            <h6 id="subtitle-alum-charts">Question No. 18</h6>
-            <canvas id="alum_canvas18"></canvas>
-        </div>
-    </div>
-        <!-- QUESTION # 1 -->
+    <div id="chart-container-alum-main">
+              <div id="ques1" class="tabcontent">
+                  <p id="subtitle-alum-charts">Sex at birth</p>
+                  <canvas id="alum_canvas1"></canvas>
+              </div>
+              <div id="ques2" class="tabcontent">
+                    <p id="subtitle-alum-charts">How satisfied are you with your undergraduate education at UP?</p>
+                    <canvas id="alum_canvas3"></canvas>
+              </div>
+              <div id="ques3" class="tabcontent">
+                  <p id="subtitle-alum-charts">How long after graduation were you able to get your first job?</p>
+                  <canvas id="alum_canvas4"></canvas>
+              </div>
+              <div id="ques4" class="tabcontent">
+                  <p id="subtitle-alum-charts">Are you employed right now?</p>
+                  <canvas id="alum_canvas5"></canvas>
+              </div>
+              <div id="ques4-1" class="tabcontent">
+                  <p id="subtitle-alum-charts">How would you characterize your employment?</p>
+                  <canvas id="alum_canvas5a"></canvas>
+              </div>
+              <div id="ques4-2" class="tabcontent">
+                  <p id="subtitle-alum-charts">Which industry best describes your employer or occupation?</p>
+                  <canvas id="alum_canvas5a-1"></canvas><br>
+                  <?php foreach ($ques5c_arr as $i => $industry) { ?>
+                    <p class="chart-legend"><strong><?php $i++; echo 'Industry '.$i.': ' ?></strong><?php echo $industry; ?></p>
+                  <?php } ?>
+              </div>
+              <div id="ques4-3" class="tabcontent">
+                  <p id="subtitle-alum-charts">Are you looking for employment at this time?</p>
+                  <canvas id="alum_canvas5b"></canvas>
+              </div>
+              <div id="ques5" class="tabcontent">
+                  <p id="subtitle-alum-charts">Minimum level of education required to perform your job (not necessarily education level)</p>
+                  <canvas id="alum_canvas6"></canvas>
+              </div>
+              <div id="ques6" class="tabcontent">
+                  <p id="subtitle-alum-charts">Preferred (but not required) level of education or training</p>
+                  <canvas id="alum_canvas7"></canvas>
+              </div>
+              <div id="ques7" class="tabcontent">
+                  <p id="subtitle-alum-charts">What is your principal occupation category?</p>
+                  <canvas id="alum_canvas8"></canvas>
+              </div>
+              <div id="ques8" class="tabcontent">
+                  <p id="subtitle-alum-charts">Is your current position related to your undergraduate field(s) of study?</p>
+                  <canvas id="alum_canvas9"></canvas>
+              </div>  
+              <div id="ques9" class="tabcontent">
+                  <p id="subtitle-alum-charts">Do you currently work for a national or local NGO or civic organization, as a paid volunteer for more than 10 hours per week?</p>
+                  <canvas id="alum_canvas11"></canvas>
+              </div>
+              <div id="ques10" class="tabcontent">
+                  <p id="subtitle-alum-charts">Minimum total number of years of experience in your field that is required to do your job (may or may not equate to your personal experience level)</p>
+                  <canvas id="alum_canvas12"></canvas>
+              </div>
+              <div id="ques11" class="tabcontent">
+                  <p id="subtitle-alum-charts">How well did UP prepare you for your current career?</p>
+                  <canvas id="alum_canvas13"></canvas>
+              </div>
+              <div id="ques12" class="tabcontent">
+                  <p id="subtitle-alum-charts">What is you current position?</p>
+                  <canvas id="alum_canvas14"></canvas>
+              </div>
+              <div id="ques13" class="tabcontent">
+                  <p id="subtitle-alum-charts">How much does your current job involve supervising or managing the work of others?</p>
+                  <canvas id="alum_canvas15"></canvas>
+              </div>
+              <div id="ques14" class="tabcontent">
+                  <p id="subtitle-alum-charts">Managerial responsibility (direct and indirect)</p>
+                  <canvas id="alum_canvas16"></canvas>
+              </div>
+              <div id="ques15" class="tabcontent">
+                  <p id="subtitle-alum-charts">How satisfied are you with your career thus far?</p>
+                  <canvas id="alum_canvas17"></canvas>
+              </div>
+              <div id="ques16" class="tabcontent">
+                  <p id="subtitle-alum-charts">How well do you think your undergraduate experience at UP DMCS prepared you to…</p>
+                  <canvas id="alum_canvas18"></canvas><br>
+                  <p class="chart-legend"><strong>Competency 1:</strong> Possess the skills and mindset to improve human life</p>
+                  <p class="chart-legend"><strong>Competency 2:</strong> Commit to the freedom and welfare of all</p>
+                  <p class="chart-legend"><strong>Competency 3:</strong> Demonstrate mastery of knowledge in your specific discipline</p>
+                  <p class="chart-legend"><strong>Competency 4:</strong> Possess breadth of mind</p>
+                  <p class="chart-legend"><strong>Competency 5:</strong> Possess strength of character</p>
+                  <p class="chart-legend"><strong>Competency 6:</strong> Possess generosity of spirit</p>
+                  <p class="chart-legend"><strong>Competency 7:</strong> Inclusively engage with society and the world at large</p>
+                  <p class="chart-legend"><strong>Competency 8:</strong> Be mindful of the needs and capabilities of people</p>
+                  <p class="chart-legend"><strong>Competency 9:</strong> Be sensitive to the challenges and opportunities of national development and global change</p>
+                  <p class="chart-legend"><strong>Competency 10:</strong> Think critically</p>
+                  <p class="chart-legend"><strong>Competency 11:</strong> Demonstrate discernment</p>
+              </div>
+            </div>
+    <!-- QUESTION # 1 -->
     <script type="text/javascript">
         var xValues = ["Female", "Male"];
         var yValues = [<?php echo $ct_fmale;?>, <?php echo $ct_male;?>];
@@ -116,6 +150,7 @@ require ('alum_data_chart.php');
           "#eeddcc",
           "#aa9999"
         ];
+        var ctx = document.getElementById("alum_canvas1").getContext('2d');
 
         new Chart("alum_canvas1", {
           type: "pie",
@@ -123,16 +158,35 @@ require ('alum_data_chart.php');
             labels: xValues,
             datasets: [{
               backgroundColor: barColors,
+              borderColor:"#fff",
               data: yValues
             }]
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 1"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -149,6 +203,7 @@ require ('alum_data_chart.php');
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("alum_canvas3").getContext('2d');
 
         new Chart("alum_canvas3", {
           type: "pie",
@@ -161,11 +216,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 3"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -184,6 +257,7 @@ require ('alum_data_chart.php');
           "#d5c6b1",
           "#747372"
         ];
+        var ctx = document.getElementById("alum_canvas4").getContext('2d');
 
         new Chart("alum_canvas4", {
           type: "pie",
@@ -196,11 +270,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 4"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -213,6 +305,7 @@ require ('alum_data_chart.php');
           "#eeddcc",
           "#aa9999"
         ];
+        var ctx = document.getElementById("alum_canvas5").getContext('2d');
 
         new Chart("alum_canvas5", {
           type: "pie",
@@ -225,11 +318,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 5"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -243,6 +354,7 @@ require ('alum_data_chart.php');
             "#d2a8a8",
             "#543737"
           ];
+          var ctx = document.getElementById("alum_canvas5a").getContext('2d');
 
           new Chart("alum_canvas5a", {
             type: "pie",
@@ -255,11 +367,24 @@ require ('alum_data_chart.php');
             },
             options: {
               plugins: {
-                   title: {
-                    display: true,
-                    text: "Question # 5a"
-                  }
-              }
+                  datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    let sum = 0;
+                    let dataArr = ctx.chart.data.datasets[0].data;
+                    dataArr.map(data => {
+                        sum += data;
+                    });
+                    let percentage = (value*100 / sum).toFixed(2)+"%";
+                    return percentage;
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
             }
           });
       </script>
@@ -292,6 +417,7 @@ require ('alum_data_chart.php');
             "#e9b0a2", "#c38673", "#ab766e", "#663d35", "#8f9da8",
             "#929ca6", "#737074", "#353032"
           ];
+          var ctx = document.getElementById("alum_canvas5a-1").getContext('2d');
 
           new Chart("alum_canvas5a-1", {
             type: "pie",
@@ -303,10 +429,30 @@ require ('alum_data_chart.php');
               }]
             },
             options: {
-              title: {
-                display: true,
-                text: "Question # 5a-1"
-              }
+              plugins: {
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
             }
           });
       </script>
@@ -318,6 +464,7 @@ require ('alum_data_chart.php');
             "#eeddcc",
       "#aa9999"
           ];
+          var ctx = document.getElementById("alum_canvas5b").getContext('2d');
 
           new Chart("alum_canvas5b", {
             type: "pie",
@@ -330,11 +477,29 @@ require ('alum_data_chart.php');
             },
             options: {
               plugins: {
-                   title: {
-                    display: true,
-                    text: "Question # 5b"
-                  }
-              }
+                  datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
+                }
+            },
+            responsive: true,
+            maintainAspectRatio: false
             }
           });
       </script>
@@ -353,6 +518,7 @@ require ('alum_data_chart.php');
           "#a17a69",
           "#747372"
         ];
+        var ctx = document.getElementById("alum_canvas6").getContext('2d');
 
         new Chart("alum_canvas6", {
           type: "pie",
@@ -365,11 +531,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 6"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -388,6 +572,7 @@ require ('alum_data_chart.php');
           "#a17a69",
           "#747372"
         ];
+        var ctx = document.getElementById("alum_canvas7").getContext('2d');
 
         new Chart("alum_canvas7", {
           type: "pie",
@@ -400,11 +585,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 7"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -426,6 +629,7 @@ require ('alum_data_chart.php');
           "#c38673",
           "#929ca6"
         ];
+        var ctx = document.getElementById("alum_canvas8").getContext('2d');
 
         new Chart("alum_canvas8", {
           type: "pie",
@@ -438,11 +642,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 8"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -457,6 +679,7 @@ require ('alum_data_chart.php');
           "#d2a8a8",
           "#543737"
         ];
+        var ctx = document.getElementById("alum_canvas9").getContext('2d');
 
         new Chart("alum_canvas9", {
           type: "pie",
@@ -469,11 +692,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 9"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -488,6 +729,7 @@ require ('alum_data_chart.php');
           "#d2a8a8",
           "#543737"
         ];
+        var ctx = document.getElementById("alum_canvas4").getContext('2d');
 
         new Chart("alum_canvas11", {
           type: "pie",
@@ -500,11 +742,24 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 11"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    let sum = 0;
+                    let dataArr = ctx.chart.data.datasets[0].data;
+                    dataArr.map(data => {
+                        sum += data;
+                    });
+                    let percentage = (value*100 / sum).toFixed(2)+"%";
+                    return percentage;
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -521,6 +776,7 @@ require ('alum_data_chart.php');
           "#bf8c88",
           "#b06f69"
         ];
+        var ctx = document.getElementById("alum_canvas12").getContext('2d');
 
         new Chart("alum_canvas12", {
           type: "pie",
@@ -533,11 +789,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 12"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -554,6 +828,7 @@ require ('alum_data_chart.php');
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("alum_canvas13").getContext('2d');
 
         new Chart("alum_canvas13", {
           type: "pie",
@@ -566,11 +841,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 13"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -587,6 +880,7 @@ require ('alum_data_chart.php');
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("alum_canvas14").getContext('2d');
 
         new Chart("alum_canvas14", {
           type: "pie",
@@ -599,11 +893,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 14"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -620,6 +932,7 @@ require ('alum_data_chart.php');
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("alum_canvas15").getContext('2d');
 
         new Chart("alum_canvas15", {
           type: "pie",
@@ -632,11 +945,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 15"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -653,6 +984,7 @@ require ('alum_data_chart.php');
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("alum_canvas16").getContext('2d');
 
         new Chart("alum_canvas16", {
           type: "pie",
@@ -665,11 +997,29 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 16"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
@@ -686,6 +1036,7 @@ require ('alum_data_chart.php');
           "#aa9999",
           "#ddbbaa"
         ];
+        var ctx = document.getElementById("alum_canvas17").getContext('2d');
 
         new Chart("alum_canvas17", {
           type: "pie",
@@ -698,16 +1049,37 @@ require ('alum_data_chart.php');
           },
           options: {
             plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 17"
+                datalabels: {
+                  formatter: (value, ctx) => {
+                  
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
+
+                
+                  },
+                  color: '#fff'
                 }
-            }
+            },
+            responsive: true,
+            maintainAspectRatio: false
           }
         });
     </script>
 
     <!-- QUESTION # 18 -->
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.2.1/chart.js"></script>
     <script type="text/javascript">
 
         var barChartData = {
@@ -755,17 +1127,12 @@ require ('alum_data_chart.php');
                        <?php echo $ct_dmcs11_vw;?>]
             }]
         }
+        var ctx = document.getElementById("alum_canvas18").getContext('2d');
 
         new Chart("alum_canvas18", {
           type: "bar",
           data: barChartData,
           options: {
-            plugins: {
-                 title: {
-                  display: true,
-                  text: "Question # 18"
-                }
-            },
             scales: {
                 y: {
                     suggestedMin: 0,
