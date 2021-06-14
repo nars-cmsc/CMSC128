@@ -94,9 +94,8 @@ nav {
   font-size:14pt;
 }
 #title-users {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+  color: #606060;
+  text-transform: uppercase;
   /*padding: 2%;*/
 }
 #table-users {
@@ -114,6 +113,34 @@ nav {
 }
 .user-row:hover {
   color:red;
+}
+div.content { /*for jquery data table*/
+  width: 70%;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+  box-sizing:border-box;
+  display:inline-block;
+  min-width:1.5em;
+  padding:.5em 1em;
+  margin-left:2px;
+  text-align:center;
+  text-decoration:none !important;
+  cursor:pointer;
+  *cursor:hand;
+  color:#333 !important;
+  border:1px solid transparent;
+  border-radius:2px
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+  color:#333 !important;
+  border:1px solid #979797;
+  background-color:##ffad0d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffad0d), color-stop(100%, #ffad0d));
+  background:-webkit-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-moz-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-ms-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-o-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:linear-gradient(to bottom, #ffad0d 40%, #ffad0d 100%);
 }
 
 /* all table headers */

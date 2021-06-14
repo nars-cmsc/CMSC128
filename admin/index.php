@@ -31,17 +31,21 @@ if ($_SESSION['role'] == 3) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="images/png" href="images/UP_seal.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript"src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Admin</title>
 </head>
 <?php include('header.php');  ?>
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-users">
-            <h4 id="title-users">List of Registered Users</h4>
+            <h2 id="title-users">List of Registered Users</h2><br>
             <table id="table-users">
                 <thead>
                     <tr>
@@ -94,6 +98,12 @@ if ($_SESSION['role'] == 3) {
     </section>
     
     <?php include('footer.php'); ?>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#table-users").dataTable();
+        });
+    </script>
 
 </body>
 </html>
