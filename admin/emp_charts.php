@@ -49,60 +49,61 @@ if ($_SESSION['role'] == 3) {
             <h4 id="title-emp-charts">Chart Generation</h4>
             <h6 id="subtitle-emp-charts">Employer Satisfaction Survey</h6>
                 <br>
-
-            <a href="controllers/pdf_emp_charts.php" id="" target="_blank">REPORT</a>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 1</h6>
-                <canvas id="mycanvas1"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 2</h6>
-                <canvas id="mycanvas2"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 3</h6>
-                <canvas id="mycanvas3"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 4</h6>
-                <canvas id="mycanvas4"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 6</h6>
-                <canvas id="mycanvas6"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 7</h6>
-                <canvas id="mycanvas7"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 8</h6>
-                <canvas id="mycanvas8"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 9</h6>
-                <canvas id="mycanvas9"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 10</h6>
-                <canvas id="mycanvas10"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 11</h6>
-                <canvas id="mycanvas11"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 12</h6>
-                <canvas id="mycanvas12"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 13</h6>
-                <canvas id="mycanvas13"></canvas>
-            </div>
-            <div id="chart-container">
-                <h6 id="subtitle-emp-charts">Question No. 14</h6>
-                <canvas id="mycanvas14"></canvas>
-            </div>
+            <?php  if($total != 0) { ?>
+                <a href="controllers/pdf_emp_charts.php" id="" target="_blank">REPORT</a>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 1</h6>
+                    <canvas id="mycanvas1"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 2</h6>
+                    <canvas id="mycanvas2"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 3</h6>
+                    <canvas id="mycanvas3"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 4</h6>
+                    <canvas id="mycanvas4"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 6</h6>
+                    <canvas id="mycanvas6"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 7</h6>
+                    <canvas id="mycanvas7"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 8</h6>
+                    <canvas id="mycanvas8"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 9</h6>
+                    <canvas id="mycanvas9"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 10</h6>
+                    <canvas id="mycanvas10"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 11</h6>
+                    <canvas id="mycanvas11"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 12</h6>
+                    <canvas id="mycanvas12"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 13</h6>
+                    <canvas id="mycanvas13"></canvas>
+                </div>
+                <div id="chart-container">
+                    <h6 id="subtitle-emp-charts">Question No. 14</h6>
+                    <canvas id="mycanvas14"></canvas>
+                </div>
+            <?php }?>
         </div>
     </section>
     <!-- QUESTION # 1 -->

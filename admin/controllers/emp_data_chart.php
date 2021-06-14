@@ -374,12 +374,16 @@ while ($row = mysqli_fetch_array($result)) {
 		$ct_rnd_oc_aus = round(($ct_reg_oc_aus/$ct_reg_oc*100),0);
 		$ct_rnd_oc_mel = round(($ct_reg_oc_mel/$ct_reg_oc*100),0);
 	}
-	$ct_abroad_arr_percent = array( round(($ct_reg_afr/$ct_ab*100),0), $ct_rnd_afr_na, $ct_rnd_afr_ea, $ct_rnd_afr_ma, $ct_rnd_afr_sa, $ct_rnd_afr_wa, 
-		round(($ct_reg_am/$ct_ab*100),0), $ct_rnd_am_na, $ct_rnd_am_ca, $ct_rnd_am_sa, round(($ct_reg_ant/$ct_ab*100),0), 
-		round(($ct_reg_asia/$ct_ab*100),0), $ct_rnd_asia_ca, $ct_rnd_asia_ea, $ct_rnd_asia_sa, $ct_rnd_asia_sea, $ct_rnd_asia_wa, 
-		round(($ct_reg_eu/$ct_ab*100),0), $ct_rnd_eu_ee, $ct_rnd_eu_ne, $ct_rnd_eu_se, $ct_rnd_eu_we, 
-		round(($ct_reg_oc/$ct_ab*100),0), $ct_rnd_oc_aus, $ct_rnd_oc_mel
-	);
+
+	if ($ct_ab != 0) {
+		$ct_abroad_arr_percent = array( round(($ct_reg_afr/$ct_ab*100),0), $ct_rnd_afr_na, $ct_rnd_afr_ea, $ct_rnd_afr_ma, $ct_rnd_afr_sa, $ct_rnd_afr_wa, 
+			round(($ct_reg_am/$ct_ab*100),0), $ct_rnd_am_na, $ct_rnd_am_ca, $ct_rnd_am_sa, round(($ct_reg_ant/$ct_ab*100),0), 
+			round(($ct_reg_asia/$ct_ab*100),0), $ct_rnd_asia_ca, $ct_rnd_asia_ea, $ct_rnd_asia_sa, $ct_rnd_asia_sea, $ct_rnd_asia_wa, 
+			round(($ct_reg_eu/$ct_ab*100),0), $ct_rnd_eu_ee, $ct_rnd_eu_ne, $ct_rnd_eu_se, $ct_rnd_eu_we, 
+			round(($ct_reg_oc/$ct_ab*100),0), $ct_rnd_oc_aus, $ct_rnd_oc_mel
+		);
+	}
+	
 
 ###################### QUESTION #3 ######################
 	$ques3_arr = array(
@@ -635,8 +639,12 @@ while ($row = mysqli_fetch_array($result)) {
 
 	$ct_ind_arr = array($ct_ind1, $ct_ind2, $ct_ind3, $ct_ind4, $ct_ind5, $ct_ind6, $ct_ind7, $ct_ind8, $ct_ind9, $ct_ind10, $ct_ind11, $ct_ind12, $ct_ind13, $ct_ind14, $ct_ind15, $ct_ind16, $ct_ind17, $ct_ind18, $ct_ind19, $ct_ind20, $ct_ind21, $ct_ind22
 	);
-	$ct_ind_arr_percent = array(round(($ct_ind1/$total*100),0), round(($ct_ind2/$total*100),0), round(($ct_ind3/$total*100),0), round(($ct_ind4/$total*100),0), round(($ct_ind5/$total*100),0), round(($ct_ind6/$total*100),0), round(($ct_ind7/$total*100),0), round(($ct_ind8/$total*100),0), round(($ct_ind9/$total*100),0), round(($ct_ind10/$total*100),0), round(($ct_ind11/$total*100),0), round(($ct_ind12/$total*100),0), round(($ct_ind13/$total*100),0), round(($ct_ind14/$total*100),0), round(($ct_ind15/$total*100),0), round(($ct_ind16/$total*100),0), round(($ct_ind17/$total*100),0), round(($ct_ind18/$total*100),0), round(($ct_ind19/$total*100),0), round(($ct_ind20/$total*100),0), round(($ct_ind21/$total*100),0), round(($ct_ind22/$total*100),0)
-	);
+
+	if ($total != 0) {
+		$ct_ind_arr_percent = array(round(($ct_ind1/$total*100),0), round(($ct_ind2/$total*100),0), round(($ct_ind3/$total*100),0), round(($ct_ind4/$total*100),0), round(($ct_ind5/$total*100),0), round(($ct_ind6/$total*100),0), round(($ct_ind7/$total*100),0), round(($ct_ind8/$total*100),0), round(($ct_ind9/$total*100),0), round(($ct_ind10/$total*100),0), round(($ct_ind11/$total*100),0), round(($ct_ind12/$total*100),0), round(($ct_ind13/$total*100),0), round(($ct_ind14/$total*100),0), round(($ct_ind15/$total*100),0), round(($ct_ind16/$total*100),0), round(($ct_ind17/$total*100),0), round(($ct_ind18/$total*100),0), round(($ct_ind19/$total*100),0), round(($ct_ind20/$total*100),0), round(($ct_ind21/$total*100),0), round(($ct_ind22/$total*100),0)
+		);
+	}
+		
 
 ###################### QUESTION #4 ######################
 

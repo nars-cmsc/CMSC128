@@ -51,7 +51,7 @@ if ($_SESSION['role'] == 3) {
             <h4 id="title-alum-charts">Chart Generation</h4>
             <h6 id="subtitle-alum-charts">Alumni Survey</h6>
                 <br>
-
+          <?php  if($total != 0) { ?>
             <a href="controllers/pdf_alum_charts.php" id="" target="_blank">REPORT</a>
             <div id="chart-container-alum-main">
               <div id="chart-container-alum">
@@ -131,7 +131,7 @@ if ($_SESSION['role'] == 3) {
                     <canvas id="alum_canvas18"></canvas>
                 </div>
             </div>
-            
+          <?php }?>              
         </div>
     </section>
     <!-- QUESTION # 1 -->

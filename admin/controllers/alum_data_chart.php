@@ -14,6 +14,7 @@ while ($row = mysqli_fetch_array($result)) {
 }
 
 
+
 ###################### QUESTION # 1 ######################
 	
 	$ct_fmale = 0;
@@ -1304,7 +1305,8 @@ while ($row = mysqli_fetch_array($result)) {
 		$ct_country180, $ct_country181, $ct_country182, $ct_country183, $ct_country184, $ct_country185, $ct_country186, $ct_country187, $ct_country188, $ct_country189, 
 		$ct_country190, $ct_country191, $ct_country192, $ct_country193, $ct_country194,
 	);
-	$country_percent = array(round($ct_country0/$total*100), round($ct_country1/$total*100), round($ct_country2/$total*100), round($ct_country3/$total*100), round($ct_country4/$total*100), round($ct_country5/$total*100), round($ct_country6/$total*100), round($ct_country7/$total*100), round($ct_country8/$total*100), round($ct_country9/$total*100), 
+	if ($total != 0) {
+		$country_percent = array(round($ct_country0/$total*100), round($ct_country1/$total*100), round($ct_country2/$total*100), round($ct_country3/$total*100), round($ct_country4/$total*100), round($ct_country5/$total*100), round($ct_country6/$total*100), round($ct_country7/$total*100), round($ct_country8/$total*100), round($ct_country9/$total*100), 
 		round($ct_country10/$total*100), round($ct_country11/$total*100), round($ct_country12/$total*100), round($ct_country13/$total*100), round($ct_country14/$total*100), round($ct_country15/$total*100), round($ct_country16/$total*100), round($ct_country17/$total*100), round($ct_country18/$total*100), round($ct_country19/$total*100), 
 		round($ct_country20/$total*100), round($ct_country21/$total*100), round($ct_country22/$total*100), round($ct_country23/$total*100), round($ct_country24/$total*100), round($ct_country25/$total*100), round($ct_country26/$total*100), round($ct_country27/$total*100), round($ct_country28/$total*100), round($ct_country29/$total*100), 
 		round($ct_country30/$total*100), round($ct_country31/$total*100), round($ct_country32/$total*100), round($ct_country33/$total*100), round($ct_country34/$total*100), round($ct_country35/$total*100), round($ct_country36/$total*100), round($ct_country37/$total*100), round($ct_country38/$total*100), round($ct_country39/$total*100), 
@@ -1325,6 +1327,8 @@ while ($row = mysqli_fetch_array($result)) {
 		round($ct_country180/$total*100), round($ct_country181/$total*100), round($ct_country182/$total*100), round($ct_country183/$total*100), round($ct_country184/$total*100), round($ct_country185/$total*100), round($ct_country186/$total*100), round($ct_country187/$total*100), round($ct_country188/$total*100), round($ct_country189/$total*100), 
 		round($ct_country190/$total*100), round($ct_country191/$total*100), round($ct_country192/$total*100), round($ct_country193/$total*100), round($ct_country194/$total*100),
 	);
+	}
+	
 
 
 
@@ -1721,8 +1725,11 @@ while ($row = mysqli_fetch_array($result)) {
 
 		$ct_ind_arr5 = [$ct_yes_ind1, $ct_yes_ind2, $ct_yes_ind3, $ct_yes_ind4, $ct_yes_ind5, $ct_yes_ind6, $ct_yes_ind7, $ct_yes_ind8, $ct_yes_ind9, $ct_yes_ind10, $ct_yes_ind11, $ct_yes_ind12, $ct_yes_ind13, $ct_yes_ind14, $ct_yes_ind15, $ct_yes_ind16, $ct_yes_ind17, $ct_yes_ind18, $ct_yes_ind19, $ct_yes_ind20, $ct_yes_ind21, $ct_yes_ind22];
 
-		$ct_ind_arr5_percent = array(round(($ct_yes_ind1/$ct_emp_yes5*100),0), round(($ct_yes_ind2/$ct_emp_yes5*100),0), round(($ct_yes_ind3/$ct_emp_yes5*100),0), round(($ct_yes_ind4/$ct_emp_yes5*100),0), round(($ct_yes_ind5/$ct_emp_yes5*100),0), round(($ct_yes_ind6/$ct_emp_yes5*100),0), round(($ct_yes_ind7/$ct_emp_yes5*100),0), round(($ct_yes_ind8/$ct_emp_yes5*100),0), round(($ct_yes_ind9/$ct_emp_yes5*100),0), round(($ct_yes_ind10/$ct_emp_yes5*100),0), round(($ct_yes_ind11/$ct_emp_yes5*100),0), round(($ct_yes_ind12/$ct_emp_yes5*100),0), round(($ct_yes_ind13/$ct_emp_yes5*100),0), round(($ct_yes_ind14/$ct_emp_yes5*100),0), round(($ct_yes_ind15/$ct_emp_yes5*100),0), round(($ct_yes_ind16/$ct_emp_yes5*100),0), round(($ct_yes_ind17/$ct_emp_yes5*100),0), round(($ct_yes_ind18/$ct_emp_yes5*100),0), round(($ct_yes_ind19/$ct_emp_yes5*100),0), round(($ct_yes_ind20/$ct_emp_yes5*100),0), round(($ct_yes_ind21/$ct_emp_yes5*100),0), round(($ct_yes_ind22/$ct_emp_yes5*100),0)
-		);
+		if ($ct_emp_yes5 != 0) {
+			$ct_ind_arr5_percent = array(round(($ct_yes_ind1/$ct_emp_yes5*100),0), round(($ct_yes_ind2/$ct_emp_yes5*100),0), round(($ct_yes_ind3/$ct_emp_yes5*100),0), round(($ct_yes_ind4/$ct_emp_yes5*100),0), round(($ct_yes_ind5/$ct_emp_yes5*100),0), round(($ct_yes_ind6/$ct_emp_yes5*100),0), round(($ct_yes_ind7/$ct_emp_yes5*100),0), round(($ct_yes_ind8/$ct_emp_yes5*100),0), round(($ct_yes_ind9/$ct_emp_yes5*100),0), round(($ct_yes_ind10/$ct_emp_yes5*100),0), round(($ct_yes_ind11/$ct_emp_yes5*100),0), round(($ct_yes_ind12/$ct_emp_yes5*100),0), round(($ct_yes_ind13/$ct_emp_yes5*100),0), round(($ct_yes_ind14/$ct_emp_yes5*100),0), round(($ct_yes_ind15/$ct_emp_yes5*100),0), round(($ct_yes_ind16/$ct_emp_yes5*100),0), round(($ct_yes_ind17/$ct_emp_yes5*100),0), round(($ct_yes_ind18/$ct_emp_yes5*100),0), round(($ct_yes_ind19/$ct_emp_yes5*100),0), round(($ct_yes_ind20/$ct_emp_yes5*100),0), round(($ct_yes_ind21/$ct_emp_yes5*100),0), round(($ct_yes_ind22/$ct_emp_yes5*100),0)
+			);
+		}
+		
 
 	// get data from table (no)
 	$query = "SELECT user_id FROM alum_survey_q5 WHERE Employed='No'";
@@ -1997,6 +2004,7 @@ while ($row = mysqli_fetch_array($result)) {
 	$ct_occ10 = 0;
 
 	$ct_occ_array = array();
+	$ct_occ_array_percent = array();
 
 	// get data from table (option1)
 	$query = "SELECT user_id FROM alum_survey_q8 WHERE answer_body='Armed Forces Occupations'";
@@ -2090,8 +2098,11 @@ while ($row = mysqli_fetch_array($result)) {
 
 	$ct_occ_array = [$ct_occ1, $ct_occ2, $ct_occ3, $ct_occ4, $ct_occ5, $ct_occ6, $ct_occ7, $ct_occ8, $ct_occ9, $ct_occ10];
 
-	$ct_occ_array_percent = array(round(($ct_occ1/$total*100),0), round(($ct_occ2/$total*100),0), round(($ct_occ3/$total*100),0), round(($ct_occ4/$total*100),0), round(($ct_occ5/$total*100),0), round(($ct_occ6/$total*100),0), round(($ct_occ7/$total*100),0), round(($ct_occ8/$total*100),0), round(($ct_occ9/$total*100),0), round(($ct_occ10/$total*100),0)
-	);
+	if ($total != 0) {
+		$ct_occ_array_percent = array(round(($ct_occ1/$total*100),0), round(($ct_occ2/$total*100),0), round(($ct_occ3/$total*100),0), round(($ct_occ4/$total*100),0), round(($ct_occ5/$total*100),0), round(($ct_occ6/$total*100),0), round(($ct_occ7/$total*100),0), round(($ct_occ8/$total*100),0), round(($ct_occ9/$total*100),0), round(($ct_occ10/$total*100),0)
+		);
+	}
+		
 
 ###################### QUESTION # 9 ######################
 	
@@ -2867,12 +2878,6 @@ while ($row = mysqli_fetch_array($result)) {
 
 		$alum_string19_array[] = $row;
 	}
-
-
-
-
-
-
 
 
 ?>
