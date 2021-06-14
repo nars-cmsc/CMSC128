@@ -31,72 +31,22 @@ if ($_SESSION['role'] == 3) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="images/png" href="images/UP_seal.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-
-        /* Style the tab */
-        .tab {
-          overflow: hidden;
-          border: 1px solid #ccc;
-          background-color: #f1f1f1;
-        }
-
-        /* Style the buttons inside the tab */
-        .tab button, .tab p {
-          background-color: inherit;
-          /*float: left;*/
-          border: none;
-          outline: none;
-          cursor: pointer;
-          padding: 14px 16px;
-          transition: 0.3s;
-          font-size: 17px;
-        }
-
-
-
-        /* Change background color of buttons on hover */
-        .tab button:hover {
-          background-color: #ddd;
-        }
-
-        /* Create an active/current tablink class */
-        .tab button.active {
-          background-color: #ccc;
-        }
-
-        /* Style the tab content */
-        .tabcontent {
-          display: none;
-          padding: 6px 12px;
-          border: 1px solid #ccc;
-          border-top: none;
-          -webkit-animation: fadeEffect 1s;
-          animation: fadeEffect 1s; /* Fading effect takes 1 second */
-        }
-
-        /* Fade in tabs */
-        @-webkit-keyframes fadeEffect {
-          from {opacity: 0;}
-          to {opacity: 1;}
-        }
-
-        @keyframes fadeEffect {
-          from {opacity: 0;}
-          to {opacity: 1;}
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript"src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Admin</title>
 </head>
 <?php include('header.php');  ?>
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-emp-raw">
-            <h4 id="title-emp-raw">Raw Data</h4>
-            <h6 id="subtitle-emp-raw">Employer Satisfaction Survey</h6><br>
+            <h2 id="title-emp-raw">Raw Data of Employer Satisfaction Survey</h2>
+            <h5 id="subtitle-emp-raw">Click the numbers below that correspond with the question to view responses</h5><br>
             <div class="tab">
                 <p class="tablinks" disabled="true">QUESTION NUMBER: </button>
                 <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1</button>
@@ -119,7 +69,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques1" class="tabcontent">
                 <p class="ques_title"><strong>Which sector of economy does your company/organization belong to?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw1" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -145,7 +95,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques2" class="tabcontent">
                 <p class="ques_title"><strong>Where is your company/organization located?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw2" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -177,7 +127,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques3" class="tabcontent">
                 <p class="ques_title"><strong>Which industry and business does your company/organization belong to?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw3" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -203,7 +153,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques4" class="tabcontent">
                 <p class="ques_title"><strong>What is your position in your company/organization?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw4" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -229,7 +179,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques5" class="tabcontent">
                 <p class="ques_title"><strong>How many UP graduates are employed in your company/organization?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw5" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -255,7 +205,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques6" class="tabcontent">
                 <p class="ques_title"><strong>How much do you agree or disagree with this statement: “UP graduates recruited in the last three to five years have the skills to work in my company/organization.”?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw6" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -281,7 +231,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques7" class="tabcontent">
                 <p class="ques_title"><strong>Rate the importance of each skill when hiring new staff.</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw7" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -309,7 +259,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques8" class="tabcontent">
                 <p class="ques_title"><strong>Rate your satisfaction on how well each skill is demonstrated by your staff who are UP graduates.</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw8" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -337,7 +287,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques9" class="tabcontent">
                 <p class="ques_title"><strong>Based on your experience with the staff, how LIKELY are you to hire other graduates of UP?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw9" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -363,7 +313,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques10" class="tabcontent">
                 <p class="ques_title"><strong>Based on your experience with the staff how likely are you going to keep the UP graduates in your company/organization?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw10" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -389,7 +339,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques11" class="tabcontent">
                 <p class="ques_title"><strong>Rate the importance of each item to the successful performance of the job for which your staff, who are UP graduates, were hired.</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw11" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -417,7 +367,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques12" class="tabcontent">
                 <p class="ques_title"><strong>Rate your satisfaction on how well each item was demonstrated by your hired UP graduates.</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw12" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -445,7 +395,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques13" class="tabcontent">
                 <p class="ques_title"><strong>Which actions should UP take in order to improve the skill and competency set of its graduates?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw13" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -471,7 +421,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques14" class="tabcontent">
                 <p class="ques_title"><strong>How important is UP cooperation for your company/organization?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw14" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -497,7 +447,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques15" class="tabcontent">
                 <p class="ques_title"><strong>Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw15" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -523,7 +473,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques16" class="tabcontent">
                 <p class="ques_title"><strong>Do you have any negative feedback about the graduates?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw16" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -549,7 +499,7 @@ if ($_SESSION['role'] == 3) {
             </div>
             <div id="ques17" class="tabcontent">
                 <p class="ques_title"><strong>Are specific strengths of the graduates appreciated? If yes, what are these strengths?</strong></p><br>
-                <table id="table-emp-raw">
+                <table id="table-emp-raw17" class="table-emp-raw">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -579,6 +529,26 @@ if ($_SESSION['role'] == 3) {
     <?php include('footer.php'); ?>
 
     <script>
+        $(document).ready(function(){
+            $("#table-emp-raw1").dataTable();
+            $("#table-emp-raw2").dataTable();
+            $("#table-emp-raw3").dataTable();
+            $("#table-emp-raw4").dataTable();
+            $("#table-emp-raw5").dataTable();
+            $("#table-emp-raw6").dataTable();
+            $("#table-emp-raw7").dataTable();
+            $("#table-emp-raw8").dataTable();
+            $("#table-emp-raw9").dataTable();
+            $("#table-emp-raw10").dataTable();
+            $("#table-emp-raw11").dataTable();
+            $("#table-emp-raw12").dataTable();
+            $("#table-emp-raw13").dataTable();
+            $("#table-emp-raw14").dataTable();
+            $("#table-emp-raw15").dataTable();
+            $("#table-emp-raw16").dataTable();
+            $("#table-emp-raw17").dataTable();
+        });
+
         function openQues(evt, quesNum) {
           var i, tabcontent, tablinks;
           tabcontent = document.getElementsByClassName("tabcontent");
