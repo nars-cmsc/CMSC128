@@ -31,12 +31,15 @@ if ($_SESSION['role'] == 3) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="images/png" href="images/UP_seal.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/jquery.js"></script>
-    <!-- <script type="text/javascript" src="js/survey_fcn.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <script type="text/javascript"src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>Admin</title>
 </head>
 
@@ -44,8 +47,13 @@ if ($_SESSION['role'] == 3) {
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-contact">
-            <h4 id="title-contact">List of Employer Contacts</h4>
+            <h2 id="title-contact">Contact Information of Employers</h2>
+            <h5 id="subtitle-users">Click the checkbox then update once employer has been contacted</h5>
             <form action="contact_emp.php" method="POST" id="contact-emp-form" name="contact-emp-form">
+                <div class="update-btn">
+                    <input type="submit" name="update-bttn" value="UPDATE" onclick="alert('Database updated successfully!')" id="update-bttn" style="display: none;">
+                </div>
+                <br><br>
                 <table id="table-contact">
                     <thead>
                         <tr>
@@ -73,13 +81,17 @@ if ($_SESSION['role'] == 3) {
                         <?php } ?>
                     </tbody>
                 </table>
-                <input type="submit" name="update-bttn" value="UPDATE" onclick="alert('Database updated successfully!')" id="update-bttn" style="display: none;">
             </form>
             
         </div>
     </section>
     
     <?php include('footer.php'); ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#table-contact").dataTable();
+        });
+    </script>
 
 </body>
 </html>
