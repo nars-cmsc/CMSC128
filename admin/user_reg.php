@@ -41,7 +41,8 @@ if ($_SESSION['role'] == 3) {
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-reg-users">
-        	<h4 id="title-users">Register New User</h4>
+        	<h2 id="title-users">Register New User</h2>
+        	<h5 id="subtitle-users">Fill in the following fields to add new user</h5>
             <form action="user_reg.php" method="post">
             	<!-- added this area for error messages -->
 				<?php if (count($errors) > 0): ?>
