@@ -46,26 +46,26 @@ if ($_SESSION['role'] == 3) {
         <?php include('sidenav.php');  ?>
         <div class="content-emp-raw">
             <h2 id="title-emp-raw">Raw Data of Employer Satisfaction Survey</h2>
-            <h5 id="subtitle-emp-raw">Click the numbers below that correspond with the question to view responses</h5><br>
+            <h5 id="subtitle-emp-raw">Click the number below that corresponds with a question to view responses</h5><br>
             <div class="tab">
                 <p class="tablinks" disabled="true">QUESTION NUMBER: </button>
                 <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1</button>
-                <button class="tablinks" onclick="openQues(event, 'ques2')" id="defaultOpen">2</button>
-                <button class="tablinks" onclick="openQues(event, 'ques3')" id="defaultOpen">3</button>
-                <button class="tablinks" onclick="openQues(event, 'ques4')" id="defaultOpen">4</button>
-                <button class="tablinks" onclick="openQues(event, 'ques5')" id="defaultOpen">5</button>
-                <button class="tablinks" onclick="openQues(event, 'ques6')" id="defaultOpen">6</button>
-                <button class="tablinks" onclick="openQues(event, 'ques7')" id="defaultOpen">7</button>
-                <button class="tablinks" onclick="openQues(event, 'ques8')" id="defaultOpen">8</button>
-                <button class="tablinks" onclick="openQues(event, 'ques9')" id="defaultOpen">9</button>
-                <button class="tablinks" onclick="openQues(event, 'ques10')" id="defaultOpen">10</button>
-                <button class="tablinks" onclick="openQues(event, 'ques11')" id="defaultOpen">11</button>
-                <button class="tablinks" onclick="openQues(event, 'ques12')" id="defaultOpen">12</button>
-                <button class="tablinks" onclick="openQues(event, 'ques13')" id="defaultOpen">13</button>
-                <button class="tablinks" onclick="openQues(event, 'ques14')" id="defaultOpen">14</button>
-                <button class="tablinks" onclick="openQues(event, 'ques15')" id="defaultOpen">15</button>
-                <button class="tablinks" onclick="openQues(event, 'ques16')" id="defaultOpen">16</button>
-                <button class="tablinks" onclick="openQues(event, 'ques17')" id="defaultOpen">17</button>
+                <button class="tablinks" onclick="openQues(event, 'ques2')">2</button>
+                <button class="tablinks" onclick="openQues(event, 'ques3')">3</button>
+                <button class="tablinks" onclick="openQues(event, 'ques4')">4</button>
+                <button class="tablinks" onclick="openQues(event, 'ques5')">5</button>
+                <button class="tablinks" onclick="openQues(event, 'ques6')">6</button>
+                <button class="tablinks" onclick="openQues(event, 'ques7')">7</button>
+                <button class="tablinks" onclick="openQues(event, 'ques8')">8</button>
+                <button class="tablinks" onclick="openQues(event, 'ques9')">9</button>
+                <button class="tablinks" onclick="openQues(event, 'ques10')">10</button>
+                <button class="tablinks" onclick="openQues(event, 'ques11')">11</button>
+                <button class="tablinks" onclick="openQues(event, 'ques12')">12</button>
+                <button class="tablinks" onclick="openQues(event, 'ques13')">13</button>
+                <button class="tablinks" onclick="openQues(event, 'ques14')">14</button>
+                <button class="tablinks" onclick="openQues(event, 'ques15')">15</button>
+                <button class="tablinks" onclick="openQues(event, 'ques16')">16</button>
+                <button class="tablinks" onclick="openQues(event, 'ques17')">17</button>
             </div>
             <div id="ques1" class="tabcontent">
                 <p class="ques_title"><strong>Which sector of economy does your company/organization belong to?</strong></p><br>

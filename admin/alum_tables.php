@@ -50,14 +50,14 @@ if ($_SESSION['role'] == 3) {
                 <br><br><br>
                 <div class="tab">
                     <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1 - 4</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques2')" id="defaultOpen">5</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques3')" id="defaultOpen">6</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques4')" id="defaultOpen">7</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques5')" id="defaultOpen">8 - 9</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques6')" id="defaultOpen">10</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques7')" id="defaultOpen">11 - 17</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques8')" id="defaultOpen">18</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques9')" id="defaultOpen">19</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques2')">5</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques3')">6</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques4')">7</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques5')">8 - 9</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques6')">10</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques7')">11 - 17</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques8')">18</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques9')">19</button>
                 </div>
                 <div id="ques1" class="tabcontent">
                     <table id="table-alum-table1">

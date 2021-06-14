@@ -50,15 +50,15 @@ if ($_SESSION['role'] == 3) {
                 <br><br><br>
                 <div class="tab">
                     <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1 - 2</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques2')" id="defaultOpen">3 - 4</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques3')" id="defaultOpen">5 - 6</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques4')" id="defaultOpen">7 - 8</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques6')" id="defaultOpen">10</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques5')" id="defaultOpen">11 - 12</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques7')" id="defaultOpen">13 - 14</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques8')" id="defaultOpen">15</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques9')" id="defaultOpen">16</button>
-                    <button class="tablinks" onclick="openQues(event, 'ques10')" id="defaultOpen">17</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques2')">3 - 4</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques3')">5 - 6</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques4')">7 - 8</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques6')">10</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques5')">11 - 12</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques7')">13 - 14</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques8')">15</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques9')">16</button>
+                    <button class="tablinks" onclick="openQues(event, 'ques10')">17</button>
                 </div>
                 <div id="ques1" class="tabcontent">
                     <table id="table-emp-table1">
