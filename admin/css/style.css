@@ -98,6 +98,10 @@ nav {
   text-transform: uppercase;
   /*padding: 2%;*/
 }
+#subtitle-users {
+  color: #606060;
+  text-transform: uppercase;
+}
 #table-users {
   text-align: center;
   margin:1%;
@@ -117,7 +121,7 @@ nav {
 div.content { /*for jquery data table*/
   width: 70%;
 }
-.dataTables_wrapper .dataTables_paginate .paginate_button{
+.dataTables_wrapper .dataTables_paginate .paginate_button{ /*for jquery data table buttons*/
   box-sizing:border-box;
   display:inline-block;
   min-width:1.5em;
@@ -131,7 +135,18 @@ div.content { /*for jquery data table*/
   border:1px solid transparent;
   border-radius:2px
 }
-.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button:hover{/*for jquery data table buttons hover*/
+  color:#333 !important;
+  border:1px solid #979797;
+  background-color:##ffad0d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(40%, #ffad0d), color-stop(100%, #ffad0d));
+  background:-webkit-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-moz-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-ms-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:-o-linear-gradient(top, #ffad0d 40%, #ffad0d 100%);
+  background:linear-gradient(to bottom, #ffad0d 40%, #ffad0d 100%);
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{/*for jquery data table current button hover*/
   color:#333 !important;
   border:1px solid #979797;
   background-color:##ffad0d;
@@ -211,65 +226,91 @@ input[type=submit]:hover{
   background-color:#840038;
 }
 
-/* content emp_raw.php */
-.content-emp-raw {
+/* content emp_raw.php and alum_raw.php */
+.content-emp-raw, .content-alum-raw {
   float: left;
   padding: 2%;
   width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
-#title-emp-raw {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+#title-emp-raw, #title-alum-raw {
+  color: #606060;
+  text-transform: uppercase;
 }
-#subtitle-emp-raw {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+#subtitle-emp-raw, #subtitle-alum-raw {
+  color: #606060;
+  text-transform: uppercase;
 }
-#table-emp-raw {
+.ques_title {
+  padding: 20px;
+  padding-bottom: 15px;
   text-align: center;
-  font-size:14pt;
-  width:100%;
+  color: #606060;
 }
-#table-emp-raw thead{
+.table-emp-raw {
+  text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+  overflow-wrap: all;
+}
+.table-emp-raw thead{
   color:#ffad0d;
 }
-#table-emp-raw td{
-  width:20%;
+.table-emp-raw td{
+  /*width:20%;*/
+}
+.survey-id {
+  width:5%
 }
 
-/* content alum_raw.php */
-.content-alum-raw {
-  float: left;
-  padding: 2%;
-  width: 80%;
-  min-height: 100vh;
-  font-size:14pt;
+/* TABS FOR ALUM AND EMP RAW */
+/* Style the tab */
+.tab {
+  /*overflow: hidden;*/
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
 }
-#title-alum-raw {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+
+/* Style the buttons inside the tab */
+.tab button, .tab p {
+  background-color: inherit;
+  /*float: left;*/
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
 }
-#subtitle-alum-raw {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
 }
-#table-alum-raw {
-  text-align: center;
-  font-size:14pt;
-  width:100%;
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
 }
-#table-alum-raw thead{
-  color:#ffad0d;
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
 }
-#table-alum-raw td{
-  width:20%;
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 
 /* content emp_charts.php */
 .content-emp-charts {
@@ -331,23 +372,24 @@ input[type=submit]:hover{
   border:1px solid black;
 }
 
-/* content emp_tables.php */
-.content-emp-table {
+
+
+
+/* content alum_tables.php and emp_tables.php */
+.content-emp-table, .content-alum-table {
   float: left;
   padding: 2%;
   width: 80%;
   min-height: 100vh;
   font-size:14pt;
 }
-#title-emp-table {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+#title-emp-table, #title-alum-table {
+  color: #606060;
+  text-transform: uppercase;
 }
-#subtitle-emp-table {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
+#subtitle-emp-table, #subtitle-alum-table{
+  color: #606060;
+  text-transform: uppercase;
 }
 #table-emp-table1 {
   text-align: center;
@@ -356,29 +398,9 @@ input[type=submit]:hover{
 #table-emp-table1 thead{
   color:#ffad0d;
 }
-
-/* content alum_tables.php */
-.content-alum-table {
-  float: left;
-  padding: 2%;
-  width: 80%;
-  min-height: 100vh;
-  font-size:14pt;
-}
-#title-alum-table {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
-}
-#subtitle-alum-table {
-  color: gray;
-    margin-left: 1%;
-    text-transform: uppercase;
-}
 #total-respondents {
   color: black;
-    margin-left: 1%;
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 #table-alum-table1 {
   text-align: center;
@@ -387,6 +409,24 @@ input[type=submit]:hover{
 #table-alum-table1 thead{
   color:#ffad0d;
 }
+.export-excel:link, .export-excel:visited {
+  font-weight:bold;
+  border-radius: 100px 100px 100px 100px;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.export-excel:hover {
+  background-color:#840038;
+}
+
+
 
 /* content contact_emp.php */
 .content-contact {

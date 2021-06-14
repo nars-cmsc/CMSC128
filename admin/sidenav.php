@@ -8,7 +8,7 @@
             <a href="alum_raw.php">Alumni Survey</a>
             <a href="emp_raw.php">Employer Satisfaction Survey</a>
         </div>
-        <button class="drop-bttn">Tables<i class="fa fa-caret-down"></i></button>
+        <button class="drop-bttn">Tally<i class="fa fa-caret-down"></i></button>
             <div class="dropdown-menu">
                 <a href="alum_tables.php">Alumni Survey</a>
                 <a href="emp_tables.php">Employer Satisfaction Survey</a>
