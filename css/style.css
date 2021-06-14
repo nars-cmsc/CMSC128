@@ -15,7 +15,7 @@
 	  padding-right:8%;
 	  padding-top:3%;
 	  padding-bottom:5%;
-	  border-radius: 50px 50px 50px 50px;
+	  border-radius: 50px;
   }
   .previous, .next {
 	  cursor:pointer;
@@ -72,20 +72,23 @@
 	  background-color:#840038;
 	  opacity:1.0;
   }
-  /*.fade {								////////	FADE IN ANIMATION FOR SLIDES
-	  -webkit-animation-name:fade;
-	  -webkit-animation-duration:1.5s;
-	  animation-name:fade;
-	  animation-duration:1.5s;
-  }
-  @-webkit-keyframes fade {
-	  from {opacity:.4}
-	  to {opacity:1}
-  }
-  @keyframes fade {
-	  from {opacity:.4}
-	  to {opacity:1}
-  }*/
+  input.invalid {
+	  background-color: #ffdddd;
+	}
+	/* Mark the steps that are finished and valid: */
+	.dot.finish {
+	  background-color: #04AA6D;
+	}
+	span.invalid {
+		background-color: #ffdddd;
+		padding: 5px;
+	}
+	#trial {
+		background-color: #ffdddd;
+		padding: 5px;
+	}
+
+
   body{
 	  height: 100%;
 	  font-family: Arial Nova, sans-serif;
@@ -240,6 +243,7 @@
 	  height:25px;
 	  color:#000000;
 	  border-radius: 5px 5px 5px 5px;
+	  cursor:pointer;
   }
   textarea {
 	  width:30rem;
@@ -247,6 +251,7 @@
 	  color:#000000;
 	  border-radius: 5px 5px 5px 5px;
 	  margin:0.5rem;
+	  cursor:pointer;
   }
   input[type=text]{
 	  width:300px;
@@ -254,18 +259,21 @@
 	  color:#000000;
 	  border-radius: 5px 5px 5px 5px;
 	  margin:0.5rem;
+	  cursor:pointer;
   }
   input[type=number]{
 	  width:250px;
 	  height:25px;
 	  color:#000000;
 	  border-radius: 5px 5px 5px 5px;
+	  cursor:pointer;
   }
   input[type=email]{
 	  width:300px;
 	  height:30px;
 	  color:#000000;
 	  border-radius: 10px 10px 10px 10px;
+	  cursor:pointer;
   }
   input[type=password], #pass{
 	  width:300px;
@@ -273,6 +281,24 @@
 	  color:#000000;
 	  border-radius: 10px 10px 10px 10px;
 	  margin: 0;
+	  cursor:pointer;
+  }
+  input[type=button]{
+	  width:175px;
+	  height:50px;
+	  font-weight:bold;
+	  color:#ffffff;
+	  border-radius: 100px;
+	  border:0;
+	  background-color:#ffad0d;
+	  float:right;
+	  text-transform: uppercase;
+	  transition:0.3s ease;
+	  cursor:pointer;
+	  margin-left:0.5rem;
+  }
+  input[type=button]:hover{
+	  background-color:#840038;
   }
   input[type=submit]{
 	  width:100px;
@@ -285,17 +311,10 @@
 	  float:right;
 	  text-transform: uppercase;
 	  transition:0.3s ease;
+	  cursor:pointer;
   }
   input[type=submit]:hover{
-	  width:100px;
-	  height:50px;
-	  font-weight:bold;
-	  color:#ffffff;
-	  border-radius: 100px 100px 100px 100px;
-	  border:0;
 	  background-color:#840038;
-	  float:right;
-	  text-transform: uppercase;
   }
   th {
 	  font-size:14pt;
@@ -411,6 +430,7 @@
 	  padding-top: 0;
 	  padding-bottom: 0;
 	  border-top:1px solid black;
+	  width:18.75%;
   }
   .e-q7 th, .e-q8 th, .e-q11 th, .e-q12 th, .a-q18 th {
 	  font-size:14pt;
@@ -418,6 +438,7 @@
 	  padding-top:2%;
 	  padding-right:1.5%;
 	  padding-left: 1.5%;
+	  width:18.75%;
   }
   
   /* for bigger checkboxes */
@@ -606,6 +627,66 @@
 	display: table;
 	clear: both;
   }
+    .reviewBtn {
+	padding:1rem;
+	margin:0.8rem;
+	width:200px;
+	height:50px;
+	font-weight:bold;
+	color:#ffffff;
+	border-radius: 100px 100px 100px 100px;
+	border:0;
+	background:#ffad0d;
+	text-transform: uppercase;
+	transition:0.3s ease;
+	float:right;
+  }
+  .reviewBtn:hover {
+	background:#840038;
+  }
+  .modal {
+	display:none;
+	position:fixed;
+	z-index:1;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color: rgba(0,0,0,0.5);
+  }
+  .modal-content {
+	background-color: #fefefe;
+    margin: 10% auto;
+	padding: 2rem 2.5rem;
+	border-radius: 0.5rem;
+	width: 70%;
+	box-shadow:0 5px 8px 0 rgba(0,0,0,0.2),0 7px 20px 0 rgba(0,0,0,0.17);
+  }
+  .modal-content p {
+	  font-size:14pt;
+  }
+  .modal-header {
+	  font-size:18pt;
+	  color:#840038;
+	  padding-bottom:1rem;
+  }
+  .closeBtn {
+	float: right;
+	border-radius:0.25rem;
+	color:lightgray;
+	font-size: 30px;
+	font-weight: bold;
+  }
+  .closeBtn:hover{
+	color:black;
+	text-decoration:none;
+	cursor:pointer;
+  }
+  .modal-footer {
+	  margin-top:1rem;
+	  margin-bottom:6rem;
+  }
   footer {
 	  position:absolute;
 	  left:0;
@@ -621,6 +702,7 @@
   .info {
 	  float:left;
 	  padding-top:1rem;
+	  padding-bottom:1rem;
   }
   .icons{
 	  float:right;
@@ -645,6 +727,8 @@
 	  right:0;
 	  font-size: 9pt;
 	  margin-right:1rem;
+	  padding-top:1rem;
+	  padding-bottom:1rem;
   }
   .copyright a {
 	  color:#ffffff;
@@ -664,6 +748,7 @@
 	vertical-align: middle;
 	text-align: center;
 	padding-top: 1rem;
+	padding-bottom:1rem;
 	margin-left: 0.25rem;
 	background:#ffad0d;
 	color:#ffffff;
@@ -674,8 +759,8 @@
   }
   /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
   @media (max-width: 600px) {
-	.container-login, .content-alum, .content-emp, .thanks {
+	header, footer, body, .container-login, .content-alum, .content-emp, .thanks {
 	  width: 100%;
 	  height: auto;
 	}
-  }
+ }

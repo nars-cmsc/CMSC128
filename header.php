@@ -1,6 +1,6 @@
 <?php require_once 'controllers/logout.php'; ?>
 
-<body onload="currentSlide(1)">
+<body onload="showSlides(0)">
 <div class="main-container">
 	<header>
 		<div class = "logos">
