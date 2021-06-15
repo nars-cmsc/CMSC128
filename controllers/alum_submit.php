@@ -390,17 +390,14 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q9'] = "Need to answer #9. Field cannot be empty.";
 		$error = true;
 	} 
-	//Ten
-	/*	
-	if (isset($_POST['jobduties']) && $five == 'Yes' && empty($ten) && $user_exist == false) {
+	if (isset($_POST['jobduties']) && $five == 'Yes' && empty($jobduties) && $user_exist == false) {
 		$errors['es_q10'] = "Need to answer #10. Field cannot be empty.";
 		$error = true;
 	} 
-		if (isset($_POST['percentage']) && $five == 'Yes' && empty($ten) && $user_exist == false) {
+	if (isset($_POST['percentage']) && $five == 'Yes' && empty($percentage) && $user_exist == false) {
 		$errors['es_q10'] = "Need to answer #10. Field cannot be empty.";
 		$error = true;
 	} 
-	*/
 
 	if (isset($_POST['ques11']) && $five == 'Yes'  && $five == 'No' && empty($eleven) && $user_exist == false) {
 		$errors['es_q11'] = "Need to answer #11. Field cannot be empty.";
