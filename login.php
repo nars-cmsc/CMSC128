@@ -25,18 +25,20 @@ if (isset($_SESSION['email'])) {
 <html lang="en">
   <head>    
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- 
+	<link rel="stylesheet" href="css/normalize.css"> -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="icon" type="images/png" href="images/UP_seal.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="js/survey_fcn.js"></script>
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
 	</head>
 	<body>
-	<div class="main-cont">
-		<!-- added container for header -->
-		<header id="container-header">
+	<div class="main-container">
+
+	    <header id="container-header">
 			<div class = "logos">
 				<img src = "images/UP_seal.png" id = "up">		
 				<img src = "images/CS_logo.png" id = "cs">	
@@ -47,8 +49,8 @@ if (isset($_SESSION['email'])) {
 				<h6>University of the Philippines Baguio</h6>
 			</div>		
 		</header>
-		<!-- added container for the body for flex property-->
-		<section class="container-login">
+
+	    <section class="container-login">
 			<div class = "container-info">
 				<h3>Welcome dear respondent!</h3>
 				<div class="content">
@@ -69,6 +71,7 @@ if (isset($_SESSION['email'])) {
 					<!-- added this area for error messages -->
 					<?php if (count($errors) > 0): ?>
 						<div class="alert">
+						<i class="fa fa-warning"></i>
 							<?php foreach ($errors as $error): ?>
 								<?php echo $error; ?><br>
 							<?php endforeach; ?>	
@@ -85,9 +88,10 @@ if (isset($_SESSION['email'])) {
 				</form>
 			</div>
 		</section>
-		
-		<?php include('footer.php'); ?>
-	</div>
+
+	    <?php include('footer.php'); ?>
+
+	</div> <!--/.main-container-->
 		
 	</body>
 	</html>
