@@ -27,28 +27,7 @@ if ($_SESSION['role'] == 2) {
 	<script src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/survey_fcn.js"></script>
 	<script type="text/javascript" src="js/slideshow.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			
-			var html = '<tr><td><input class="form-control" type="text" name="jobduties[]"></td><td><input class="form-control" type="text" name="percentage[]"></td><td><input class="btn btn-danger" type="button" name="remove" id="remove" value="Remove"></td></tr>';
-			
-			var max = 4;
-			var x = 1;
 
-			$("#add").click(function(){
-				if (x <= max){
-				$("#table_field_10").append(html);
-				x++;
-				}
-			});
-			$("#table_field_10").on('click', '#remove',function(){
-				$(this).closest('tr').remove();
-				x--;
-			});
-				
-				
-		});
-	</script>
 	<title>Alumni Survey - UPB DMCS</title>
 </head>
 	<!-- for header/ navbar    -->
@@ -70,7 +49,7 @@ if ($_SESSION['role'] == 2) {
 			<?php endif;?>
 
 			<br>
-			<div class="dot-navigation">
+			<!--<div class="dot-navigation">
 				<span class="dot" onclick="currentSlide(1)"></span>
 				<span class="dot" onclick="currentSlide(2)"></span>
 				<span class="dot" onclick="currentSlide(3)"></span>
@@ -83,14 +62,14 @@ if ($_SESSION['role'] == 2) {
 				<span class="dot" onclick="currentSlide(10)"></span>
 				<span class="dot" onclick="currentSlide(11)"></span>
 				<span class="dot" onclick="currentSlide(12)"></span>
-			</div>
+			</div>-->
 
 			<div class="questions-container">
 
 					<!-- QUESTION # 1 -->
 					<div class="entry">
 						<input type="hidden" name="one" value="1">
-						<h3 class="ques_title">1. Sex at birth: </h3>
+						<h3 class="ques_title">Sex at birth: </h3>
 					</div>
 
 						<label class="option">Female
@@ -110,7 +89,7 @@ if ($_SESSION['role'] == 2) {
 					<!-- QUESTION # 2 -->
 					<div class="entry">
 						<input type="hidden" name="two" value="2">
-						<h3 class="ques_title">2. In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
+						<h3 class="ques_title">In which country do you presently reside or work for most of the year (more than 6 months)? </h3>
 					</div>						
 					<select name="ques2" id="ques2">
 					<option value="none" selected disabled >
@@ -126,7 +105,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 3 -->
 			<div class="entry">
 				<input type="hidden" name="three" value="3">
-				<h3 class="ques_title">3. Overall, how satisfied are you with your undergraduate education at UP?</h3>
+				<h3 class="ques_title">Overall, how satisfied are you with your undergraduate education at UP?</h3>
 			</div>
 
 				<label class="option">Very Dissatisfied
@@ -159,7 +138,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 5 -->
 			<div class="entry">
 				<input type="hidden" name="five" value="5">
-				<h3 class="ques_title">5. Are you employed right now? </h3>
+				<h3 class="ques_title">Are you employed right now? </h3>
 			</div>
 
 				<label class="option">Yes
@@ -180,7 +159,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 5.a -->
 						<div id="five_a" style="display: none;">
 						<input type="hidden" name="five_a" value="5.1">
-						<h3 class="ques_title">5.a If you answered Yes, how would you characterize your employment?</h3>
+						<h3 class="ques_title">If you answered Yes, how would you characterize your employment?</h3>
 
 						<label class="option">Full time (40 hours/week)
 							<input class="options" type="radio" name="ques5_1" id="fivea1" value="Full time (40 hours/week)">
@@ -205,7 +184,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 5.b -->
 						<div id="five_b" style="display: none;">
 						<input type="hidden" name="five_b" value="5.2">
-						<h3 class="ques_title">5.b If you answered No, are you looking for employment at this time?</h3>
+						<h3 class="ques_title">If you answered No, are you looking for employment at this time?</h3>
 
 						<label class="option">Yes
 							<input class="options" type="radio" name="ques5_2" id="fiveb1" value="Yes">
@@ -224,7 +203,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 5.c --> 
 			<div id="five_c" style="display: none;">
 			<input type="hidden" name="five_c" value="5.3">
-			<h3 class="ques_title">If you answered 5.a., which industry best describes your employer or occupation? Drop-down menu of the following choices	</h3>
+			<h3 class="ques_title">Which industry best describes your employer or occupation? Drop-down menu of the following choices	</h3>
 				<select name="ques5c" id="ques5c" onchange="other_txt5();">
 					<option value="none" selected disabled >
 						Select industry and business
@@ -244,7 +223,7 @@ if ($_SESSION['role'] == 2) {
 			<!-- QUESTION # 4 -->
 			<div id="four" style="display: none;">
 				<input type="hidden" name="four" value="4">
-				<h3 class="ques_title">4. How long after graduation were you able to get your first job?</h3>
+				<h3 class="ques_title">How long after graduation were you able to get your first job?</h3>
 
 				<label class="option">I got a job while still in college
 					<input class="options" type="radio" name="ques4" id="four1" value="I got a job while still in college">
@@ -295,7 +274,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 6 -->
 			<div id="six" style="display: none;">
 				<input type="hidden" name="six" value="6">
-				<h3 class="ques_title">6. Select the minimum level of education required to perform your job (not necessarily your education level)	</h3>
+				<h3 class="ques_title">Select the minimum level of education required to perform your job (not necessarily your education level)	</h3>
 			
 
 				<label class="option">High school
@@ -359,7 +338,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 7 -->
 			<div id="seven" style="display: none;">
 				<input type="hidden" name="seven" value="7">
-				<h3 class="ques_title">7. Select the preferred (but not required) level of education or training</h3>
+				<h3 class="ques_title">Select the preferred (but not required) level of education or training</h3>
 			
 
 				<label class="option">High school
@@ -423,7 +402,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 8 -->
 			<div id="eight" style="display: none;">
 				<input type="hidden" name="eight" value="8">
-				<h3 class="ques_title">8. Whether or not you are currently employed, what is your principal occupation category?</h3>
+				<h3 class="ques_title">Whether or not you are currently employed, what is your principal occupation category?</h3>
 					
 					<select name="ques8" id="ques8">
 					<option value="none" selected disabled >
@@ -439,7 +418,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 9 -->
 			<div id="nine" style="display: none;">
 				<input type="hidden" name="nine" value="9">
-				<h3 class="ques_title">9. Is your current position related to your undergraduate field(s) of study?</h3>
+				<h3 class="ques_title">Is your current position related to your undergraduate field(s) of study?</h3>
 
 
 				<label class="option">Yes, it is the same field as my major/s
@@ -464,9 +443,28 @@ if ($_SESSION['role'] == 2) {
 			</div>
 
 		<!-- QUESTION # 10 --> 
+		<script type="text/javascript">
+		$(document).ready(function(){
+			var html = '<tr><td><input class="form-control" type="text" name="jobduties[]" placeholder="Enter job duty"></td><td><input type="number" min="0" max="100" step="1" class="form-control" name="percentage[]" placeholder="Enter percentage"</td><td><input class="btn btn-danger" type="button" name="remove" id="remove" value="Remove"></td></tr>';
+			var max = 4;
+			var x = 1;
+
+			$("#add").click(function(){
+				if (x <= max){
+				$("#table_field_10").append(html);
+				x++;
+				}
+			});
+			$("#table_field_10").on('click', '#remove',function(){
+				$(this).closest('tr').remove();
+				x--;
+			});				
+		});
+	</script>
+	
 			<div id="ten" style="display: none;">
 				<input type="hidden" name="ten" value="10">
-				<h3 class="ques_title">10. In the order of importance, list your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
+				<h3 class="ques_title">In the order of importance, list your major job duties and the percentage of time you spend on each. Think back on the past 12 months to make sure you capture all key responsibilities. The total percentage of time spent must not exceed 100 but may be less since you are not to list all duties.</h3>
 			
 				<table class="a-q10" border="0" id="table_field_10">
 					<tr>
@@ -476,8 +474,8 @@ if ($_SESSION['role'] == 2) {
 					</tr>
 
 					<tr>
-						<td><input class="form-control" type="text" name="jobduties[]"></td>
-						<td><input class="form-control" type="text" name="percentage[]"></td>
+						<td><input class="form-control" type="text" name="jobduties[]" placeholder="Enter job duty" ></td>
+						<td><input  type="number" min="0" max="100" step="1"  class="form-control" type="text" name="percentage[]" placeholder="Enter percentage"></td>
 						<td><input class="btn btn-warning" type="button" name="add" id="add" value="Add"></td>
 					</tr>
 				</table>
@@ -486,7 +484,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 11 -->
 			<div id="eleven" style="display: none;">
 				<input type="hidden" name="eleven" value="11">
-				<h3 class="ques_title">11. Do you currently work for a national or local NGO or civic organization, as a paid volunteer for more than 10 hours per week?	</h3>
+				<h3 class="ques_title">Do you currently work for a national or local NGO or civic organization, as a paid volunteer for more than 10 hours per week?	</h3>
 			
 
 				<label class="option">Yes
@@ -505,7 +503,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 11.a -->
 			<div id="eleven_a" style="display: none;">
 				<input type="hidden" name="eleven_a" value="11.1">
-				<h3 class="ques_title">11.a How would you characterize this service of volunteer work?</h3>
+				<h3 class="ques_title">How would you characterize this service of volunteer work?</h3>
 
 				<label class="option">Full time (40 hours/week)
 					<input class="options" type="radio" name="ques11_1" id="elevena1" value="Full time (40 hours/week)">
@@ -524,7 +522,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 12 -->
 			<div id="twelve" style="display: none;">
 				<input type="hidden" name="twelve" value="12">
-				<h3 class="ques_title">12. Select the minimum total number of years of experience in your field that is required to do your job.Your selection may or may not equate to your personal experience level.</h3>
+				<h3 class="ques_title">Select the minimum total number of years of experience in your field that is required to do your job.Your selection may or may not equate to your personal experience level.</h3>
 
 				<label class="option">No experience
 					<input class="options" type="radio" name="ques12" id="twelve1" onclick="$('#twelve_a').show();" value="No experience">
@@ -560,7 +558,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 12.a -->
 				<div id="twelve_a" style="display: none;">
 				<input type="hidden" name="twelve_a" value="12.1">
-				<h3 class="ques_title">12.a Why do you feel this level of experience is necessary to perform your job?</h3>
+				<h3 class="ques_title">Why do you feel this level of experience is necessary to perform your job?</h3>
 				
 						<textarea id="" name="ques12_1" rows="4" cols="50" style="resize: none;" 
 						placeholder="Type your thoughts here... (Use letters only)"
@@ -570,7 +568,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 13 -->
 			<div id="thirteen" style="display: none;">
 				<input type="hidden" name="thirteen" value="13">
-				<h3 class="ques_title">13. How well did UP prepare for your current career?</h3>
+				<h3 class="ques_title">How well did UP prepare for your current career?</h3>
 			
 
 				<label class="option">Very Poorly
@@ -602,7 +600,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 14 -->
 			<div id="fourteen" style="display: none;">
 				<input type="hidden" name="fourteen" value="14">
-				<h3 class="ques_title">14. Which of the following best describes your current position?</h3>
+				<h3 class="ques_title">Which of the following best describes your current position?</h3>
 			
 
 				<label class="option">Entry-level
@@ -634,7 +632,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 15 -->
 		<div id="fifteen" style="display: none;">
 				<input type="hidden" name="fifteen" value="15">
-				<h3 class="ques_title">15. How much does your current job involve supervising or managing the work of others?</h3>
+				<h3 class="ques_title">How much does your current job involve supervising or managing the work of others?</h3>
 
 
 				<label class="option">Most of my time (75% of my time)
@@ -665,7 +663,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 16 -->
 			<div id="sixteen" style="display: none;">
 				<input type="hidden" name="sixteen" value="16">
-				<h3 class="ques_title">16. This question measures the managerial responsibility (direct and indirect) for achieving results through people. Select the single statement that best describes your job.</h3>
+				<h3 class="ques_title">This question measures the managerial responsibility (direct and indirect) for achieving results through people. Select the single statement that best describes your job.</h3>
 			
 
 				<label class="option">Direct supervision over a unit or department, involving responsibility for results in terms of budget management, methods of work, policy development and personnel issues.
@@ -696,7 +694,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 17 -->
 			<div id="seventeen" style="display: none;">
 				<input type="hidden" name="seventeen" value="17">
-				<h3 class="ques_title">17. Overall, how satisfied are you with your career thus far?</h3>
+				<h3 class="ques_title">Overall, how satisfied are you with your career thus far?</h3>
 
 
 				<label class="option">Very satisfied
@@ -729,7 +727,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 18 -->
 			<div id="eighteen" style="display: none;">
 				<input type="hidden" name="eighteen" value="18">
-				<h3 class="ques_title">18. Based on what you know now, how well do you think your undergraduate experience at UP DMCS prepared you to…</h3>
+				<h3 class="ques_title">Based on what you know now, how well do you think your undergraduate experience at UP DMCS prepared you to…</h3>
 			
 			<table class="a-q18" border="0">
 					<tr>
@@ -742,7 +740,7 @@ if ($_SESSION['role'] == 2) {
 					<?php $i = 0; foreach ($ques18_arr as $ques18_to): ?>
 					<tr>
 						<?php $i++; ?>
-						<td style="text-align:left;">
+						<td style="text-align:left;;width:40%; padding-left:1rem;">
 							<?php echo $ques18_to; ?>
 						</td>
 
@@ -785,7 +783,7 @@ if ($_SESSION['role'] == 2) {
 		<!-- QUESTION # 19 -->
 			<div id="nineteen" style="display: none;">
 				<input type="hidden" name="nineteen" value="19">
-				<h3 class="ques_title">19. Would you like to elaborate on how UP DMCS helped you acquire the competencies you needed?</h3>
+				<h3 class="ques_title">Would you like to elaborate on how UP DMCS helped you acquire the competencies you needed?</h3>
 
 				<label class="option">Yes
 					<input class="options" type="radio" name="ques19" id="eleven1" onclick="$('#nineteen_txt').show();" value="Yes">
@@ -808,13 +806,12 @@ if ($_SESSION['role'] == 2) {
 						</div>
 
 				<div class="submit-survey">
-					<input type="submit" name="submit-alum" value="Submit"/>
+					<input type="button" id="reviewBtn" name="review-alum" value="Review Answers"/>
+					<!--<input type="submit" id="reviewBtn" name="submit-emp" value="Submit"/>-->
 				</div>
 </div>
-				
-		</div>
 
-			<div class="previous" onclick="plusSlides(-1)">
+			<!--<div class="previous" onclick="plusSlides(-1)">
 				<div class="prev">
 					&#10094;
 				</div>
@@ -823,9 +820,36 @@ if ($_SESSION['role'] == 2) {
 				<div class="nxt">
 					&#10095;
 				</div>
-			</div>
+			</div>-->
 
 		</div>
+		
+	
+		<div id="reviewModal" class="modal">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="closeBtn">&times;</span>
+					<h4 style="color:#840038; text-transform:uppercase;">Are you sure you want to submit?</h4>
+					<h5 style="color:black; font-size:16pt;">Here are your answers from the survey:</h5>
+				</div>
+				<div class="modal-body">
+					<p>Sex at birth:</p><br>
+						<?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
+					<p>In which country do you presently reside or work for most of the year (more than 6 months)?</p><br>
+						<?php if (isset($_POST['ques2'])){  echo $_POST['ques2'];  } ?>
+					<p>Overall, how satisfied are you with your undergraduate education at UP?</p><br>
+						<?php if (isset($_POST['ques3'])){  echo $_POST['ques3'];  } ?>
+					<p>Are you employed right now?</p><br>
+						<?php if (isset($_POST['ques4'])){  echo $_POST['ques4'];  } ?>
+				</div>
+				<div class="modal-footer">		
+					<div class="submit-survey">
+						<input type="submit" name="submit-alum" value="Submit"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 				
 			<!-- submit button -->
 			<!--a href="contactemp_ques.php"-->
@@ -838,9 +862,10 @@ if ($_SESSION['role'] == 2) {
 			
 	</div>
 </section>
-<!-- for footer/ contact details 
-<php include('footer.php'); ?> -->
+<!-- for footer/ contact details  -->
+<?php include('footer.php'); ?>
+
+	<script type="text/javascript" src="js/review.js"></script>
 
 </body>
 </html>
-						
