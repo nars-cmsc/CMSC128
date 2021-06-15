@@ -76,30 +76,27 @@ if (!isset($_SESSION['email'])) {
 				
 					<div id="companyname" style="display: none;">
 						<p class="ques_title">Company Name:</p>
-						<textarea id="" name="emp1" value="1" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
+						<input id="" name="emp1" value="" rows="3" cols="40" style="resize: none;" 
+						placeholder="Enter company name">
 					</div>
 
 					<div id="contactperson" style="display: none;">
 						<p class="ques_title">Contact Person:</p>
-						<textarea id="" name="emp2" value="2" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Use letters only)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
+						<input id="" name="emp2" value="" rows="3" cols="40" style="resize: none;" 
+						placeholder="Enter name of the employer"
+						pattern="[a-zA-Z'-'\s]*">
 					</div>
 					
 					<div id="contactnumber" style="display: none;">
 						<p class="ques_title">Contact Number:</p>
-						<textarea id="" name="emp3" value="3" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Enter NA if the information is not available)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
+						<input type="tel" id="" name="emp3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') value="" rows="3" cols="40" style="resize: none;" 
+						placeholder="Enter contact number">
 					</div>
 
 					<div id="contactemail" style="display: none;">
 						<p class="ques_title">Email:</p>
-						<textarea id="" name="emp4" value="4" rows="3" cols="40" style="resize: none;" 
-						placeholder="Type here... (Enter NA if the information is not available)"
-						onkeyup="this.value = this.value.replace(/[^\w .]/g, '')"></textarea>
+						<input type="email" id="" name="emp4" value="" rows="3" cols="40" style="resize: none;" 
+						placeholder="Enter email">
 					</div>
 
 
