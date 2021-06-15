@@ -521,26 +521,26 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 							$fivec_other = mysqli_real_escape_string($db_conn, $_POST['ques5c_other']);
 				if ($five_a == 'Full time (40 hours/week)') {
 						if ($five_c == 'other'){						
-							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$fivec_other', 'NA', now())";
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 							mysqli_query($db_conn, $sql);
 						} else {
-							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', 'NA', now())";
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 							mysqli_query($db_conn, $sql);
 						}
 				} else if ($five_a == 'Part time') {
 						if ($five_c == 'other'){						
-							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$fivec_other', 'NA', now())";
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 							mysqli_query($db_conn, $sql);
 						} else {
-							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry,Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', 'NA', now())";
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 							mysqli_query($db_conn, $sql);
 						}
 				} else if ($five_a == 'Self-employed') {
 						if ($five_c == 'other'){						
-							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$fivec_other', 'NA', now())";
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 							mysqli_query($db_conn, $sql);
 						} else {
-							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', 'NA', now())";
+							$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 							mysqli_query($db_conn, $sql);
 						}
 				}
@@ -792,7 +792,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		} else if ($five == 'No') {
 				$five_b = mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
 					
-			$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Applying, date_response) VALUES ('$id', '$five', 'NA', 'NA', '$five_b', now())";
+			$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
 			mysqli_query($db_conn, $sql);
 			
 			//Start
