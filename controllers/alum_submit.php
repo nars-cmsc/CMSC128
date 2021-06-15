@@ -390,7 +390,18 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q9'] = "Need to answer #9. Field cannot be empty.";
 		$error = true;
 	} 
-//Ten
+	//Ten
+	/*	
+	if (isset($_POST['jobduties']) && $five == 'Yes' && empty($ten) && $user_exist == false) {
+		$errors['es_q10'] = "Need to answer #10. Field cannot be empty.";
+		$error = true;
+	} 
+		if (isset($_POST['percentage']) && $five == 'Yes' && empty($ten) && $user_exist == false) {
+		$errors['es_q10'] = "Need to answer #10. Field cannot be empty.";
+		$error = true;
+	} 
+	*/
+
 	if (isset($_POST['ques11']) && $five == 'Yes'  && $five == 'No' && empty($eleven) && $user_exist == false) {
 		$errors['es_q11'] = "Need to answer #11. Field cannot be empty.";
 		$error = true;
@@ -500,8 +511,6 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		// QUESTION NUMBER 5 
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five']);
 		$five = mysqli_real_escape_string($db_conn, $_POST['ques5']);
-
-
 
 
 		
@@ -764,6 +773,18 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 			mysqli_query($db_conn, $sql);
 		}
 		
+		if ($_SESSION['role'] == $ALUMNI_ROLE_ID) {
+			// update time of response
+			$sql_time = "UPDATE emp_survey set date_response=now() where user_id=".$_SESSION['id'];
+			$rs = mysqli_query($db_conn, $sql_time);
+
+			header('location: contactemp_ques.php');
+			// echo '<script> alert("Thank you for completing the survey!"); </script>';
+		}
+		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+			header('location: alum_emp.php');
+		}
+		
 		//End
 				
 		//No db 5
@@ -865,14 +886,27 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 			mysqli_query($db_conn, $sql);
 		}
 		
-			
+		if ($_SESSION['role'] == $ALUMNI_ROLE_ID) {
+			// update time of response
+			$sql_time = "UPDATE emp_survey set date_response=now() where user_id=".$_SESSION['id'];
+			$rs = mysqli_query($db_conn, $sql_time);
+
+			header('location: contactemp_ques.php');
+			// echo '<script> alert("Thank you for completing the survey!"); </script>';
+		}
+		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+			header('location: alum_emp.php');
+		}
 			
 			//End
 		} else {
 			$five_field = $five;
 		}
 		
+		
+
 	}
+
 }//end of submit-alum
 
 ?>
