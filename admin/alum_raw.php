@@ -197,7 +197,7 @@ if ($_SESSION['role'] == 3) {
                                 <td><?php echo $result['email']; ?></td>
                                 <td><?php echo $row['Employed']; ?></td>
                                 <td><?php echo $row['Characterized']; ?></td>
-                                <td><?php echo $row['Industry']; ?></td>
+                                <td><?php if($row['Industry'] == 'other') {echo $row['Other_Ans'];} else echo $row['Industry']; ?></td>
                                 <td><?php echo $row['Applying']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>

@@ -1711,7 +1711,7 @@ while ($row = mysqli_fetch_array($result)) {
 		}
 
 		// get data from table (other industries)
-		$query = "SELECT user_id, Applying FROM alum_survey_q5 WHERE Industry='other'";
+		$query = "SELECT user_id, Other_Ans FROM alum_survey_q5 WHERE Industry='other'";
 		// execute query
 		$result = mysqli_query($db_conn, $query);
 		// loop through returned data
@@ -1719,7 +1719,7 @@ while ($row = mysqli_fetch_array($result)) {
 			$ct_yes_other5++;
 
 			// for other answers
-			$alum_string5 = $alum_string5 . ', ' . $row['Applying'];
+			$alum_string5 = $alum_string5 . ', ' . $row['Other_Ans'];
 			$ct_yes_ind_other = ltrim($alum_string5, ', ');
 		}
 
