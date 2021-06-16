@@ -25,7 +25,7 @@ if (isset($_POST['login-btn'])) {
 		$errors['email'] = "Email is required";
 	}
 	// if password field is empty
-	if (empty($password)) {
+	if (empty($password) && !empty($email)) {
 		$errors['password'] = "Password is required";
 	}
 
@@ -34,7 +34,7 @@ if (isset($_POST['login-btn'])) {
   	$result = mysqli_query($db_conn, $id_query);
   	$user = mysqli_fetch_assoc($result);
 
-	if ($user) {
+	if ($user && empty($errors)) {
   		$id = $user['user_id'];
 		$role_id = $user['role_id'];
 
@@ -118,7 +118,7 @@ if (isset($_POST['login-btn'])) {
 				$errors['login_fail'] = "Email and password do not match!";
 			}
 		}
-  	} else {
+  	} else if (!$user && !empty($email)) {
   		$errors['password'] = "The email you entered is not registered";
   	}
 }// end of login-btn
