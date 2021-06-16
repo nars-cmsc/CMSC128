@@ -402,13 +402,18 @@ if ($_SESSION['role'] == 3) {
                   datalabels: {
                   formatter: (value, ctx) => {
                   
-                    let sum = 0;
-                    let dataArr = ctx.chart.data.datasets[0].data;
-                    dataArr.map(data => {
-                        sum += data;
-                    });
-                    let percentage = (value*100 / sum).toFixed(2)+"%";
-                    return percentage;
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
 
                 
                   },
@@ -777,13 +782,18 @@ if ($_SESSION['role'] == 3) {
                 datalabels: {
                   formatter: (value, ctx) => {
                   
-                    let sum = 0;
-                    let dataArr = ctx.chart.data.datasets[0].data;
-                    dataArr.map(data => {
-                        sum += data;
-                    });
-                    let percentage = (value*100 / sum).toFixed(2)+"%";
-                    return percentage;
+                    if (value > 0) {
+                       let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value*100 / sum).toFixed(2)+"%";
+                        return percentage; 
+                    } else {
+                        value = "";
+                        return value;
+                    }
 
                 
                   },
