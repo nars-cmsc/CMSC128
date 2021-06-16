@@ -792,7 +792,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		} else if ($five == 'No') {
 				$five_b = mysqli_real_escape_string($db_conn, $_POST['ques5_2']);
 					
-			$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', '$five_a', '$five_c', '$fivec_other', 'NA', now())";
+			$sql = "INSERT INTO alum_survey_q5 (user_id, Employed, Characterized, Industry, Other_Ans, Applying, date_response) VALUES ('$id', '$five', 'NA', 'NA', 'NA', '$five_b', now())";
 			mysqli_query($db_conn, $sql);
 			
 			//Start
