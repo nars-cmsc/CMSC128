@@ -31,6 +31,7 @@ if (isset($_SESSION['email'])) {
 	<link rel="icon" type="images/png" href="images/UP_seal.png">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="js/survey_fcn.js"></script>
 	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
 	</head>
@@ -70,6 +71,7 @@ if (isset($_SESSION['email'])) {
 					<!-- added this area for error messages -->
 					<?php if (count($errors) > 0): ?>
 						<div class="alert">
+						<i class="fa fa-warning"></i>
 							<?php foreach ($errors as $error): ?>
 								<?php echo $error; ?><br>
 							<?php endforeach; ?>	
