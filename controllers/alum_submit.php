@@ -119,7 +119,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques2'])) {
 		$two = $_POST['ques2'];
 	}
-	if (isset($_POST['ques3'])) {
+	if (isset($_POST['ques3'])) { 
 		$three = $_POST['ques3'];
 	}
 	if (isset($_POST['ques4'])) {
