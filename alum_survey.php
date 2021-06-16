@@ -286,7 +286,7 @@ if ($_SESSION['role'] == 2) {
 						<span class="checkbttn"></span>
 					</label><br>
 					<label class="option">Bachelor’s degree
-						<input class="options" type="radio" name="ques7" id="seven4" onclick="$('#sevenacademicfield').show(); $(#'sevenothers').hide();" value="Bachelor’s degree">
+						<input class="options" type="radio" name="ques7" id="seven4" onclick="$('#sevenothers').hide(); $('#sevenacademicfield').show();" value="Bachelor’s degree">
 						<span class="checkbttn"></span>
 					</label><br>
 					<label class="option">Master’s degree
