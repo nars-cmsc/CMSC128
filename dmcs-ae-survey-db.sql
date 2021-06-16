@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 4.9.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2021 at 02:47 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.11
+-- Generation Time: Jun 16, 2021 at 04:13 PM
+-- Server version: 10.4.8-MariaDB
+-- PHP Version: 7.3.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -63,7 +64,6 @@ INSERT INTO `alum_survey_q1` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (9, 20, 'Male', '2021-05-23'),
 (10, 21, 'Female', '2021-05-23');
 
-
 -- --------------------------------------------------------
 
 --
@@ -92,7 +92,6 @@ INSERT INTO `alum_survey_q2` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (8, 19, 'Hogwarts', '2021-05-23'),
 (9, 20, 'Swwwwiizzerrrlond', '2021-05-23'),
 (10, 21, 'Philippines', '2021-05-23');
-
 
 -- --------------------------------------------------------
 
@@ -123,8 +122,6 @@ INSERT INTO `alum_survey_q3` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (9, 20, 'Generally Satisfied', '2021-05-23'),
 (10, 21, 'Generally Dissatisfied', '2021-05-23');
 
-
-
 -- --------------------------------------------------------
 
 --
@@ -153,7 +150,6 @@ INSERT INTO `alum_survey_q4` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (8, 19, 'I got a job while still in college', '2021-05-23'),
 (9, 20, '3 to 6 months', '2021-05-23'),
 (10, 21, '1 to 2 years', '2021-05-23');
-
 
 -- --------------------------------------------------------
 
@@ -188,7 +184,6 @@ INSERT INTO `alum_survey_q5` (`answer_id`, `user_id`, `Employed`, `Characterized
 (9, 20, 'No', 'NA', 'NA', '0', 'Yes', '2021-05-23'),
 (10, 21, 'No', 'NA', 'NA', '0', 'Yes', '2021-05-23');
 
-
 -- --------------------------------------------------------
 
 --
@@ -218,7 +213,6 @@ INSERT INTO `alum_survey_q6` (`answer_id`, `user_id`, `Level`, `Field`, `date_re
 (8, 19, 'Some college', 'NA', '2021-05-23'),
 (9, 20, 'Associate’s degree', 'Xerffcv', '2021-05-23'),
 (10, 21, 'Master’s degree', 'KNLSNL', '2021-05-23');
-
 
 -- --------------------------------------------------------
 
@@ -712,7 +706,6 @@ INSERT INTO `alum_survey_q18` (`answer_id`, `user_id`, `ques18_arr`, `answer_bod
 (108, 21, 'Be sensitive to the challenges and opportunities of national development and global change', 'Very poorly', '2021-05-23'),
 (109, 21, 'Think critically', 'Very poorly', '2021-05-23'),
 (110, 21, 'Demonstrate discernment', 'Less than adequately', '2021-05-23');
-
 
 -- --------------------------------------------------------
 
@@ -2601,7 +2594,17 @@ INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`,
 (33, 'employer_nueve@gmail.com', 'da5646599de973b0868c4a7c4e83a38aa57d0c5959d7d787707e9e636178316fe66c1ab75e430d6755ea72da2772bd97c906', '$2y$10$7MS3eTmw9liv/2UYBORiMeLWR35RzaQT2/GszYyThUUb8319qlkS2', 'emp9', 2, '2021-05-23 21:45:14', '2021-05-24 14:19:48'),
 (34, 'employer_diez@gmail.com', 'a78349451bf5637c2a3c5da4a5182c18ce4b0a80c7aec670ba4cfee4354dc35ff328680659db718e106413a558eb254703e9', '$2y$10$h1fuD0NPsOr2gxXdl6tVU.wE1mxuc1zwu6Eaa4kK0X9cv5gZVcvk6', 'emp10', 2, '2021-05-23 21:45:49', '2021-05-24 14:21:14'),
 (47, 'attachment@gmail.com', 'c252f891613630e546dbc5165ac643a0a39a50ca84c2a38283be207cd31e97422d12917736ebaac724d9c7d24ca28276806c', '$2y$10$tpu335LW1Vi1LYuORsVQL.gC6fncrBZIH3WclE8ew.23kNzR5s5Ta', 'attached', 1, '2021-06-15 09:14:01', '2021-06-15 09:27:03'),
-(52, 'chuchu@gmail.com', '8242907a6de7c92d5cadee2301f1e0d01854ad72af643b4711da530e65093740ce2bcd3118606e6eaf7e1105c2093c021371', '$2y$10$F7TQBH7XqM/vRqqaacCFHuDkIs55Aas3MG/e85ev0kISXQ/4GC.3W', 'chuchuch', 1, '2021-06-13 17:24:09', '2021-06-15 20:43:56');
+(52, 'chuchu@gmail.com', '8242907a6de7c92d5cadee2301f1e0d01854ad72af643b4711da530e65093740ce2bcd3118606e6eaf7e1105c2093c021371', '$2y$10$F7TQBH7XqM/vRqqaacCFHuDkIs55Aas3MG/e85ev0kISXQ/4GC.3W', 'chuchuch', 1, '2021-06-13 17:24:09', '2021-06-15 20:43:56'),
+(53, 'alumni_onze@gmail.com', '4266b728affac10c9271e812875daff6bba18ffdbfa6b6fdfc63bd93a12b87a550254ade3fa5cc50d2269b27696489ddd53c', '$2y$10$Eqlib.yPWfbbgyIpCpoEiuOAjNR6NTdAYuGMw3v8g2uycLDr1bvDi', 'alumni11', 1, '2021-06-16 22:09:36', '2021-06-16 22:09:36'),
+(54, 'alumni_doze@gmail.com', '0361ece98550fc4e79618283aa1b81371448ec8c2f24abb77cfa73c0961fd34c85ffe0841b2fc8d049fa511da92987254832', '$2y$10$Zb95KVyQHDcU77IUGfhIeO0iFBukUOeXHkCJfxyTsptQ.TDzb2YJy', 'alumni12', 1, '2021-06-16 22:09:55', '2021-06-16 22:09:55'),
+(55, 'alumni_trese@gmail.com', '3db08f70180fed79d49b9a35a800b1311ea59068b56e8c20b79373e363082f5aec9ed78efbaf105288fe84a829cd9e9a157f', '$2y$10$92vNOIrA2tndfupSKC7o/.MZdbkI2pKtFtxE1F3LSxtcByENjLtj6', 'alumni13', 1, '2021-06-16 22:10:17', '2021-06-16 22:10:17'),
+(56, 'alumni_katorse@gmail.com', '090889eea5ee151cfa1ef032e3b48021d94cabe7880b067c48b8959624bf7b50bb9877396d19df9fe0085be490ea1aa528f1', '$2y$10$hP08mWT..0qUYsxbBAdJiudgMwdtf/Ow1n5u7q75WfeOOaFc3.vcG', 'alumni14', 1, '2021-06-16 22:10:35', '2021-06-16 22:10:35'),
+(57, 'alumni_kinse@gmail.com', 'b53c0d36b93230d3ce09a070eb66f929fe4f01cf8d822bfb2bb797cd2e9cf919bbd956f43b5d7619d2594b50c0f4214bdce0', '$2y$10$y1JQ.krm5HtgBiLkW.ORlugufYAB7ZZJtG65/hP4uNfyRqYAsd1wm', 'alumni15', 1, '2021-06-16 22:10:55', '2021-06-16 22:10:55'),
+(58, 'employer_onze@gmail.com', 'eae7980043a564722c144b63588e380b13d09e369704adb05fc431366602ca48ff6454b8dbce2acdcc1d864f7948257854d7', '$2y$10$1wZSkTYP5eMMgDhD6D8IEus2LTqui5KFvQpQ1R9Ko6Uqej9nFGb.2', 'employ11', 2, '2021-06-16 22:11:23', '2021-06-16 22:11:23'),
+(59, 'employer_doze@gmail.com', '0959d26c5113c4aaf90633927ab455adb1f9a441298276f09af2f26201ef825a685fbecc7368a72d74e58d33cef6ff45e4e6', '$2y$10$efm4jUJJ8Qmja1wdjRwup.5C5AEcM7R9pjAvVsOJyGeOCFj0/PNLS', 'employ12', 2, '2021-06-16 22:11:39', '2021-06-16 22:11:39'),
+(60, 'employer_trese@gmail.com', '65118f2e83f3388600c3441de73503a0797c88204a9ab569f35d584ed9950681cb897bf495b88dd2349eff52c40eda83482c', '$2y$10$Exv1WSOva6ljhsPD8EmRe.NxAkvFePRqkiiukEyKyFpx.QxG/JO5K', 'employ13', 2, '2021-06-16 22:11:56', '2021-06-16 22:11:56'),
+(61, 'employer_katorse@gmail.com', 'c83325dd36accfe35b0e53383fcc1359fc1ff4660de593c83a84a38d90de82511cbd7b3fef1fc9ca4b16cfa2740ecfd3221d', '$2y$10$E4PE8TpUYB3Oy/BF2r7ezeu.GBjd3hb.91cn6MtZZUPObPgxpPGcC', 'employ14', 2, '2021-06-16 22:12:09', '2021-06-16 22:12:09'),
+(62, 'employer_kinse@gmail.com', '6bf5476cdecd505ea8bbad3f4827d7a612276ca4ca62c61346a259491fd3867281a99f4541fd0ad9d29dcb49c9905edb2436', '$2y$10$NYInDBn.FFBS1zBZGE2AK.IQuNRF4EiMQqEtb8jyJg8iFvXEQy6v2', 'employ15', 2, '2021-06-16 22:12:33', '2021-06-16 22:12:33');
 
 --
 -- Indexes for dumped tables
@@ -3141,7 +3144,7 @@ ALTER TABLE `emp_survey_q17`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
