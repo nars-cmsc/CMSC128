@@ -196,12 +196,9 @@
   }
   /* for alert message */
   .alert {
-	  text-align: left;
-	  padding: 1rem;
-		background-color: #db7c6b; /* Red */
-		color: white;
-	   margin-bottom: 1rem;
-	   width: 16rem;
+	  color: #050505;
+    	  font-size: 18px;
+  	  margin: 10px;
   }
   .ae-choices{
 	  width:300px;
