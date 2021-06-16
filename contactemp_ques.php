@@ -29,7 +29,7 @@ if (!isset($_SESSION['email'])) {
 
 	<!-- for header/ navbar    -->
 	<?php include('header.php'); ?>
-	<!-- label class = option; radio bttn class = options -->
+	<!-- label class = option; radio bttn class = options --> 
 
 
 <section>
