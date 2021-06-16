@@ -31,7 +31,7 @@ if ($_SESSION['role'] == 2) {
 	<title>Alumni Survey - UPB DMCS</title>
 </head>
 	<!-- for header/ navbar    -->
-	<?php include('header.php'); ?> 
+	<?php include('header.php'); ?>  
 	<!-- label class = option; radio bttn class = options -->
 
 <section>
