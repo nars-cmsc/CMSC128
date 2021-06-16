@@ -119,7 +119,7 @@ if (isset($_POST['login-btn'])) {
 			}
 		}
   	} else {
-  		$errors['user'] = "The email you entered is not registered";
+  		$errors['password'] = "The email you entered is not registered";
   	}
 }// end of login-btn
 
