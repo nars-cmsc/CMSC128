@@ -17,7 +17,6 @@ if(isset($_POST["submit-contactemp"]))
 <?php
 }
 
-
 //EMPLOYER CONTACT INFORMATION
 
 // use $_POST['<name>'] to get info from survey form
@@ -55,11 +54,8 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 		}
 	}
 	
-	
 	// VALIDATION / ERROR HANDLING
-
 	// ERROR: required fields are empty or only white spaces
-	
 	if (isset($_POST['contactemp_yon']) && $contactemp == 'Yes' && (empty($companyname) || strlen(trim($companyname)) <= 0) && (empty($contactperson) || strlen(trim($contactperson)) <= 0) && (empty($contactnumber) || strlen(trim($contactnumber)) <= 0) && (empty($contactemail) || strlen(trim($contactemail)) <= 0) && $user_exist == false) {
 		$errors['es_emp1'] = "Need to answer company name. Field cannot be empty.";
 		$errors['es_emp2'] = "Need to answer contact person. Field cannot be empty.";
@@ -68,9 +64,7 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 		$error = true;
 	}
 	
-	// if there are no errors store answers to db
-
-		
+	// if there are no errors store answers to db		
 	if ($error == false) {
 		
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactemp']);
@@ -91,7 +85,6 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 			$contactperson = $contactemp;
 			$contactnumber = $contactemp;
 			$contactemail = $contactemp;
-			
 		}
 	}
 }//end of submit-contactemp
