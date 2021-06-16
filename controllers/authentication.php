@@ -19,7 +19,6 @@ if (isset($_POST['login-btn'])) {
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
-
 	// validation/ error handling
 	// if email field is empty
 	if (empty($email)) {
@@ -112,7 +111,6 @@ if (isset($_POST['login-btn'])) {
 				header('location: admin');
 				exit();
 			}
-			
 		}
 		else {
 			$errors['login_fail'] = "Email and password do not match!";
