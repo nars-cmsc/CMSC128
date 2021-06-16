@@ -723,7 +723,7 @@ if ($_SESSION['role'] == 1) {
 						</div>
 
 						<div class="submit-survey">
-							<input type="button" id="reviewBtn" name="review-emp" value="Review Answers" onclick="validateReview()" />
+							<input type="button" id="reviewBtn" name="review-emp" value="Submit Answers" onclick="validateReview()" />
 							<!-- <input type="submit" name="submit-emp" value="Submit"/> -->
 						</div>		
 					</div>
@@ -744,44 +744,10 @@ if ($_SESSION['role'] == 1) {
 					<div class="modal-content">
 						<div class="modal-header">
 							<span class="closeBtn">&times;</span>
-							<h4 style="color:#840038; text-transform:uppercase;">Are you sure you want to submit?</h4>
-							<h5 style="color:black; font-size:16pt;">Here are your answers from the survey:</h5>
+							<h4 style="color:#840038; text-transform:uppercase;">Are you sure that you want to submit?</h4>
 						</div>
 						<div class="modal-body">
-							<p>1. Which sector of economy does your company/organization belong to?</p><br>
-								<?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>2. Where is your company/organization located?</p><br>
-								<?php if (isset($_POST['ques2'])){  echo $_POST['ques2'];  } ?>
-							<p>3. Which industry and business does your company/organization belong to?</p><br>
-								<?php if (isset($_POST['ques3'])){  echo $_POST['ques3'];  } ?>
-							<p>4. What is your position in your company/organization?</p><br>
-								<?php if (isset($_POST['ques4'])){  echo $_POST['ques4'];  } ?>
-							<p>5. How many UP graduates are employed in your company/organization?</p><br>
-								<?php if (isset($_POST['ques5'])){  echo $_POST['ques5'];  } ?>
-							<p>6. How much do you agree or disagree with this statement: “UP graduates recruited in the last three to five years have the skills to work in my company/organization.”?</p><br>
-								<?php if (isset($_POST['ques6'])){  echo $_POST['ques6'];  } ?>
-							<!--<p>7. Rate the importance of each skill when hiring new staff. Kindly select your ratings.</p>
-							<$?php if (isset($_POST['ques7'])){  echo $_POST['ques1'];  } ?>
-							<p>8. Rate your satisfaction on how well each skill is demonstrated by your staff who are UP graduates. Kindly select your ratings.</p>
-							<$?php if (isset($_POST['ques8'])){  echo $_POST['ques1'];  } ?>
-							<p>9. Based on your experience with the staff, how LIKELY are you to hire other graduates of UP?</p>
-							<$?php if (isset($_POST['ques9'])){  echo $_POST['ques1'];  } ?>
-							<p>10. Based on your experience with the staff how likely are you going to keep the UP graduates in your company/organization?</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>11. Rate the importance of each item to the successful performance of the job for which your staff, who are UP graduates, were hired.</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>12. Rate your satisfaction on how well each item was demonstrated by your hired UP graduates.</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>13. Which actions should UP take in order to improve the skill and competency set of its graduates? Check all that apply.</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>14. How important is UP cooperation for your company/organization? Please rate the importance of cooperating with UP in the design of curricula and study programs.</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>15. Do you have any other comments or suggestions as to how UP can improve the skill and competency set of its graduates?</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>16. Do you have any negative feedback about the graduates?</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>
-							<p>17. Are specific strengths of the graduates appreciated? If yes, what are these strengths?</p>
-							<$?php if (isset($_POST['ques1'])){  echo $_POST['ques1'];  } ?>-->
+							<p>You cannot change your answers once you have submitted your responses.</p>						
 						</div>
 						<div class="modal-footer">		
 							<div class="submit-survey">
