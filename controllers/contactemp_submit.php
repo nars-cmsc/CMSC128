@@ -33,7 +33,7 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 	if($user){ 
 	    if ($user['user_id'] == $id) {
 		    $errors['user'] = "Feedback from user already exists";
-		    $error = true;
+		    $error = true; 
 		    $user_exist = true;
 	    }
 	}else {
