@@ -1,6 +1,6 @@
 -- phpMyAdmin SQL Dump
 -- version 5.0.3
--- https://www.phpmyadmin.net/ 
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
 -- Generation Time: Jun 15, 2021 at 02:47 PM
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `alum_survey` (
   `answer_id` int(11) NOT NULL,
   `question_num` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL, 
+  `user_id` int(11) NOT NULL,
   `answer_body` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

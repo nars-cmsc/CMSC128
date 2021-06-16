@@ -29,7 +29,7 @@ if (!isset($_SESSION['email'])) {
 
 	<!-- for header/ navbar    -->
 	<?php include('header.php'); ?>
-	<!-- label class = option; radio bttn class = options --> 
+	<!-- label class = option; radio bttn class = options -->
 
 
 <section>
@@ -76,26 +76,26 @@ if (!isset($_SESSION['email'])) {
 				
 					<div id="companyname" style="display: none;">
 						<p class="ques_title">Company Name:</p>
-						<input id="" name="emp1" value="" rows="3" cols="40" style="resize: none;" 
+						<input id="" name="emp1" type="text" value="" rows="3" cols="40" style="resize: none;" 
 						placeholder="Enter company name">
 					</div>
 
 					<div id="contactperson" style="display: none;">
 						<p class="ques_title">Contact Person:</p>
-						<input id="" name="emp2" value="" rows="3" cols="40" style="resize: none;" 
+						<input id="" name="emp2" type="text" value="" rows="3" cols="40" style="resize: none;" 
 						placeholder="Enter name of the employer"
 						pattern="[a-zA-Z'-'\s]*">
 					</div>
 					
 					<div id="contactnumber" style="display: none;">
 						<p class="ques_title">Contact Number:</p>
-						<input type="tel" id="" name="emp3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') value="" rows="3" cols="40" style="resize: none;" 
+						<input type="text" id="" name="emp3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1') value="" rows="3" cols="40" style="resize: none;" 
 						placeholder="Enter contact number">
 					</div>
 
 					<div id="contactemail" style="display: none;">
 						<p class="ques_title">Email:</p>
-						<input type="email" id="" name="emp4" value="" rows="3" cols="40" style="resize: none;" 
+						<input type="text" id="" name="emp4" value="" rows="3" cols="40" style="resize: none;" 
 						placeholder="Enter email">
 					</div>
 
@@ -114,5 +114,5 @@ if (!isset($_SESSION['email'])) {
 	<?php include('footer.php'); ?>
 </section>
 </body>
-</html> 
+</html>
 
