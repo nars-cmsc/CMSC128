@@ -34,88 +34,93 @@ if (isset($_POST['login-btn'])) {
   	$result = mysqli_query($db_conn, $id_query);
   	$user = mysqli_fetch_assoc($result);
 
-	$id = $user['user_id'];
-	$role_id = $user['role_id'];
+	if ($user) {
+  		$id = $user['user_id'];
+		$role_id = $user['role_id'];
 
-	// if user already answered employer survey
-  	$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
-  	$result1 = mysqli_query($db_conn, $emp_check_query);
-  	$user_emp = mysqli_fetch_assoc($result1);
+		// if user already answered employer survey
+	  	$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
+	  	$result1 = mysqli_query($db_conn, $emp_check_query);
+	  	$user_emp = mysqli_fetch_assoc($result1);
 
-	if($user_emp && $role_id==$EMPLOYER_ROLE_ID){ 
-	    if ($user_emp['user_id'] == $id) {
-		    $errors['user'] = "Feedback from user already exists";
-		    $error = true;
-	    }
-	}else {
-		$error = false;
-	}
+		if($user_emp && $role_id==$EMPLOYER_ROLE_ID){ 
+		    if ($user_emp['user_id'] == $id) {
+			    $errors['user'] = "Feedback from user already exists";
+			    $error = true;
+		    }
+		}else {
+			$error = false;
+		}
 
-	// if user already answered employer survey
-  	$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";
-  	$result2 = mysqli_query($db_conn, $alum_check_query);
-  	$user_alum = mysqli_fetch_assoc($result2);
+		// if user already answered employer survey
+	  	$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";
+	  	$result2 = mysqli_query($db_conn, $alum_check_query);
+	  	$user_alum = mysqli_fetch_assoc($result2);
 
-	if($user_alum && $role_id==$ALUMNI_ROLE_ID){ 
-	    if ($user_alum['user_id'] == $id) {
-		    $errors['user'] = "Feedback from user already exists";
-		    $error = true;
-	    }
-	}else {
-		$error = false;
-	}
+		if($user_alum && $role_id==$ALUMNI_ROLE_ID){ 
+		    if ($user_alum['user_id'] == $id) {
+			    $errors['user'] = "Feedback from user already exists";
+			    $error = true;
+		    }
+		}else {
+			$error = false;
+		}
 
-	if($user_emp && $user_alum && $role_id==$ALUM_EMP_ROLE_ID){ 
-	    if ($user_alum['user_id'] == $id || $user_emp['user_id']) {
-		    $errors['user'] = "Feedback from user already exists";
-		    $error = true;
-	    }
-	}else {
-		$error = false;
-	}
+		if($user_emp && $user_alum && $role_id==$ALUM_EMP_ROLE_ID){ 
+		    if ($user_alum['user_id'] == $id || $user_emp['user_id']) {
+			    $errors['user'] = "Feedback from user already exists";
+			    $error = true;
+		    }
+		}else {
+			$error = false;
+		}
 
 
-	// if there are no errors
-	if (count($errors) == 0) {
-		$sql = "SELECT * FROM users WHERE email=? LIMIT 1";
-		$stmt = $db_conn->prepare($sql);
-		$stmt->bind_param('s', $email);
-		$stmt->execute();
-		$result = $stmt->get_result();
-		$user = $result->fetch_assoc();
+		// if there are no errors
+		if (count($errors) == 0) {
+			$sql = "SELECT * FROM users WHERE email=? LIMIT 1";
+			$stmt = $db_conn->prepare($sql);
+			$stmt->bind_param('s', $email);
+			$stmt->execute();
+			$result = $stmt->get_result();
+			$user = $result->fetch_assoc();
 
-		if (password_verify($password, $user['password'])) {
-			// successful login
-			$_SESSION['id'] = $user['user_id'];
-			$_SESSION['email'] = $user['email'];
-			$_SESSION['role'] = $user['role_id'];
+			if (password_verify($password, $user['password'])) {
+				// successful login
+				$_SESSION['id'] = $user['user_id'];
+				$_SESSION['email'] = $user['email'];
+				$_SESSION['role'] = $user['role_id'];
 
-			// update date and time of last login
-			$sql_time = "UPDATE users set last_login=now() where user_id=".$_SESSION['id'];
-			$rs = mysqli_query($db_conn, $sql_time);
+				// update date and time of last login
+				$sql_time = "UPDATE users set last_login=now() where user_id=".$_SESSION['id'];
+				$rs = mysqli_query($db_conn, $sql_time);
 
-			// check role of the user
-			if ($user['role_id'] === $ALUMNI_ROLE_ID) {
-				header('location: alum_survey.php');
-				exit();
+				// check role of the user
+				if ($user['role_id'] === $ALUMNI_ROLE_ID) {
+					header('location: alum_survey.php');
+					exit();
+				}
+				elseif ($user['role_id'] === $EMPLOYER_ROLE_ID) {
+					header('location: emp_survey.php');
+					exit();
+				}
+				elseif ($user['role_id'] === $ALUM_EMP_ROLE_ID) {
+					header('location: alum_emp.php');
+					exit();
+				}
+				elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
+					header('location: admin');
+					exit();
+				}
+				
 			}
-			elseif ($user['role_id'] === $EMPLOYER_ROLE_ID) {
-				header('location: emp_survey.php');
-				exit();
-			}
-			elseif ($user['role_id'] === $ALUM_EMP_ROLE_ID) {
-				header('location: alum_emp.php');
-				exit();
-			}
-			elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
-				header('location: admin');
-				exit();
+			else {
+				$errors['login_fail'] = "Email and password do not match!";
 			}
 		}
-		else {
-			$errors['login_fail'] = "Email and password do not match!";
-		}
-	}	
+  	} else {
+  		$errors['user'] = "The email you entered is not registered";
+  	}
 }// end of login-btn
 
 ?>
