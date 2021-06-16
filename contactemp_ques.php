@@ -114,5 +114,5 @@ if (!isset($_SESSION['email'])) {
 	<?php include('footer.php'); ?>
 </section>
 </body>
-</html>
+</html> 
 
