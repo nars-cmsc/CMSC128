@@ -88,15 +88,12 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques4'])) {
 		$four = $_POST['ques4'];
 	}
-
 	if (isset($_POST['ques5'])) {
 		$five = $_POST['ques5'];
 	}
-
 	if (isset($_POST['ques6'])) {
 		$six = $_POST['ques6'];
 	}
-
 	if (isset($_POST['ques7_1'])) {
 		$skill7_1 = $_POST['ques7_1'];
 	}
@@ -148,7 +145,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques7_17'])) {
 		$skill7_17 = $_POST['ques7_17'];
 	}
-
 	if (isset($_POST['ques8_1'])) {
 		$skill8_1 = $_POST['ques8_1'];
 	}
@@ -200,15 +196,12 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques8_17'])) {
 		$skill8_17 = $_POST['ques8_17'];
 	}
-
 	if (isset($_POST['ques9'])) {
 		$nine = $_POST['ques9'];
 	}
-
 	if (isset($_POST['ques10'])) {
 		$ten = $_POST['ques10'];
 	}
-
 	if (isset($_POST['ques11_1'])) {
 		$skill11_1 = $_POST['ques11_1'];
 	}
@@ -242,7 +235,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques11_11'])) {
 		$skill11_11 = $_POST['ques11_11'];
 	}
-
 	if (isset($_POST['ques12_1'])) {
 		$skill12_1 = $_POST['ques12_1'];
 	}
@@ -276,7 +268,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	if (isset($_POST['ques12_11'])) {
 		$skill12_11 = $_POST['ques12_11'];
 	}
-
 	if (isset($_POST['ques13'])) {
 		$check13 = $_POST['ques13'];
 		$chk13 = false;
@@ -287,33 +278,27 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 			}
 		}
 	}
-
 	if (isset($_POST['ques14'])) {
 		$fourteen = $_POST['ques14'];
 	}
-
 	if (isset($_POST['ques15'])) {
 		$fifteen = $_POST['ques15'];
 		if ($fifteen == 'Yes') {
 			$fifteen_txt = $_POST['ques15_ytxt'];
 		}
 	}
-
 	if (isset($_POST['ques16'])) {
 		$sixteen = $_POST['ques16'];
 		if ($sixteen == 'Yes') {
 			$sixteen_txt = $_POST['ques16_ytxt'];
 		}
 	}
-
 	if (isset($_POST['ques17'])) {
 		$seventeen = $_POST['ques17'];
 		if ($seventeen == 'Yes') {
 			$seventeen_txt = $_POST['ques17_ytxt'];
 		}
 	}
-
-
 
 	// VALIDATION / ERROR HANDLING
 
@@ -326,7 +311,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q1'] = "Need to answer #1. 'Others' field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($two) && $user_exist == false) {
 		$errors['es_q2'] = "Need to answer #2. Field cannot be empty.";
 		$error = true;
@@ -335,7 +319,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q2'] = "Need to answer #2.1. Field cannot be empty.";
 		$error = true;
 	}
-		
 	if (empty($three) && $user_exist == false) {
 		$errors['es_q3'] = "Need to answer #3. Field cannot be empty.";
 		$error = true;
@@ -344,22 +327,18 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q3'] = "Need to answer #3. 'Others' field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($four) && $user_exist == false) {
 		$errors['es_q4'] = "Need to answer #4. Field cannot be empty.";
 		$error = true;
 	}
-
 	if ((empty($five) || strlen(trim($five)) <= 0) && $user_exist == false) {
 		$errors['es_q5'] = "Need to answer #5. Field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($six) && $user_exist == false) {
 		$errors['es_q6'] = "Need to answer #6. Field cannot be empty.";
 		$error = true;
 	}
-
 	if ((empty($skill7_1) || empty($skill7_2) || empty($skill7_3) ||
 		empty($skill7_4) || empty($skill7_5) || empty($skill7_6) ||
 		empty($skill7_7) || empty($skill7_8) || empty($skill7_9) ||
@@ -369,7 +348,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q7'] = "There are items in #7 that were not answered.";
 		$error = true;
 	}
-
 	if ((empty($skill8_1) || empty($skill8_2) || empty($skill8_3) ||
 		empty($skill8_4) || empty($skill8_5) || empty($skill8_6) ||
 		empty($skill8_7) || empty($skill8_8) || empty($skill8_9) ||
@@ -379,17 +357,14 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q8'] = "There are items in #8 that were not answered.";
 		$error = true;
 	}
-
 	if (empty($nine) && $user_exist == false) {
 		$errors['es_q9'] = "Need to answer #9. Field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($ten) && $user_exist == false) {
 		$errors['es_q10'] = "Need to answer #10. Field cannot be empty.";
 		$error = true;
 	}
-
 	if ((empty($skill11_1) || empty($skill11_2) || empty($skill11_3) ||
 		empty($skill11_4) || empty($skill11_5) || empty($skill11_6) ||
 		empty($skill11_7) || empty($skill11_8) || empty($skill11_9) ||
@@ -397,7 +372,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q11'] = "There are items in #11 that were not answered.";
 		$error = true;
 	}
-
 	if ((empty($skill12_1) || empty($skill12_2) || empty($skill12_3) ||
 		empty($skill12_4) || empty($skill12_5) || empty($skill12_6) ||
 		empty($skill12_7) || empty($skill12_8) || empty($skill12_9) ||
@@ -405,7 +379,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q12'] = "There are items in #12 that were not answered.";
 		$error = true;
 	}
-
 	if (empty($check13) && $user_exist == false) {
 		$errors['es_q13'] = "Need to answer #13. Field cannot be empty.";
 		$error = true;
@@ -414,12 +387,10 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q13'] = "Need to answer #13. 'Others' field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($fourteen) && $user_exist == false) {
 		$errors['es_q14'] = "Need to answer #14. Field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($fifteen) && $user_exist == false) {
 		$errors['es_q15'] = "Need to answer #15. Field cannot be empty.";
 		$error = true;
@@ -428,7 +399,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q15'] = "Need to answer #15. 'Yes' field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($sixteen) && $user_exist == false) {
 		$errors['es_q16'] = "Need to answer #16. Field cannot be empty.";
 		$error = true;
@@ -437,7 +407,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q16'] = "Need to answer #16. 'Yes' field cannot be empty.";
 		$error = true;
 	}
-
 	if (empty($seventeen) && $user_exist == false) {
 		$errors['es_q17'] = "Need to answer #17. Field cannot be empty.";
 		$error = true;
@@ -446,8 +415,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$errors['es_q17'] = "Need to answer #17. 'Yes' field cannot be empty.";
 		$error = true;
 	}
-
-
 
 	// if there are no errors store answers to db
 	if ($error == false) {
@@ -473,7 +440,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		// store to db (emp_survey_q1 table)
 		$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, date_response) VALUES ('$id', '$one', now())";
 	    mysqli_query($db_conn, $sql);
-		
 
 		// QUESTION NUMBER 2
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['two']);
@@ -486,8 +452,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    // store to db (emp_survey_q2 table)
 		$sql = "INSERT INTO emp_survey_q2 (user_id, answer_body, date_response) VALUES ('$id', '$two', now())";
 	    mysqli_query($db_conn, $sql);
-
-
 
 		// QUESTION NUMBER 2.1
 		if ($two == 'Abroad') {
@@ -510,8 +474,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 			$sql = "INSERT INTO emp_survey_q2_1 (user_id, region, subregion, date_response) VALUES ('$id', '$region', '$subregion', now())";
 		    mysqli_query($db_conn, $sql);
 		}
-
-
 
 		// QUESTION NUMBER 3
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['three']);
@@ -536,8 +498,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, date_response) VALUES ('$id', '$three', now())";
 	    mysqli_query($db_conn, $sql);
 
-
-
 		// QUESTION NUMBER 4
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['four']);
 		$four = mysqli_real_escape_string($db_conn, $_POST['ques4']);
@@ -549,8 +509,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    // store to db (emp_survey_q4 table)
 		$sql = "INSERT INTO emp_survey_q4 (user_id, answer_body, date_response) VALUES ('$id', '$four', now())";
 	    mysqli_query($db_conn, $sql);
-
-
 
 		// QUESTION NUMBER 5
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five']);
@@ -564,8 +522,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		$sql = "INSERT INTO emp_survey_q5 (user_id, answer_body, date_response) VALUES ('$id', '$five', now())";
 	    mysqli_query($db_conn, $sql);
 
-
-
 		// QUESTION NUMBER 6
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['six']);
 		$six = mysqli_real_escape_string($db_conn, $_POST['ques6']);
@@ -577,8 +533,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    // store to db (emp_survey_q6 table)
 		$sql = "INSERT INTO emp_survey_q6 (user_id, answer_body, date_response) VALUES ('$id', '$six', now())";
 	    mysqli_query($db_conn, $sql);
-		
-
 
 		// QUESTION NUMBER 7
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['seven']);
@@ -660,7 +614,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
     		mysqli_query($db_conn, $sql);
 	    }
 
-
 		// QUESTION NUMBER 8
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['eight']);
 		$skill8_1 = mysqli_real_escape_string($db_conn, $_POST['ques8_1']);
@@ -741,8 +694,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
     		mysqli_query($db_conn, $sql);
 	    }
 
-
-
 		// QUESTION NUMBER 9
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['nine']);
 		$nine = mysqli_real_escape_string($db_conn, $_POST['ques9']);
@@ -755,8 +706,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey_q9 (user_id, answer_body, date_response) VALUES ('$id', '$nine', now())";
     	mysqli_query($db_conn, $sql);
 
-
-
 		// QUESTION NUMBER 10
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['ten']);
 		$ten = mysqli_real_escape_string($db_conn, $_POST['ques10']);
@@ -768,8 +717,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    // store to db (emp_survey_q10)
 	    $sql = "INSERT INTO emp_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten', now())";
     	mysqli_query($db_conn, $sql);
-
-
 
 		// QUESTION NUMBER 11
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['eleven']);
@@ -827,8 +774,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
     		mysqli_query($db_conn, $sql);
 	    }
 
-
-
 		// QUESTION NUMBER 12
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['twelve']);
 		$skill12_1 = mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
@@ -885,8 +830,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
     		mysqli_query($db_conn, $sql);
 	    }
 
-
-
 		// QUESTION NUMBER 13
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['thirteen']);
 		$check13 = $_POST['ques13'];
@@ -913,8 +856,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$thirteen')";
 	    mysqli_query($db_conn, $sql);
 
-
-
 		// QUESTION NUMBER 14
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['fourteen']);
 		$fourteen = mysqli_real_escape_string($db_conn, $_POST['ques14']);
@@ -926,8 +867,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    // store to db (emp_survey_q14)
 	    $sql = "INSERT INTO emp_survey_q14 (user_id, answer_body, date_response) VALUES ('$id', '$fourteen', now())";
     	mysqli_query($db_conn, $sql);
-
-
 
 		// QUESTION NUMBER 15
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['fifteen']);
@@ -953,8 +892,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, date_response) VALUES ('$id', '$fifteen', now())";
     	mysqli_query($db_conn, $sql);
 
-
-
 		// QUESTION NUMBER 16
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['sixteen']);
 		$sixteen = mysqli_real_escape_string($db_conn, $_POST['ques16']);
@@ -978,8 +915,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    // store to db (emp_survey_q16)
 	    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, date_response) VALUES ('$id', '$sixteen', now())";
     	mysqli_query($db_conn, $sql);
-
-
 
 		// QUESTION NUMBER 17
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['seventeen']);
@@ -1005,7 +940,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, date_response) VALUES ('$id', '$seventeen', now())";
     	mysqli_query($db_conn, $sql);
 
-
 		if ($_SESSION['role'] == $EMPLOYER_ROLE_ID) {
 			// update time of response
 			$sql_time = "UPDATE emp_survey set date_response=now() where user_id=".$_SESSION['id'];
@@ -1017,11 +951,7 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
 			header('location: alum_emp.php');
 		}
-	    
-
 	} // end of if no errors
-
 }// end of submit-emp
-
 
 ?>
