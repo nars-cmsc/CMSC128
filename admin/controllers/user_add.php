@@ -6,9 +6,9 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 require ('config/connection.php');
 
-require_once ('phpmailer/Exception.php');
-require_once ('phpmailer/PHPMailer.php');
-require_once ('phpmailer/SMTP.php');
+require_once ('phpmailer/src/Exception.php');
+require_once ('phpmailer/src/PHPMailer.php');
+require_once ('phpmailer/src/SMTP.php');
 
 $query = mysqli_query($db_conn, "SELECT * FROM users");
 $errors = array();
