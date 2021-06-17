@@ -49,26 +49,6 @@ if ($_SESSION['role'] == 2) {
 			<?php endif;?>
 			
 			<br>
-				<div class="dot-navigation">
-					<span class="dot" onclick="currentSlide(0)"></span>
-				</div>
-				<br>
-
-			<br>
-			<!--<div class="dot-navigation">
-				<span class="dot" onclick="currentSlide(1)"></span>
-				<span class="dot" onclick="currentSlide(2)"></span>
-				<span class="dot" onclick="currentSlide(3)"></span>
-				<span class="dot" onclick="currentSlide(4)"></span>
-				<span class="dot" onclick="currentSlide(5)"></span>
-				<span class="dot" onclick="currentSlide(6)"></span>
-				<span class="dot" onclick="currentSlide(7)"></span>
-				<span class="dot" onclick="currentSlide(8)"></span>
-				<span class="dot" onclick="currentSlide(9)"></span>
-				<span class="dot" onclick="currentSlide(10)"></span>
-				<span class="dot" onclick="currentSlide(11)"></span>
-				<span class="dot" onclick="currentSlide(12)"></span>
-			</div>-->
 
 		<div class="questions-container">
 				<div class="Slides" style="display:block;">
@@ -379,7 +359,7 @@ if ($_SESSION['role'] == 2) {
 				<!-- QUESTION # 10 --> 
 				<script type="text/javascript">
 				$(document).ready(function(){
-					var html = '<tr><td><input class="form-control" type="text" name="jobduties[]" placeholder="Enter job duty"></td><td><input type="number" min="0" max="100" step="1" class="form-control" name="percentage[]" placeholder="Enter percentage"</td><td><input class="btn btn-danger" type="button" name="remove" id="remove" value="Remove"></td></tr>';
+					var html = '<tr><td><input class="form-control" type="text" name="jobduties[]" placeholder="Enter job duty"></td><td><input type="number" min="0" max="100" step="1" class="form-control" name="percentage[]" placeholder="Enter percentage"</td><td><input class="btn-warning" type="button" name="remove" id="remove" value="Remove"></td></tr>';
 					var max = 4;
 					var x = 1;
 
@@ -407,8 +387,8 @@ if ($_SESSION['role'] == 2) {
 						</tr>
 						<tr>
 							<td><input class="form-control" type="text" name="jobduties[]" placeholder="Enter job duty" onclick="$('#eleven').show();"></td>
-							<td><input  type="number" min="0" max="100" step="1"  class="form-control" type="text" name="percentage[]" placeholder="Enter percentage of time (Limit 100)" onclick="$('#eleven').show();"></td>
-							<td><input class="btn btn-warning" type="button" name="add" id="add" value="Add"></td>
+							<td><input class="" type="number" min="0" max="100" step="1"  class="form-control" type="text" name="percentage[]" placeholder="Enter percentage" onclick="$('#eleven').show();"></td>
+							<td><input class="btn-warning" type="button" name="add" id="add" value="Add"></td>
 						</tr>
 					</table>
 				</div>
