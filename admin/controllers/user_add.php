@@ -84,26 +84,26 @@ if (isset($_POST['reg-btn'])) {
 		$_SESSION['message'] = "User successfully added to the database!";
 
 		// sending email to newly registered users
-		// try {
-		// 	$mail->isSMTP();
-		// 	$mail->Host = 'smtp.gmail.com';
-		// 	$mail->SMTPAuth = true;
-		// 	$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
-		// 	$mail->Password = 'dmcssurveytest1'; // password of gmail address
-		// 	$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-		// 	$mail->Port = '587';
+		try {
+			$mail->isSMTP();
+			$mail->Host = 'smtp.gmail.com';
+			$mail->SMTPAuth = true;
+			$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
+			$mail->Password = 'dmcssurveytest1'; // password of gmail address
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+			$mail->Port = '587';
 
-		// 	$mail->setFrom('dmcs.survey.test1@gmail.com');
-		// 	$mail->addAddress($email); // email receiver
+			$mail->setFrom('dmcs.survey.test1@gmail.com');
+			$mail->addAddress($email); // email receiver
 
-		// 	$mail->isHTML(true);
-		// 	$mail->Subject = 'DMCS Survey Credentials';
-		// 	$mail->Body = "Please use the following credentials for logging in.<br><b>Email : </b>$email <br><b>Password : </b>$pass";
+			$mail->isHTML(true);
+			$mail->Subject = 'DMCS Survey Credentials';
+			$mail->Body = "Please use the following credentials for logging in.<br><b>Email : </b>$email <br><b>Password : </b>$pass";
 
-		// 	$mail->send();
-		// } catch (Exception $e) {
-		// 	$errors = $e->getMessage();
-		// }
+			$mail->send();
+		} catch (Exception $e) {
+			$errors = $e->getMessage();
+		}
 
 		header('location: index.php');
 	 	exit();
