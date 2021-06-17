@@ -33,27 +33,30 @@ if ($_SESSION['role'] == 2) {
 	<title>Alumni & Employer Landing Page - UPB DMCS</title>
 	</head>
 		<?php include('header.php'); ?>
-	<div class="container-login">
-		<div class = "container-info-ae">
-			<h3>
-				Which survey would you like to answer first?
-			</h3>
+	<section>
+		<div class="container-login">
+			<div class = "container-info-ae">
+				<h3>
+					Which survey would you like to answer first?
+				</h3>
+			</div>
+			<div class="ae-buttons">
+				<form action="login.php" method="post">
+					<!-- added this area for error messages -->
+					<!--<//?php if (count($errors) > 0): ?>
+						<div class="alert">
+							<?php //foreach ($errors as $error): ?>
+								<?php //echo $error; ?><br>
+							<?php //endforeach; ?>	
+						</div>
+					<//?php endif;?>-->
+					<a href="alum_survey.php" class="ae-choices" name="alumni" title="Alumni Survey">Alumni</a><br><br><br><br>
+					<a href="emp_survey.php" class="ae-choices" name="employer" title="Employer Satisfaction Survey">Employer</a>
+				</form>
+			</div>
 		</div>
-		<div class="ae-buttons">
-			<form action="login.php" method="post">
-				<!-- added this area for error messages -->
-				<!--<//?php if (count($errors) > 0): ?>
-					<div class="alert">
-						<?php //foreach ($errors as $error): ?>
-							<?php //echo $error; ?><br>
-						<?php //endforeach; ?>	
-					</div>
-				<//?php endif;?>-->
-				<a href="alum_survey.php" class="ae-choices" name="alumni" title="Alumni Survey">Alumni</a><br><br><br><br>
-				<a href="emp_survey.php" class="ae-choices" name="employer" title="Employer Satisfaction Survey">Employer</a>
-			</form>
-		</div>
-	</div>
+	</section>
+	
 	<?php include('footer.php'); ?>
 	</body>
 	</html>
