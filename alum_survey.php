@@ -47,6 +47,12 @@ if ($_SESSION['role'] == 2) {
 					<?php endforeach; ?>	
 				</div>
 			<?php endif;?>
+			
+			<br>
+				<div class="dot-navigation">
+					<span class="dot" onclick="currentSlide(0)"></span>
+				</div>
+				<br>
 
 			<br>
 			<!--<div class="dot-navigation">
@@ -64,6 +70,9 @@ if ($_SESSION['role'] == 2) {
 				<span class="dot" onclick="currentSlide(12)"></span>
 			</div>-->
 
+		<div class="questions-container">
+				<div class="Slides" style="display:block;">
+					<!-- <div class="numbertext">1 / 10</div> -->
 			<div class="questions-container">
 				<!-- QUESTION # 1 -->
 				<div class="entry">
@@ -117,6 +126,7 @@ if ($_SESSION['role'] == 2) {
 					<input class="options" type="radio" name="ques3" id="three4" value="Very Satisfied">
 					<span class="checkbttn"></span>
 				</label><br>
+				
 
 				<!-- QUESTION # 5 -->
 				<div class="entry">
@@ -219,8 +229,6 @@ if ($_SESSION['role'] == 2) {
 						<span class="checkbttn"></span>
 					</label><br>
 				</div>
-				
-				
 				
 				<!-- QUESTION # 6 -->
 				<div id="six" style="display: none;">
@@ -350,7 +358,6 @@ if ($_SESSION['role'] == 2) {
 					</select>
 				</div>
 		
-		
 				<!-- QUESTION # 9 -->
 				<div id="nine" style="display: none;">
 					<input type="hidden" name="nine" value="9">
@@ -406,7 +413,6 @@ if ($_SESSION['role'] == 2) {
 					</table>
 				</div>
 
-
 				<!-- QUESTION # 11 -->
 				<div id="eleven" style="display: none;">
 					<input type="hidden" name="eleven" value="11">
@@ -420,7 +426,6 @@ if ($_SESSION['role'] == 2) {
 						<span class="checkbttn"></span>
 					</label><br>
 				</div>
-
 
 				<!-- QUESTION # 11.a -->
 				<div id="eleven_a" style="display: none;">
@@ -450,7 +455,6 @@ if ($_SESSION['role'] == 2) {
 					</label><br>
 				</div>
 
-
 				<!-- QUESTION # 11.a NO-->
 				<div id="eleven_a-no" style="display: none;">
 					<input type="hidden" name="eleven_a" value="11.1">
@@ -464,7 +468,6 @@ if ($_SESSION['role'] == 2) {
 						<span class="checkbttn"></span>
 					</label><br>
 				</div>
-			
 			
 				<!-- QUESTION # 12 -->
 				<div id="twelve" style="display: none;">
@@ -708,6 +711,8 @@ if ($_SESSION['role'] == 2) {
 					</div>
 				</div>
 			</div>
+		</div>		
+</div>
 		
 	
 			<div id="reviewModal" class="modal">
