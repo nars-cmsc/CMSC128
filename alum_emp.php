@@ -33,8 +33,7 @@ if ($_SESSION['role'] == 2) {
 	<title>Alumni & Employer Landing Page - UPB DMCS</title>
 	</head>
 		<?php include('header.php'); ?>
-	<section>
-		<div class="container-login">
+	<section class="container-login">
 			<div class = "container-info-ae">
 				<h3>
 					Which survey would you like to answer first?
@@ -54,7 +53,6 @@ if ($_SESSION['role'] == 2) {
 					<a href="emp_survey.php" class="ae-choices" name="employer" title="Employer Satisfaction Survey">Employer</a>
 				</form>
 			</div>
-		</div>
 	</section>
 	
 	<?php include('footer.php'); ?>
