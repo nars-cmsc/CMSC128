@@ -585,18 +585,22 @@
 	  width:100%;
   }
   .a-q10 input[type=text]{
-	  width:20rem;
+	  width:13rem;
 	  height:2rem;
 	  color:#000000;
 	  border-radius: 5px 5px 5px 5px;
 	  margin:0.5rem;
   }
   .a-q10 input[type=number] {
-	  width:13rem;
+	  width:10rem;
 	  height:2rem;
 	  color:#000000;
 	  border-radius: 5px 5px 5px 5px;
 	  margin:0.5rem;
+  }
+  .a-q10 .btn-warning {
+	  width:8rem;
+	  margin-left:3rem;
   }
   .options {
 	  text-align:center;
