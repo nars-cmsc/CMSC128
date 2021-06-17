@@ -4,18 +4,14 @@ session_start();
 
 require ('config/connection.php');
 
+$ADMIN_ROLE_ID = 0;
+$ALUMNI_ROLE_ID = 1;
+$EMPLOYER_ROLE_ID = 2;
+$ALUM_EMP_ROLE_ID = 3;
+
 $errors = array();
 $error;
 
-if(isset($_POST["submit-contactemp"]))
-{
-	?>
-	<script type="text/javascript">
-	window.location="thankyou.php";
-	</script>
-
-<?php
-}
 
 //EMPLOYER CONTACT INFORMATION
 
@@ -54,8 +50,15 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 		}
 	}
 	
+	
 	// VALIDATION / ERROR HANDLING
+
 	// ERROR: required fields are empty or only white spaces
+	
+	if (empty($contactemp) && $user_exist == false) {
+		$errors['es_contactempyon'] = "Need to answer field.";
+		$error = true;
+	}
 	if (isset($_POST['contactemp_yon']) && $contactemp == 'Yes' && (empty($companyname) || strlen(trim($companyname)) <= 0) && (empty($contactperson) || strlen(trim($contactperson)) <= 0) && (empty($contactnumber) || strlen(trim($contactnumber)) <= 0) && (empty($contactemail) || strlen(trim($contactemail)) <= 0) && $user_exist == false) {
 		$errors['es_emp1'] = "Need to answer company name. Field cannot be empty.";
 		$errors['es_emp2'] = "Need to answer contact person. Field cannot be empty.";
@@ -63,8 +66,11 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 		$errors['es_emp4'] = "Need to answer contact email. Field cannot be empty.";		
 		$error = true;
 	}
+
 	
-	// if there are no errors store answers to db		
+	// if there are no errors store answers to db
+
+		
 	if ($error == false) {
 		
 		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactemp']);
@@ -85,6 +91,19 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 			$contactperson = $contactemp;
 			$contactnumber = $contactemp;
 			$contactemail = $contactemp;
+			
+		}
+		
+		if ($_SESSION['role'] == $ALUMNI_ROLE_ID) {
+			// update time of response
+			$sql_time = "UPDATE contactemp_ques set date_response=now() where user_id=".$_SESSION['id'];
+			$rs = mysqli_query($db_conn, $sql_time);
+
+			header('location: thankyou.php');
+			// echo '<script> alert("Thank you for completing the survey!"); </script>';
+		}
+		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+			header('location: alum_emp.php');
 		}
 	}
 }//end of submit-contactemp
