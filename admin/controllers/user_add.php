@@ -59,7 +59,7 @@ if (isset($_POST['reg-btn'])) {
 
 	// error checking
 	if ($user_count > 0) {
-		$errors['email'] = "Email already exits";
+		$errors['email'] = "Email already exists";
 	}
 	if (empty($email)) {
 		$errors['email_emp'] = "Email is required";
