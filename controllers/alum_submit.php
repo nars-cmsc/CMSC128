@@ -886,17 +886,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 			mysqli_query($db_conn, $sql);
 		}
 		
-		if ($_SESSION['role'] == $ALUMNI_ROLE_ID) {
-			// update time of response
-			$sql_time = "UPDATE emp_survey set date_response=now() where user_id=".$_SESSION['id'];
-			$rs = mysqli_query($db_conn, $sql_time);
-
-			header('location: contactemp_ques.php');
-			// echo '<script> alert("Thank you for completing the survey!"); </script>';
-		}
-		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
-			header('location: alum_emp.php');
-		}
+		header('location: contactemp_ques.php');
 			
 			//End
 		} else {

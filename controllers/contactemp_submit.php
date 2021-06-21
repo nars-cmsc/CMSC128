@@ -93,18 +93,29 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 			$contactemail = $contactemp;
 			
 		}
+
+		// if user already answered employer survey
+		$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
+		$result1 = mysqli_query($db_conn, $emp_check_query);
+		$user_emp = mysqli_fetch_assoc($result1);
 		
+		// if alumni only		
 		if ($_SESSION['role'] == $ALUMNI_ROLE_ID) {
 			// update time of response
 			$sql_time = "UPDATE contactemp_ques set date_response=now() where user_id=".$_SESSION['id'];
 			$rs = mysqli_query($db_conn, $sql_time);
 
 			header('location: thankyou.php');
-			// echo '<script> alert("Thank you for completing the survey!"); </script>';
 		}
-		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+		// if  alumni and employer and employer survey is done
+		elseif ($user_emp && $_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+			header('location: thankyou.php');
+		}
+		// if alumni and employer and employer survey is NOT yet done
+		elseif (!($user_emp) && $_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
 			header('location: alum_emp.php');
 		}
+
 	}
 }//end of submit-contactemp
 
