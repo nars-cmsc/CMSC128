@@ -538,23 +538,6 @@ section::after {
   display: table;
   clear: both;
 }
-    .reviewBtn {
-	padding:1rem;
-	margin:0.8rem;
-	width:200px;
-	height:50px;
-	font-weight:bold;
-	color:#ffffff;
-	border-radius: 100px 100px 100px 100px;
-	border:0;
-	background:#ffad0d;
-	text-transform: uppercase;
-	transition:0.3s ease;
-	float:right;
-  }
-  .reviewBtn:hover {
-	background:#840038;
-  }
   .modal {
 	display:none;
 	position:fixed;
