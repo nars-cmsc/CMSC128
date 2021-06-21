@@ -940,6 +940,12 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, date_response) VALUES ('$id', '$seventeen', now())";
     	mysqli_query($db_conn, $sql);
 
+    	// if user already answered alumni survey
+		$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";
+		$result2 = mysqli_query($db_conn, $alum_check_query);
+		$user_alum = mysqli_fetch_assoc($result2);
+
+		// if employer only
 		if ($_SESSION['role'] == $EMPLOYER_ROLE_ID) {
 			// update time of response
 			$sql_time = "UPDATE emp_survey set date_response=now() where user_id=".$_SESSION['id'];
@@ -948,7 +954,14 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 			header('location: thankyou.php');
 			// echo '<script> alert("Thank you for completing the survey!"); </script>';
 		}
-		elseif ($_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+		// if alumni and employer and alumni survey is done
+		elseif ($user_alum && $_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
+			if ($user_alum['user_id'] == $id) {
+				header('location: thankyou.php');
+			}
+		}
+		// if alumni and employer and alumni survey is NOT yet done
+		elseif (!($user_alum) && $_SESSION['role'] == $ALUM_EMP_ROLE_ID) {
 			header('location: alum_emp.php');
 		}
 	} // end of if no errors
