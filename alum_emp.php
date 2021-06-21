@@ -57,14 +57,14 @@ if ($_SESSION['role'] == 2) {
 		<div class = "ae-buttons">
 				<a href="alum_survey.php" class="ae-choices" name="alumni" title="Alumni Survey" 
 				<?php if($user_alum && $_SESSION['role']==3){ if ($user_alum['user_id'] == $_SESSION['id']) {?>
-					onclick="return false;" style="background-color:gray;"
+					onclick="return false;" style="background-color:gray;cursor: not-allowed;"
 		   		<?php } else ?> 
 		   			onclick="return true;"
 		   		<?php }?>>Alumni</a>
 
 				<a href="emp_survey.php" class="ae-choices" name="employer" title="Employer Satisfaction Survey" 
 				<?php if($user_emp && $_SESSION['role']==3){ if ($user_emp['user_id'] == $_SESSION['id']) {?>
-					onclick="return false;" style="background-color:gray;"
+					onclick="return false;" style="background-color:gray;cursor: not-allowed;"
 		   		<?php } else ?> 
 		   			onclick="return true;"
 		   		<?php }?>>Employer</a>
