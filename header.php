@@ -14,9 +14,9 @@
 		</div>
 		<div class="log_out">
 			<br>
-			<a class="logout" title="Log out"><img src = "images/logout.png" onclick = "document.getElementById('reviewModal').style.display='block'"></a>
+			<img src = "images/logout.png" onclick = "document.getElementById('logoutModal').style.display='block'">
 		</div>
-		<div id="reviewModal" class="modal">
+		<div id="logoutModal" class="modal">
 			<div class="modal-content" style="width:50%;">
 				<div class="modal-header">
 					<span class="closeBtn">&times;</span>
@@ -32,5 +32,5 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/review.js"></script>
+		<script type="text/javascript" src="js/logout.js"></script>
 	</header>
