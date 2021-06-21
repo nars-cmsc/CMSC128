@@ -34,11 +34,12 @@ if (isset($_POST['login-btn'])) {
   	$result = mysqli_query($db_conn, $id_query);
   	$user = mysqli_fetch_assoc($result);
 
+  	// if user exists and there are no errors
 	if ($user && empty($errors)) {
   		$id = $user['user_id'];
 		$role_id = $user['role_id'];
 
-		// if user already answered employer survey
+		// if user already answered employer survey and is an employer
 	  	$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
 	  	$result1 = mysqli_query($db_conn, $emp_check_query);
 	  	$user_emp = mysqli_fetch_assoc($result1);
@@ -52,7 +53,7 @@ if (isset($_POST['login-btn'])) {
 			$error = false;
 		}
 
-		// if user already answered employer survey
+		// if user already answered alumni survey and is an alumni
 	  	$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";
 	  	$result2 = mysqli_query($db_conn, $alum_check_query);
 	  	$user_alum = mysqli_fetch_assoc($result2);
@@ -66,6 +67,7 @@ if (isset($_POST['login-btn'])) {
 			$error = false;
 		}
 
+		// if user is an alumni and employer and answered both surveys already
 		if($user_emp && $user_alum && $role_id==$ALUM_EMP_ROLE_ID){ 
 		    if ($user_alum['user_id'] == $id || $user_emp['user_id']) {
 			    $errors['user'] = "Feedback from user already exists";
@@ -76,7 +78,7 @@ if (isset($_POST['login-btn'])) {
 		}
 
 
-		// if there are no errors
+		// if there are no errors proceed to log in
 		if (count($errors) == 0) {
 			$sql = "SELECT * FROM users WHERE email=? LIMIT 1";
 			$stmt = $db_conn->prepare($sql);
