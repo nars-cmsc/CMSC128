@@ -277,13 +277,13 @@ input[type=submit]:hover{
 /* Style the buttons inside the tab */
 .tab button, .tab p {
   background-color: inherit;
-  /*float: left;*/
+  float: left;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-  font-size: 17px;
+  font-size: 14px;
 }
 /* Change background color of buttons on hover */
 .tab button:hover {

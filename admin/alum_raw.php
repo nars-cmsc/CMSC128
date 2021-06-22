@@ -48,7 +48,6 @@ if ($_SESSION['role'] == 3) {
             <h2 id="title-alum-raw">Raw Data of Alumni Survey</h2>
             <h5 id="subtitle-alum-raw">Click the number below that corresponds with a question to view responses</h5><br>
             <div class="tab">
-                <p class="tablinks" disabled="true">QUESTION NUMBER: </button>
                 <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1</button>
                 <button class="tablinks" onclick="openQues(event, 'ques2')">2</button>
                 <button class="tablinks" onclick="openQues(event, 'ques3')">3</button>

@@ -46,8 +46,9 @@ if ($_SESSION['role'] == 3) {
             <p id="total-respondents"><strong>Total Respondents: </strong><?php echo $total ; ?></p>
 
             <?php  if($total != 0) { ?>
-                <a href="controllers/excel_alum_results.php" class="export-excel">Export to Spreadsheet</a>
-                <br><br><br>
+                <div class="export-btn">
+                    <a href="controllers/excel_alum_results.php" class="export-excel">Export to Spreadsheet</a>
+                </div>
                 <div class="tab">
                     <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1 - 4</button>
                     <button class="tablinks" onclick="openQues(event, 'ques2')">5</button>

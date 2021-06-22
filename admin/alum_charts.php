@@ -58,7 +58,6 @@ if ($_SESSION['role'] == 3) {
               <a href="controllers/pdf_alum_charts.php" class="export-pdf" id="" target="_blank">Export to pdf</a>
             </div>
             <div class="tab">
-                <p class="tablinks" disabled="true">QUESTION: </button>
                 <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen">1</button>
                 <button class="tablinks" onclick="openQues(event, 'ques2')">2</button>
                 <button class="tablinks" onclick="openQues(event, 'ques3')">3</button>
