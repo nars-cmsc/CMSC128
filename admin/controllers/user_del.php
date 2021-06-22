@@ -2,10 +2,20 @@
 
 session_start();
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 require ('config/connection.php');
+
+require_once 'phpmailer/src/Exception.php';
+require_once 'phpmailer/src/PHPMailer.php';
+require_once 'phpmailer/src/SMTP.php';
+
+$mail = new PHPMailer(true);
 
 $query = mysqli_query($db_conn, "SELECT * FROM users");
 
+// for deleting users
 if (isset($_GET['delete'])) {
 	mysqli_query($db_conn, "DELETE FROM users WHERE user_id='".$_GET['delete']."'");
 	$_SESSION['message'] = "User record has been deleted!";
@@ -14,6 +24,53 @@ if (isset($_GET['delete'])) {
 	exit();
 }
 
+$pass_query = mysqli_query($db_conn, "SELECT * FROM password_request");
+$pass_rows_count = mysqli_num_rows($pass_query);
+// for users who requested password
+if (isset($_GET['id'])) {
+	$id = mysqli_real_escape_string($db_conn, $_GET['id']);
 
+	// getting associated email with id
+	$id_query = "SELECT * FROM users WHERE user_id='$id' LIMIT 1";
+  	$result = mysqli_query($db_conn, $id_query);
+  	$user = mysqli_fetch_assoc($result);
+  	$email = $user['email'];
+  	$pass = $user['pass'];
+
+	// sending email to users
+	try {
+		$mail->isSMTP();
+		$mail->Host = 'smtp.gmail.com';
+		$mail->SMTPAuth = true;
+		$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
+		$mail->Password = 'dmcssurveytest1'; // password of gmail address
+		$mail->SMTPSecure = 'ssl';
+		$mail->Port = '465';
+
+		$mail->setFrom('dmcs.survey.test1@gmail.com', 'DMCS Survey');
+		$mail->addAddress($email); // email receiver
+		$mail->addReplyTo('no-reply@gmail.com', 'No reply');
+
+		$mail->isHTML(true);
+		$mail->Subject = 'DMCS Survey Password Resend Request';
+		$mail->Body = "Good day! <br><br>
+		A password resend was requested for your account at UP Baguio DMCS Surveys.<br><br>
+		To proceed, please click this link: <a href='#'>link here</a> and use the following credentials for logging in.<br><br><b>
+		Email : </b>$email <br><b>
+		Password : </b>$pass <br><br>
+		If this password reset was not requested by you, no action is needed.<br><br>
+		If you need help, please contact the site administrator. Thank you! <br><br><br>
+		<b>Admin User</b>";
+
+		$mail->AltBody = 'For non HTML clients';
+
+		$mail->send();
+	} catch (Exception $e) {
+		echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+	}
+	mysqli_query($db_conn, "DELETE FROM password_request WHERE user_id='$id'");
+	header('location: index.php');
+	exit();
+}
 
 ?>

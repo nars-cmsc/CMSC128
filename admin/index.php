@@ -45,55 +45,86 @@ if ($_SESSION['role'] == 3) {
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-users">
-            <h2 id="title-users">List of Registered Users</h2><br>
-            <table id="table-users">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Email</th>
-                        <th>Password</th>
-                        <th>Role</th>
-                        <th>Finished Survey?</th>
-                        <th>Time Created</th>
-                        <th>Last Login</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($row = mysqli_fetch_array($query)) {?>
-                        <?php 
-                        $emp_check_query = 'SELECT * FROM emp_survey_q1 WHERE user_id='.$row['user_id'].' LIMIT 1';
-                        $result1 = mysqli_query($db_conn, $emp_check_query);
-                        $user_emp = mysqli_fetch_assoc($result1); 
-                        $alum_check_query = 'SELECT * FROM alum_survey_q1 WHERE user_id='.$row['user_id'].' LIMIT 1';
-                        $result2 = mysqli_query($db_conn, $alum_check_query);
-                        $user_alum = mysqli_fetch_assoc($result2);
-                        ?>
-                        <tr class="user-row">
-                            <td><?php echo $row['user_id']; ?></td>
-                            <td><?php echo $row['email']; ?></td>
-                            <td><?php echo $row['pass']; ?></td>
-                            <td>
-                                <?php if ($row['role_id'] == 0) { echo "ADMIN"; } ?>
-                                <?php if ($row['role_id'] == 1) { echo "ALUMNI"; } ?>
-                                <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
-                                <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
-                            </td>
-                            <td>
-                                <?php if ($row['role_id'] == 0) { echo "-"; } ?>
-                                <?php if ($row['role_id'] == 1) { if ($user_alum && $user_alum['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }?>
-                                <?php if ($row['role_id'] == 2) { if ($user_emp && $user_emp['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }?>
-                                <?php if ($row['role_id'] == 3) { if ($user_alum && $user_alum['user_id'] == $row['user_id'] && !($user_emp)) { echo "ALUMNI ONLY"; } elseif ($user_emp && $user_emp['user_id'] == $row['user_id'] && !($user_alum)) { echo "EMPLOYER ONLY"; } elseif ($user_alum && $user_alum['user_id'] == $row['user_id'] && $user_emp && $user_emp['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }  ?>
-                            </td>
-                            <td><?php echo $row['time_created']; ?></td>
-                            <td><?php echo $row['last_login']; ?></td>
-                            <td>
-                                <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
-                            </td>
+            <div class="tab">
+                <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen"><h2 id="title-users">List of Registered Users</h2></button>
+                <button class="tablinks" onclick="openQues(event, 'ques2')"><h2 id="title-users">Password Resend Requests (<?php echo $pass_rows_count; ?>)</h2></button>
+            </div>
+            <br>
+            <div id="ques1" class="tabcontent">
+                <table id="table-users">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Role</th>
+                            <th>Finished Survey?</th>
+                            <th>Time Created</th>
+                            <th>Last Login</th>
+                            <th></th>
                         </tr>
-                    <?php } ?>
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = mysqli_fetch_array($query)) {?>
+                            <?php 
+                            $emp_check_query = 'SELECT * FROM emp_survey_q1 WHERE user_id='.$row['user_id'].' LIMIT 1';
+                            $result1 = mysqli_query($db_conn, $emp_check_query);
+                            $user_emp = mysqli_fetch_assoc($result1); 
+                            $alum_check_query = 'SELECT * FROM alum_survey_q1 WHERE user_id='.$row['user_id'].' LIMIT 1';
+                            $result2 = mysqli_query($db_conn, $alum_check_query);
+                            $user_alum = mysqli_fetch_assoc($result2);
+                            ?>
+                            <tr class="user-row">
+                                <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['pass']; ?></td>
+                                <td>
+                                    <?php if ($row['role_id'] == 0) { echo "ADMIN"; } ?>
+                                    <?php if ($row['role_id'] == 1) { echo "ALUMNI"; } ?>
+                                    <?php if ($row['role_id'] == 2) { echo "EMPLOYER"; } ?>
+                                    <?php if ($row['role_id'] == 3) { echo "ALUMNI AND EMPLOYER"; } ?>
+                                </td>
+                                <td>
+                                    <?php if ($row['role_id'] == 0) { echo "-"; } ?>
+                                    <?php if ($row['role_id'] == 1) { if ($user_alum && $user_alum['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }?>
+                                    <?php if ($row['role_id'] == 2) { if ($user_emp && $user_emp['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }?>
+                                    <?php if ($row['role_id'] == 3) { if ($user_alum && $user_alum['user_id'] == $row['user_id'] && !($user_emp)) { echo "ALUMNI ONLY"; } elseif ($user_emp && $user_emp['user_id'] == $row['user_id'] && !($user_alum)) { echo "EMPLOYER ONLY"; } elseif ($user_alum && $user_alum['user_id'] == $row['user_id'] && $user_emp && $user_emp['user_id'] == $row['user_id']) { echo "YES"; } else {echo "NO";} }  ?>
+                                </td>
+                                <td><?php echo $row['time_created']; ?></td>
+                                <td><?php echo $row['last_login']; ?></td>
+                                <td>
+                                    <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            <div id="ques2" class="tabcontent">
+                <p id="note-pass">NOTE: Clicking "send password" only resends the stored password in the database to the user.</p>
+                <table id="table-requests">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Date of Request</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php while ($row = mysqli_fetch_array($pass_query)) {?>
+                            <tr class="user-row">
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['date_request']; ?></td>
+                                <td>
+                                    <a class="send-email" href="index.php?id=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to send email to user?');">Send Password</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
     
@@ -102,7 +133,25 @@ if ($_SESSION['role'] == 3) {
     <script type="text/javascript">
         $(document).ready(function(){
             $("#table-users").dataTable();
+            $("#table-requests").dataTable();
         });
+
+        function openQues(evt, quesNum) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(quesNum).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
     </script>
 
 </body>

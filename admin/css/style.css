@@ -110,14 +110,50 @@ nav {
   font-size:14pt;
   overflow-wrap: all;
 }
-.delete {
-  color: #ffad0d;
+.delete:link, .delete:visited {
+  font-weight:bold;
+  border-radius: 100px 100px 100px 100px;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: small;
 }
 .delete:hover {
-  color:red;
+  background-color:#840038;
 }
 .user-row:hover {
-  color:red;
+  background-color: lightgoldenrodyellow;
+}
+#note-pass {
+  font-size: 16pt;
+  margin-bottom: 15px;
+  color: red;
+}
+#table-requests {
+  text-align: center;
+  margin:1%;
+  width:100%;
+  font-size:14pt;
+  overflow-wrap: all;
+}
+.send-email:link, .send-email:visited {
+  font-weight:bold;
+  border-radius: 100px 100px 100px 100px;
+  background-color:#ffad0d;
+  text-transform: uppercase;
+  float:right;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: small;
+}
+.send-email:hover {
+  background-color:#840038;
 }
 div.content { /*for jquery data table*/
   width: 70%;
