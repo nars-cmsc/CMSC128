@@ -26,6 +26,7 @@ if (isset($_POST['reset-btn'])) {
 	$id_query = "SELECT * FROM users WHERE email='$email' LIMIT 1";
   	$result = mysqli_query($db_conn, $id_query);
   	$user = mysqli_fetch_assoc($result);
+  	$user_id = $user['user_id'];
 
   	if (!$user && !empty($email)) {
   		$errors['message'] = "User does not exist in the database. Contact admin for more info.";
@@ -34,7 +35,7 @@ if (isset($_POST['reset-btn'])) {
   	if ($user && empty($errors)) {
   		$role_id = $user['role_id'];
 
-  		$sql = "INSERT INTO password_request (email, date_request) VALUES ('$email', now())";
+  		$sql = "INSERT INTO password_request (email, user_id, date_request) VALUES ('$email', '$user_id', now())";
 		mysqli_query($db_conn, $sql);
 
 		$succ['message'] =  "Request forwarded to the admin. Wait for response in email.";
