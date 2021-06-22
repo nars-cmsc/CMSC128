@@ -19,20 +19,20 @@ require ('emp_data_chart.php');
         background-color: #fff;
       }
       canvas {
-        min-height:30rem;
+        min-height:50rem;
         width: auto;
         margin-left: 18%;
       }
       #mycanvas3  {
-        max-height: 45rem;
+        max-height: 50rem;
         width: auto;
       }
       #mycanvas7, #mycanvas8, #mycanvas11, #mycanvas12 {
-        max-height: 40%;
+        max-height: 70%;
         width: auto;
       }
       .chart-legend {
-        font-size: 12pt;
+        font-size: 20pt;
         padding-left: 500px;
         margin: 0;
       }
@@ -46,71 +46,58 @@ require ('emp_data_chart.php');
 	<title></title>
 	<title></title>
 </head>
-<body onload='setTimeout(() => { window.print() }, 1000);setTimeout("window.close()", 2000);'>
+<body onload='setTimeout(() => { window.print() }, 500);setTimeout("window.close()", 1000);'>
 	<h1>EMPLOYER SATISFACTION SURVEY SUMMARY OF RESULTS<br>
         Total Respondents: <?php echo $total ; ?> <br>
         Date of Generation: <?php echo date("m/d/Y"); ?></h1><br>
 
     <div class="content-emp-charts">
         <div id="ques1" class="tabcontent">
-            <p id="subtitle-emp-charts">Which sector of economy does your company/organization belong to?</p>
             <canvas id="mycanvas1"></canvas>
         </div><br>
         <div id="ques2" class="tabcontent">
-            <p id="subtitle-emp-charts">Where is your company/organization located?</p>
             <canvas id="mycanvas2"></canvas>
         </div><br>
         <div id="ques3" class="tabcontent">
-            <p id="subtitle-emp-charts">Which industry and business does your company/organization belong to?</p>
             <canvas id="mycanvas3"></canvas><br>
             <?php foreach ($ques3_arr as $i => $industry) { ?>
                 <p class="chart-legend"><strong><?php $i++; echo 'Industry '.$i.': ' ?></strong><?php echo $industry; ?></p>
             <?php } ?>
         </div><br>
         <div id="ques4" class="tabcontent">
-            <p id="subtitle-emp-charts">What is your position in your company/organization?</p>
             <canvas id="mycanvas4"></canvas>
         </div><br>
         <div id="ques5" class="tabcontent">
-            <p id="subtitle-emp-charts">“UP graduates recruited in the last three to five years have the skills to work in my company/organization.”</p>
             <canvas id="mycanvas6"></canvas>
         </div><br>
         <div id="ques6" class="tabcontent">
-            <p id="subtitle-emp-charts">Importance of each skill when hiring new staff</p>
             <canvas id="mycanvas7"></canvas>
         </div><br>
         <div id="ques7" class="tabcontent">
-            <p id="subtitle-emp-charts">Satisfaction on how well each skill is demonstrated by staff who are UP graduates</p>
             <canvas id="mycanvas8"></canvas>
         </div><br>
         <div id="ques8" class="tabcontent">
-            <p id="subtitle-emp-charts">How LIKELY are you to hire other graduates of UP?</p>
             <canvas id="mycanvas9"></canvas>
         </div><br>
         <div id="ques9" class="tabcontent">
-            <p id="subtitle-emp-charts">How likely are you going to keep the UP graduates in your company/organization?</p>
             <canvas id="mycanvas10"></canvas>
         </div><br>
         <div id="ques10" class="tabcontent">
-            <p id="subtitle-emp-charts">Importance of each skill to the successful performance of the job for which the staff, who are UP graduates, were hired</p>
             <canvas id="mycanvas11"></canvas><br>
             <?php foreach ($dmcs_skills_arr as $i => $skill) { ?>
                 <p class="chart-legend"><strong><?php $i++; echo 'Skill '.$i.': ' ?></strong><?php echo $skill; ?></p>
             <?php } ?>
         </div><br>
         <div id="ques11" class="tabcontent">
-            <p id="subtitle-emp-charts">Satisfaction on how well each skill was demonstrated by hired UP graduates</p>
             <canvas id="mycanvas12"></canvas>
             <?php foreach ($dmcs_skills_arr as $i => $skill) { ?>
                 <p class="chart-legend"><strong><?php $i++; echo 'Skill '.$i.': ' ?></strong><?php echo $skill; ?></p>
             <?php } ?>
         </div><br>
         <div id="ques12" class="tabcontent">
-            <p id="subtitle-emp-charts">Which actions should UP take in order to improve the skill and competency set of its graduates?</p>
             <canvas id="mycanvas13"></canvas>
         </div><br>
         <div id="ques13" class="tabcontent">
-            <p id="subtitle-emp-charts">How important is UP cooperation for your company/organization?</p>
             <canvas id="mycanvas14"></canvas>
         </div>
     </div>
@@ -137,6 +124,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Which sector of economy does your company/organization belong to?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -160,7 +152,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -185,6 +178,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Where is your company/organization located?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -208,7 +206,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -254,6 +253,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Which industry and business does your company/organization belong to?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -277,7 +281,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -303,6 +308,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "What is your position in your company/organization?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -326,7 +336,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -355,6 +366,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "“UP graduates recruited in the last three to five years have the skills to work in my company/organization.”",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -378,7 +394,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -409,6 +426,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How LIKELY are you to hire other graduates of UP?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -432,7 +454,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -461,6 +484,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How likely are you going to keep the UP graduates in your company/organization?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -484,7 +512,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -515,6 +544,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Which actions should UP take in order to improve the skill and competency set of its graduates?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -538,7 +572,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -567,6 +602,11 @@ require ('emp_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How important is UP cooperation for your company/organization?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -590,7 +630,8 @@ require ('emp_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -699,7 +740,17 @@ require ('emp_data_chart.php');
                     suggestedMin: 0,
                     suggestedMax: 10
                 }
-            }
+            },
+            plugins: {
+              title: {
+                display: true,
+                text: "Importance of each skill when hiring new staff",
+                font: {
+                  size: 20
+                }
+              }
+            },
+            animation:false
           }
         });
     </script>
@@ -805,7 +856,17 @@ require ('emp_data_chart.php');
                     suggestedMin: 0,
                     suggestedMax: 10
                 }
-            }
+            },
+            plugins: {
+              title: {
+                display: true,
+                text: "Satisfaction on how well each skill is demonstrated by staff who are UP graduates",
+                font: {
+                  size: 20
+                }
+              }
+            },
+            animation:false
           }
         });
     </script>
@@ -899,8 +960,17 @@ require ('emp_data_chart.php');
                     suggestedMin: 0,
                     suggestedMax: 10
                 }
-            }
-           
+            },
+            plugins: {
+              title: {
+                display: true,
+                text: "Importance of each skill to the successful performance of the job for which the staff, who are UP graduates, were hired",
+                font: {
+                  size: 20
+                }
+              }
+            },
+            animation:false
           }
         });
     </script>
@@ -995,8 +1065,17 @@ require ('emp_data_chart.php');
                     suggestedMin: 0,
                     suggestedMax: 10
                 }
-            }
-           
+            },
+            plugins: {
+              title: {
+                display: true,
+                text: "Satisfaction on how well each skill was demonstrated by hired UP graduates",
+                font: {
+                  size: 20
+                }
+              }
+            },
+            animation:false
           }
         });
     </script>

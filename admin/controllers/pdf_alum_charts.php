@@ -19,20 +19,20 @@ require ('alum_data_chart.php');
         background-color: #fff;
       }
       canvas {
-        min-height:30rem;
+        min-height:50rem;
         width: auto;
         margin-left: 18%;
       }
       #alum_canvas5a-1 {
-        max-height: 45rem;
+        max-height: 50rem;
         width: auto;
       }
       #alum_canvas18{
-        max-height: 40%;
+        max-height: 70%;
         width: auto;
       }
       .chart-legend {
-        font-size: 12pt;
+        font-size: 20pt;
         padding-left: 500px;
         margin: 0;
       }
@@ -45,89 +45,70 @@ require ('alum_data_chart.php');
     </style>
 	<title></title>
 </head>
-<body onload='setTimeout(() => { window.print() }, 1000);setTimeout("window.close()", 2000);'>
+<body onload='setTimeout(() => { window.print() }, 500);setTimeout("window.close()", 1000);'>
 	<h1>ALUMNI SURVEY SUMMARY OF RESULTS<br>
         Total Respondents: <?php echo $total ; ?> <br>
         Date of Generation: <?php echo date("m/d/Y"); ?></h1><br>
 
     <div id="chart-container-alum-main">
               <div id="ques1" class="tabcontent">
-                  <p id="subtitle-alum-charts">Sex at birth</p>
                   <canvas id="alum_canvas1"></canvas>
               </div>
               <div id="ques2" class="tabcontent">
-                    <p id="subtitle-alum-charts">How satisfied are you with your undergraduate education at UP?</p>
                     <canvas id="alum_canvas3"></canvas>
               </div>
               <div id="ques3" class="tabcontent">
-                  <p id="subtitle-alum-charts">How long after graduation were you able to get your first job?</p>
                   <canvas id="alum_canvas4"></canvas>
               </div>
               <div id="ques4" class="tabcontent">
-                  <p id="subtitle-alum-charts">Are you employed right now?</p>
                   <canvas id="alum_canvas5"></canvas>
               </div>
               <div id="ques4-1" class="tabcontent">
-                  <p id="subtitle-alum-charts">How would you characterize your employment?</p>
                   <canvas id="alum_canvas5a"></canvas>
               </div>
               <div id="ques4-2" class="tabcontent">
-                  <p id="subtitle-alum-charts">Which industry best describes your employer or occupation?</p>
                   <canvas id="alum_canvas5a-1"></canvas><br>
                   <?php foreach ($ques5c_arr as $i => $industry) { ?>
                     <p class="chart-legend"><strong><?php $i++; echo 'Industry '.$i.': ' ?></strong><?php echo $industry; ?></p>
                   <?php } ?>
               </div>
               <div id="ques4-3" class="tabcontent">
-                  <p id="subtitle-alum-charts">Are you looking for employment at this time?</p>
                   <canvas id="alum_canvas5b"></canvas>
               </div>
               <div id="ques5" class="tabcontent">
-                  <p id="subtitle-alum-charts">Minimum level of education required to perform your job (not necessarily education level)</p>
                   <canvas id="alum_canvas6"></canvas>
               </div>
               <div id="ques6" class="tabcontent">
-                  <p id="subtitle-alum-charts">Preferred (but not required) level of education or training</p>
                   <canvas id="alum_canvas7"></canvas>
               </div>
               <div id="ques7" class="tabcontent">
-                  <p id="subtitle-alum-charts">What is your principal occupation category?</p>
                   <canvas id="alum_canvas8"></canvas>
               </div>
               <div id="ques8" class="tabcontent">
-                  <p id="subtitle-alum-charts">Is your current position related to your undergraduate field(s) of study?</p>
                   <canvas id="alum_canvas9"></canvas>
               </div>  
               <div id="ques9" class="tabcontent">
-                  <p id="subtitle-alum-charts">Do you currently work for a national or local NGO or civic organization, as a paid volunteer for more than 10 hours per week?</p>
                   <canvas id="alum_canvas11"></canvas>
               </div>
               <div id="ques10" class="tabcontent">
-                  <p id="subtitle-alum-charts">Minimum total number of years of experience in your field that is required to do your job (may or may not equate to your personal experience level)</p>
                   <canvas id="alum_canvas12"></canvas>
               </div>
               <div id="ques11" class="tabcontent">
-                  <p id="subtitle-alum-charts">How well did UP prepare you for your current career?</p>
                   <canvas id="alum_canvas13"></canvas>
               </div>
               <div id="ques12" class="tabcontent">
-                  <p id="subtitle-alum-charts">What is you current position?</p>
                   <canvas id="alum_canvas14"></canvas>
               </div>
               <div id="ques13" class="tabcontent">
-                  <p id="subtitle-alum-charts">How much does your current job involve supervising or managing the work of others?</p>
                   <canvas id="alum_canvas15"></canvas>
               </div>
               <div id="ques14" class="tabcontent">
-                  <p id="subtitle-alum-charts">Managerial responsibility (direct and indirect)</p>
                   <canvas id="alum_canvas16"></canvas>
               </div>
               <div id="ques15" class="tabcontent">
-                  <p id="subtitle-alum-charts">How satisfied are you with your career thus far?</p>
                   <canvas id="alum_canvas17"></canvas>
               </div>
               <div id="ques16" class="tabcontent">
-                  <p id="subtitle-alum-charts">How well do you think your undergraduate experience at UP DMCS prepared you to…</p>
                   <canvas id="alum_canvas18"></canvas><br>
                   <p class="chart-legend"><strong>Competency 1:</strong> Possess the skills and mindset to improve human life</p>
                   <p class="chart-legend"><strong>Competency 2:</strong> Commit to the freedom and welfare of all</p>
@@ -163,6 +144,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Sex at birth",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -179,14 +165,13 @@ require ('alum_data_chart.php');
                         value = "";
                         return value;
                     }
-
-                
                   },
                   color: '#fff'
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -215,6 +200,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How satisfied are you with your undergraduate education at UP?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -238,7 +228,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -269,6 +260,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How long after graduation were you able to get your first job?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -292,7 +288,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -317,6 +314,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Are you employed right now?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -340,7 +342,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -366,6 +369,11 @@ require ('alum_data_chart.php');
               }]
             },
             options: {
+            title: {
+              display: true,
+              text: "How would you characterize your employment?",
+              fontSize: 25
+            },
               plugins: {
                   datalabels: {
                   formatter: (value, ctx) => {
@@ -384,7 +392,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
             }
           });
       </script>
@@ -429,6 +438,11 @@ require ('alum_data_chart.php');
               }]
             },
             options: {
+              title: {
+                display: true,
+                text: "Which industry best describes your employer or occupation?",
+                fontSize: 25
+              },
               plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -452,7 +466,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
             }
           });
       </script>
@@ -476,6 +491,11 @@ require ('alum_data_chart.php');
               }]
             },
             options: {
+              title: {
+                display: true,
+                text: "Are you looking for employment at this time?",
+                fontSize: 25
+              },
               plugins: {
                   datalabels: {
                   formatter: (value, ctx) => {
@@ -499,7 +519,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
             }
           });
       </script>
@@ -530,6 +551,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Minimum level of education required to perform your job (not necessarily education level)",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -553,7 +579,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -584,6 +611,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Preferred (but not required) level of education or training",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -607,7 +639,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -641,6 +674,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "What is your principal occupation category?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -664,7 +702,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -691,6 +730,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Is your current position related to your undergraduate field(s) of study?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -714,7 +758,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -741,6 +786,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Do you currently work for a national or local NGO or civic organization, as a paid volunteer for more than 10 hours per week?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -759,7 +809,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -788,6 +839,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Minimum total number of years of experience in your field that is required to do your job (may or may not equate to your personal experience level)",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -811,7 +867,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -840,6 +897,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How well did UP prepare you for your current career?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -863,7 +925,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -892,6 +955,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "What is you current position?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -915,7 +983,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -944,6 +1013,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How much does your current job involve supervising or managing the work of others?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -967,7 +1041,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -996,6 +1071,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "Managerial responsibility (direct and indirect)",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -1019,7 +1099,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -1048,6 +1129,11 @@ require ('alum_data_chart.php');
             }]
           },
           options: {
+            title: {
+              display: true,
+              text: "How satisfied are you with your career thus far?",
+              fontSize: 25
+            },
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
@@ -1071,7 +1157,8 @@ require ('alum_data_chart.php');
                 }
             },
             responsive: true,
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            animation:false
           }
         });
     </script>
@@ -1170,8 +1257,17 @@ require ('alum_data_chart.php');
                     suggestedMin: 0,
                     suggestedMax: 10
                 }
-            }
-           
+            },
+            plugins: {
+              title: {
+                display: true,
+                text: "How well do you think your undergraduate experience at UP DMCS prepared you to…",
+                font: {
+                  size: 20
+                }
+              }
+            },
+            animation:false
           }
         });
     </script>
