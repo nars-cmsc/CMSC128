@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2021 at 05:46 PM
+-- Generation Time: Jun 22, 2021 at 08:19 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -61,7 +61,10 @@ INSERT INTO `alum_survey_q1` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 19, 'Male', '2021-06-16'),
 (8, 18, 'Female', '2021-06-16'),
 (9, 20, 'Female', '2021-06-16'),
-(10, 21, 'Male', '2021-06-16');
+(10, 21, 'Male', '2021-06-16'),
+(11, 8, 'Female', '2021-06-21'),
+(12, 67, 'Female', '2021-06-21'),
+(13, 68, 'Female', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -90,7 +93,10 @@ INSERT INTO `alum_survey_q2` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 19, 'Mexico', '2021-06-16'),
 (8, 18, 'North Korea', '2021-06-16'),
 (9, 20, 'Russia', '2021-06-16'),
-(10, 21, 'Iceland', '2021-06-16');
+(10, 21, 'Iceland', '2021-06-16'),
+(11, 8, 'Algeria', '2021-06-21'),
+(12, 67, 'Afghanistan', '2021-06-21'),
+(13, 68, 'Algeria', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -119,7 +125,10 @@ INSERT INTO `alum_survey_q3` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 19, 'Generally Satisfied', '2021-06-16'),
 (8, 18, 'Generally Satisfied', '2021-06-16'),
 (9, 20, 'Generally Satisfied', '2021-06-16'),
-(10, 21, 'Generally Satisfied', '2021-06-16');
+(10, 21, 'Generally Satisfied', '2021-06-16'),
+(11, 8, 'Generally Dissatisfied', '2021-06-21'),
+(12, 67, 'Generally Satisfied', '2021-06-21'),
+(13, 68, 'Generally Satisfied', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -178,7 +187,10 @@ INSERT INTO `alum_survey_q5` (`answer_id`, `user_id`, `Employed`, `Characterized
 (7, 19, 'Yes', 'Self-employed', 'Finance, Banks, and Insurance', '', 'NA', '2021-06-16'),
 (8, 18, 'Yes', 'Full time (40 hours/week)', 'Human Health and Social Work Activities', '', 'NA', '2021-06-16'),
 (9, 20, 'Yes', 'Full time (40 hours/week)', 'Public Administration and Defense; Compulsory Social Security', '', 'NA', '2021-06-16'),
-(10, 21, 'No', '', '', '', 'No', '2021-06-16');
+(10, 21, 'No', '', '', '', 'No', '2021-06-16'),
+(11, 8, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21'),
+(12, 67, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21'),
+(13, 68, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -261,7 +273,10 @@ INSERT INTO `alum_survey_q8` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (7, 19, 'Professionals', '2021-06-16'),
 (8, 18, 'Professionals', '2021-06-16'),
 (9, 20, 'Plant and Machine Operators, and Assemblers', '2021-06-16'),
-(10, 21, 'Armed Forces Occupations', '2021-06-16');
+(10, 21, 'Armed Forces Occupations', '2021-06-16'),
+(11, 8, 'Craft and Related Trade Workers', '2021-06-21'),
+(12, 67, 'Clerical Support Workers', '2021-06-21'),
+(13, 68, 'Craft and Related Trade Workers', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -348,7 +363,10 @@ INSERT INTO `alum_survey_q11` (`answer_id`, `user_id`, `Volunteer`, `Characteriz
 (7, 19, 'No', 'NA', '2021-06-16'),
 (8, 18, 'Yes', 'Full time (40 hours/week)', '2021-06-16'),
 (9, 20, 'Yes', 'Full time (40 hours/week)', '2021-06-16'),
-(10, 21, 'Yes', 'Full time (40 hours/week)', '2021-06-16');
+(10, 21, 'Yes', 'Full time (40 hours/week)', '2021-06-16'),
+(11, 8, 'No', 'NA', '2021-06-21'),
+(12, 67, 'No', 'NA', '2021-06-21'),
+(13, 68, 'No', 'NA', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -404,7 +422,10 @@ INSERT INTO `alum_survey_q13` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 19, 'Very well', '2021-06-16'),
 (8, 18, 'More than adequately', '2021-06-16'),
 (9, 20, 'More than adequately', '2021-06-16'),
-(10, 21, 'More than adequately', '2021-06-16');
+(10, 21, 'More than adequately', '2021-06-16'),
+(11, 8, 'More than adequately', '2021-06-21'),
+(12, 67, 'More than adequately', '2021-06-21'),
+(13, 68, 'More than adequately', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -511,7 +532,10 @@ INSERT INTO `alum_survey_q17` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (7, 19, 'Generally satisfied', '2021-06-16'),
 (8, 18, 'Generally satisfied', '2021-06-16'),
 (9, 20, 'Generally dissatisfied', '2021-06-16'),
-(10, 21, 'Generally satisfied', '2021-06-16');
+(10, 21, 'Generally satisfied', '2021-06-16'),
+(11, 8, 'Generally satisfied', '2021-06-21'),
+(12, 67, 'Generally dissatisfied', '2021-06-21'),
+(13, 68, 'Generally satisfied', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -641,7 +665,40 @@ INSERT INTO `alum_survey_q18` (`answer_id`, `user_id`, `ques18_arr`, `answer_bod
 (107, 21, 'Be mindful of the needs and capabilities of people', 'More than adequately', '2021-06-16'),
 (108, 21, 'Be sensitive to the challenges and opportunities of national development and global change', 'More than adequately', '2021-06-16'),
 (109, 21, 'Think critically', 'More than adequately', '2021-06-16'),
-(110, 21, 'Demonstrate discernment', 'More than adequately', '2021-06-16');
+(110, 21, 'Demonstrate discernment', 'More than adequately', '2021-06-16'),
+(111, 8, 'Possess the skills and mindset to improve human life', 'Very well', '2021-06-21'),
+(112, 8, 'Commit to the freedom and welfare of all', 'Very well', '2021-06-21'),
+(113, 8, 'Demonstrate mastery of knowledge in your specific discipline', 'Very well', '2021-06-21'),
+(114, 8, 'Possess breadth of mind', 'Very well', '2021-06-21'),
+(115, 8, 'Possess strength of character', 'Very well', '2021-06-21'),
+(116, 8, 'Possess generosity of spirit', 'Very well', '2021-06-21'),
+(117, 8, 'Inclusively engage with society and the world at large', 'Very well', '2021-06-21'),
+(118, 8, 'Be mindful of the needs and capabilities of people', 'Very well', '2021-06-21'),
+(119, 8, 'Be sensitive to the challenges and opportunities of national development and global change', 'Very well', '2021-06-21'),
+(120, 8, 'Think critically', 'Very well', '2021-06-21'),
+(121, 8, 'Demonstrate discernment', 'Very well', '2021-06-21'),
+(122, 67, 'Possess the skills and mindset to improve human life', 'More than adequately', '2021-06-21'),
+(123, 67, 'Commit to the freedom and welfare of all', 'More than adequately', '2021-06-21'),
+(124, 67, 'Demonstrate mastery of knowledge in your specific discipline', 'More than adequately', '2021-06-21'),
+(125, 67, 'Possess breadth of mind', 'More than adequately', '2021-06-21'),
+(126, 67, 'Possess strength of character', 'More than adequately', '2021-06-21'),
+(127, 67, 'Possess generosity of spirit', 'More than adequately', '2021-06-21'),
+(128, 67, 'Inclusively engage with society and the world at large', 'More than adequately', '2021-06-21'),
+(129, 67, 'Be mindful of the needs and capabilities of people', 'More than adequately', '2021-06-21'),
+(130, 67, 'Be sensitive to the challenges and opportunities of national development and global change', 'More than adequately', '2021-06-21'),
+(131, 67, 'Think critically', 'More than adequately', '2021-06-21'),
+(132, 67, 'Demonstrate discernment', 'More than adequately', '2021-06-21'),
+(133, 68, 'Possess the skills and mindset to improve human life', 'More than adequately', '2021-06-21'),
+(134, 68, 'Commit to the freedom and welfare of all', 'More than adequately', '2021-06-21'),
+(135, 68, 'Demonstrate mastery of knowledge in your specific discipline', 'More than adequately', '2021-06-21'),
+(136, 68, 'Possess breadth of mind', 'More than adequately', '2021-06-21'),
+(137, 68, 'Possess strength of character', 'More than adequately', '2021-06-21'),
+(138, 68, 'Possess generosity of spirit', 'More than adequately', '2021-06-21'),
+(139, 68, 'Inclusively engage with society and the world at large', 'More than adequately', '2021-06-21'),
+(140, 68, 'Be mindful of the needs and capabilities of people', 'More than adequately', '2021-06-21'),
+(141, 68, 'Be sensitive to the challenges and opportunities of national development and global change', 'More than adequately', '2021-06-21'),
+(142, 68, 'Think critically', 'More than adequately', '2021-06-21'),
+(143, 68, 'Demonstrate discernment', 'More than adequately', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -671,7 +728,10 @@ INSERT INTO `alum_survey_q19` (`answer_id`, `user_id`, `Elaborate`, `answer_body
 (7, 19, 'No', 'NA', '2021-06-16'),
 (8, 18, 'Yes', 'Study hard', '2021-06-16'),
 (9, 20, 'No', 'NA', '2021-06-16'),
-(10, 21, 'No', 'NA', '2021-06-16');
+(10, 21, 'No', 'NA', '2021-06-16'),
+(11, 8, 'No', 'NA', '2021-06-21'),
+(12, 67, 'No', 'NA', '2021-06-21'),
+(13, 68, 'No', 'NA', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -695,7 +755,7 @@ CREATE TABLE `contactemp_ques` (
 --
 
 INSERT INTO `contactemp_ques` (`answer_id`, `user_id`, `companyname`, `contactperson`, `contactnumber`, `contactemail`, `date_response`, `contacted`) VALUES
-(1, 14, 'Media Inc.', 'Sam Ting Wong', '2345678', 'sam@mail.com', '2021-06-16', 'No'),
+(1, 14, 'Media Inc.', 'Sam Ting Wong', '2345678', 'sam@mail.com', '2021-06-16', 'Yes'),
 (2, 15, 'Drag University', 'Yekaterina Petrovna Zamolochikova', '', 'katya_zamo@mail.com', '2021-06-16', 'No'),
 (3, 20, 'Company', 'Jane Doe', '09089089078', '', '2021-06-16', 'No');
 
@@ -1479,7 +1539,146 @@ INSERT INTO `emp_survey` (`answer_id`, `question_num`, `user_id`, `answer_body`,
 (759, 14, 5, 'Important', '2021-06-16'),
 (760, 15, 5, 'No', '2021-06-16'),
 (761, 16, 5, 'No', '2021-06-16'),
-(762, 17, 5, 'No', '2021-06-16');
+(762, 17, 5, 'No', '2021-06-16'),
+(763, 1, 8, 'Private', '2021-06-21'),
+(764, 2, 8, 'Philippines', '2021-06-21'),
+(765, 3, 8, 'Agriculture, Forestry and Fishing', '2021-06-21'),
+(766, 4, 8, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
+(767, 5, 8, '1', '2021-06-21'),
+(768, 6, 8, 'Agree', '2021-06-21'),
+(769, 7, 8, 'Important', '2021-06-21'),
+(770, 7, 8, 'Important', '2021-06-21'),
+(771, 7, 8, 'Important', '2021-06-21'),
+(772, 7, 8, 'Important', '2021-06-21'),
+(773, 7, 8, 'Important', '2021-06-21'),
+(774, 7, 8, 'Important', '2021-06-21'),
+(775, 7, 8, 'Important', '2021-06-21'),
+(776, 7, 8, 'Important', '2021-06-21'),
+(777, 7, 8, 'Important', '2021-06-21'),
+(778, 7, 8, 'Important', '2021-06-21'),
+(779, 7, 8, 'Important', '2021-06-21'),
+(780, 7, 8, 'Important', '2021-06-21'),
+(781, 7, 8, 'Important', '2021-06-21'),
+(782, 7, 8, 'Important', '2021-06-21'),
+(783, 7, 8, 'Important', '2021-06-21'),
+(784, 7, 8, 'Important', '2021-06-21'),
+(785, 7, 8, 'Important', '2021-06-21'),
+(786, 8, 8, 'Satisfied', '2021-06-21'),
+(787, 8, 8, 'Satisfied', '2021-06-21'),
+(788, 8, 8, 'Satisfied', '2021-06-21'),
+(789, 8, 8, 'Satisfied', '2021-06-21'),
+(790, 8, 8, 'Satisfied', '2021-06-21'),
+(791, 8, 8, 'Satisfied', '2021-06-21'),
+(792, 8, 8, 'Satisfied', '2021-06-21'),
+(793, 8, 8, 'Satisfied', '2021-06-21'),
+(794, 8, 8, 'Satisfied', '2021-06-21'),
+(795, 8, 8, 'Satisfied', '2021-06-21'),
+(796, 8, 8, 'Satisfied', '2021-06-21'),
+(797, 8, 8, 'Satisfied', '2021-06-21'),
+(798, 8, 8, 'Satisfied', '2021-06-21'),
+(799, 8, 8, 'Satisfied', '2021-06-21'),
+(800, 8, 8, 'Satisfied', '2021-06-21'),
+(801, 8, 8, 'Satisfied', '2021-06-21'),
+(802, 8, 8, 'Satisfied', '2021-06-21'),
+(803, 9, 8, 'Likely', '2021-06-21'),
+(804, 10, 8, 'Likely', '2021-06-21'),
+(805, 11, 8, 'Important', '2021-06-21'),
+(806, 11, 8, 'Important', '2021-06-21'),
+(807, 11, 8, 'Important', '2021-06-21'),
+(808, 11, 8, 'Important', '2021-06-21'),
+(809, 11, 8, 'Important', '2021-06-21'),
+(810, 11, 8, 'Important', '2021-06-21'),
+(811, 11, 8, 'Important', '2021-06-21'),
+(812, 11, 8, 'Important', '2021-06-21'),
+(813, 11, 8, 'Important', '2021-06-21'),
+(814, 11, 8, 'Important', '2021-06-21'),
+(815, 11, 8, 'Important', '2021-06-21'),
+(816, 12, 8, 'Satisfied', '2021-06-21'),
+(817, 12, 8, 'Satisfied', '2021-06-21'),
+(818, 12, 8, 'Satisfied', '2021-06-21'),
+(819, 12, 8, 'Satisfied', '2021-06-21'),
+(820, 12, 8, 'Satisfied', '2021-06-21'),
+(821, 12, 8, 'Satisfied', '2021-06-21'),
+(822, 12, 8, 'Satisfied', '2021-06-21'),
+(823, 12, 8, 'Satisfied', '2021-06-21'),
+(824, 12, 8, 'Satisfied', '2021-06-21'),
+(825, 12, 8, 'Satisfied', '2021-06-21'),
+(826, 12, 8, 'Satisfied', '2021-06-21'),
+(827, 13, 8, 'Include sector specific job placements as an integral part of the degree program', '2021-06-21'),
+(828, 14, 8, 'Important', '2021-06-21'),
+(829, 15, 8, 'No', '2021-06-21'),
+(830, 16, 8, 'No', '2021-06-21'),
+(831, 17, 8, 'No', '2021-06-21'),
+(832, 1, 67, 'Private', '2021-06-21'),
+(833, 2, 67, 'Abroad', '2021-06-21'),
+(834, 2, 67, 'Asia_Southeast Asia', '2021-06-21'),
+(835, 3, 67, 'Information Technology', '2021-06-21'),
+(836, 4, 67, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
+(837, 5, 67, '2', '2021-06-21'),
+(838, 6, 67, 'Disagree', '2021-06-21'),
+(839, 7, 67, 'Of Little Importance', '2021-06-21'),
+(840, 7, 67, 'Of Little Importance', '2021-06-21'),
+(841, 7, 67, 'Of Little Importance', '2021-06-21'),
+(842, 7, 67, 'Of Little Importance', '2021-06-21'),
+(843, 7, 67, 'Of Little Importance', '2021-06-21'),
+(844, 7, 67, 'Of Little Importance', '2021-06-21'),
+(845, 7, 67, 'Of Little Importance', '2021-06-21'),
+(846, 7, 67, 'Of Little Importance', '2021-06-21'),
+(847, 7, 67, 'Of Little Importance', '2021-06-21'),
+(848, 7, 67, 'Of Little Importance', '2021-06-21'),
+(849, 7, 67, 'Of Little Importance', '2021-06-21'),
+(850, 7, 67, 'Of Little Importance', '2021-06-21'),
+(851, 7, 67, 'Of Little Importance', '2021-06-21'),
+(852, 7, 67, 'Of Little Importance', '2021-06-21'),
+(853, 7, 67, 'Of Little Importance', '2021-06-21'),
+(854, 7, 67, 'Of Little Importance', '2021-06-21'),
+(855, 7, 67, 'Of Little Importance', '2021-06-21'),
+(856, 8, 67, 'Satisfied', '2021-06-21'),
+(857, 8, 67, 'Satisfied', '2021-06-21'),
+(858, 8, 67, 'Satisfied', '2021-06-21'),
+(859, 8, 67, 'Satisfied', '2021-06-21'),
+(860, 8, 67, 'Satisfied', '2021-06-21'),
+(861, 8, 67, 'Satisfied', '2021-06-21'),
+(862, 8, 67, 'Satisfied', '2021-06-21'),
+(863, 8, 67, 'Satisfied', '2021-06-21'),
+(864, 8, 67, 'Satisfied', '2021-06-21'),
+(865, 8, 67, 'Satisfied', '2021-06-21'),
+(866, 8, 67, 'Satisfied', '2021-06-21'),
+(867, 8, 67, 'Satisfied', '2021-06-21'),
+(868, 8, 67, 'Satisfied', '2021-06-21'),
+(869, 8, 67, 'Satisfied', '2021-06-21'),
+(870, 8, 67, 'Satisfied', '2021-06-21'),
+(871, 8, 67, 'Satisfied', '2021-06-21'),
+(872, 8, 67, 'Satisfied', '2021-06-21'),
+(873, 9, 67, 'Likely', '2021-06-21'),
+(874, 10, 67, 'Likely', '2021-06-21'),
+(875, 11, 67, 'Important', '2021-06-21'),
+(876, 11, 67, 'Important', '2021-06-21'),
+(877, 11, 67, 'Important', '2021-06-21'),
+(878, 11, 67, 'Of Little Importance', '2021-06-21'),
+(879, 11, 67, 'Of Little Importance', '2021-06-21'),
+(880, 11, 67, 'Important', '2021-06-21'),
+(881, 11, 67, 'Of Little Importance', '2021-06-21'),
+(882, 11, 67, 'Of Little Importance', '2021-06-21'),
+(883, 11, 67, 'Important', '2021-06-21'),
+(884, 11, 67, 'Important', '2021-06-21'),
+(885, 11, 67, 'Important', '2021-06-21'),
+(886, 12, 67, 'Satisfied', '2021-06-21'),
+(887, 12, 67, 'Very Satisfied', '2021-06-21'),
+(888, 12, 67, 'Satisfied', '2021-06-21'),
+(889, 12, 67, 'Very Satisfied', '2021-06-21'),
+(890, 12, 67, 'Satisfied', '2021-06-21'),
+(891, 12, 67, 'Very Satisfied', '2021-06-21'),
+(892, 12, 67, 'Satisfied', '2021-06-21'),
+(893, 12, 67, 'Very Satisfied', '2021-06-21'),
+(894, 12, 67, 'Satisfied', '2021-06-21'),
+(895, 12, 67, 'Very Satisfied', '2021-06-21'),
+(896, 12, 67, 'Satisfied', '2021-06-21'),
+(897, 13, 67, 'Design courses that are more relevant to the needs of employers; Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '2021-06-21'),
+(898, 14, 67, 'Of Little Importance', '2021-06-21'),
+(899, 15, 67, 'No', '2021-06-21'),
+(900, 16, 67, 'No', '2021-06-21'),
+(901, 17, 67, 'No', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1510,7 +1709,9 @@ INSERT INTO `emp_survey_q1` (`answer_id`, `user_id`, `answer_body`, `answer_othe
 (10, 32, 'Public', '', '2021-05-24'),
 (11, 34, 'Private', '', '2021-05-24'),
 (12, 33, 'Public', '', '2021-05-24'),
-(13, 5, 'Private', '', '2021-06-16');
+(13, 5, 'Private', '', '2021-06-16'),
+(14, 8, 'Private', '', '2021-06-21'),
+(15, 67, 'Private', '', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1540,7 +1741,9 @@ INSERT INTO `emp_survey_q2` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (8, 32, 'Philippines', '2021-05-24'),
 (9, 34, 'Philippines', '2021-05-24'),
 (10, 33, 'Philippines', '2021-05-24'),
-(11, 5, 'Abroad', '2021-06-16');
+(11, 5, 'Abroad', '2021-06-16'),
+(12, 8, 'Philippines', '2021-06-21'),
+(13, 67, 'Abroad', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1563,7 +1766,8 @@ CREATE TABLE `emp_survey_q2_1` (
 INSERT INTO `emp_survey_q2_1` (`answer_id`, `user_id`, `region`, `subregion`, `date_response`) VALUES
 (1, 24, 'Antarctica', '', '2021-05-24'),
 (2, 28, 'Europe', 'Southern Europe', '2021-05-24'),
-(3, 5, 'Asia', 'Southeast Asia', '2021-06-16');
+(3, 5, 'Asia', 'Southeast Asia', '2021-06-16'),
+(4, 67, 'Asia', 'Southeast Asia', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1594,7 +1798,9 @@ INSERT INTO `emp_survey_q3` (`answer_id`, `user_id`, `answer_body`, `answer_othe
 (8, 32, 'Information Technology', '', '2021-05-24'),
 (9, 34, 'Arts, Entertainment and Recreation', '', '2021-05-24'),
 (10, 33, 'Agriculture, Forestry and Fishing', '', '2021-05-24'),
-(11, 5, 'Arts, Entertainment and Recreation', '', '2021-06-16');
+(11, 5, 'Arts, Entertainment and Recreation', '', '2021-06-16'),
+(12, 8, 'Agriculture, Forestry and Fishing', '', '2021-06-21'),
+(13, 67, 'Information Technology', '', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1624,7 +1830,9 @@ INSERT INTO `emp_survey_q4` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (8, 32, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
 (9, 34, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
 (10, 33, 'Rank and file', '2021-05-24'),
-(11, 5, 'Rank and file', '2021-06-16');
+(11, 5, 'Rank and file', '2021-06-16'),
+(12, 8, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
+(13, 67, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1654,7 +1862,9 @@ INSERT INTO `emp_survey_q5` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (8, 32, 1, '2021-05-24'),
 (9, 34, 3, '2021-05-24'),
 (10, 33, 5, '2021-05-24'),
-(11, 5, 2, '2021-06-16');
+(11, 5, 2, '2021-06-16'),
+(12, 8, 1, '2021-06-21'),
+(13, 67, 2, '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1684,7 +1894,9 @@ INSERT INTO `emp_survey_q6` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (8, 32, 'Agree', '2021-05-24'),
 (9, 34, 'Strongly Agree', '2021-05-24'),
 (10, 33, 'Strongly Agree', '2021-05-24'),
-(11, 5, 'Agree', '2021-06-16');
+(11, 5, 'Agree', '2021-06-16'),
+(12, 8, 'Agree', '2021-06-21'),
+(13, 67, 'Disagree', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1891,7 +2103,41 @@ INSERT INTO `emp_survey_q7` (`answer_id`, `user_id`, `skill`, `answer_body`, `da
 (184, 5, 'Time Management', 'Very Important', '2021-06-16'),
 (185, 5, 'Complex Problem Solving Skills', 'Very Important', '2021-06-16'),
 (186, 5, 'Judgment and Decision Making', 'Important', '2021-06-16'),
-(187, 5, 'Systems Analysis and Evaluation', 'Important', '2021-06-16');
+(187, 5, 'Systems Analysis and Evaluation', 'Important', '2021-06-16'),
+(188, 8, 'Reading Comprehension', 'Important', '2021-06-21'),
+(189, 8, 'Active Listening', 'Important', '2021-06-21'),
+(190, 8, 'Writing Skills', 'Important', '2021-06-21'),
+(191, 8, 'Verbal Communication', 'Important', '2021-06-21'),
+(192, 8, 'Mathematics Skills', 'Important', '2021-06-21'),
+(193, 8, 'Scientific Literacy', 'Important', '2021-06-21'),
+(194, 8, 'Digital Literacy', 'Important', '2021-06-21'),
+(195, 8, 'Critical Thinking', 'Important', '2021-06-21'),
+(196, 8, 'Participatory Learning', 'Important', '2021-06-21'),
+(197, 8, 'Creative and Innovation', 'Important', '2021-06-21'),
+(198, 8, 'Leadership Skills', 'Important', '2021-06-21'),
+(199, 8, 'Social Awareness', 'Important', '2021-06-21'),
+(200, 8, 'Service Orientation', 'Important', '2021-06-21'),
+(201, 8, 'Time Management', 'Important', '2021-06-21'),
+(202, 8, 'Complex Problem Solving Skills', 'Important', '2021-06-21'),
+(203, 8, 'Judgment and Decision Making', 'Important', '2021-06-21'),
+(204, 8, 'Systems Analysis and Evaluation', 'Important', '2021-06-21'),
+(205, 67, 'Reading Comprehension', 'Of Little Importance', '2021-06-21'),
+(206, 67, 'Active Listening', 'Of Little Importance', '2021-06-21'),
+(207, 67, 'Writing Skills', 'Of Little Importance', '2021-06-21'),
+(208, 67, 'Verbal Communication', 'Of Little Importance', '2021-06-21'),
+(209, 67, 'Mathematics Skills', 'Of Little Importance', '2021-06-21'),
+(210, 67, 'Scientific Literacy', 'Of Little Importance', '2021-06-21'),
+(211, 67, 'Digital Literacy', 'Of Little Importance', '2021-06-21'),
+(212, 67, 'Critical Thinking', 'Of Little Importance', '2021-06-21'),
+(213, 67, 'Participatory Learning', 'Of Little Importance', '2021-06-21'),
+(214, 67, 'Creative and Innovation', 'Of Little Importance', '2021-06-21'),
+(215, 67, 'Leadership Skills', 'Of Little Importance', '2021-06-21'),
+(216, 67, 'Social Awareness', 'Of Little Importance', '2021-06-21'),
+(217, 67, 'Service Orientation', 'Of Little Importance', '2021-06-21'),
+(218, 67, 'Time Management', 'Of Little Importance', '2021-06-21'),
+(219, 67, 'Complex Problem Solving Skills', 'Of Little Importance', '2021-06-21'),
+(220, 67, 'Judgment and Decision Making', 'Of Little Importance', '2021-06-21'),
+(221, 67, 'Systems Analysis and Evaluation', 'Of Little Importance', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2098,7 +2344,41 @@ INSERT INTO `emp_survey_q8` (`answer_id`, `user_id`, `skill`, `answer_body`, `da
 (184, 5, 'Time Management', 'Satisfied', '2021-06-16'),
 (185, 5, 'Complex Problem Solving Skills', 'Very Satisfied', '2021-06-16'),
 (186, 5, 'Judgment and Decision Making', 'Satisfied', '2021-06-16'),
-(187, 5, 'Systems Analysis and Evaluation', 'Very Satisfied', '2021-06-16');
+(187, 5, 'Systems Analysis and Evaluation', 'Very Satisfied', '2021-06-16'),
+(188, 8, 'Reading Comprehension', 'Satisfied', '2021-06-21'),
+(189, 8, 'Active Listening', 'Satisfied', '2021-06-21'),
+(190, 8, 'Writing Skills', 'Satisfied', '2021-06-21'),
+(191, 8, 'Verbal Communication', 'Satisfied', '2021-06-21'),
+(192, 8, 'Mathematics Skills', 'Satisfied', '2021-06-21'),
+(193, 8, 'Scientific Literacy', 'Satisfied', '2021-06-21'),
+(194, 8, 'Digital Literacy', 'Satisfied', '2021-06-21'),
+(195, 8, 'Critical Thinking', 'Satisfied', '2021-06-21'),
+(196, 8, 'Participatory Learning', 'Satisfied', '2021-06-21'),
+(197, 8, 'Creative and Innovation', 'Satisfied', '2021-06-21'),
+(198, 8, 'Leadership Skills', 'Satisfied', '2021-06-21'),
+(199, 8, 'Social Awareness', 'Satisfied', '2021-06-21'),
+(200, 8, 'Service Orientation', 'Satisfied', '2021-06-21'),
+(201, 8, 'Time Management', 'Satisfied', '2021-06-21'),
+(202, 8, 'Complex Problem Solving Skills', 'Satisfied', '2021-06-21'),
+(203, 8, 'Judgment and Decision Making', 'Satisfied', '2021-06-21'),
+(204, 8, 'Systems Analysis and Evaluation', 'Satisfied', '2021-06-21'),
+(205, 67, 'Reading Comprehension', 'Satisfied', '2021-06-21'),
+(206, 67, 'Active Listening', 'Satisfied', '2021-06-21'),
+(207, 67, 'Writing Skills', 'Satisfied', '2021-06-21'),
+(208, 67, 'Verbal Communication', 'Satisfied', '2021-06-21'),
+(209, 67, 'Mathematics Skills', 'Satisfied', '2021-06-21'),
+(210, 67, 'Scientific Literacy', 'Satisfied', '2021-06-21'),
+(211, 67, 'Digital Literacy', 'Satisfied', '2021-06-21'),
+(212, 67, 'Critical Thinking', 'Satisfied', '2021-06-21'),
+(213, 67, 'Participatory Learning', 'Satisfied', '2021-06-21'),
+(214, 67, 'Creative and Innovation', 'Satisfied', '2021-06-21'),
+(215, 67, 'Leadership Skills', 'Satisfied', '2021-06-21'),
+(216, 67, 'Social Awareness', 'Satisfied', '2021-06-21'),
+(217, 67, 'Service Orientation', 'Satisfied', '2021-06-21'),
+(218, 67, 'Time Management', 'Satisfied', '2021-06-21'),
+(219, 67, 'Complex Problem Solving Skills', 'Satisfied', '2021-06-21'),
+(220, 67, 'Judgment and Decision Making', 'Satisfied', '2021-06-21'),
+(221, 67, 'Systems Analysis and Evaluation', 'Satisfied', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2128,7 +2408,9 @@ INSERT INTO `emp_survey_q9` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (8, 32, 'Very Likely', '2021-05-24'),
 (9, 34, 'Very Likely', '2021-05-24'),
 (10, 33, 'Likely', '2021-05-24'),
-(11, 5, 'Likely', '2021-06-16');
+(11, 5, 'Likely', '2021-06-16'),
+(12, 8, 'Likely', '2021-06-21'),
+(13, 67, 'Likely', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2158,7 +2440,9 @@ INSERT INTO `emp_survey_q10` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (8, 32, 'Very Likely', '2021-05-24'),
 (9, 34, 'Very Likely', '2021-05-24'),
 (10, 33, 'Very Likely', '2021-05-24'),
-(11, 5, 'Likely', '2021-06-16');
+(11, 5, 'Likely', '2021-06-16'),
+(12, 8, 'Likely', '2021-06-21'),
+(13, 67, 'Likely', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2299,7 +2583,29 @@ INSERT INTO `emp_survey_q11` (`answer_id`, `user_id`, `skill`, `answer_body`, `d
 (118, 5, 'Effective in both oral and written communication', 'Important', '2021-06-16'),
 (119, 5, 'Computer and Technical Literate', 'Important', '2021-06-16'),
 (120, 5, 'Effective and efficient in accomplishing tasks', 'Important', '2021-06-16'),
-(121, 5, 'Able to provide innovative ideas to the company', 'Important', '2021-06-16');
+(121, 5, 'Able to provide innovative ideas to the company', 'Important', '2021-06-16'),
+(122, 8, 'Willing to undergo training and/or further education', 'Important', '2021-06-21'),
+(123, 8, 'Has strong and professional work ethic', 'Important', '2021-06-21'),
+(124, 8, 'Willing to share knowledge and expertise within the company and/or community', 'Important', '2021-06-21'),
+(125, 8, 'Willing and has a positive attitude towards working with others', 'Important', '2021-06-21'),
+(126, 8, 'Is able to learn quickly the basic company operations', 'Important', '2021-06-21'),
+(127, 8, 'Is able to provide solutions and contribute to the growth of the company', 'Important', '2021-06-21'),
+(128, 8, 'Is able to master company operations', 'Important', '2021-06-21'),
+(129, 8, 'Effective in both oral and written communication', 'Important', '2021-06-21'),
+(130, 8, 'Computer and Technical Literate', 'Important', '2021-06-21'),
+(131, 8, 'Effective and efficient in accomplishing tasks', 'Important', '2021-06-21'),
+(132, 8, 'Able to provide innovative ideas to the company', 'Important', '2021-06-21'),
+(133, 67, 'Willing to undergo training and/or further education', 'Important', '2021-06-21'),
+(134, 67, 'Has strong and professional work ethic', 'Important', '2021-06-21'),
+(135, 67, 'Willing to share knowledge and expertise within the company and/or community', 'Important', '2021-06-21'),
+(136, 67, 'Willing and has a positive attitude towards working with others', 'Of Little Importance', '2021-06-21'),
+(137, 67, 'Is able to learn quickly the basic company operations', 'Of Little Importance', '2021-06-21'),
+(138, 67, 'Is able to provide solutions and contribute to the growth of the company', 'Important', '2021-06-21'),
+(139, 67, 'Is able to master company operations', 'Of Little Importance', '2021-06-21'),
+(140, 67, 'Effective in both oral and written communication', 'Of Little Importance', '2021-06-21'),
+(141, 67, 'Computer and Technical Literate', 'Important', '2021-06-21'),
+(142, 67, 'Effective and efficient in accomplishing tasks', 'Important', '2021-06-21'),
+(143, 67, 'Able to provide innovative ideas to the company', 'Important', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2440,7 +2746,29 @@ INSERT INTO `emp_survey_q12` (`answer_id`, `user_id`, `skill`, `answer_body`, `d
 (118, 5, 'Effective in both oral and written communication', 'Satisfied', '2021-06-16'),
 (119, 5, 'Computer and Technical Literate', 'Satisfied', '2021-06-16'),
 (120, 5, 'Effective and efficient in accomplishing tasks', 'Satisfied', '2021-06-16'),
-(121, 5, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-16');
+(121, 5, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-16'),
+(122, 8, 'Willing to undergo training and/or further education', 'Satisfied', '2021-06-21'),
+(123, 8, 'Has strong and professional work ethic', 'Satisfied', '2021-06-21'),
+(124, 8, 'Willing to share knowledge and expertise within the company and/or community', 'Satisfied', '2021-06-21'),
+(125, 8, 'Willing and has a positive attitude towards working with others', 'Satisfied', '2021-06-21'),
+(126, 8, 'Is able to learn quickly the basic company operations', 'Satisfied', '2021-06-21'),
+(127, 8, 'Is able to provide solutions and contribute to the growth of the company', 'Satisfied', '2021-06-21'),
+(128, 8, 'Is able to master company operations', 'Satisfied', '2021-06-21'),
+(129, 8, 'Effective in both oral and written communication', 'Satisfied', '2021-06-21'),
+(130, 8, 'Computer and Technical Literate', 'Satisfied', '2021-06-21'),
+(131, 8, 'Effective and efficient in accomplishing tasks', 'Satisfied', '2021-06-21'),
+(132, 8, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-21'),
+(133, 67, 'Willing to undergo training and/or further education', 'Satisfied', '2021-06-21'),
+(134, 67, 'Has strong and professional work ethic', 'Very Satisfied', '2021-06-21'),
+(135, 67, 'Willing to share knowledge and expertise within the company and/or community', 'Satisfied', '2021-06-21'),
+(136, 67, 'Willing and has a positive attitude towards working with others', 'Very Satisfied', '2021-06-21'),
+(137, 67, 'Is able to learn quickly the basic company operations', 'Satisfied', '2021-06-21'),
+(138, 67, 'Is able to provide solutions and contribute to the growth of the company', 'Very Satisfied', '2021-06-21'),
+(139, 67, 'Is able to master company operations', 'Satisfied', '2021-06-21'),
+(140, 67, 'Effective in both oral and written communication', 'Very Satisfied', '2021-06-21'),
+(141, 67, 'Computer and Technical Literate', 'Satisfied', '2021-06-21'),
+(142, 67, 'Effective and efficient in accomplishing tasks', 'Very Satisfied', '2021-06-21'),
+(143, 67, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2486,7 +2814,10 @@ INSERT INTO `emp_survey_q13` (`answer_id`, `user_id`, `answer_body`, `answer_oth
 (23, 34, 'Include practical experience as part of the academic programs', '', '2021-05-24'),
 (24, 34, 'Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '', '2021-05-24'),
 (25, 33, 'Include sector specific job placements as an integral part of the degree program', '', '2021-05-24'),
-(26, 5, 'Include sector specific job placements as an integral part of the degree program', '', '2021-06-16');
+(26, 5, 'Include sector specific job placements as an integral part of the degree program', '', '2021-06-16'),
+(27, 8, 'Include sector specific job placements as an integral part of the degree program', '', '2021-06-21'),
+(28, 67, 'Design courses that are more relevant to the needs of employers', '', '2021-06-21'),
+(29, 67, 'Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2516,7 +2847,9 @@ INSERT INTO `emp_survey_q14` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (8, 32, 'Of Little Importance', '2021-05-24'),
 (9, 34, 'Important', '2021-05-24'),
 (10, 33, 'Of Little Importance', '2021-05-24'),
-(11, 5, 'Important', '2021-06-16');
+(11, 5, 'Important', '2021-06-16'),
+(12, 8, 'Important', '2021-06-21'),
+(13, 67, 'Of Little Importance', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2547,7 +2880,9 @@ INSERT INTO `emp_survey_q15` (`answer_id`, `user_id`, `answer_body`, `answer_yes
 (9, 32, 'No', '', '2021-05-24'),
 (10, 34, 'Yes', 'Aral pa more', '2021-05-24'),
 (12, 33, 'No', '', '2021-05-24'),
-(13, 5, 'No', '', '2021-06-16');
+(13, 5, 'No', '', '2021-06-16'),
+(14, 8, 'No', '', '2021-06-21'),
+(15, 67, 'No', '', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2578,7 +2913,9 @@ INSERT INTO `emp_survey_q16` (`answer_id`, `user_id`, `answer_body`, `answer_yes
 (11, 32, 'No', '', '2021-05-24'),
 (12, 34, 'No', '', '2021-05-24'),
 (13, 33, 'No', '', '2021-05-24'),
-(14, 5, 'No', '', '2021-06-16');
+(14, 5, 'No', '', '2021-06-16'),
+(15, 8, 'No', '', '2021-06-21'),
+(16, 67, 'No', '', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -2609,7 +2946,29 @@ INSERT INTO `emp_survey_q17` (`answer_id`, `user_id`, `answer_body`, `answer_yes
 (11, 32, 'No', '', '2021-05-24'),
 (12, 34, 'Yes', 'persevering', '2021-05-24'),
 (14, 33, 'No', '', '2021-05-24'),
-(15, 5, 'No', '', '2021-06-16');
+(15, 5, 'No', '', '2021-06-16'),
+(16, 8, 'No', '', '2021-06-21'),
+(17, 67, 'No', '', '2021-06-21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `password_request`
+--
+
+CREATE TABLE `password_request` (
+  `id` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date_request` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `password_request`
+--
+
+INSERT INTO `password_request` (`id`, `email`, `user_id`, `date_request`) VALUES
+(14, 'test2@mail.com', 83, '2021-06-23 01:24:55');
 
 -- --------------------------------------------------------
 
@@ -2633,13 +2992,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`, `time_created`, `last_login`) VALUES
-(2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-06-16 23:13:09'),
+(2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-06-22 15:58:12'),
 (3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-06-15 08:44:40'),
-(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-06-15 09:13:27'),
-(5, 'juan@gmail.com', '7c61c8b92cfeb880d8d99b58533e324c07cc461d3e573b17369f2a377ef1f2dbb47629ea4b1511290a91319a6d5f7944cb78', '$2y$10$MiSINz5TurNhGjk0sIbzKu9eaOepd9WkQ0XD/uw3j9hryuTtZYuke', '12345', 3, '2021-05-20 09:51:01', '2021-06-16 23:04:58'),
+(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-06-22 23:27:39'),
+(5, 'juan@gmail.com', '7c61c8b92cfeb880d8d99b58533e324c07cc461d3e573b17369f2a377ef1f2dbb47629ea4b1511290a91319a6d5f7944cb78', '$2y$10$MiSINz5TurNhGjk0sIbzKu9eaOepd9WkQ0XD/uw3j9hryuTtZYuke', '12345', 3, '2021-05-20 09:51:01', '2021-06-21 23:44:31'),
 (6, 'jen@gmail.com', 'e81e1502f327062b08945aa5be675c4488af8a411baedd922657ef346d1e73dee7aa19618a4572c0e898107677eeb64f72a8', '$2y$10$qTvg/EBRTtcpi.aHX5tFyegP/C3BO.b.y3HAvt.herwmej3URnK.q', 'ZDxyt3kL', 2, '2021-05-21 06:43:37', '2021-05-21 06:50:57'),
 (7, 'admin2@mail.com', '26c1731abfdaa3d0c9efe3a99af10d1de301119324548f3707149281a3eb21ca1517321df1945b15de4d1e8eddf454a5875d', '$2y$10$nCAYW6LBthx9kBH8ropAreufnByt/O6AC02iMDAUHCqCaByN2WG.G', 'HE1nKkNg', 0, '2021-05-21 06:44:13', '2021-05-21 06:44:13'),
-(8, 'jiji@mail.com', 'acb0d136743deda5472f6d450f2576bd4827af42b55b86c7a74326ca1bc1e1ef413354ff3f91914faeea31c3c49be91d24b5', '$2y$10$/obFaBBGMHAq.mv2xSgMUuSn23a2rFhfAKX3bxrfU45VchTzTlX2a', '15VkWCFg', 3, '2021-05-21 06:44:46', '2021-05-21 09:07:54'),
+(8, 'jiji@mail.com', 'acb0d136743deda5472f6d450f2576bd4827af42b55b86c7a74326ca1bc1e1ef413354ff3f91914faeea31c3c49be91d24b5', '$2y$10$/obFaBBGMHAq.mv2xSgMUuSn23a2rFhfAKX3bxrfU45VchTzTlX2a', '15VkWCFg', 3, '2021-05-21 06:44:46', '2021-06-21 22:51:06'),
 (9, 'jj@mail.com', '7e514e8836b1af412dfbbc5723b09f9d9fada2124e9790f369006eeb8459c5b0776cd8511f00052363889f56690c9bb7abc5', '$2y$10$yo8YoqxoQje3FAYYAFX8hOEiyynwqaPf0iTvo.AfrMuum7aZDFsAK', '72bD8ekW', 1, '2021-05-21 06:45:03', '2021-05-21 06:45:03'),
 (10, 'jon@mail.com', 'a4a36353b3de1d0c67830c919c322eb3c5ac8b3314c7a5c28bf78b2da17ca83373dfdc81e2c6ace045a6554ef8b6f321658a', '$2y$10$XPMpNskyE4DW86y/fIzAMO5ZjpRjvWI30JWFRrLTYPwSbmcJN5Cum', 'xVgyLp3w', 2, '2021-05-21 06:45:18', '2021-05-21 09:10:43'),
 (12, 'alumni_uno@gmail.com', '8d4a2fd0ccc964b32712bebc38abfe2fb2ca539720799964b9713043bf65acf971abb7a0065a68e1a7387e8cfc906f9eae36', '$2y$10$C/p1SEuPT/uw/6tro2xlLOBle/SGsFj5ZOggkJrKGh3.iw2AbE162', 'alumni1', 1, '2021-05-23 21:33:51', '2021-06-16 22:29:27'),
@@ -2673,7 +3032,10 @@ INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`,
 (59, 'employer_doze@gmail.com', '0959d26c5113c4aaf90633927ab455adb1f9a441298276f09af2f26201ef825a685fbecc7368a72d74e58d33cef6ff45e4e6', '$2y$10$efm4jUJJ8Qmja1wdjRwup.5C5AEcM7R9pjAvVsOJyGeOCFj0/PNLS', 'employ12', 2, '2021-06-16 22:11:39', '2021-06-16 22:11:39'),
 (60, 'employer_trese@gmail.com', '65118f2e83f3388600c3441de73503a0797c88204a9ab569f35d584ed9950681cb897bf495b88dd2349eff52c40eda83482c', '$2y$10$Exv1WSOva6ljhsPD8EmRe.NxAkvFePRqkiiukEyKyFpx.QxG/JO5K', 'employ13', 2, '2021-06-16 22:11:56', '2021-06-16 22:11:56'),
 (61, 'employer_katorse@gmail.com', 'c83325dd36accfe35b0e53383fcc1359fc1ff4660de593c83a84a38d90de82511cbd7b3fef1fc9ca4b16cfa2740ecfd3221d', '$2y$10$E4PE8TpUYB3Oy/BF2r7ezeu.GBjd3hb.91cn6MtZZUPObPgxpPGcC', 'employ14', 2, '2021-06-16 22:12:09', '2021-06-16 22:12:09'),
-(62, 'employer_kinse@gmail.com', '6bf5476cdecd505ea8bbad3f4827d7a612276ca4ca62c61346a259491fd3867281a99f4541fd0ad9d29dcb49c9905edb2436', '$2y$10$NYInDBn.FFBS1zBZGE2AK.IQuNRF4EiMQqEtb8jyJg8iFvXEQy6v2', 'employ15', 2, '2021-06-16 22:12:33', '2021-06-16 22:12:33');
+(62, 'employer_kinse@gmail.com', '6bf5476cdecd505ea8bbad3f4827d7a612276ca4ca62c61346a259491fd3867281a99f4541fd0ad9d29dcb49c9905edb2436', '$2y$10$NYInDBn.FFBS1zBZGE2AK.IQuNRF4EiMQqEtb8jyJg8iFvXEQy6v2', 'employ15', 2, '2021-06-16 22:12:33', '2021-06-16 22:12:33'),
+(68, 'test1@mail.com', '054053a8b132538a53c7b1e9c560b041c8eca9f7798abe043c0d7577c68701e9f0463a74cfeb31c734caa44e3c2f4bf34e50', '$2y$10$24CAMQ21C2H3rdp/TqK2kuQ1LheeO6yAtnCxezNIuNHnPxpaXwapS', '11111111', 3, '2021-06-21 23:32:37', '2021-06-21 23:32:52'),
+(85, 'test@mail.com', '42e91391a827afcdb5f135db056ab8688518236ed462362b1b9f057683f7481164708ba84d2883b0705460a0c2c23cdf8350', '$2y$10$d5xTDxcHkEj5NPtBo76TPeORBDkHMbApOoG3hbB0O2uD/zJ73XVda', '3vAFMhHs', 0, '2021-06-23 01:52:47', '2021-06-23 01:52:47'),
+(86, 'test2@mail.com', '9d76c8760be34e1e33648c08534d1db7ce72bea240054267b54077253bc521a66ee28e2e10f92af27148382b284421b3ffae', '$2y$10$r9DDYa/b4mnob7qR0y.s.OEjM4.56QYZqZLBrasn0upStmpLuoAP6', '7jMB64oY', 3, '2021-06-23 01:53:03', '2021-06-23 01:53:03');
 
 --
 -- Indexes for dumped tables
@@ -2959,6 +3321,12 @@ ALTER TABLE `emp_survey_q17`
   ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `password_request`
+--
+ALTER TABLE `password_request`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -2979,19 +3347,19 @@ ALTER TABLE `alum_survey`
 -- AUTO_INCREMENT for table `alum_survey_q1`
 --
 ALTER TABLE `alum_survey_q1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q2`
 --
 ALTER TABLE `alum_survey_q2`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q3`
 --
 ALTER TABLE `alum_survey_q3`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q4`
@@ -3003,7 +3371,7 @@ ALTER TABLE `alum_survey_q4`
 -- AUTO_INCREMENT for table `alum_survey_q5`
 --
 ALTER TABLE `alum_survey_q5`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q6`
@@ -3021,7 +3389,7 @@ ALTER TABLE `alum_survey_q7`
 -- AUTO_INCREMENT for table `alum_survey_q8`
 --
 ALTER TABLE `alum_survey_q8`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q9`
@@ -3039,7 +3407,7 @@ ALTER TABLE `alum_survey_q10`
 -- AUTO_INCREMENT for table `alum_survey_q11`
 --
 ALTER TABLE `alum_survey_q11`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q12`
@@ -3051,7 +3419,7 @@ ALTER TABLE `alum_survey_q12`
 -- AUTO_INCREMENT for table `alum_survey_q13`
 --
 ALTER TABLE `alum_survey_q13`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q14`
@@ -3075,19 +3443,19 @@ ALTER TABLE `alum_survey_q16`
 -- AUTO_INCREMENT for table `alum_survey_q17`
 --
 ALTER TABLE `alum_survey_q17`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q18`
 --
 ALTER TABLE `alum_survey_q18`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q19`
 --
 ALTER TABLE `alum_survey_q19`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `contactemp_ques`
@@ -3099,121 +3467,127 @@ ALTER TABLE `contactemp_ques`
 -- AUTO_INCREMENT for table `emp_survey`
 --
 ALTER TABLE `emp_survey`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=763;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=902;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q1`
 --
 ALTER TABLE `emp_survey_q1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q2`
 --
 ALTER TABLE `emp_survey_q2`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q2_1`
 --
 ALTER TABLE `emp_survey_q2_1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q3`
 --
 ALTER TABLE `emp_survey_q3`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q4`
 --
 ALTER TABLE `emp_survey_q4`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q5`
 --
 ALTER TABLE `emp_survey_q5`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q6`
 --
 ALTER TABLE `emp_survey_q6`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q7`
 --
 ALTER TABLE `emp_survey_q7`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q8`
 --
 ALTER TABLE `emp_survey_q8`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q9`
 --
 ALTER TABLE `emp_survey_q9`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q10`
 --
 ALTER TABLE `emp_survey_q10`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q11`
 --
 ALTER TABLE `emp_survey_q11`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q12`
 --
 ALTER TABLE `emp_survey_q12`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=122;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q13`
 --
 ALTER TABLE `emp_survey_q13`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q14`
 --
 ALTER TABLE `emp_survey_q14`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q15`
 --
 ALTER TABLE `emp_survey_q15`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q16`
 --
 ALTER TABLE `emp_survey_q16`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q17`
 --
 ALTER TABLE `emp_survey_q17`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `password_request`
+--
+ALTER TABLE `password_request`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
