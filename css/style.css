@@ -190,15 +190,96 @@
   .password-container {
 	display: flex;
   }
+  .login-addons {
+  	font-size: 11pt;
+  }
+  #forgot-pwd {
+  	padding-left: 3rem;
+  }
+
+
+  /* for reset password */
+  .reset-form {
+  	background-color:#f5f5f5;
+	  /*padding-left:8%;
+	  padding-right:8%;
+	  padding-top:3%;
+	  padding-bottom:5%;*/
+	  padding-top: 1%;
+	  border-radius: 50px;
+	  width: 30%;
+	  margin-left: 35%;
+	  margin-top: 5%;
+	  height: 30%;
+  }
+  #reset-form {
+  	padding: 0;
+  	padding-bottom: 23%;
+  }
+  #reset-txt {
+  	margin-top: 3%;
+  	margin-bottom: 5%;
+  	text-align: center;
+  }
+  #reset-email {
+  	width: 50%;
+  	margin-left: 25%;
+  }
+  #reset-btn {
+  	margin-top: 5%;
+  	margin-right: 22%;
+  	margin-left: 1%;
+  }
+  #cancel-btn:link, #cancel-btn:visited {
+	  font-weight:bold;
+	  border-radius: 100px 100px 100px 100px;
+	  background-color:#ffad0d;
+	  text-transform: uppercase;
+	  float:right;
+	  color: white;
+	  padding: 18px 25px;
+	  text-align: center;
+	  text-decoration: none;
+  	margin-top: 5%;
+  	font-size: small;
+  }
+  #cancel-btn:hover{
+	  background-color:#840038;
+  }
+  .alert-fail {
+  	background-color:#FFD2D2;
+  	color: #D8000C;
+  	text-align: center;
+  	padding-top: 1%;
+  	padding-bottom: 1%;
+  	margin-top: 4%;
+		border-radius: 5px;
+		width: 70%;
+		margin-left: 15%;
+  }
+  .alert-success {
+  	background-color:#DFF2BF;
+  	color: #4F8A10;
+  	text-align: center;
+  	padding-top: 1%;
+  	padding-bottom: 1%;
+  	margin-top: 4%;
+		border-radius: 5px;
+		width: 70%;
+		margin-left: 15%;
+  }
   
+
+
   .content {
 	  font-size:14pt;
   }
   /* for alert message */
   .alert {
 	  color: #050505;
-    	  font-size: 18px;
-  	  margin: 10px;
+    font-size: 18px;
+  	margin: 10px;
+  	margin-left: 0;
   }
   .ae-choices{
 	  width:300px;

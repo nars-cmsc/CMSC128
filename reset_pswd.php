@@ -1,4 +1,5 @@
-<?php require_once 'controllers/authentication.php'; 
+<?php
+require_once 'controllers/reset_submit.php'; 
 
 // prevent back to login
 if (isset($_SESSION['email'])) {
@@ -33,7 +34,7 @@ if (isset($_SESSION['email'])) {
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https:////maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="js/survey_fcn.js"></script>
-	<title>Log in - UPB DMCS Alumni and Employer Survey</title>
+	<title>Reset Password</title>
 	</head>
 	<body>
 	<div class="main-container">
@@ -50,42 +51,26 @@ if (isset($_SESSION['email'])) {
 			</div>		
 		</header>
 
-	    <section class="container-login">
-			<div class = "container-info">
-				<h3>Welcome dear respondent!</h3>
-				<div class="content">
-					Please use the credentials sent to you by email.<br><br>
-					We would like to ask your help in completing the succeeding survey.
-					Your answers will be used as important feedback to improve our degree programs.<br><br>
-					Your participation in this study is voluntary and you may opt not to participate
-					by exiting this webpage. Once you log in and choose to participate, 
-					it is mandatory for you to fill in the required fields. Please rest assured 
-					your answers will not be attributed to you or matched with your identity. Since 
-					no personal information will be collected from you, the Philippine Data Privacy
-					Act does not apply to the processing of information gathered through this survey.<br><br>
-					Thank you.
-				</div>
-			</div>
-			<div class="login-form">
-				<form action="login.php" method="post">
+	  <section>
+			<div class="reset-form">
+				<form action="reset_pswd.php" method="post" id="reset-form">
 					<!-- added this area for error messages -->
 					<?php if (count($errors) > 0): ?>
-						<div class="alert">
-						<i class="fa fa-warning"></i>
+						<div class="alert-fail">
 							<?php foreach ($errors as $error): ?>
 								<?php echo $error; ?><br>
 							<?php endforeach; ?>	
 						</div>
 					<?php endif;?>
-					<label for="email">E-mail:</label><br>
-					<input type="email" placeholder="Type your email address here..." name="email" value="<?php echo $email; ?>"><br><br>
-					<label for="password">Password:</label><br>
-					<input type="password" placeholder="Type your password here..." name="password" id="pass"><br>
-					<input type="checkbox" onclick="showPass()" name="show_check" class="login-addons">
-					<label for="show_check" class="login-addons">Show Password</label>
-					<a href="reset_pswd.php" class="login-addons" id="forgot-pwd">Forgot Password?</a>
-					<br><br>
-					<input type="submit" value="Log in" name="login-btn">
+					<?php if (!empty($succ['message'])): ?>
+						<div class="alert-success">
+								<?php echo $succ['message']; ?><br>
+						</div>
+					<?php endif; ?>
+					<p id="reset-txt">Kindly type your email to send request to admin to reset your password</p>
+					<input type="email" placeholder="  Email" name="email" value="<?php echo $email; ?>" id="reset-email" autocomplete="off">
+					<input type="submit" value="Reset" name="reset-btn" id="reset-btn">
+					<a href="login.php" name="cancel-btn" id="cancel-btn">Back</a>
 				</form>
 			</div>
 		</section>
