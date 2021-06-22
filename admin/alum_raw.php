@@ -86,7 +86,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php if($row['answer_body'] == 'Other') { echo $row['answer_others']; } else { echo $row['answer_body']; }?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -112,7 +112,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -138,7 +138,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php if($row['answer_body'] == 'other') { echo $row['answer_others']; } else { echo $row['answer_body']; }?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -164,7 +164,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php if($row['answer_body'] == 'other') { echo $row['answer_others']; } else { echo $row['answer_body']; }?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -193,7 +193,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Employed']; ?></td>
                                 <td><?php echo $row['Characterized']; ?></td>
                                 <td><?php if($row['Industry'] == 'other') {echo $row['Other_Ans'];} else echo $row['Industry']; ?></td>
@@ -223,7 +223,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Level']; ?></td>
                                 <td><?php echo $row['Field']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
@@ -251,7 +251,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Level']; ?></td>
                                 <td><?php echo $row['Field']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
@@ -278,7 +278,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -304,7 +304,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -331,7 +331,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Job']; ?></td>
                                 <td><?php echo $row['Percent']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
@@ -359,7 +359,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Volunteer']; ?></td>
                                 <td><?php echo $row['Characterized']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
@@ -387,7 +387,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Experience']; ?></td>
                                 <td><?php echo $row['Necessity']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
@@ -414,7 +414,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php if($row['answer_body'] == 'other') { echo $row['answer_others']; } else { echo $row['answer_body']; }?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -440,7 +440,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -466,7 +466,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id" class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -492,7 +492,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id" class="survey-id" class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -518,7 +518,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
                             </tr>
@@ -545,7 +545,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['ques18_arr']; ?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
@@ -573,7 +573,7 @@ if ($_SESSION['role'] == 3) {
                         ?>
                             <tr>
                                 <td class="survey-id"><?php echo $row['answer_id']; ?></td>
-                                <td><?php echo $result['email']; ?></td>
+                                <td><?php if ($result) echo $result['email']; else echo "DELETED USER";?></td>
                                 <td><?php echo $row['Elaborate']; ?></td>
                                 <td><?php echo $row['answer_body']; ?></td>
                                 <td><?php echo $row['date_response']; ?></td>
