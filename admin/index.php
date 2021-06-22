@@ -105,7 +105,7 @@ if ($_SESSION['role'] == 3) {
                                 <td><?php echo $row['time_created']; ?></td>
                                 <td><?php echo $row['last_login']; ?></td>
                                 <td>
-                                    <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');">Delete</a>
+                                    <a class="delete" href="index.php?delete=<?php echo $row['user_id']; ?>" onClick="return confirm('Are you sure you want to delete this user from the database?');"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         <?php } ?>

@@ -112,18 +112,13 @@ nav {
 }
 .delete:link, .delete:visited {
   font-weight:bold;
-  border-radius: 100px 100px 100px 100px;
-  background-color:#ffad0d;
-  text-transform: uppercase;
-  float:right;
-  color: white;
-  padding: 10px 25px;
-  text-align: center;
+  color: darkgray;
+  text-align: right;
   text-decoration: none;
-  font-size: small;
+  font-size: larger;
 }
 .delete:hover {
-  background-color:#840038;
+  color:#840038;
 }
 .user-row:hover {
   background-color: lightgoldenrodyellow;
