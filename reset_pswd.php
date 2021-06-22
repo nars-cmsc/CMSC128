@@ -67,7 +67,7 @@ if (isset($_SESSION['email'])) {
 								<?php echo $succ['message']; ?><br>
 						</div>
 					<?php endif; ?>
-					<p id="reset-txt">Kindly type your email to send request to admin to reset your password</p>
+					<p id="reset-txt">Kindly type your email to send request to admin to resend your password</p>
 					<input type="email" placeholder="  Email" name="email" value="<?php echo $email; ?>" id="reset-email" autocomplete="off">
 					<input type="submit" value="Reset" name="reset-btn" id="reset-btn">
 					<a href="login.php" name="cancel-btn" id="cancel-btn">Back</a>
