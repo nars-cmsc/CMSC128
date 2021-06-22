@@ -43,15 +43,15 @@ if ($_SESSION['role'] == 3) {
         <div class="content-reg-users">
         	<h2 id="title-users">Register New User</h2>
         	<h5 id="subtitle-users">Fill in the following fields to add new user</h5>
+        	<!-- added this area for error messages -->
+			<?php if (count($errors) > 0): ?>
+				<div class="alert-fail">
+					<?php foreach ($errors as $error): ?>
+						<?php echo $error; ?><br>
+					<?php endforeach; ?>	
+				</div>
+			<?php endif;?>
             <form action="user_reg.php" method="post">
-            	<!-- added this area for error messages -->
-				<?php if (count($errors) > 0): ?>
-					<div class="alert">
-						<?php foreach ($errors as $error): ?>
-							<?php echo $error; ?><br>
-						<?php endforeach; ?>	
-					</div>
-				<?php endif;?>
             	<label for="email">E-mail:</label><br>
 				<input type="email" placeholder="Type email address here..." name="email" value="<?php echo (isset($_POST['email'])) ? $_POST['email'] : '' ; ?>"><br><br>
 				<label for="email">Role:</label><br>
@@ -72,6 +72,18 @@ if ($_SESSION['role'] == 3) {
     </section>
     
     <?php include('footer.php'); ?>
+
+    <script type="text/javascript">
+        setTimeout(function() {
+            let alert = document.querySelector(".alert-success");
+                alert.remove();
+        }, 3000);
+        setTimeout(function() {
+            let alert = document.querySelector(".alert-fail");
+                alert.remove();
+        }, 3000);
+
+    </script>
 
 </body>
 </html>

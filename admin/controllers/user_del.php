@@ -18,7 +18,7 @@ $query = mysqli_query($db_conn, "SELECT * FROM users");
 // for deleting users
 if (isset($_GET['delete'])) {
 	mysqli_query($db_conn, "DELETE FROM users WHERE user_id='".$_GET['delete']."'");
-	$_SESSION['message'] = "User record has been deleted!";
+	$_SESSION['success'] = "User record has been deleted!";
 	
 	header('location: index.php');
 	exit();
@@ -64,11 +64,12 @@ if (isset($_GET['id'])) {
 
 		$mail->AltBody = 'For non HTML clients';
 
+		$_SESSION['success'] = "Email containing password was sent to user";
 		$mail->send();
+		mysqli_query($db_conn, "DELETE FROM password_request WHERE user_id='$id'");
 	} catch (Exception $e) {
-		echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+		$_SESSION['error'] = 'Message could not be sent. Mailer Error: '. $mail->ErrorInfo;
 	}
-	mysqli_query($db_conn, "DELETE FROM password_request WHERE user_id='$id'");
 	header('location: index.php');
 	exit();
 }

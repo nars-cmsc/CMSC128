@@ -45,6 +45,18 @@ if ($_SESSION['role'] == 3) {
     <section>
         <?php include('sidenav.php');  ?>
         <div class="content-users">
+            <?php if (isset($_SESSION['success'])): ?>
+                <div class="alert-success">
+                    <?php echo $_SESSION['success']; ?><br>
+                </div>
+            <?php endif; ?>
+            <?php unset($_SESSION['success']); ?>
+            <?php if (isset($_SESSION['error'])): ?>
+                <div class="alert-fail">
+                    <?php echo $_SESSION['error']; ?><br>
+                </div>
+            <?php endif; ?>
+            <?php unset($_SESSION['error']); ?>
             <div class="tab">
                 <button class="tablinks" onclick="openQues(event, 'ques1')" id="defaultOpen"><h2 id="title-users">List of Registered Users</h2></button>
                 <button class="tablinks" onclick="openQues(event, 'ques2')"><h2 id="title-users">Password Resend Requests (<?php echo $pass_rows_count; ?>)</h2></button>
@@ -135,6 +147,11 @@ if ($_SESSION['role'] == 3) {
             $("#table-users").dataTable();
             $("#table-requests").dataTable();
         });
+
+        setTimeout(function() {
+            let alert = document.querySelector(".alert-success");
+                alert.remove();
+        }, 3000);
 
         function openQues(evt, quesNum) {
           var i, tabcontent, tablinks;

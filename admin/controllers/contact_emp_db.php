@@ -6,7 +6,6 @@ require ('config/connection.php');
 
 $result = mysqli_query($db_conn, "SELECT * FROM contactemp_ques");
 
-$alert = array();
 
 if (isset($_POST['update-bttn'])) {
 	$query = mysqli_query($db_conn, "UPDATE contactemp_ques SET contacted = 'No'");
@@ -25,11 +24,11 @@ if (isset($_POST['update-bttn'])) {
         $sql3 = "UPDATE contactemp_ques SET contacted = 'Yes' WHERE answer_id in (".$in_clause.")";
         $result3 = $db_conn->query($sql3);
 
-        $alert['message'] = "Database updated successfully!";
+        $_SESSION['success'] = "Checklist updated successfully!";
 
-        
+        header('location: contact_emp.php');
 	}
-	header('location: ../admin/contact_emp.php');
+	
 }
 
 ?>

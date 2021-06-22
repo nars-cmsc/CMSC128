@@ -485,6 +485,9 @@ canvas {
   min-height: 100vh;
   font-size:14pt;
 }
+#contact-emp-form {
+  margin-top: 0;
+}
 #title-contact {
   color: #606060;
   text-transform: uppercase;
@@ -494,7 +497,7 @@ canvas {
   width: 100%;
 }
 .contact-row:hover {
-  color: #ffad0d;
+  background-color: lightgoldenrodyellow;
 }
 .update-btn {
   padding-bottom: 20px;
@@ -559,14 +562,28 @@ canvas {
 }
 
 /* for alert message */
-.alert {
-  text-align: left;
-  padding: 1rem;
-  background-color: #db7c6b; /* Red */
-  color: white;
-  margin-bottom: 1rem;
-  width: 16rem;
-}
+.alert-fail {
+    background-color:#FFD2D2;
+    color: #D8000C;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 15%;
+  }
+  .alert-success {
+    background-color:#DFF2BF;
+    color: #4F8A10;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    width: 70%;
+    margin-left: 15%;
+  }
 
 /* Clear floats after the columns */
 section::after {

@@ -1,5 +1,5 @@
 <?php
-# onchange checkbox show 'save changes' button
+
 require ('controllers/contact_emp_db.php');
 
 // if user is not logged in
@@ -48,10 +48,10 @@ if ($_SESSION['role'] == 3) {
         <?php include('sidenav.php');  ?>
         <div class="content-contact">
             <h2 id="title-contact">Contact Information of Employers</h2>
-            <h5 id="subtitle-users">Click the checkbox then update once employer has been contacted</h5>
+            <h5 id="subtitle-users">Click the checkbox then update once employer has been contacted</h5><br>
             <form action="contact_emp.php" method="POST" id="contact-emp-form" name="contact-emp-form">
                 <div class="update-btn">
-                    <input type="submit" name="update-bttn" value="UPDATE" onclick="alert('Database updated successfully!')" id="update-bttn" style="display: none;">
+                    <input type="submit" name="update-bttn" value="UPDATE" onclick="alert('Checklist updated successfully!')"" id="update-bttn" style="display: none;">
                 </div>
                 <br><br>
                 <table id="table-contact">
