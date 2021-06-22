@@ -3,12 +3,13 @@
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 require ('config/connection.php');
 
-require_once ('phpmailer/Exception.php');
-require_once ('phpmailer/PHPMailer.php');
-require_once ('phpmailer/SMTP.php');
+require_once 'phpmailer/src/Exception.php';
+require_once 'phpmailer/src/PHPMailer.php';
+require_once 'phpmailer/src/SMTP.php';
 
 $query = mysqli_query($db_conn, "SELECT * FROM users");
 $errors = array();
@@ -90,23 +91,60 @@ if (isset($_POST['reg-btn'])) {
 			$mail->SMTPAuth = true;
 			$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
 			$mail->Password = 'dmcssurveytest1'; // password of gmail address
-			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-			$mail->Port = '587';
+			$mail->SMTPSecure = 'ssl';
+			$mail->Port = '465';
 
-			$mail->setFrom('dmcs.survey.test1@gmail.com');
+			$mail->setFrom('dmcs.survey.test1@gmail.com', 'DMCS Survey');
 			$mail->addAddress($email); // email receiver
+			$mail->addReplyTo('no-reply@gmail.com', 'No reply');
 
 			$mail->isHTML(true);
 			$mail->Subject = 'DMCS Survey Credentials';
-			$mail->Body = "Please use the following credentials for logging in.<br><b>Email : </b>$email <br><b>Password : </b>$pass";
+			if ($role == 'admin') {
+				$mail->Body = "Good day! <br><br>
+			You have been given admin privileges to the DMCS Surveys.<br><br>
+			To proceed, please click this link: <a href='#'>link here</a> and use the following credentials for logging in.<br><br><b>
+			Email : </b>$email <br><b>
+			Password : </b>$pass <br><br>
+			Kindly disregard if you already received this email. Thank you.";
+			}
+			elseif ($role == 'alum') {
+				$mail->Body = "Good day! <br><br>
+			You are invited to participate in the DMCS Alumni Survey, which is being used to assess the situation of DMCS Alumni.<br><br>
+			Your answers will remain anonymous, and all survey results will be stored securely, made available only to authorized individuals for analysis and reporting.<br><br>
+			To proceed, please click this link: <a href='#'>link here</a> and use the following credentials for logging in.<br><br><b>
+			Email : </b>$email <br><b>
+			Password : </b>$pass <br><br>
+			Kindly disregard if you already responded to this survey. Thank you.";
+			}
+			elseif ($role == 'emp') {
+				$mail->Body = "Good day! <br><br>
+			You are invited to participate in the DMCS Employer Satisfaction Survey, which is being used to assess the employability of DMCS Alumni.<br><br>
+			Your answers will remain anonymous, and all survey results will be stored securely, made available only to authorized individuals for analysis and reporting.<br><br>
+			To proceed, please click this link: <a href='#'>link here</a> and use the following credentials for logging in.<br><br><b>
+			Email : </b>$email <br><b>
+			Password : </b>$pass <br><br>
+			Kindly disregard if you already responded to this survey. Thank you.";
+			}
+			else {
+				$mail->Body = "Good day! <br><br>
+			You are invited to participate in the DMCS Alumni Survey and Employer Satisfaction Survey, which is being used to assess the situation of DMCS Alumni and assess the employability of DMCS Alumni, respectively.<br><br>
+			Your answers will remain anonymous, and all survey results will be stored securely, made available only to authorized individuals for analysis and reporting.<br><br>
+			To proceed, please click this link: <a href='#'>link here</a> and use the following credentials for logging in.<br><br><b>
+			Email : </b>$email <br><b>
+			Password : </b>$pass <br><br>
+			Kindly disregard if you already responded to this survey. Thank you.";
+			}
+			
+			$mail->AltBody = 'For non HTML clients';
 
 			$mail->send();
 		} catch (Exception $e) {
-			$errors1 = $e->getMessage();
+			echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
 		}
 
-		header('location: index.php');
-	 	exit();
+		// header('location: index.php');
+	 // 	exit();
 	}
 
 }
