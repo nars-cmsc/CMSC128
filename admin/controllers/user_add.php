@@ -91,8 +91,8 @@ if (isset($_POST['reg-btn'])) {
 			$mail->SMTPAuth = true;
 			$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
 			$mail->Password = 'eysiyplscikrzidf'; // password of gmail address
-			$mail->SMTPSecure = 'ssl';
-			$mail->Port = '465';
+			$mail->SMTPSecure = 'tsl';
+			$mail->Port = 587;
 
 			$mail->setFrom('dmcs.survey.test1@gmail.com', 'DMCS Survey');
 			$mail->addAddress($email); // email receiver
