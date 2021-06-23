@@ -43,7 +43,7 @@ if (isset($_GET['id'])) {
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = true;
 		$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
-		$mail->Password = 'dmcssurveytest1'; // password of gmail address
+		$mail->Password = 'eysiyplscikrzidf'; // password of gmail address
 		$mail->SMTPSecure = 'ssl';
 		$mail->Port = '465';
 

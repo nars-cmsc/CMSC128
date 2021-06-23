@@ -90,7 +90,7 @@ if (isset($_POST['reg-btn'])) {
 			$mail->Host = 'smtp.gmail.com';
 			$mail->SMTPAuth = true;
 			$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
-			$mail->Password = 'dmcssurveytest1'; // password of gmail address
+			$mail->Password = 'eysiyplscikrzidf'; // password of gmail address
 			$mail->SMTPSecure = 'ssl';
 			$mail->Port = '465';
 
@@ -140,7 +140,7 @@ if (isset($_POST['reg-btn'])) {
 
 			$mail->send();
 		} catch (Exception $e) {
-			echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+			$_SESSION['error'] = 'Message could not be sent. Mailer Error: '. $mail->ErrorInfo;
 		}
 
 		header('location: index.php');
