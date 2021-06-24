@@ -698,15 +698,15 @@ if ($_SESSION['role'] == 2) {
 			<div id="reviewModal" class="modal">
 				<div class="modal-content">
 					<div class="modal-header">
-						<span class="closeBtn">&times;</span>
 						<h4 style="color:#840038; text-transform:uppercase;">Are you sure that you want to submit?</h4>
 					</div>
 					<div class="modal-body">
-						<p>You cannot change your answers once you have submitted your responses.</p>
+						<p>You cannot change your answers once you have submitted your responses.</p><br>
+						<p style="font-size:12pt;">(Click outside of the prompt to cancel.)</p>
 					</div>
 					<div class="modal-footer">		
 						<div class="submit-survey">
-							<input type="submit" name="submit-alum" value="Submit"/>
+							<input type="submit" name="submit-alum" style="width:9rem; height: 3rem;" value="Continue"/>
 						</div>
 					</div>
 				</div>
@@ -714,8 +714,11 @@ if ($_SESSION['role'] == 2) {
 		
 				
 			<!-- submit button -->
+			<!--a href="contactemp_ques.php"-->
+			
 			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 			<input type="hidden" name="submitted" value="1"/> 
+			<!--/a-->
 			
 		</form>			
 	</div>
