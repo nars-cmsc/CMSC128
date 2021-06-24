@@ -613,18 +613,6 @@ section::after {
 	  color:#840038;
 	  padding-bottom:1rem;
   }
-  .closeBtn {
-	float: right;
-	border-radius:0.25rem;
-	color:lightgray;
-	font-size: 30px;
-	font-weight: bold;
-  }
-  .closeBtn:hover{
-	color:black;
-	text-decoration:none;
-	cursor:pointer;
-  }
   .modal-footer {
 	  margin-top:1rem;
 	  margin-bottom:6rem;
