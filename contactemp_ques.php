@@ -55,7 +55,7 @@ if (!isset($_SESSION['email'])) {
 				<div class="Slides" style="display:block;">
 					<div class="entry">
 						<input type="hidden" name="contactemp" value="contactemp"/>
-						<h3 class="ques_title">Do you wish to answer the employer's contact information?</h3>
+						<h3 class="ques_title">Do you wish to answer share your employer's contact information?</h3>
 					</div>
 
 					<label class="option">Yes
