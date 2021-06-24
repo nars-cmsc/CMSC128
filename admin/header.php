@@ -18,15 +18,14 @@
 		<div id="logoutModal" class="modal">
 			<div class="modal-content" style="width:50%;">
 				<div class="modal-header">
-					<span class="closeBtn">&times;</span>
 					<h4 style="color:#840038; text-transform:uppercase;">You are about to log out of the system.</h4>
 				</div>
 				<div class="modal-body">
-					<p style="color:black;">Continue?</p>
+					<p style="color:black;">(Click outside of the prompt to cancel.)</p>
 				</div>
 				<div class="modal-footer">		
 					<div class="logout-modal">
-						<a href="header.php?logout=1" class="logout" title="Log out">Log Out</a>
+						<a href="header.php?logout=1" class="logout" title="Continue">Continue</a>
 					</div>
 				</div>
 			</div>
