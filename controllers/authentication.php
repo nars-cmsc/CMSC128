@@ -87,6 +87,7 @@ if (isset($_POST['login-btn'])) {
 			$result = $stmt->get_result();
 			$user = $result->fetch_assoc();
 
+			// chack if password matches email
 			if (password_verify($password, $user['password'])) {
 				// successful login
 				$_SESSION['id'] = $user['user_id'];

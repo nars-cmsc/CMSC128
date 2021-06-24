@@ -11,15 +11,6 @@ $ALUM_EMP_ROLE_ID = 3;
 
 $errors = array();
 $error;
-
-/*if(isset($_POST["submit-alum"]))
-{
-	?>
-	<script type="text/javascript">
-	window.location="contactemp_ques.php";
-	</script>
-<?php
- } */
  
 $ques2_arr = array (
 	"Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "	Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria",
@@ -76,16 +67,6 @@ $ques18_arr = array(
 	"Think critically",
 	"Demonstrate discernment"
 );
-
-
-/*if(isset($_POST["submit-alum"]))
-{
-	?>
-	<script type="text/javascript">
-	window.location="contactemp_ques.php";
-	</script>
-<?php
-}*/
 
 // ALUMNI SURVEY
 
@@ -287,15 +268,15 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 
 	// ERROR: required fields are empty or only white spaces
 
-		if (empty($one) && $user_exist == false) {
+	if (empty($one) && $user_exist == false) {
 		$errors['es_q1'] = "Need to answer your sex. Field cannot be empty.";
 		$error = true;
 	}
-		if (empty($two) && $user_exist == false) {
+	if (empty($two) && $user_exist == false) {
 		$errors['es_q2'] = "Need to answer the country. Field cannot be empty.";
 		$error = true;
 	}	
-		if (empty($three) && $user_exist == false) {
+	if (empty($three) && $user_exist == false) {
 		$errors['es_q3'] = "Need to answer your satisfaction. Field cannot be empty.";
 		$error = true;
 	}
@@ -304,16 +285,16 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$error = true;
 	}
 		if (isset($_POST['ques5_1']) && $five == 'Yes' && empty($five_a)  && $user_exist == false) {
-		$errors['es_q5_1'] = "Need to answer characterization of employment. Field cannot be empty.";
-		$error = true;
+			$errors['es_q5_1'] = "Need to answer characterization of employment. Field cannot be empty.";
+			$error = true;
 		}
 		if (isset($_POST['ques5_2']) && $five == 'No' && empty($five_b) && $user_exist == false) {
-		$errors['es_q5_2'] = "Need to answer if you're looking for employment. Field cannot be empty.";
-		$error = true;
+			$errors['es_q5_2'] = "Need to answer if you're looking for employment. Field cannot be empty.";
+			$error = true;
 		}
 		if (isset($_POST['ques5c']) && $five == 'Yes' && empty($five_c) && $user_exist == false) {
-		$errors['es_q5_3'] = "Need to answer the industry. Field cannot be empty.";
-		$error = true;
+			$errors['es_q5_3'] = "Need to answer the industry. Field cannot be empty.";
+			$error = true;
 		}
 			if (isset($_POST['ques5c_other']) && $_POST['ques5c_other'] == 'other' && (empty($fivec_other) || strlen(trim($fivec_other)) <= 0) && $user_exist == false) {
 				$errors['es_q5c_other'] = "Need to answer the industry. 'Others' field cannot be empty.";
@@ -323,7 +304,7 @@ if (isset($_POST['submit-alum']) && $_POST['submitted'] == '1') {
 		$errors['es_q4'] = "Need to answer how long since you got your first job after graduation. Field cannot be empty.";
 		$error = true;
 	}		
-		if (isset($_POST['ques6']) && $five == 'Yes' && empty($six) && $user_exist == false) {
+	if (isset($_POST['ques6']) && $five == 'Yes' && empty($six) && $user_exist == false) {
 		$errors['es_q6'] = "Need to answer minimum level of education. Field cannot be empty.";
 		$error = true;
 	}

@@ -419,35 +419,22 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	// if there are no errors store answers to db
 	if ($error == false) {
 		// QUESTION NUMBER 1
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['one']);
 		$one = mysqli_real_escape_string($db_conn, $_POST['ques1']);	
 		// if other is selected
 		if ($one == 'Other') {
-			$one_field = "other_" . mysqli_real_escape_string($db_conn, $_POST['ques1_otxt']);
 			$one_other = mysqli_real_escape_string($db_conn, $_POST['ques1_otxt']);
 
 			// store to db (emp_survey_q1 table)
 			$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, answer_others,  date_response) VALUES ('$id', '$one', '$one_other', now())";
 		    mysqli_query($db_conn, $sql);
 		} else {
-			$one_field = $one;
+			// store to db (emp_survey_q1 table)
+			$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, date_response) VALUES ('$id', '$one', now())";
+		    mysqli_query($db_conn, $sql);
 		}
 
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$one_field')";
-	    mysqli_query($db_conn, $sql);
-
-		// store to db (emp_survey_q1 table)
-		$sql = "INSERT INTO emp_survey_q1 (user_id, answer_body, date_response) VALUES ('$id', '$one', now())";
-	    mysqli_query($db_conn, $sql);
-
 		// QUESTION NUMBER 2
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['two']);
 		$two = mysqli_real_escape_string($db_conn, $_POST['ques2']);
-		
-		// store to db (emp_survey table)	
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$two')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q2 table)
 		$sql = "INSERT INTO emp_survey_q2 (user_id, answer_body, date_response) VALUES ('$id', '$two', now())";
@@ -455,20 +442,8 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 
 		// QUESTION NUMBER 2.1
 		if ($two == 'Abroad') {
-			$ques_num = mysqli_real_escape_string($db_conn, $_POST['twopone']);
 			$region = mysqli_real_escape_string($db_conn, $_POST['ques2_1_1']);
 			$subregion = mysqli_real_escape_string($db_conn, $_POST['ques2_1_2']);
-
-			if ($region == 'Antarctica') {
-				$reg_sub = mysqli_real_escape_string($db_conn, $region);
-			}
-			else {
-				$reg_sub = mysqli_real_escape_string($db_conn, $region.'_'.$subregion);
-			}
-
-			// store to db (emp_survey table)
-		    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$reg_sub')";
-		    mysqli_query($db_conn, $sql);
 
 		    // store to db (emp_survey_q2_1 table)
 			$sql = "INSERT INTO emp_survey_q2_1 (user_id, region, subregion, date_response) VALUES ('$id', '$region', '$subregion', now())";
@@ -476,120 +451,43 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 		}
 
 		// QUESTION NUMBER 3
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['three']);
 		$three = mysqli_real_escape_string($db_conn, $_POST['ques3']);
 		$three_other = mysqli_real_escape_string($db_conn, $_POST['ques3_other']);
 		
 		if ($three == 'other') {
-			$industry = "other_" . mysqli_real_escape_string($db_conn, $three_other);
 			// store to db (emp_survey_q3 table)
 			$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, answer_others,  date_response) VALUES ('$id', '$three', '$three_other', now())";
 		    mysqli_query($db_conn, $sql);
 		}
 		else {
-			$industry = mysqli_real_escape_string($db_conn, $three);
+			// store to db (emp_survey_q3 table)
+			$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, date_response) VALUES ('$id', '$three', now())";
+		    mysqli_query($db_conn, $sql);
 		}
 
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$industry')";
-	    mysqli_query($db_conn, $sql);
-
-	    // store to db (emp_survey_q3 table)
-		$sql = "INSERT INTO emp_survey_q3 (user_id, answer_body, date_response) VALUES ('$id', '$three', now())";
-	    mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 4
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['four']);
 		$four = mysqli_real_escape_string($db_conn, $_POST['ques4']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$four')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q4 table)
 		$sql = "INSERT INTO emp_survey_q4 (user_id, answer_body, date_response) VALUES ('$id', '$four', now())";
 	    mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 5
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['five']);
 		$five = mysqli_real_escape_string($db_conn, $_POST['ques5']);
-		
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$five')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q5 table)
 		$sql = "INSERT INTO emp_survey_q5 (user_id, answer_body, date_response) VALUES ('$id', '$five', now())";
 	    mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 6
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['six']);
 		$six = mysqli_real_escape_string($db_conn, $_POST['ques6']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$six')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q6 table)
 		$sql = "INSERT INTO emp_survey_q6 (user_id, answer_body, date_response) VALUES ('$id', '$six', now())";
 	    mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 7
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['seven']);
-		$skill7_1 = mysqli_real_escape_string($db_conn, $_POST['ques7_1']);
-		$skill7_2 = mysqli_real_escape_string($db_conn, $_POST['ques7_2']);
-		$skill7_3 = mysqli_real_escape_string($db_conn, $_POST['ques7_3']);
-		$skill7_4 = mysqli_real_escape_string($db_conn, $_POST['ques7_4']);
-		$skill7_5 = mysqli_real_escape_string($db_conn, $_POST['ques7_5']);
-		$skill7_6 = mysqli_real_escape_string($db_conn, $_POST['ques7_6']);
-		$skill7_7 = mysqli_real_escape_string($db_conn, $_POST['ques7_7']);
-		$skill7_8 = mysqli_real_escape_string($db_conn, $_POST['ques7_8']);
-		$skill7_9 = mysqli_real_escape_string($db_conn, $_POST['ques7_9']);
-		$skill7_10 = mysqli_real_escape_string($db_conn, $_POST['ques7_10']);
-		$skill7_11 = mysqli_real_escape_string($db_conn, $_POST['ques7_11']);
-		$skill7_12 = mysqli_real_escape_string($db_conn, $_POST['ques7_12']);
-		$skill7_13 = mysqli_real_escape_string($db_conn, $_POST['ques7_13']);
-		$skill7_14 = mysqli_real_escape_string($db_conn, $_POST['ques7_14']);
-		$skill7_15 = mysqli_real_escape_string($db_conn, $_POST['ques7_15']);
-		$skill7_16 = mysqli_real_escape_string($db_conn, $_POST['ques7_16']);
-		$skill7_17 = mysqli_real_escape_string($db_conn, $_POST['ques7_17']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_1')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_2')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_3')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_4')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_5')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_6')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_7')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_8')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_9')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_10')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_11')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_12')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_13')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_14')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_15')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_16')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill7_17')";
-	    mysqli_query($db_conn, $sql);
-
 	    // store to db (emp_survey_q7 table)
 	    $skill7[$skills_arr[0]] = mysqli_real_escape_string($db_conn, $_POST['ques7_1']);
 		$skill7[$skills_arr[1]] = mysqli_real_escape_string($db_conn, $_POST['ques7_2']);
@@ -615,61 +513,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    }
 
 		// QUESTION NUMBER 8
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['eight']);
-		$skill8_1 = mysqli_real_escape_string($db_conn, $_POST['ques8_1']);
-		$skill8_2 = mysqli_real_escape_string($db_conn, $_POST['ques8_2']);
-		$skill8_3 = mysqli_real_escape_string($db_conn, $_POST['ques8_3']);
-		$skill8_4 = mysqli_real_escape_string($db_conn, $_POST['ques8_4']);
-		$skill8_5 = mysqli_real_escape_string($db_conn, $_POST['ques8_5']);
-		$skill8_6 = mysqli_real_escape_string($db_conn, $_POST['ques8_6']);
-		$skill8_7 = mysqli_real_escape_string($db_conn, $_POST['ques8_7']);
-		$skill8_8 = mysqli_real_escape_string($db_conn, $_POST['ques8_8']);
-		$skill8_9 = mysqli_real_escape_string($db_conn, $_POST['ques8_9']);
-		$skill8_10 = mysqli_real_escape_string($db_conn, $_POST['ques8_10']);
-		$skill8_11 = mysqli_real_escape_string($db_conn, $_POST['ques8_11']);
-		$skill8_12 = mysqli_real_escape_string($db_conn, $_POST['ques8_12']);
-		$skill8_13 = mysqli_real_escape_string($db_conn, $_POST['ques8_13']);
-		$skill8_14 = mysqli_real_escape_string($db_conn, $_POST['ques8_14']);
-		$skill8_15 = mysqli_real_escape_string($db_conn, $_POST['ques8_15']);
-		$skill8_16 = mysqli_real_escape_string($db_conn, $_POST['ques8_16']);
-		$skill8_17 = mysqli_real_escape_string($db_conn, $_POST['ques8_17']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_1')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_2')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_3')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_4')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_5')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_6')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_7')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_8')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_9')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_10')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_11')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_12')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_13')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_14')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_15')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_16')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill8_17')";
-	    mysqli_query($db_conn, $sql);
-
 	    // store to db (emp_survey_q8 table)
 	    $skill8[$skills_arr[0]] = mysqli_real_escape_string($db_conn, $_POST['ques8_1']);
 		$skill8[$skills_arr[1]] = mysqli_real_escape_string($db_conn, $_POST['ques8_2']);
@@ -695,67 +538,20 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    }
 
 		// QUESTION NUMBER 9
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['nine']);
 		$nine = mysqli_real_escape_string($db_conn, $_POST['ques9']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$nine')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q9)
 	    $sql = "INSERT INTO emp_survey_q9 (user_id, answer_body, date_response) VALUES ('$id', '$nine', now())";
     	mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 10
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['ten']);
 		$ten = mysqli_real_escape_string($db_conn, $_POST['ques10']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$ten')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q10)
 	    $sql = "INSERT INTO emp_survey_q10 (user_id, answer_body, date_response) VALUES ('$id', '$ten', now())";
     	mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 11
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['eleven']);
-		$skill11_1 = mysqli_real_escape_string($db_conn, $_POST['ques11_1']);
-		$skill11_2 = mysqli_real_escape_string($db_conn, $_POST['ques11_2']);
-		$skill11_3 = mysqli_real_escape_string($db_conn, $_POST['ques11_3']);
-		$skill11_4 = mysqli_real_escape_string($db_conn, $_POST['ques11_4']);
-		$skill11_5 = mysqli_real_escape_string($db_conn, $_POST['ques11_5']);
-		$skill11_6 = mysqli_real_escape_string($db_conn, $_POST['ques11_6']);
-		$skill11_7 = mysqli_real_escape_string($db_conn, $_POST['ques11_7']);
-		$skill11_8 = mysqli_real_escape_string($db_conn, $_POST['ques11_8']);
-		$skill11_9 = mysqli_real_escape_string($db_conn, $_POST['ques11_9']);
-		$skill11_10 = mysqli_real_escape_string($db_conn, $_POST['ques11_10']);
-		$skill11_11 = mysqli_real_escape_string($db_conn, $_POST['ques11_11']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_1')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_2')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_3')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_4')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_5')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_6')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_7')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_8')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_9')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_10')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill11_11')";
-	    mysqli_query($db_conn, $sql);
-
 	    // store to db (emp_survey_q11 table)
 	    $skill11[$dmcs_skills_arr[0]] = mysqli_real_escape_string($db_conn, $_POST['ques11_1']);
 		$skill11[$dmcs_skills_arr[1]] = mysqli_real_escape_string($db_conn, $_POST['ques11_2']);
@@ -775,43 +571,6 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    }
 
 		// QUESTION NUMBER 12
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['twelve']);
-		$skill12_1 = mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
-		$skill12_2 = mysqli_real_escape_string($db_conn, $_POST['ques12_2']);
-		$skill12_3 = mysqli_real_escape_string($db_conn, $_POST['ques12_3']);
-		$skill12_4 = mysqli_real_escape_string($db_conn, $_POST['ques12_4']);
-		$skill12_5 = mysqli_real_escape_string($db_conn, $_POST['ques12_5']);
-		$skill12_6 = mysqli_real_escape_string($db_conn, $_POST['ques12_6']);
-		$skill12_7 = mysqli_real_escape_string($db_conn, $_POST['ques12_7']);
-		$skill12_8 = mysqli_real_escape_string($db_conn, $_POST['ques12_8']);
-		$skill12_9 = mysqli_real_escape_string($db_conn, $_POST['ques12_9']);
-		$skill12_10 = mysqli_real_escape_string($db_conn, $_POST['ques12_10']);
-		$skill12_11 = mysqli_real_escape_string($db_conn, $_POST['ques12_11']);
-
-		// store to db (emp_survey table)
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_1')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_2')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_3')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_4')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_5')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_6')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_7')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_8')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_9')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_10')";
-	    mysqli_query($db_conn, $sql);
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$skill12_11')";
-	    mysqli_query($db_conn, $sql);
-
 	    // store to db (emp_survey_q12 table)
 	    $skill12[$dmcs_skills_arr[0]] = mysqli_real_escape_string($db_conn, $_POST['ques12_1']);
 		$skill12[$dmcs_skills_arr[1]] = mysqli_real_escape_string($db_conn, $_POST['ques12_2']);
@@ -831,114 +590,76 @@ if (isset($_POST['submit-emp']) && $_POST['submitted'] == '1') {
 	    }
 
 		// QUESTION NUMBER 13
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['thirteen']);
 		$check13 = $_POST['ques13'];
 		$check13_other = mysqli_real_escape_string($db_conn, $_POST['ques13_otxt']);
 		
 		foreach ($check13 as $chk) {
 			if ($chk == 'other') {
-				$thirteen = implode('; ', $check13).'_'.$check13_other;
-
 				// store to db (emp_survey_q13)
 			    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, answer_others, date_response) VALUES ('$id', '$chk', '$check13_other', now())";
 		    	mysqli_query($db_conn, $sql);
 			}
 			else {
-				$thirteen = implode('; ', $check13);
-
-			// store to db (emp_survey_q13)
-		    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$chk', now())";
-	    	mysqli_query($db_conn, $sql);
-				}
+				// store to db (emp_survey_q13)
+			    $sql = "INSERT INTO emp_survey_q13 (user_id, answer_body, date_response) VALUES ('$id', '$chk', now())";
+		    	mysqli_query($db_conn, $sql);
+			}
 		}
 
-		// store to db
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$thirteen')";
-	    mysqli_query($db_conn, $sql);
-
 		// QUESTION NUMBER 14
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['fourteen']);
 		$fourteen = mysqli_real_escape_string($db_conn, $_POST['ques14']);
-
-		// store to db
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$fourteen')";
-	    mysqli_query($db_conn, $sql);
 
 	    // store to db (emp_survey_q14)
 	    $sql = "INSERT INTO emp_survey_q14 (user_id, answer_body, date_response) VALUES ('$id', '$fourteen', now())";
     	mysqli_query($db_conn, $sql);
 
 		// QUESTION NUMBER 15
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['fifteen']);
 		$fifteen = mysqli_real_escape_string($db_conn, $_POST['ques15']);
 		$fifteen_txt = mysqli_real_escape_string($db_conn, $_POST['ques15_ytxt']);
 
 		// if other is selected
 		if ($fifteen == 'Yes') {
-			$fifteen_field = mysqli_real_escape_string($db_conn, $fifteen_txt);
-
 			// store to db (emp_survey_q15)
 		    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, answer_yes, date_response) VALUES ('$id', '$fifteen', '$fifteen_txt', now())";
 	    	mysqli_query($db_conn, $sql);
 		} else {
-			$fifteen_field = $fifteen;
+			// store to db (emp_survey_q15)
+		    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, date_response) VALUES ('$id', '$fifteen', now())";
+	    	mysqli_query($db_conn, $sql);
 		}
-
-		// store to db
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$fifteen_field')";
-	    mysqli_query($db_conn, $sql);
-
-	    // store to db (emp_survey_q15)
-	    $sql = "INSERT INTO emp_survey_q15 (user_id, answer_body, date_response) VALUES ('$id', '$fifteen', now())";
-    	mysqli_query($db_conn, $sql);
+		    
 
 		// QUESTION NUMBER 16
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['sixteen']);
 		$sixteen = mysqli_real_escape_string($db_conn, $_POST['ques16']);
 		$sixteen_txt = mysqli_real_escape_string($db_conn, $_POST['ques16_ytxt']);
 		
 		// if other is selected
 		if ($sixteen == 'Yes') {
-			$sixteen_field = mysqli_real_escape_string($db_conn, $sixteen_txt);
-
 			// store to db (emp_survey_q16)
 		    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, answer_yes, date_response) VALUES ('$id', '$sixteen', '$sixteen_txt', now())";
 	    	mysqli_query($db_conn, $sql);
 		} else {
-			$sixteen_field = $sixteen;
+			// store to db (emp_survey_q16)
+		    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, date_response) VALUES ('$id', '$sixteen', now())";
+	    	mysqli_query($db_conn, $sql);
 		}
-
-		// store to db
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$sixteen_field')";
-	    mysqli_query($db_conn, $sql);
-
-	    // store to db (emp_survey_q16)
-	    $sql = "INSERT INTO emp_survey_q16 (user_id, answer_body, date_response) VALUES ('$id', '$sixteen', now())";
-    	mysqli_query($db_conn, $sql);
+		    
 
 		// QUESTION NUMBER 17
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['seventeen']);
 		$seventeen = mysqli_real_escape_string($db_conn, $_POST['ques17']);
 		$seventeen_txt = mysqli_real_escape_string($db_conn, $_POST['ques17_ytxt']);
 
 		// if other is selected
 		if ($seventeen == 'Yes') {
-			$seventeen_field = mysqli_real_escape_string($db_conn, $seventeen_txt);
-
 			// store to db (emp_survey_q17)
 		    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, answer_yes, date_response) VALUES ('$id', '$seventeen', '$seventeen_txt', now())";
 	    	mysqli_query($db_conn, $sql);
 		} else {
-			$seventeen_field = $seventeen;
+			// store to db (emp_survey_q17)
+		    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, date_response) VALUES ('$id', '$seventeen', now())";
+	    	mysqli_query($db_conn, $sql);
 		}
-
-		// store to db
-	    $sql = "INSERT INTO emp_survey (question_num, user_id, answer_body) VALUES ('$ques_num', '$id', '$seventeen_field')";
-	    mysqli_query($db_conn, $sql);
-
-	    // store to db (emp_survey_q17)
-	    $sql = "INSERT INTO emp_survey_q17 (user_id, answer_body, date_response) VALUES ('$id', '$seventeen', now())";
-    	mysqli_query($db_conn, $sql);
+	    
 
     	// if user already answered alumni survey
 		$alum_check_query = "SELECT * FROM alum_survey_q1 WHERE user_id='$id' LIMIT 1";

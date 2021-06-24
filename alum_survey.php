@@ -714,11 +714,8 @@ if ($_SESSION['role'] == 2) {
 		
 				
 			<!-- submit button -->
-			<!--a href="contactemp_ques.php"-->
-			
 			<input type="hidden" name="user_id" value="<?php echo $_SESSION['id']; ?>"/>
 			<input type="hidden" name="submitted" value="1"/> 
-			<!--/a-->
 			
 		</form>			
 	</div>

@@ -12,16 +12,11 @@ var slideIndex = 0;
 showSlides(slideIndex);
 
 function plusSlides(n){
-	//showSlides(slideIndex += n);	
 
 	var x = document.getElementsByClassName("Slides");
 	if (n == 1 && !validateEmpForm()) return false;
 	x[slideIndex].style.display = "none";
 	slideIndex = slideIndex + n;
-	// if (slideIndex >= x.length) {
-	// 	document.getElementById("empForm").submit();
-	// 	return false;
-	// }
 
 	showSlides(slideIndex);
 	document.body.scrollTop = 0;
@@ -41,20 +36,6 @@ function currentSlide(n){
 }
 
 function showSlides(n){
-	// var i;
-	// var slides = document.getElementsByClassName("Slides");
-	// var dots = document.getElementsByClassName("dot");
-	// if (n > slides.length) {slideIndex = slides.length}
-	// if (n < 1) {slideIndex = 1}
-	// for (i = 0; i< slides.length; i++){
-	// 	slides[i].style.display = "none";
-	// }
-	// for (i = 0; i< dots.length; i++){
-	// 	dots[i].className = dots[i].className.replace(" active","");
-	// }
-	// slides[slideIndex-1].style.display = "block";
-	// dots[slideIndex-1].className += " active";
-
 
 	var x = document.getElementsByClassName("Slides");
 	x[n].style.display = "block";
