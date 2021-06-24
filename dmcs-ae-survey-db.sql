@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2021 at 08:19 PM
+-- Generation Time: Jun 24, 2021 at 11:28 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -20,19 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `dmcs-ae-survey-db`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `alum_survey`
---
-
-CREATE TABLE `alum_survey` (
-  `answer_id` int(11) NOT NULL,
-  `question_num` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -190,7 +177,8 @@ INSERT INTO `alum_survey_q5` (`answer_id`, `user_id`, `Employed`, `Characterized
 (10, 21, 'No', '', '', '', 'No', '2021-06-16'),
 (11, 8, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21'),
 (12, 67, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21'),
-(13, 68, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21');
+(13, 68, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-21'),
+(14, 2, 'No', 'NA', 'NA', 'NA', 'No', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -276,7 +264,8 @@ INSERT INTO `alum_survey_q8` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (10, 21, 'Armed Forces Occupations', '2021-06-16'),
 (11, 8, 'Craft and Related Trade Workers', '2021-06-21'),
 (12, 67, 'Clerical Support Workers', '2021-06-21'),
-(13, 68, 'Craft and Related Trade Workers', '2021-06-21');
+(13, 68, 'Craft and Related Trade Workers', '2021-06-21'),
+(14, 2, 'Technicians and Associate Professionals', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -366,7 +355,8 @@ INSERT INTO `alum_survey_q11` (`answer_id`, `user_id`, `Volunteer`, `Characteriz
 (10, 21, 'Yes', 'Full time (40 hours/week)', '2021-06-16'),
 (11, 8, 'No', 'NA', '2021-06-21'),
 (12, 67, 'No', 'NA', '2021-06-21'),
-(13, 68, 'No', 'NA', '2021-06-21');
+(13, 68, 'No', 'NA', '2021-06-21'),
+(14, 2, 'No', 'NA', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -425,7 +415,8 @@ INSERT INTO `alum_survey_q13` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (10, 21, 'More than adequately', '2021-06-16'),
 (11, 8, 'More than adequately', '2021-06-21'),
 (12, 67, 'More than adequately', '2021-06-21'),
-(13, 68, 'More than adequately', '2021-06-21');
+(13, 68, 'More than adequately', '2021-06-21'),
+(14, 2, 'Less than adequately', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -535,7 +526,8 @@ INSERT INTO `alum_survey_q17` (`answer_id`, `user_id`, `answer_body`, `date_resp
 (10, 21, 'Generally satisfied', '2021-06-16'),
 (11, 8, 'Generally satisfied', '2021-06-21'),
 (12, 67, 'Generally dissatisfied', '2021-06-21'),
-(13, 68, 'Generally satisfied', '2021-06-21');
+(13, 68, 'Generally satisfied', '2021-06-21'),
+(14, 2, 'Very dissatisfied ', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -698,7 +690,18 @@ INSERT INTO `alum_survey_q18` (`answer_id`, `user_id`, `ques18_arr`, `answer_bod
 (140, 68, 'Be mindful of the needs and capabilities of people', 'More than adequately', '2021-06-21'),
 (141, 68, 'Be sensitive to the challenges and opportunities of national development and global change', 'More than adequately', '2021-06-21'),
 (142, 68, 'Think critically', 'More than adequately', '2021-06-21'),
-(143, 68, 'Demonstrate discernment', 'More than adequately', '2021-06-21');
+(143, 68, 'Demonstrate discernment', 'More than adequately', '2021-06-21'),
+(144, 2, 'Possess the skills and mindset to improve human life', '', '2021-06-24'),
+(145, 2, 'Commit to the freedom and welfare of all', '', '2021-06-24'),
+(146, 2, 'Demonstrate mastery of knowledge in your specific discipline', '', '2021-06-24'),
+(147, 2, 'Possess breadth of mind', '', '2021-06-24'),
+(148, 2, 'Possess strength of character', '', '2021-06-24'),
+(149, 2, 'Possess generosity of spirit', '', '2021-06-24'),
+(150, 2, 'Inclusively engage with society and the world at large', '', '2021-06-24'),
+(151, 2, 'Be mindful of the needs and capabilities of people', '', '2021-06-24'),
+(152, 2, 'Be sensitive to the challenges and opportunities of national development and global change', '', '2021-06-24'),
+(153, 2, 'Think critically', '', '2021-06-24'),
+(154, 2, 'Demonstrate discernment', 'Very well', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -731,7 +734,8 @@ INSERT INTO `alum_survey_q19` (`answer_id`, `user_id`, `Elaborate`, `answer_body
 (10, 21, 'No', 'NA', '2021-06-16'),
 (11, 8, 'No', 'NA', '2021-06-21'),
 (12, 67, 'No', 'NA', '2021-06-21'),
-(13, 68, 'No', 'NA', '2021-06-21');
+(13, 68, 'No', 'NA', '2021-06-21'),
+(14, 2, 'No', 'NA', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -758,927 +762,6 @@ INSERT INTO `contactemp_ques` (`answer_id`, `user_id`, `companyname`, `contactpe
 (1, 14, 'Media Inc.', 'Sam Ting Wong', '2345678', 'sam@mail.com', '2021-06-16', 'Yes'),
 (2, 15, 'Drag University', 'Yekaterina Petrovna Zamolochikova', '', 'katya_zamo@mail.com', '2021-06-16', 'No'),
 (3, 20, 'Company', 'Jane Doe', '09089089078', '', '2021-06-16', 'No');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `emp_survey`
---
-
-CREATE TABLE `emp_survey` (
-  `answer_id` int(11) NOT NULL,
-  `question_num` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `answer_body` mediumtext NOT NULL,
-  `date_response` date NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `emp_survey`
---
-
-INSERT INTO `emp_survey` (`answer_id`, `question_num`, `user_id`, `answer_body`, `date_response`) VALUES
-(1, 1, 24, 'other_Semi private', '2021-05-24'),
-(2, 2, 24, 'Abroad', '2021-05-24'),
-(3, 2, 24, 'Antarctica', '2021-05-24'),
-(4, 3, 24, 'Education', '2021-05-24'),
-(5, 4, 24, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
-(6, 5, 24, '3', '2021-05-24'),
-(7, 6, 24, 'Disagree', '2021-05-24'),
-(8, 7, 24, 'Unimportant', '2021-05-24'),
-(9, 7, 24, 'Of Little Importance', '2021-05-24'),
-(10, 7, 24, 'Of Little Importance', '2021-05-24'),
-(11, 7, 24, 'Important', '2021-05-24'),
-(12, 7, 24, 'Very Important', '2021-05-24'),
-(13, 7, 24, 'Important', '2021-05-24'),
-(14, 7, 24, 'Of Little Importance', '2021-05-24'),
-(15, 7, 24, 'Unimportant', '2021-05-24'),
-(16, 7, 24, 'Of Little Importance', '2021-05-24'),
-(17, 7, 24, 'Important', '2021-05-24'),
-(18, 7, 24, 'Important', '2021-05-24'),
-(19, 7, 24, 'Important', '2021-05-24'),
-(20, 7, 24, 'Important', '2021-05-24'),
-(21, 7, 24, 'Important', '2021-05-24'),
-(22, 7, 24, 'Important', '2021-05-24'),
-(23, 7, 24, 'Very Important', '2021-05-24'),
-(24, 7, 24, 'Of Little Importance', '2021-05-24'),
-(25, 8, 24, 'Very Unsatisfied', '2021-05-24'),
-(26, 8, 24, 'Unsatisfied', '2021-05-24'),
-(27, 8, 24, 'Satisfied', '2021-05-24'),
-(28, 8, 24, 'Unsatisfied', '2021-05-24'),
-(29, 8, 24, 'Satisfied', '2021-05-24'),
-(30, 8, 24, 'Unsatisfied', '2021-05-24'),
-(31, 8, 24, 'Satisfied', '2021-05-24'),
-(32, 8, 24, 'Very Unsatisfied', '2021-05-24'),
-(33, 8, 24, 'Unsatisfied', '2021-05-24'),
-(34, 8, 24, 'Satisfied', '2021-05-24'),
-(35, 8, 24, 'Very Satisfied', '2021-05-24'),
-(36, 8, 24, 'Satisfied', '2021-05-24'),
-(37, 8, 24, 'Unsatisfied', '2021-05-24'),
-(38, 8, 24, 'Very Unsatisfied', '2021-05-24'),
-(39, 8, 24, 'Unsatisfied', '2021-05-24'),
-(40, 8, 24, 'Satisfied', '2021-05-24'),
-(41, 8, 24, 'Very Satisfied', '2021-05-24'),
-(42, 9, 24, 'Unlikely', '2021-05-24'),
-(43, 10, 24, 'Very Unlikely', '2021-05-24'),
-(44, 11, 24, 'Unimportant', '2021-05-24'),
-(45, 11, 24, 'Of Little Importance', '2021-05-24'),
-(46, 11, 24, 'Unimportant', '2021-05-24'),
-(47, 11, 24, 'Of Little Importance', '2021-05-24'),
-(48, 11, 24, 'Important', '2021-05-24'),
-(49, 11, 24, 'Very Important', '2021-05-24'),
-(50, 11, 24, 'Of Little Importance', '2021-05-24'),
-(51, 11, 24, 'Of Little Importance', '2021-05-24'),
-(52, 11, 24, 'Important', '2021-05-24'),
-(53, 11, 24, 'Important', '2021-05-24'),
-(54, 11, 24, 'Of Little Importance', '2021-05-24'),
-(55, 12, 24, 'Very Unsatisfied', '2021-05-24'),
-(56, 12, 24, 'Unsatisfied', '2021-05-24'),
-(57, 12, 24, 'Unsatisfied', '2021-05-24'),
-(58, 12, 24, 'Satisfied', '2021-05-24'),
-(59, 12, 24, 'Unsatisfied', '2021-05-24'),
-(60, 12, 24, 'Satisfied', '2021-05-24'),
-(61, 12, 24, 'Unsatisfied', '2021-05-24'),
-(62, 12, 24, 'Satisfied', '2021-05-24'),
-(63, 12, 24, 'Satisfied', '2021-05-24'),
-(64, 12, 24, 'Satisfied', '2021-05-24'),
-(65, 12, 24, 'Unsatisfied', '2021-05-24'),
-(66, 13, 24, 'Design courses that are more relevant to the needs of employers; Include practical experience as part of the academic programs; Provide better post-graduation support (facilitate relations between graduates and companies/organizations); other_Something', '2021-05-24'),
-(67, 14, 24, 'Of Little Importance', '2021-05-24'),
-(68, 15, 24, 'No', '2021-05-24'),
-(69, 16, 24, 'Very negative', '2021-05-24'),
-(70, 17, 24, 'Very strong', '2021-05-24'),
-(71, 1, 25, 'Private', '2021-05-24'),
-(72, 2, 25, 'Philippines', '2021-05-24'),
-(73, 3, 25, 'Other Service Activities', '2021-05-24'),
-(74, 4, 25, 'Chief level – General Manager/President/CEO', '2021-05-24'),
-(75, 5, 25, '6', '2021-05-24'),
-(76, 6, 25, 'Strongly Agree', '2021-05-24'),
-(77, 7, 25, 'Important', '2021-05-24'),
-(78, 7, 25, 'Very Important', '2021-05-24'),
-(79, 7, 25, 'Important', '2021-05-24'),
-(80, 7, 25, 'Very Important', '2021-05-24'),
-(81, 7, 25, 'Important', '2021-05-24'),
-(82, 7, 25, 'Very Important', '2021-05-24'),
-(83, 7, 25, 'Important', '2021-05-24'),
-(84, 7, 25, 'Of Little Importance', '2021-05-24'),
-(85, 7, 25, 'Of Little Importance', '2021-05-24'),
-(86, 7, 25, 'Important', '2021-05-24'),
-(87, 7, 25, 'Of Little Importance', '2021-05-24'),
-(88, 7, 25, 'Of Little Importance', '2021-05-24'),
-(89, 7, 25, 'Of Little Importance', '2021-05-24'),
-(90, 7, 25, 'Important', '2021-05-24'),
-(91, 7, 25, 'Of Little Importance', '2021-05-24'),
-(92, 7, 25, 'Important', '2021-05-24'),
-(93, 7, 25, 'Very Important', '2021-05-24'),
-(94, 8, 25, 'Very Unsatisfied', '2021-05-24'),
-(95, 8, 25, 'Unsatisfied', '2021-05-24'),
-(96, 8, 25, 'Very Unsatisfied', '2021-05-24'),
-(97, 8, 25, 'Satisfied', '2021-05-24'),
-(98, 8, 25, 'Very Satisfied', '2021-05-24'),
-(99, 8, 25, 'Satisfied', '2021-05-24'),
-(100, 8, 25, 'Unsatisfied', '2021-05-24'),
-(101, 8, 25, 'Satisfied', '2021-05-24'),
-(102, 8, 25, 'Very Satisfied', '2021-05-24'),
-(103, 8, 25, 'Satisfied', '2021-05-24'),
-(104, 8, 25, 'Satisfied', '2021-05-24'),
-(105, 8, 25, 'Very Satisfied', '2021-05-24'),
-(106, 8, 25, 'Satisfied', '2021-05-24'),
-(107, 8, 25, 'Satisfied', '2021-05-24'),
-(108, 8, 25, 'Very Satisfied', '2021-05-24'),
-(109, 8, 25, 'Satisfied', '2021-05-24'),
-(110, 8, 25, 'Very Satisfied', '2021-05-24'),
-(111, 9, 25, 'Very Likely', '2021-05-24'),
-(112, 10, 25, 'Likely', '2021-05-24'),
-(113, 11, 25, 'Important', '2021-05-24'),
-(114, 11, 25, 'Very Important', '2021-05-24'),
-(115, 11, 25, 'Of Little Importance', '2021-05-24'),
-(116, 11, 25, 'Of Little Importance', '2021-05-24'),
-(117, 11, 25, 'Important', '2021-05-24'),
-(118, 11, 25, 'Very Important', '2021-05-24'),
-(119, 11, 25, 'Important', '2021-05-24'),
-(120, 11, 25, 'Important', '2021-05-24'),
-(121, 11, 25, 'Important', '2021-05-24'),
-(122, 11, 25, 'Very Important', '2021-05-24'),
-(123, 11, 25, 'Important', '2021-05-24'),
-(124, 12, 25, 'Satisfied', '2021-05-24'),
-(125, 12, 25, 'Very Satisfied', '2021-05-24'),
-(126, 12, 25, 'Satisfied', '2021-05-24'),
-(127, 12, 25, 'Very Satisfied', '2021-05-24'),
-(128, 12, 25, 'Very Satisfied', '2021-05-24'),
-(129, 12, 25, 'Very Satisfied', '2021-05-24'),
-(130, 12, 25, 'Satisfied', '2021-05-24'),
-(131, 12, 25, 'Unsatisfied', '2021-05-24'),
-(132, 12, 25, 'Unsatisfied', '2021-05-24'),
-(133, 12, 25, 'Satisfied', '2021-05-24'),
-(134, 12, 25, 'Satisfied', '2021-05-24'),
-(135, 13, 25, 'Design courses that are more relevant to the needs of employers; Include practical experience as part of the academic programs; Include sector specific job placements as an integral part of the degree program; Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '2021-05-24'),
-(136, 14, 25, 'Important', '2021-05-24'),
-(137, 15, 25, 'I forgot that u existed', '2021-05-24'),
-(138, 16, 25, 'No', '2021-05-24'),
-(139, 17, 25, 'No', '2021-05-24'),
-(140, 1, 26, 'Public', '2021-05-24'),
-(141, 2, 26, 'Philippines', '2021-05-24'),
-(142, 3, 26, 'Information Technology', '2021-05-24'),
-(143, 4, 26, 'Rank and file', '2021-05-24'),
-(144, 5, 26, '1', '2021-05-24'),
-(145, 6, 26, 'Disagree', '2021-05-24'),
-(146, 7, 26, 'Important', '2021-05-24'),
-(147, 7, 26, 'Important', '2021-05-24'),
-(148, 7, 26, 'Very Important', '2021-05-24'),
-(149, 7, 26, 'Important', '2021-05-24'),
-(150, 7, 26, 'Very Important', '2021-05-24'),
-(151, 7, 26, 'Important', '2021-05-24'),
-(152, 7, 26, 'Very Important', '2021-05-24'),
-(153, 7, 26, 'Important', '2021-05-24'),
-(154, 7, 26, 'Important', '2021-05-24'),
-(155, 7, 26, 'Important', '2021-05-24'),
-(156, 7, 26, 'Very Important', '2021-05-24'),
-(157, 7, 26, 'Important', '2021-05-24'),
-(158, 7, 26, 'Very Important', '2021-05-24'),
-(159, 7, 26, 'Important', '2021-05-24'),
-(160, 7, 26, 'Very Important', '2021-05-24'),
-(161, 7, 26, 'Important', '2021-05-24'),
-(162, 7, 26, 'Very Important', '2021-05-24'),
-(163, 8, 26, 'Very Satisfied', '2021-05-24'),
-(164, 8, 26, 'Satisfied', '2021-05-24'),
-(165, 8, 26, 'Very Satisfied', '2021-05-24'),
-(166, 8, 26, 'Satisfied', '2021-05-24'),
-(167, 8, 26, 'Very Satisfied', '2021-05-24'),
-(168, 8, 26, 'Satisfied', '2021-05-24'),
-(169, 8, 26, 'Very Satisfied', '2021-05-24'),
-(170, 8, 26, 'Satisfied', '2021-05-24'),
-(171, 8, 26, 'Very Satisfied', '2021-05-24'),
-(172, 8, 26, 'Satisfied', '2021-05-24'),
-(173, 8, 26, 'Satisfied', '2021-05-24'),
-(174, 8, 26, 'Satisfied', '2021-05-24'),
-(175, 8, 26, 'Satisfied', '2021-05-24'),
-(176, 8, 26, 'Very Satisfied', '2021-05-24'),
-(177, 8, 26, 'Very Satisfied', '2021-05-24'),
-(178, 8, 26, 'Very Satisfied', '2021-05-24'),
-(179, 8, 26, 'Very Satisfied', '2021-05-24'),
-(180, 9, 26, 'Likely', '2021-05-24'),
-(181, 10, 26, 'Likely', '2021-05-24'),
-(182, 11, 26, 'Very Important', '2021-05-24'),
-(183, 11, 26, 'Important', '2021-05-24'),
-(184, 11, 26, 'Very Important', '2021-05-24'),
-(185, 11, 26, 'Important', '2021-05-24'),
-(186, 11, 26, 'Very Important', '2021-05-24'),
-(187, 11, 26, 'Very Important', '2021-05-24'),
-(188, 11, 26, 'Very Important', '2021-05-24'),
-(189, 11, 26, 'Important', '2021-05-24'),
-(190, 11, 26, 'Very Important', '2021-05-24'),
-(191, 11, 26, 'Important', '2021-05-24'),
-(192, 11, 26, 'Important', '2021-05-24'),
-(193, 12, 26, 'Unsatisfied', '2021-05-24'),
-(194, 12, 26, 'Unsatisfied', '2021-05-24'),
-(195, 12, 26, 'Satisfied', '2021-05-24'),
-(196, 12, 26, 'Satisfied', '2021-05-24'),
-(197, 12, 26, 'Unsatisfied', '2021-05-24'),
-(198, 12, 26, 'Satisfied', '2021-05-24'),
-(199, 12, 26, 'Unsatisfied', '2021-05-24'),
-(200, 12, 26, 'Very Satisfied', '2021-05-24'),
-(201, 12, 26, 'Very Satisfied', '2021-05-24'),
-(202, 12, 26, 'Very Satisfied', '2021-05-24'),
-(203, 12, 26, 'Satisfied', '2021-05-24'),
-(204, 13, 26, 'Design courses that are more relevant to the needs of employers; Include practical experience as part of the academic programs; Include sector specific job placements as an integral part of the degree program', '2021-05-24'),
-(205, 14, 26, 'Moderately part Important', '2021-05-24'),
-(206, 15, 26, 'No', '2021-05-24'),
-(207, 16, 26, 'Very poor', '2021-05-24'),
-(208, 17, 26, 'Very good', '2021-05-24'),
-(209, 1, 28, 'other_Semi public', '2021-05-24'),
-(210, 2, 28, 'Abroad', '2021-05-24'),
-(211, 2, 28, 'Europe_Southern Europe', '2021-05-24'),
-(212, 3, 28, 'Arts, Entertainment and Recreation', '2021-05-24'),
-(213, 4, 28, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
-(214, 5, 28, '7', '2021-05-24'),
-(215, 6, 28, 'Strongly Agree', '2021-05-24'),
-(216, 7, 28, 'Very Important', '2021-05-24'),
-(217, 7, 28, 'Very Important', '2021-05-24'),
-(218, 7, 28, 'Of Little Importance', '2021-05-24'),
-(219, 7, 28, 'Of Little Importance', '2021-05-24'),
-(220, 7, 28, 'Unimportant', '2021-05-24'),
-(221, 7, 28, 'Unimportant', '2021-05-24'),
-(222, 7, 28, 'Important', '2021-05-24'),
-(223, 7, 28, 'Important', '2021-05-24'),
-(224, 7, 28, 'Of Little Importance', '2021-05-24'),
-(225, 7, 28, 'Important', '2021-05-24'),
-(226, 7, 28, 'Of Little Importance', '2021-05-24'),
-(227, 7, 28, 'Important', '2021-05-24'),
-(228, 7, 28, 'Of Little Importance', '2021-05-24'),
-(229, 7, 28, 'Important', '2021-05-24'),
-(230, 7, 28, 'Very Important', '2021-05-24'),
-(231, 7, 28, 'Of Little Importance', '2021-05-24'),
-(232, 7, 28, 'Unimportant', '2021-05-24'),
-(233, 8, 28, 'Unsatisfied', '2021-05-24'),
-(234, 8, 28, 'Satisfied', '2021-05-24'),
-(235, 8, 28, 'Very Satisfied', '2021-05-24'),
-(236, 8, 28, 'Unsatisfied', '2021-05-24'),
-(237, 8, 28, 'Satisfied', '2021-05-24'),
-(238, 8, 28, 'Very Unsatisfied', '2021-05-24'),
-(239, 8, 28, 'Unsatisfied', '2021-05-24'),
-(240, 8, 28, 'Satisfied', '2021-05-24'),
-(241, 8, 28, 'Unsatisfied', '2021-05-24'),
-(242, 8, 28, 'Satisfied', '2021-05-24'),
-(243, 8, 28, 'Satisfied', '2021-05-24'),
-(244, 8, 28, 'Very Satisfied', '2021-05-24'),
-(245, 8, 28, 'Satisfied', '2021-05-24'),
-(246, 8, 28, 'Very Satisfied', '2021-05-24'),
-(247, 8, 28, 'Satisfied', '2021-05-24'),
-(248, 8, 28, 'Satisfied', '2021-05-24'),
-(249, 8, 28, 'Very Satisfied', '2021-05-24'),
-(250, 9, 28, 'Unlikely', '2021-05-24'),
-(251, 10, 28, 'Very Likely', '2021-05-24'),
-(252, 11, 28, 'Very Important', '2021-05-24'),
-(253, 11, 28, 'Important', '2021-05-24'),
-(254, 11, 28, 'Very Important', '2021-05-24'),
-(255, 11, 28, 'Important', '2021-05-24'),
-(256, 11, 28, 'Important', '2021-05-24'),
-(257, 11, 28, 'Very Important', '2021-05-24'),
-(258, 11, 28, 'Of Little Importance', '2021-05-24'),
-(259, 11, 28, 'Important', '2021-05-24'),
-(260, 11, 28, 'Important', '2021-05-24'),
-(261, 11, 28, 'Important', '2021-05-24'),
-(262, 11, 28, 'Important', '2021-05-24'),
-(263, 12, 28, 'Unsatisfied', '2021-05-24'),
-(264, 12, 28, 'Satisfied', '2021-05-24'),
-(265, 12, 28, 'Satisfied', '2021-05-24'),
-(266, 12, 28, 'Satisfied', '2021-05-24'),
-(267, 12, 28, 'Very Satisfied', '2021-05-24'),
-(268, 12, 28, 'Satisfied', '2021-05-24'),
-(269, 12, 28, 'Very Satisfied', '2021-05-24'),
-(270, 12, 28, 'Satisfied', '2021-05-24'),
-(271, 12, 28, 'Satisfied', '2021-05-24'),
-(272, 12, 28, 'Unsatisfied', '2021-05-24'),
-(273, 12, 28, 'Very Unsatisfied', '2021-05-24'),
-(274, 13, 28, 'other_Some people want it all', '2021-05-24'),
-(275, 14, 28, 'Moderately part Important', '2021-05-24'),
-(276, 15, 28, 'No', '2021-05-24'),
-(277, 16, 28, 'No', '2021-05-24'),
-(278, 17, 28, 'No', '2021-05-24'),
-(279, 1, 27, 'Private', '2021-05-24'),
-(280, 2, 27, 'Philippines', '2021-05-24'),
-(281, 3, 27, 'Finance, Banks, and Insurance', '2021-05-24'),
-(282, 4, 27, 'Chief level – General Manager/President/CEO', '2021-05-24'),
-(283, 5, 27, '7', '2021-05-24'),
-(284, 6, 27, 'Strongly Disagree', '2021-05-24'),
-(285, 7, 27, 'Of Little Importance', '2021-05-24'),
-(286, 7, 27, 'Of Little Importance', '2021-05-24'),
-(287, 7, 27, 'Of Little Importance', '2021-05-24'),
-(288, 7, 27, 'Of Little Importance', '2021-05-24'),
-(289, 7, 27, 'Of Little Importance', '2021-05-24'),
-(290, 7, 27, 'Of Little Importance', '2021-05-24'),
-(291, 7, 27, 'Of Little Importance', '2021-05-24'),
-(292, 7, 27, 'Of Little Importance', '2021-05-24'),
-(293, 7, 27, 'Of Little Importance', '2021-05-24'),
-(294, 7, 27, 'Of Little Importance', '2021-05-24'),
-(295, 7, 27, 'Of Little Importance', '2021-05-24'),
-(296, 7, 27, 'Of Little Importance', '2021-05-24'),
-(297, 7, 27, 'Of Little Importance', '2021-05-24'),
-(298, 7, 27, 'Of Little Importance', '2021-05-24'),
-(299, 7, 27, 'Of Little Importance', '2021-05-24'),
-(300, 7, 27, 'Of Little Importance', '2021-05-24'),
-(301, 7, 27, 'Of Little Importance', '2021-05-24'),
-(302, 8, 27, 'Unsatisfied', '2021-05-24'),
-(303, 8, 27, 'Unsatisfied', '2021-05-24'),
-(304, 8, 27, 'Unsatisfied', '2021-05-24'),
-(305, 8, 27, 'Unsatisfied', '2021-05-24'),
-(306, 8, 27, 'Unsatisfied', '2021-05-24'),
-(307, 8, 27, 'Unsatisfied', '2021-05-24'),
-(308, 8, 27, 'Unsatisfied', '2021-05-24'),
-(309, 8, 27, 'Unsatisfied', '2021-05-24'),
-(310, 8, 27, 'Unsatisfied', '2021-05-24'),
-(311, 8, 27, 'Unsatisfied', '2021-05-24'),
-(312, 8, 27, 'Unsatisfied', '2021-05-24'),
-(313, 8, 27, 'Unsatisfied', '2021-05-24'),
-(314, 8, 27, 'Unsatisfied', '2021-05-24'),
-(315, 8, 27, 'Unsatisfied', '2021-05-24'),
-(316, 8, 27, 'Unsatisfied', '2021-05-24'),
-(317, 8, 27, 'Unsatisfied', '2021-05-24'),
-(318, 8, 27, 'Unsatisfied', '2021-05-24'),
-(319, 9, 27, 'Likely', '2021-05-24'),
-(320, 10, 27, 'Likely', '2021-05-24'),
-(321, 11, 27, 'Important', '2021-05-24'),
-(322, 11, 27, 'Important', '2021-05-24'),
-(323, 11, 27, 'Important', '2021-05-24'),
-(324, 11, 27, 'Important', '2021-05-24'),
-(325, 11, 27, 'Important', '2021-05-24'),
-(326, 11, 27, 'Important', '2021-05-24'),
-(327, 11, 27, 'Important', '2021-05-24'),
-(328, 11, 27, 'Important', '2021-05-24'),
-(329, 11, 27, 'Important', '2021-05-24'),
-(330, 11, 27, 'Important', '2021-05-24'),
-(331, 11, 27, 'Important', '2021-05-24'),
-(332, 12, 27, 'Satisfied', '2021-05-24'),
-(333, 12, 27, 'Satisfied', '2021-05-24'),
-(334, 12, 27, 'Satisfied', '2021-05-24'),
-(335, 12, 27, 'Satisfied', '2021-05-24'),
-(336, 12, 27, 'Satisfied', '2021-05-24'),
-(337, 12, 27, 'Satisfied', '2021-05-24'),
-(338, 12, 27, 'Satisfied', '2021-05-24'),
-(339, 12, 27, 'Satisfied', '2021-05-24'),
-(340, 12, 27, 'Satisfied', '2021-05-24'),
-(341, 12, 27, 'Satisfied', '2021-05-24'),
-(342, 12, 27, 'Satisfied', '2021-05-24'),
-(343, 13, 27, 'Design courses that are more relevant to the needs of employers; Include practical experience as part of the academic programs; Include sector specific job placements as an integral part of the degree program; Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '2021-05-24'),
-(344, 14, 27, 'Moderately part Important', '2021-05-24'),
-(345, 15, 27, 'No', '2021-05-24'),
-(346, 16, 27, 'No', '2021-05-24'),
-(347, 17, 27, 'No', '2021-05-24'),
-(348, 1, 29, 'Private', '2021-05-24'),
-(349, 2, 29, 'Philippines', '2021-05-24'),
-(350, 3, 29, 'Manufacturing', '2021-05-24'),
-(351, 4, 29, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
-(352, 5, 29, '5', '2021-05-24'),
-(353, 6, 29, 'Agree', '2021-05-24'),
-(354, 7, 29, 'Of Little Importance', '2021-05-24'),
-(355, 7, 29, 'Important', '2021-05-24'),
-(356, 7, 29, 'Important', '2021-05-24'),
-(357, 7, 29, 'Important', '2021-05-24'),
-(358, 7, 29, 'Important', '2021-05-24'),
-(359, 7, 29, 'Important', '2021-05-24'),
-(360, 7, 29, 'Important', '2021-05-24'),
-(361, 7, 29, 'Important', '2021-05-24'),
-(362, 7, 29, 'Important', '2021-05-24'),
-(363, 7, 29, 'Important', '2021-05-24'),
-(364, 7, 29, 'Of Little Importance', '2021-05-24'),
-(365, 7, 29, 'Important', '2021-05-24'),
-(366, 7, 29, 'Of Little Importance', '2021-05-24'),
-(367, 7, 29, 'Important', '2021-05-24'),
-(368, 7, 29, 'Very Important', '2021-05-24'),
-(369, 7, 29, 'Important', '2021-05-24'),
-(370, 7, 29, 'Important', '2021-05-24'),
-(371, 8, 29, 'Satisfied', '2021-05-24'),
-(372, 8, 29, 'Satisfied', '2021-05-24'),
-(373, 8, 29, 'Very Satisfied', '2021-05-24'),
-(374, 8, 29, 'Very Satisfied', '2021-05-24'),
-(375, 8, 29, 'Unsatisfied', '2021-05-24'),
-(376, 8, 29, 'Unsatisfied', '2021-05-24'),
-(377, 8, 29, 'Satisfied', '2021-05-24'),
-(378, 8, 29, 'Satisfied', '2021-05-24'),
-(379, 8, 29, 'Satisfied', '2021-05-24'),
-(380, 8, 29, 'Very Satisfied', '2021-05-24'),
-(381, 8, 29, 'Satisfied', '2021-05-24'),
-(382, 8, 29, 'Satisfied', '2021-05-24'),
-(383, 8, 29, 'Satisfied', '2021-05-24'),
-(384, 8, 29, 'Satisfied', '2021-05-24'),
-(385, 8, 29, 'Very Satisfied', '2021-05-24'),
-(386, 8, 29, 'Satisfied', '2021-05-24'),
-(387, 8, 29, 'Satisfied', '2021-05-24'),
-(388, 9, 29, 'Likely', '2021-05-24'),
-(389, 10, 29, 'Likely', '2021-05-24'),
-(390, 11, 29, 'Very Important', '2021-05-24'),
-(391, 11, 29, 'Very Important', '2021-05-24'),
-(392, 11, 29, 'Very Important', '2021-05-24'),
-(393, 11, 29, 'Important', '2021-05-24'),
-(394, 11, 29, 'Important', '2021-05-24'),
-(395, 11, 29, 'Very Important', '2021-05-24'),
-(396, 11, 29, 'Of Little Importance', '2021-05-24'),
-(397, 11, 29, 'Important', '2021-05-24'),
-(398, 11, 29, 'Important', '2021-05-24'),
-(399, 11, 29, 'Important', '2021-05-24'),
-(400, 11, 29, 'Very Important', '2021-05-24'),
-(401, 12, 29, 'Very Satisfied', '2021-05-24'),
-(402, 12, 29, 'Satisfied', '2021-05-24'),
-(403, 12, 29, 'Very Satisfied', '2021-05-24'),
-(404, 12, 29, 'Satisfied', '2021-05-24'),
-(405, 12, 29, 'Very Satisfied', '2021-05-24'),
-(406, 12, 29, 'Satisfied', '2021-05-24'),
-(407, 12, 29, 'Very Satisfied', '2021-05-24'),
-(408, 12, 29, 'Satisfied', '2021-05-24'),
-(409, 12, 29, 'Very Satisfied', '2021-05-24'),
-(410, 12, 29, 'Satisfied', '2021-05-24'),
-(411, 12, 29, 'Very Satisfied', '2021-05-24'),
-(412, 13, 29, 'Include practical experience as part of the academic programs; Include sector specific job placements as an integral part of the degree program', '2021-05-24'),
-(413, 14, 29, 'Moderately part Important', '2021-05-24'),
-(414, 15, 29, 'No', '2021-05-24'),
-(415, 16, 29, 'Someone new', '2021-05-24'),
-(416, 17, 29, 'Very peaceful', '2021-05-24'),
-(417, 1, 31, 'Private', '2021-05-24'),
-(418, 2, 31, 'Philippines', '2021-05-24'),
-(419, 3, 31, 'Real Estate Activities', '2021-05-24'),
-(420, 4, 31, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
-(421, 5, 31, '2', '2021-05-24'),
-(422, 6, 31, 'Agree', '2021-05-24'),
-(423, 7, 31, 'Important', '2021-05-24'),
-(424, 7, 31, 'Important', '2021-05-24'),
-(425, 7, 31, 'Important', '2021-05-24'),
-(426, 7, 31, 'Important', '2021-05-24'),
-(427, 7, 31, 'Important', '2021-05-24'),
-(428, 7, 31, 'Of Little Importance', '2021-05-24'),
-(429, 7, 31, 'Of Little Importance', '2021-05-24'),
-(430, 7, 31, 'Of Little Importance', '2021-05-24'),
-(431, 7, 31, 'Of Little Importance', '2021-05-24'),
-(432, 7, 31, 'Of Little Importance', '2021-05-24'),
-(433, 7, 31, 'Of Little Importance', '2021-05-24'),
-(434, 7, 31, 'Of Little Importance', '2021-05-24'),
-(435, 7, 31, 'Of Little Importance', '2021-05-24'),
-(436, 7, 31, 'Of Little Importance', '2021-05-24'),
-(437, 7, 31, 'Of Little Importance', '2021-05-24'),
-(438, 7, 31, 'Of Little Importance', '2021-05-24'),
-(439, 7, 31, 'Of Little Importance', '2021-05-24'),
-(440, 8, 31, 'Satisfied', '2021-05-24'),
-(441, 8, 31, 'Satisfied', '2021-05-24'),
-(442, 8, 31, 'Satisfied', '2021-05-24'),
-(443, 8, 31, 'Satisfied', '2021-05-24'),
-(444, 8, 31, 'Satisfied', '2021-05-24'),
-(445, 8, 31, 'Satisfied', '2021-05-24'),
-(446, 8, 31, 'Satisfied', '2021-05-24'),
-(447, 8, 31, 'Satisfied', '2021-05-24'),
-(448, 8, 31, 'Satisfied', '2021-05-24'),
-(449, 8, 31, 'Satisfied', '2021-05-24'),
-(450, 8, 31, 'Satisfied', '2021-05-24'),
-(451, 8, 31, 'Satisfied', '2021-05-24'),
-(452, 8, 31, 'Satisfied', '2021-05-24'),
-(453, 8, 31, 'Satisfied', '2021-05-24'),
-(454, 8, 31, 'Satisfied', '2021-05-24'),
-(455, 8, 31, 'Satisfied', '2021-05-24'),
-(456, 8, 31, 'Satisfied', '2021-05-24'),
-(457, 9, 31, 'Likely', '2021-05-24'),
-(458, 10, 31, 'Likely', '2021-05-24'),
-(459, 11, 31, 'Important', '2021-05-24'),
-(460, 11, 31, 'Important', '2021-05-24'),
-(461, 11, 31, 'Of Little Importance', '2021-05-24'),
-(462, 11, 31, 'Of Little Importance', '2021-05-24'),
-(463, 11, 31, 'Important', '2021-05-24'),
-(464, 11, 31, 'Important', '2021-05-24'),
-(465, 11, 31, 'Of Little Importance', '2021-05-24'),
-(466, 11, 31, 'Of Little Importance', '2021-05-24'),
-(467, 11, 31, 'Important', '2021-05-24'),
-(468, 11, 31, 'Important', '2021-05-24'),
-(469, 11, 31, 'Important', '2021-05-24'),
-(470, 12, 31, 'Satisfied', '2021-05-24'),
-(471, 12, 31, 'Satisfied', '2021-05-24'),
-(472, 12, 31, 'Satisfied', '2021-05-24'),
-(473, 12, 31, 'Satisfied', '2021-05-24'),
-(474, 12, 31, 'Satisfied', '2021-05-24'),
-(475, 12, 31, 'Satisfied', '2021-05-24'),
-(476, 12, 31, 'Satisfied', '2021-05-24'),
-(477, 12, 31, 'Satisfied', '2021-05-24'),
-(478, 12, 31, 'Satisfied', '2021-05-24'),
-(479, 12, 31, 'Satisfied', '2021-05-24'),
-(480, 12, 31, 'Satisfied', '2021-05-24'),
-(481, 13, 31, 'Design courses that are more relevant to the needs of employers; Include sector specific job placements as an integral part of the degree program', '2021-05-24'),
-(482, 14, 31, 'Of Little Importance', '2021-05-24'),
-(483, 15, 31, 'No', '2021-05-24'),
-(484, 16, 31, 'No', '2021-05-24'),
-(485, 17, 31, 'No', '2021-05-24'),
-(486, 1, 32, 'Public', '2021-05-24'),
-(487, 2, 32, 'Philippines', '2021-05-24'),
-(488, 3, 32, 'Information Technology', '2021-05-24'),
-(489, 4, 32, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
-(490, 5, 32, '1', '2021-05-24'),
-(491, 6, 32, 'Agree', '2021-05-24'),
-(492, 7, 32, 'Very Important', '2021-05-24'),
-(493, 7, 32, 'Important', '2021-05-24'),
-(494, 7, 32, 'Of Little Importance', '2021-05-24'),
-(495, 7, 32, 'Important', '2021-05-24'),
-(496, 7, 32, 'Very Important', '2021-05-24'),
-(497, 7, 32, 'Very Important', '2021-05-24'),
-(498, 7, 32, 'Very Important', '2021-05-24'),
-(499, 7, 32, 'Very Important', '2021-05-24'),
-(500, 7, 32, 'Of Little Importance', '2021-05-24'),
-(501, 7, 32, 'Important', '2021-05-24'),
-(502, 7, 32, 'Important', '2021-05-24'),
-(503, 7, 32, 'Important', '2021-05-24'),
-(504, 7, 32, 'Important', '2021-05-24'),
-(505, 7, 32, 'Very Important', '2021-05-24'),
-(506, 7, 32, 'Very Important', '2021-05-24'),
-(507, 7, 32, 'Important', '2021-05-24'),
-(508, 7, 32, 'Important', '2021-05-24'),
-(509, 8, 32, 'Satisfied', '2021-05-24'),
-(510, 8, 32, 'Satisfied', '2021-05-24'),
-(511, 8, 32, 'Satisfied', '2021-05-24'),
-(512, 8, 32, 'Satisfied', '2021-05-24'),
-(513, 8, 32, 'Satisfied', '2021-05-24'),
-(514, 8, 32, 'Satisfied', '2021-05-24'),
-(515, 8, 32, 'Satisfied', '2021-05-24'),
-(516, 8, 32, 'Satisfied', '2021-05-24'),
-(517, 8, 32, 'Satisfied', '2021-05-24'),
-(518, 8, 32, 'Satisfied', '2021-05-24'),
-(519, 8, 32, 'Satisfied', '2021-05-24'),
-(520, 8, 32, 'Satisfied', '2021-05-24'),
-(521, 8, 32, 'Satisfied', '2021-05-24'),
-(522, 8, 32, 'Satisfied', '2021-05-24'),
-(523, 8, 32, 'Satisfied', '2021-05-24'),
-(524, 8, 32, 'Satisfied', '2021-05-24'),
-(525, 8, 32, 'Satisfied', '2021-05-24'),
-(526, 9, 32, 'Very Likely', '2021-05-24'),
-(527, 10, 32, 'Very Likely', '2021-05-24'),
-(528, 11, 32, 'Important', '2021-05-24'),
-(529, 11, 32, 'Important', '2021-05-24'),
-(530, 11, 32, 'Important', '2021-05-24'),
-(531, 11, 32, 'Important', '2021-05-24'),
-(532, 11, 32, 'Important', '2021-05-24'),
-(533, 11, 32, 'Important', '2021-05-24'),
-(534, 11, 32, 'Important', '2021-05-24'),
-(535, 11, 32, 'Important', '2021-05-24'),
-(536, 11, 32, 'Important', '2021-05-24'),
-(537, 11, 32, 'Important', '2021-05-24'),
-(538, 11, 32, 'Important', '2021-05-24'),
-(539, 12, 32, 'Satisfied', '2021-05-24'),
-(540, 12, 32, 'Satisfied', '2021-05-24'),
-(541, 12, 32, 'Satisfied', '2021-05-24'),
-(542, 12, 32, 'Satisfied', '2021-05-24'),
-(543, 12, 32, 'Satisfied', '2021-05-24'),
-(544, 12, 32, 'Satisfied', '2021-05-24'),
-(545, 12, 32, 'Satisfied', '2021-05-24'),
-(546, 12, 32, 'Satisfied', '2021-05-24'),
-(547, 12, 32, 'Satisfied', '2021-05-24'),
-(548, 12, 32, 'Satisfied', '2021-05-24'),
-(549, 12, 32, 'Satisfied', '2021-05-24'),
-(550, 13, 32, 'Design courses that are more relevant to the needs of employers; other_Be generous', '2021-05-24'),
-(551, 14, 32, 'Of Little Importance', '2021-05-24'),
-(552, 15, 32, 'No', '2021-05-24'),
-(553, 16, 32, 'No', '2021-05-24'),
-(554, 17, 32, 'No', '2021-05-24'),
-(555, 1, 34, 'Private', '2021-05-24'),
-(556, 2, 34, 'Philippines', '2021-05-24'),
-(557, 3, 34, 'Arts, Entertainment and Recreation', '2021-05-24'),
-(558, 4, 34, 'Supervisory – Director/Managing Director/Supervisor', '2021-05-24'),
-(559, 5, 34, '3', '2021-05-24'),
-(560, 6, 34, 'Strongly Agree', '2021-05-24'),
-(561, 7, 34, 'Very Important', '2021-05-24'),
-(562, 7, 34, 'Very Important', '2021-05-24'),
-(563, 7, 34, 'Very Important', '2021-05-24'),
-(564, 7, 34, 'Very Important', '2021-05-24'),
-(565, 7, 34, 'Very Important', '2021-05-24'),
-(566, 7, 34, 'Very Important', '2021-05-24'),
-(567, 7, 34, 'Very Important', '2021-05-24'),
-(568, 7, 34, 'Very Important', '2021-05-24'),
-(569, 7, 34, 'Very Important', '2021-05-24'),
-(570, 7, 34, 'Very Important', '2021-05-24'),
-(571, 7, 34, 'Very Important', '2021-05-24'),
-(572, 7, 34, 'Very Important', '2021-05-24'),
-(573, 7, 34, 'Very Important', '2021-05-24'),
-(574, 7, 34, 'Very Important', '2021-05-24'),
-(575, 7, 34, 'Very Important', '2021-05-24'),
-(576, 7, 34, 'Very Important', '2021-05-24'),
-(577, 7, 34, 'Very Important', '2021-05-24'),
-(578, 8, 34, 'Very Satisfied', '2021-05-24'),
-(579, 8, 34, 'Very Satisfied', '2021-05-24'),
-(580, 8, 34, 'Very Satisfied', '2021-05-24'),
-(581, 8, 34, 'Very Satisfied', '2021-05-24'),
-(582, 8, 34, 'Very Satisfied', '2021-05-24'),
-(583, 8, 34, 'Very Satisfied', '2021-05-24'),
-(584, 8, 34, 'Very Satisfied', '2021-05-24'),
-(585, 8, 34, 'Very Satisfied', '2021-05-24'),
-(586, 8, 34, 'Very Satisfied', '2021-05-24'),
-(587, 8, 34, 'Very Satisfied', '2021-05-24'),
-(588, 8, 34, 'Very Satisfied', '2021-05-24'),
-(589, 8, 34, 'Very Satisfied', '2021-05-24'),
-(590, 8, 34, 'Very Satisfied', '2021-05-24'),
-(591, 8, 34, 'Very Satisfied', '2021-05-24'),
-(592, 8, 34, 'Very Satisfied', '2021-05-24'),
-(593, 8, 34, 'Very Satisfied', '2021-05-24'),
-(594, 8, 34, 'Very Satisfied', '2021-05-24'),
-(595, 9, 34, 'Very Likely', '2021-05-24'),
-(596, 10, 34, 'Very Likely', '2021-05-24'),
-(597, 11, 34, 'Very Important', '2021-05-24'),
-(598, 11, 34, 'Very Important', '2021-05-24'),
-(599, 11, 34, 'Very Important', '2021-05-24'),
-(600, 11, 34, 'Very Important', '2021-05-24'),
-(601, 11, 34, 'Very Important', '2021-05-24'),
-(602, 11, 34, 'Very Important', '2021-05-24'),
-(603, 11, 34, 'Very Important', '2021-05-24'),
-(604, 11, 34, 'Very Important', '2021-05-24'),
-(605, 11, 34, 'Very Important', '2021-05-24'),
-(606, 11, 34, 'Very Important', '2021-05-24'),
-(607, 11, 34, 'Very Important', '2021-05-24'),
-(608, 12, 34, 'Very Satisfied', '2021-05-24'),
-(609, 12, 34, 'Very Satisfied', '2021-05-24'),
-(610, 12, 34, 'Very Satisfied', '2021-05-24'),
-(611, 12, 34, 'Very Satisfied', '2021-05-24'),
-(612, 12, 34, 'Very Satisfied', '2021-05-24'),
-(613, 12, 34, 'Very Satisfied', '2021-05-24'),
-(614, 12, 34, 'Very Satisfied', '2021-05-24'),
-(615, 12, 34, 'Very Satisfied', '2021-05-24'),
-(616, 12, 34, 'Very Satisfied', '2021-05-24'),
-(617, 12, 34, 'Very Satisfied', '2021-05-24'),
-(618, 12, 34, 'Very Satisfied', '2021-05-24'),
-(619, 13, 34, 'Include practical experience as part of the academic programs; Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '2021-05-24'),
-(620, 14, 34, 'Important', '2021-05-24'),
-(621, 15, 34, 'Aral pa more', '2021-05-24'),
-(622, 16, 34, 'No', '2021-05-24'),
-(623, 17, 34, 'persevering', '2021-05-24'),
-(624, 1, 33, 'Public', '2021-05-24'),
-(625, 2, 33, 'Philippines', '2021-05-24'),
-(626, 3, 33, 'Agriculture, Forestry and Fishing', '2021-05-24'),
-(627, 4, 33, 'Rank and file', '2021-05-24'),
-(628, 5, 33, '5', '2021-05-24'),
-(629, 6, 33, 'Strongly Agree', '2021-05-24'),
-(630, 7, 33, 'Important', '2021-05-24'),
-(631, 7, 33, 'Very Important', '2021-05-24'),
-(632, 7, 33, 'Important', '2021-05-24'),
-(633, 7, 33, 'Very Important', '2021-05-24'),
-(634, 7, 33, 'Important', '2021-05-24'),
-(635, 7, 33, 'Very Important', '2021-05-24'),
-(636, 7, 33, 'Important', '2021-05-24'),
-(637, 7, 33, 'Very Important', '2021-05-24'),
-(638, 7, 33, 'Important', '2021-05-24'),
-(639, 7, 33, 'Very Important', '2021-05-24'),
-(640, 7, 33, 'Important', '2021-05-24'),
-(641, 7, 33, 'Very Important', '2021-05-24'),
-(642, 7, 33, 'Important', '2021-05-24'),
-(643, 7, 33, 'Very Important', '2021-05-24'),
-(644, 7, 33, 'Important', '2021-05-24'),
-(645, 7, 33, 'Very Important', '2021-05-24'),
-(646, 7, 33, 'Important', '2021-05-24'),
-(647, 8, 33, 'Unsatisfied', '2021-05-24'),
-(648, 8, 33, 'Very Satisfied', '2021-05-24'),
-(649, 8, 33, 'Unsatisfied', '2021-05-24'),
-(650, 8, 33, 'Satisfied', '2021-05-24'),
-(651, 8, 33, 'Very Satisfied', '2021-05-24'),
-(652, 8, 33, 'Unsatisfied', '2021-05-24'),
-(653, 8, 33, 'Satisfied', '2021-05-24'),
-(654, 8, 33, 'Satisfied', '2021-05-24'),
-(655, 8, 33, 'Unsatisfied', '2021-05-24'),
-(656, 8, 33, 'Satisfied', '2021-05-24'),
-(657, 8, 33, 'Very Satisfied', '2021-05-24'),
-(658, 8, 33, 'Satisfied', '2021-05-24'),
-(659, 8, 33, 'Unsatisfied', '2021-05-24'),
-(660, 8, 33, 'Satisfied', '2021-05-24'),
-(661, 8, 33, 'Unsatisfied', '2021-05-24'),
-(662, 8, 33, 'Satisfied', '2021-05-24'),
-(663, 8, 33, 'Satisfied', '2021-05-24'),
-(664, 9, 33, 'Likely', '2021-05-24'),
-(665, 10, 33, 'Very Likely', '2021-05-24'),
-(666, 11, 33, 'Very Important', '2021-05-24'),
-(667, 11, 33, 'Of Little Importance', '2021-05-24'),
-(668, 11, 33, 'Important', '2021-05-24'),
-(669, 11, 33, 'Important', '2021-05-24'),
-(670, 11, 33, 'Of Little Importance', '2021-05-24'),
-(671, 11, 33, 'Very Important', '2021-05-24'),
-(672, 11, 33, 'Important', '2021-05-24'),
-(673, 11, 33, 'Very Important', '2021-05-24'),
-(674, 11, 33, 'Of Little Importance', '2021-05-24'),
-(675, 11, 33, 'Important', '2021-05-24'),
-(676, 11, 33, 'Important', '2021-05-24'),
-(677, 12, 33, 'Satisfied', '2021-05-24'),
-(678, 12, 33, 'Satisfied', '2021-05-24'),
-(679, 12, 33, 'Satisfied', '2021-05-24'),
-(680, 12, 33, 'Satisfied', '2021-05-24'),
-(681, 12, 33, 'Satisfied', '2021-05-24'),
-(682, 12, 33, 'Satisfied', '2021-05-24'),
-(683, 12, 33, 'Satisfied', '2021-05-24'),
-(684, 12, 33, 'Satisfied', '2021-05-24'),
-(685, 12, 33, 'Satisfied', '2021-05-24'),
-(686, 12, 33, 'Satisfied', '2021-05-24'),
-(687, 12, 33, 'Satisfied', '2021-05-24'),
-(688, 13, 33, 'Include sector specific job placements as an integral part of the degree program', '2021-05-24'),
-(689, 14, 33, 'Of Little Importance', '2021-05-24'),
-(690, 15, 33, 'No', '2021-05-24'),
-(691, 16, 33, 'No', '2021-05-24'),
-(692, 17, 33, 'No', '2021-05-24'),
-(693, 1, 5, 'Private', '2021-06-16'),
-(694, 2, 5, 'Abroad', '2021-06-16'),
-(695, 2, 5, 'Asia_Southeast Asia', '2021-06-16'),
-(696, 3, 5, 'Arts, Entertainment and Recreation', '2021-06-16'),
-(697, 4, 5, 'Rank and file', '2021-06-16'),
-(698, 5, 5, '2', '2021-06-16'),
-(699, 6, 5, 'Agree', '2021-06-16'),
-(700, 7, 5, 'Important', '2021-06-16'),
-(701, 7, 5, 'Very Important', '2021-06-16'),
-(702, 7, 5, 'Very Important', '2021-06-16'),
-(703, 7, 5, 'Important', '2021-06-16'),
-(704, 7, 5, 'Very Important', '2021-06-16'),
-(705, 7, 5, 'Important', '2021-06-16'),
-(706, 7, 5, 'Very Important', '2021-06-16'),
-(707, 7, 5, 'Important', '2021-06-16'),
-(708, 7, 5, 'Important', '2021-06-16'),
-(709, 7, 5, 'Important', '2021-06-16'),
-(710, 7, 5, 'Important', '2021-06-16'),
-(711, 7, 5, 'Very Important', '2021-06-16'),
-(712, 7, 5, 'Very Important', '2021-06-16'),
-(713, 7, 5, 'Very Important', '2021-06-16'),
-(714, 7, 5, 'Very Important', '2021-06-16'),
-(715, 7, 5, 'Important', '2021-06-16'),
-(716, 7, 5, 'Important', '2021-06-16'),
-(717, 8, 5, 'Satisfied', '2021-06-16'),
-(718, 8, 5, 'Satisfied', '2021-06-16'),
-(719, 8, 5, 'Satisfied', '2021-06-16'),
-(720, 8, 5, 'Satisfied', '2021-06-16'),
-(721, 8, 5, 'Satisfied', '2021-06-16'),
-(722, 8, 5, 'Satisfied', '2021-06-16'),
-(723, 8, 5, 'Very Satisfied', '2021-06-16'),
-(724, 8, 5, 'Satisfied', '2021-06-16'),
-(725, 8, 5, 'Very Satisfied', '2021-06-16'),
-(726, 8, 5, 'Satisfied', '2021-06-16'),
-(727, 8, 5, 'Very Satisfied', '2021-06-16'),
-(728, 8, 5, 'Satisfied', '2021-06-16'),
-(729, 8, 5, 'Very Satisfied', '2021-06-16'),
-(730, 8, 5, 'Satisfied', '2021-06-16'),
-(731, 8, 5, 'Very Satisfied', '2021-06-16'),
-(732, 8, 5, 'Satisfied', '2021-06-16'),
-(733, 8, 5, 'Very Satisfied', '2021-06-16'),
-(734, 9, 5, 'Likely', '2021-06-16'),
-(735, 10, 5, 'Likely', '2021-06-16'),
-(736, 11, 5, 'Important', '2021-06-16'),
-(737, 11, 5, 'Important', '2021-06-16'),
-(738, 11, 5, 'Important', '2021-06-16'),
-(739, 11, 5, 'Important', '2021-06-16'),
-(740, 11, 5, 'Important', '2021-06-16'),
-(741, 11, 5, 'Important', '2021-06-16'),
-(742, 11, 5, 'Important', '2021-06-16'),
-(743, 11, 5, 'Important', '2021-06-16'),
-(744, 11, 5, 'Important', '2021-06-16'),
-(745, 11, 5, 'Important', '2021-06-16'),
-(746, 11, 5, 'Important', '2021-06-16'),
-(747, 12, 5, 'Satisfied', '2021-06-16'),
-(748, 12, 5, 'Satisfied', '2021-06-16'),
-(749, 12, 5, 'Satisfied', '2021-06-16'),
-(750, 12, 5, 'Satisfied', '2021-06-16'),
-(751, 12, 5, 'Satisfied', '2021-06-16'),
-(752, 12, 5, 'Satisfied', '2021-06-16'),
-(753, 12, 5, 'Satisfied', '2021-06-16'),
-(754, 12, 5, 'Satisfied', '2021-06-16'),
-(755, 12, 5, 'Satisfied', '2021-06-16'),
-(756, 12, 5, 'Satisfied', '2021-06-16'),
-(757, 12, 5, 'Satisfied', '2021-06-16'),
-(758, 13, 5, 'Include sector specific job placements as an integral part of the degree program', '2021-06-16'),
-(759, 14, 5, 'Important', '2021-06-16'),
-(760, 15, 5, 'No', '2021-06-16'),
-(761, 16, 5, 'No', '2021-06-16'),
-(762, 17, 5, 'No', '2021-06-16'),
-(763, 1, 8, 'Private', '2021-06-21'),
-(764, 2, 8, 'Philippines', '2021-06-21'),
-(765, 3, 8, 'Agriculture, Forestry and Fishing', '2021-06-21'),
-(766, 4, 8, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
-(767, 5, 8, '1', '2021-06-21'),
-(768, 6, 8, 'Agree', '2021-06-21'),
-(769, 7, 8, 'Important', '2021-06-21'),
-(770, 7, 8, 'Important', '2021-06-21'),
-(771, 7, 8, 'Important', '2021-06-21'),
-(772, 7, 8, 'Important', '2021-06-21'),
-(773, 7, 8, 'Important', '2021-06-21'),
-(774, 7, 8, 'Important', '2021-06-21'),
-(775, 7, 8, 'Important', '2021-06-21'),
-(776, 7, 8, 'Important', '2021-06-21'),
-(777, 7, 8, 'Important', '2021-06-21'),
-(778, 7, 8, 'Important', '2021-06-21'),
-(779, 7, 8, 'Important', '2021-06-21'),
-(780, 7, 8, 'Important', '2021-06-21'),
-(781, 7, 8, 'Important', '2021-06-21'),
-(782, 7, 8, 'Important', '2021-06-21'),
-(783, 7, 8, 'Important', '2021-06-21'),
-(784, 7, 8, 'Important', '2021-06-21'),
-(785, 7, 8, 'Important', '2021-06-21'),
-(786, 8, 8, 'Satisfied', '2021-06-21'),
-(787, 8, 8, 'Satisfied', '2021-06-21'),
-(788, 8, 8, 'Satisfied', '2021-06-21'),
-(789, 8, 8, 'Satisfied', '2021-06-21'),
-(790, 8, 8, 'Satisfied', '2021-06-21'),
-(791, 8, 8, 'Satisfied', '2021-06-21'),
-(792, 8, 8, 'Satisfied', '2021-06-21'),
-(793, 8, 8, 'Satisfied', '2021-06-21'),
-(794, 8, 8, 'Satisfied', '2021-06-21'),
-(795, 8, 8, 'Satisfied', '2021-06-21'),
-(796, 8, 8, 'Satisfied', '2021-06-21'),
-(797, 8, 8, 'Satisfied', '2021-06-21'),
-(798, 8, 8, 'Satisfied', '2021-06-21'),
-(799, 8, 8, 'Satisfied', '2021-06-21'),
-(800, 8, 8, 'Satisfied', '2021-06-21'),
-(801, 8, 8, 'Satisfied', '2021-06-21'),
-(802, 8, 8, 'Satisfied', '2021-06-21'),
-(803, 9, 8, 'Likely', '2021-06-21'),
-(804, 10, 8, 'Likely', '2021-06-21'),
-(805, 11, 8, 'Important', '2021-06-21'),
-(806, 11, 8, 'Important', '2021-06-21'),
-(807, 11, 8, 'Important', '2021-06-21'),
-(808, 11, 8, 'Important', '2021-06-21'),
-(809, 11, 8, 'Important', '2021-06-21'),
-(810, 11, 8, 'Important', '2021-06-21'),
-(811, 11, 8, 'Important', '2021-06-21'),
-(812, 11, 8, 'Important', '2021-06-21'),
-(813, 11, 8, 'Important', '2021-06-21'),
-(814, 11, 8, 'Important', '2021-06-21'),
-(815, 11, 8, 'Important', '2021-06-21'),
-(816, 12, 8, 'Satisfied', '2021-06-21'),
-(817, 12, 8, 'Satisfied', '2021-06-21'),
-(818, 12, 8, 'Satisfied', '2021-06-21'),
-(819, 12, 8, 'Satisfied', '2021-06-21'),
-(820, 12, 8, 'Satisfied', '2021-06-21'),
-(821, 12, 8, 'Satisfied', '2021-06-21'),
-(822, 12, 8, 'Satisfied', '2021-06-21'),
-(823, 12, 8, 'Satisfied', '2021-06-21'),
-(824, 12, 8, 'Satisfied', '2021-06-21'),
-(825, 12, 8, 'Satisfied', '2021-06-21'),
-(826, 12, 8, 'Satisfied', '2021-06-21'),
-(827, 13, 8, 'Include sector specific job placements as an integral part of the degree program', '2021-06-21'),
-(828, 14, 8, 'Important', '2021-06-21'),
-(829, 15, 8, 'No', '2021-06-21'),
-(830, 16, 8, 'No', '2021-06-21'),
-(831, 17, 8, 'No', '2021-06-21'),
-(832, 1, 67, 'Private', '2021-06-21'),
-(833, 2, 67, 'Abroad', '2021-06-21'),
-(834, 2, 67, 'Asia_Southeast Asia', '2021-06-21'),
-(835, 3, 67, 'Information Technology', '2021-06-21'),
-(836, 4, 67, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
-(837, 5, 67, '2', '2021-06-21'),
-(838, 6, 67, 'Disagree', '2021-06-21'),
-(839, 7, 67, 'Of Little Importance', '2021-06-21'),
-(840, 7, 67, 'Of Little Importance', '2021-06-21'),
-(841, 7, 67, 'Of Little Importance', '2021-06-21'),
-(842, 7, 67, 'Of Little Importance', '2021-06-21'),
-(843, 7, 67, 'Of Little Importance', '2021-06-21'),
-(844, 7, 67, 'Of Little Importance', '2021-06-21'),
-(845, 7, 67, 'Of Little Importance', '2021-06-21'),
-(846, 7, 67, 'Of Little Importance', '2021-06-21'),
-(847, 7, 67, 'Of Little Importance', '2021-06-21'),
-(848, 7, 67, 'Of Little Importance', '2021-06-21'),
-(849, 7, 67, 'Of Little Importance', '2021-06-21'),
-(850, 7, 67, 'Of Little Importance', '2021-06-21'),
-(851, 7, 67, 'Of Little Importance', '2021-06-21'),
-(852, 7, 67, 'Of Little Importance', '2021-06-21'),
-(853, 7, 67, 'Of Little Importance', '2021-06-21'),
-(854, 7, 67, 'Of Little Importance', '2021-06-21'),
-(855, 7, 67, 'Of Little Importance', '2021-06-21'),
-(856, 8, 67, 'Satisfied', '2021-06-21'),
-(857, 8, 67, 'Satisfied', '2021-06-21'),
-(858, 8, 67, 'Satisfied', '2021-06-21'),
-(859, 8, 67, 'Satisfied', '2021-06-21'),
-(860, 8, 67, 'Satisfied', '2021-06-21'),
-(861, 8, 67, 'Satisfied', '2021-06-21'),
-(862, 8, 67, 'Satisfied', '2021-06-21'),
-(863, 8, 67, 'Satisfied', '2021-06-21'),
-(864, 8, 67, 'Satisfied', '2021-06-21'),
-(865, 8, 67, 'Satisfied', '2021-06-21'),
-(866, 8, 67, 'Satisfied', '2021-06-21'),
-(867, 8, 67, 'Satisfied', '2021-06-21'),
-(868, 8, 67, 'Satisfied', '2021-06-21'),
-(869, 8, 67, 'Satisfied', '2021-06-21'),
-(870, 8, 67, 'Satisfied', '2021-06-21'),
-(871, 8, 67, 'Satisfied', '2021-06-21'),
-(872, 8, 67, 'Satisfied', '2021-06-21'),
-(873, 9, 67, 'Likely', '2021-06-21'),
-(874, 10, 67, 'Likely', '2021-06-21'),
-(875, 11, 67, 'Important', '2021-06-21'),
-(876, 11, 67, 'Important', '2021-06-21'),
-(877, 11, 67, 'Important', '2021-06-21'),
-(878, 11, 67, 'Of Little Importance', '2021-06-21'),
-(879, 11, 67, 'Of Little Importance', '2021-06-21'),
-(880, 11, 67, 'Important', '2021-06-21'),
-(881, 11, 67, 'Of Little Importance', '2021-06-21'),
-(882, 11, 67, 'Of Little Importance', '2021-06-21'),
-(883, 11, 67, 'Important', '2021-06-21'),
-(884, 11, 67, 'Important', '2021-06-21'),
-(885, 11, 67, 'Important', '2021-06-21'),
-(886, 12, 67, 'Satisfied', '2021-06-21'),
-(887, 12, 67, 'Very Satisfied', '2021-06-21'),
-(888, 12, 67, 'Satisfied', '2021-06-21'),
-(889, 12, 67, 'Very Satisfied', '2021-06-21'),
-(890, 12, 67, 'Satisfied', '2021-06-21'),
-(891, 12, 67, 'Very Satisfied', '2021-06-21'),
-(892, 12, 67, 'Satisfied', '2021-06-21'),
-(893, 12, 67, 'Very Satisfied', '2021-06-21'),
-(894, 12, 67, 'Satisfied', '2021-06-21'),
-(895, 12, 67, 'Very Satisfied', '2021-06-21'),
-(896, 12, 67, 'Satisfied', '2021-06-21'),
-(897, 13, 67, 'Design courses that are more relevant to the needs of employers; Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '2021-06-21'),
-(898, 14, 67, 'Of Little Importance', '2021-06-21'),
-(899, 15, 67, 'No', '2021-06-21'),
-(900, 16, 67, 'No', '2021-06-21'),
-(901, 17, 67, 'No', '2021-06-21');
 
 -- --------------------------------------------------------
 
@@ -1711,7 +794,8 @@ INSERT INTO `emp_survey_q1` (`answer_id`, `user_id`, `answer_body`, `answer_othe
 (12, 33, 'Public', '', '2021-05-24'),
 (13, 5, 'Private', '', '2021-06-16'),
 (14, 8, 'Private', '', '2021-06-21'),
-(15, 67, 'Private', '', '2021-06-21');
+(15, 67, 'Private', '', '2021-06-21'),
+(16, 3, 'Other', 'Semi private', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -1743,7 +827,8 @@ INSERT INTO `emp_survey_q2` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (10, 33, 'Philippines', '2021-05-24'),
 (11, 5, 'Abroad', '2021-06-16'),
 (12, 8, 'Philippines', '2021-06-21'),
-(13, 67, 'Abroad', '2021-06-21');
+(13, 67, 'Abroad', '2021-06-21'),
+(14, 3, 'Abroad', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -1767,7 +852,8 @@ INSERT INTO `emp_survey_q2_1` (`answer_id`, `user_id`, `region`, `subregion`, `d
 (1, 24, 'Antarctica', '', '2021-05-24'),
 (2, 28, 'Europe', 'Southern Europe', '2021-05-24'),
 (3, 5, 'Asia', 'Southeast Asia', '2021-06-16'),
-(4, 67, 'Asia', 'Southeast Asia', '2021-06-21');
+(4, 67, 'Asia', 'Southeast Asia', '2021-06-21'),
+(5, 3, 'Africa', 'Northern Africa', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -1800,7 +886,8 @@ INSERT INTO `emp_survey_q3` (`answer_id`, `user_id`, `answer_body`, `answer_othe
 (10, 33, 'Agriculture, Forestry and Fishing', '', '2021-05-24'),
 (11, 5, 'Arts, Entertainment and Recreation', '', '2021-06-16'),
 (12, 8, 'Agriculture, Forestry and Fishing', '', '2021-06-21'),
-(13, 67, 'Information Technology', '', '2021-06-21');
+(13, 67, 'Information Technology', '', '2021-06-21'),
+(14, 3, 'other', 'something', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -1832,7 +919,8 @@ INSERT INTO `emp_survey_q4` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (10, 33, 'Rank and file', '2021-05-24'),
 (11, 5, 'Rank and file', '2021-06-16'),
 (12, 8, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
-(13, 67, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21');
+(13, 67, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-21'),
+(14, 3, 'Supervisory – Director/Managing Director/Supervisor', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -1864,7 +952,8 @@ INSERT INTO `emp_survey_q5` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (10, 33, 5, '2021-05-24'),
 (11, 5, 2, '2021-06-16'),
 (12, 8, 1, '2021-06-21'),
-(13, 67, 2, '2021-06-21');
+(13, 67, 2, '2021-06-21'),
+(14, 3, 3, '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -1896,7 +985,8 @@ INSERT INTO `emp_survey_q6` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (10, 33, 'Strongly Agree', '2021-05-24'),
 (11, 5, 'Agree', '2021-06-16'),
 (12, 8, 'Agree', '2021-06-21'),
-(13, 67, 'Disagree', '2021-06-21');
+(13, 67, 'Disagree', '2021-06-21'),
+(14, 3, 'Agree', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2137,7 +1227,24 @@ INSERT INTO `emp_survey_q7` (`answer_id`, `user_id`, `skill`, `answer_body`, `da
 (218, 67, 'Time Management', 'Of Little Importance', '2021-06-21'),
 (219, 67, 'Complex Problem Solving Skills', 'Of Little Importance', '2021-06-21'),
 (220, 67, 'Judgment and Decision Making', 'Of Little Importance', '2021-06-21'),
-(221, 67, 'Systems Analysis and Evaluation', 'Of Little Importance', '2021-06-21');
+(221, 67, 'Systems Analysis and Evaluation', 'Of Little Importance', '2021-06-21'),
+(222, 3, 'Reading Comprehension', 'Very Important', '2021-06-24'),
+(223, 3, 'Active Listening', 'Very Important', '2021-06-24'),
+(224, 3, 'Writing Skills', 'Very Important', '2021-06-24'),
+(225, 3, 'Verbal Communication', 'Very Important', '2021-06-24'),
+(226, 3, 'Mathematics Skills', 'Very Important', '2021-06-24'),
+(227, 3, 'Scientific Literacy', 'Very Important', '2021-06-24'),
+(228, 3, 'Digital Literacy', 'Very Important', '2021-06-24'),
+(229, 3, 'Critical Thinking', 'Very Important', '2021-06-24'),
+(230, 3, 'Participatory Learning', 'Very Important', '2021-06-24'),
+(231, 3, 'Creative and Innovation', 'Very Important', '2021-06-24'),
+(232, 3, 'Leadership Skills', 'Very Important', '2021-06-24'),
+(233, 3, 'Social Awareness', 'Very Important', '2021-06-24'),
+(234, 3, 'Service Orientation', 'Very Important', '2021-06-24'),
+(235, 3, 'Time Management', 'Very Important', '2021-06-24'),
+(236, 3, 'Complex Problem Solving Skills', 'Very Important', '2021-06-24'),
+(237, 3, 'Judgment and Decision Making', 'Very Important', '2021-06-24'),
+(238, 3, 'Systems Analysis and Evaluation', 'Very Important', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2378,7 +1485,24 @@ INSERT INTO `emp_survey_q8` (`answer_id`, `user_id`, `skill`, `answer_body`, `da
 (218, 67, 'Time Management', 'Satisfied', '2021-06-21'),
 (219, 67, 'Complex Problem Solving Skills', 'Satisfied', '2021-06-21'),
 (220, 67, 'Judgment and Decision Making', 'Satisfied', '2021-06-21'),
-(221, 67, 'Systems Analysis and Evaluation', 'Satisfied', '2021-06-21');
+(221, 67, 'Systems Analysis and Evaluation', 'Satisfied', '2021-06-21'),
+(222, 3, 'Reading Comprehension', 'Very Satisfied', '2021-06-24'),
+(223, 3, 'Active Listening', 'Very Satisfied', '2021-06-24'),
+(224, 3, 'Writing Skills', 'Very Satisfied', '2021-06-24'),
+(225, 3, 'Verbal Communication', 'Very Satisfied', '2021-06-24'),
+(226, 3, 'Mathematics Skills', 'Very Satisfied', '2021-06-24'),
+(227, 3, 'Scientific Literacy', 'Very Satisfied', '2021-06-24'),
+(228, 3, 'Digital Literacy', 'Very Satisfied', '2021-06-24'),
+(229, 3, 'Critical Thinking', 'Very Satisfied', '2021-06-24'),
+(230, 3, 'Participatory Learning', 'Very Satisfied', '2021-06-24'),
+(231, 3, 'Creative and Innovation', 'Very Satisfied', '2021-06-24'),
+(232, 3, 'Leadership Skills', 'Very Satisfied', '2021-06-24'),
+(233, 3, 'Social Awareness', 'Very Satisfied', '2021-06-24'),
+(234, 3, 'Service Orientation', 'Very Satisfied', '2021-06-24'),
+(235, 3, 'Time Management', 'Very Satisfied', '2021-06-24'),
+(236, 3, 'Complex Problem Solving Skills', 'Very Satisfied', '2021-06-24'),
+(237, 3, 'Judgment and Decision Making', 'Very Satisfied', '2021-06-24'),
+(238, 3, 'Systems Analysis and Evaluation', 'Very Satisfied', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2410,7 +1534,8 @@ INSERT INTO `emp_survey_q9` (`answer_id`, `user_id`, `answer_body`, `date_respon
 (10, 33, 'Likely', '2021-05-24'),
 (11, 5, 'Likely', '2021-06-16'),
 (12, 8, 'Likely', '2021-06-21'),
-(13, 67, 'Likely', '2021-06-21');
+(13, 67, 'Likely', '2021-06-21'),
+(14, 3, 'Likely', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2442,7 +1567,8 @@ INSERT INTO `emp_survey_q10` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (10, 33, 'Very Likely', '2021-05-24'),
 (11, 5, 'Likely', '2021-06-16'),
 (12, 8, 'Likely', '2021-06-21'),
-(13, 67, 'Likely', '2021-06-21');
+(13, 67, 'Likely', '2021-06-21'),
+(14, 3, 'Likely', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2605,7 +1731,18 @@ INSERT INTO `emp_survey_q11` (`answer_id`, `user_id`, `skill`, `answer_body`, `d
 (140, 67, 'Effective in both oral and written communication', 'Of Little Importance', '2021-06-21'),
 (141, 67, 'Computer and Technical Literate', 'Important', '2021-06-21'),
 (142, 67, 'Effective and efficient in accomplishing tasks', 'Important', '2021-06-21'),
-(143, 67, 'Able to provide innovative ideas to the company', 'Important', '2021-06-21');
+(143, 67, 'Able to provide innovative ideas to the company', 'Important', '2021-06-21'),
+(144, 3, 'Willing to undergo training and/or further education', 'Important', '2021-06-24'),
+(145, 3, 'Has strong and professional work ethic', 'Important', '2021-06-24'),
+(146, 3, 'Willing to share knowledge and expertise within the company and/or community', 'Important', '2021-06-24'),
+(147, 3, 'Willing and has a positive attitude towards working with others', 'Important', '2021-06-24'),
+(148, 3, 'Is able to learn quickly the basic company operations', 'Important', '2021-06-24'),
+(149, 3, 'Is able to provide solutions and contribute to the growth of the company', 'Important', '2021-06-24'),
+(150, 3, 'Is able to master company operations', 'Important', '2021-06-24'),
+(151, 3, 'Effective in both oral and written communication', 'Important', '2021-06-24'),
+(152, 3, 'Computer and Technical Literate', 'Important', '2021-06-24'),
+(153, 3, 'Effective and efficient in accomplishing tasks', 'Important', '2021-06-24'),
+(154, 3, 'Able to provide innovative ideas to the company', 'Important', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2768,7 +1905,18 @@ INSERT INTO `emp_survey_q12` (`answer_id`, `user_id`, `skill`, `answer_body`, `d
 (140, 67, 'Effective in both oral and written communication', 'Very Satisfied', '2021-06-21'),
 (141, 67, 'Computer and Technical Literate', 'Satisfied', '2021-06-21'),
 (142, 67, 'Effective and efficient in accomplishing tasks', 'Very Satisfied', '2021-06-21'),
-(143, 67, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-21');
+(143, 67, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-21'),
+(144, 3, 'Willing to undergo training and/or further education', 'Satisfied', '2021-06-24'),
+(145, 3, 'Has strong and professional work ethic', 'Satisfied', '2021-06-24'),
+(146, 3, 'Willing to share knowledge and expertise within the company and/or community', 'Satisfied', '2021-06-24'),
+(147, 3, 'Willing and has a positive attitude towards working with others', 'Satisfied', '2021-06-24'),
+(148, 3, 'Is able to learn quickly the basic company operations', 'Satisfied', '2021-06-24'),
+(149, 3, 'Is able to provide solutions and contribute to the growth of the company', 'Satisfied', '2021-06-24'),
+(150, 3, 'Is able to master company operations', 'Satisfied', '2021-06-24'),
+(151, 3, 'Effective in both oral and written communication', 'Satisfied', '2021-06-24'),
+(152, 3, 'Computer and Technical Literate', 'Satisfied', '2021-06-24'),
+(153, 3, 'Effective and efficient in accomplishing tasks', 'Satisfied', '2021-06-24'),
+(154, 3, 'Able to provide innovative ideas to the company', 'Satisfied', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2817,7 +1965,12 @@ INSERT INTO `emp_survey_q13` (`answer_id`, `user_id`, `answer_body`, `answer_oth
 (26, 5, 'Include sector specific job placements as an integral part of the degree program', '', '2021-06-16'),
 (27, 8, 'Include sector specific job placements as an integral part of the degree program', '', '2021-06-21'),
 (28, 67, 'Design courses that are more relevant to the needs of employers', '', '2021-06-21'),
-(29, 67, 'Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '', '2021-06-21');
+(29, 67, 'Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '', '2021-06-21'),
+(30, 3, 'Design courses that are more relevant to the needs of employers', '', '2021-06-24'),
+(31, 3, 'Include practical experience as part of the academic programs', '', '2021-06-24'),
+(32, 3, 'Include sector specific job placements as an integral part of the degree program', '', '2021-06-24'),
+(33, 3, 'Provide better post-graduation support (facilitate relations between graduates and companies/organizations)', '', '2021-06-24'),
+(34, 3, 'other', 'Other actions', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2849,7 +2002,8 @@ INSERT INTO `emp_survey_q14` (`answer_id`, `user_id`, `answer_body`, `date_respo
 (10, 33, 'Of Little Importance', '2021-05-24'),
 (11, 5, 'Important', '2021-06-16'),
 (12, 8, 'Important', '2021-06-21'),
-(13, 67, 'Of Little Importance', '2021-06-21');
+(13, 67, 'Of Little Importance', '2021-06-21'),
+(14, 3, 'Moderately part Important', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2882,7 +2036,8 @@ INSERT INTO `emp_survey_q15` (`answer_id`, `user_id`, `answer_body`, `answer_yes
 (12, 33, 'No', '', '2021-05-24'),
 (13, 5, 'No', '', '2021-06-16'),
 (14, 8, 'No', '', '2021-06-21'),
-(15, 67, 'No', '', '2021-06-21');
+(15, 67, 'No', '', '2021-06-21'),
+(16, 3, 'Yes', 'Some comments', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2915,7 +2070,8 @@ INSERT INTO `emp_survey_q16` (`answer_id`, `user_id`, `answer_body`, `answer_yes
 (13, 33, 'No', '', '2021-05-24'),
 (14, 5, 'No', '', '2021-06-16'),
 (15, 8, 'No', '', '2021-06-21'),
-(16, 67, 'No', '', '2021-06-21');
+(16, 67, 'No', '', '2021-06-21'),
+(17, 3, 'No', '', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2948,7 +2104,8 @@ INSERT INTO `emp_survey_q17` (`answer_id`, `user_id`, `answer_body`, `answer_yes
 (14, 33, 'No', '', '2021-05-24'),
 (15, 5, 'No', '', '2021-06-16'),
 (16, 8, 'No', '', '2021-06-21'),
-(17, 67, 'No', '', '2021-06-21');
+(17, 67, 'No', '', '2021-06-21'),
+(18, 3, 'Yes', 'resilience', '2021-06-24');
 
 -- --------------------------------------------------------
 
@@ -2968,7 +2125,9 @@ CREATE TABLE `password_request` (
 --
 
 INSERT INTO `password_request` (`id`, `email`, `user_id`, `date_request`) VALUES
-(14, 'test2@mail.com', 83, '2021-06-23 01:24:55');
+(14, 'test2@mail.com', 83, '2021-06-23 01:24:55'),
+(16, 'test@mail.com', 85, '2021-06-24 16:03:12'),
+(17, 'test1@mail.com', 68, '2021-06-24 16:03:41');
 
 -- --------------------------------------------------------
 
@@ -2992,9 +2151,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`, `time_created`, `last_login`) VALUES
-(2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-06-22 15:58:12'),
-(3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-06-15 08:44:40'),
-(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-06-22 23:27:39'),
+(2, 'jane@gmail.com', '5e6a6d87aeb4c389a1361cd463856eaf6466cefd82bae5408a94e05d337f319f49e38ccda424e0c1b7e1e376ea6a7e8becc3', '$2y$10$HK2Ellp9/Mw89bckEg9PbeJFwComfd5.4BQjcHAkqRs3Aei.lBbAi', '12345', 1, '2021-05-20 09:51:01', '2021-06-24 16:38:45'),
+(3, 'john@gmail.com', '8478bfb97840a79d6e2ed2b61d8977487a72d685597ed4fd8054cfbbbd833940abf39322c47692ea321d2f85cbd4a3ba5163', '$2y$10$lQOQtTfN4Avsbuy8ROlUOOY.qSr2rz49GSYF..QNCCd2rsJ7bZlLG', '12345', 2, '2021-05-20 09:51:01', '2021-06-24 16:54:55'),
+(4, 'admin@gmail.com', 'bbf073a951128bc7beff931d97845715e08ff3744445f6cd8324d2565f4c32f65c31262cdc54e5abe022e499f34a2248504b', '$2y$10$e45H4/zzpxHEKiEdqPK02eknJKZyXTVGScKHRATLBF5.W8km4vUMy', 'admin', 0, '2021-05-20 09:51:01', '2021-06-24 16:05:16'),
 (5, 'juan@gmail.com', '7c61c8b92cfeb880d8d99b58533e324c07cc461d3e573b17369f2a377ef1f2dbb47629ea4b1511290a91319a6d5f7944cb78', '$2y$10$MiSINz5TurNhGjk0sIbzKu9eaOepd9WkQ0XD/uw3j9hryuTtZYuke', '12345', 3, '2021-05-20 09:51:01', '2021-06-21 23:44:31'),
 (6, 'jen@gmail.com', 'e81e1502f327062b08945aa5be675c4488af8a411baedd922657ef346d1e73dee7aa19618a4572c0e898107677eeb64f72a8', '$2y$10$qTvg/EBRTtcpi.aHX5tFyegP/C3BO.b.y3HAvt.herwmej3URnK.q', 'ZDxyt3kL', 2, '2021-05-21 06:43:37', '2021-05-21 06:50:57'),
 (7, 'admin2@mail.com', '26c1731abfdaa3d0c9efe3a99af10d1de301119324548f3707149281a3eb21ca1517321df1945b15de4d1e8eddf454a5875d', '$2y$10$nCAYW6LBthx9kBH8ropAreufnByt/O6AC02iMDAUHCqCaByN2WG.G', 'HE1nKkNg', 0, '2021-05-21 06:44:13', '2021-05-21 06:44:13'),
@@ -3035,17 +2194,13 @@ INSERT INTO `users` (`user_id`, `email`, `token`, `password`, `pass`, `role_id`,
 (62, 'employer_kinse@gmail.com', '6bf5476cdecd505ea8bbad3f4827d7a612276ca4ca62c61346a259491fd3867281a99f4541fd0ad9d29dcb49c9905edb2436', '$2y$10$NYInDBn.FFBS1zBZGE2AK.IQuNRF4EiMQqEtb8jyJg8iFvXEQy6v2', 'employ15', 2, '2021-06-16 22:12:33', '2021-06-16 22:12:33'),
 (68, 'test1@mail.com', '054053a8b132538a53c7b1e9c560b041c8eca9f7798abe043c0d7577c68701e9f0463a74cfeb31c734caa44e3c2f4bf34e50', '$2y$10$24CAMQ21C2H3rdp/TqK2kuQ1LheeO6yAtnCxezNIuNHnPxpaXwapS', '11111111', 3, '2021-06-21 23:32:37', '2021-06-21 23:32:52'),
 (85, 'test@mail.com', '42e91391a827afcdb5f135db056ab8688518236ed462362b1b9f057683f7481164708ba84d2883b0705460a0c2c23cdf8350', '$2y$10$d5xTDxcHkEj5NPtBo76TPeORBDkHMbApOoG3hbB0O2uD/zJ73XVda', '3vAFMhHs', 0, '2021-06-23 01:52:47', '2021-06-23 01:52:47'),
-(86, 'test2@mail.com', '9d76c8760be34e1e33648c08534d1db7ce72bea240054267b54077253bc521a66ee28e2e10f92af27148382b284421b3ffae', '$2y$10$r9DDYa/b4mnob7qR0y.s.OEjM4.56QYZqZLBrasn0upStmpLuoAP6', '7jMB64oY', 3, '2021-06-23 01:53:03', '2021-06-23 01:53:03');
+(86, 'test2@mail.com', '9d76c8760be34e1e33648c08534d1db7ce72bea240054267b54077253bc521a66ee28e2e10f92af27148382b284421b3ffae', '$2y$10$r9DDYa/b4mnob7qR0y.s.OEjM4.56QYZqZLBrasn0upStmpLuoAP6', '7jMB64oY', 3, '2021-06-23 01:53:03', '2021-06-23 01:53:03'),
+(95, 'alpha@mail.com', 'c9014eaf7512da5b2f032da46dced750e93490a17ae6bd3cb4b466faffc5be9b90eda2c8971dad96f71d10375ed063e677a8', '$2y$10$ty.LMdVs6LkPxiRUzMZcbeUqP5rZ1osfpOkiOBZwefpp4TClL2f/m', 's7QwjGe6', 2, '2021-06-24 16:02:03', '2021-06-24 16:02:03'),
+(96, 'lcdungo@up.edu.ph', 'eff27b02da9216821a9d1ab8d6fef1414f6f3e81c5e668ef0378e51300719f6a0d15bf2dd7046ba1f1072c55c4d18c3d880e', '$2y$10$d1xjxaIdLdbc6jQQ0tkUU.hM.bEdFkxAktIrAXgtk8Yoxn0CgOK7G', 'nbcXKPqx', 1, '2021-06-24 16:04:51', '2021-06-24 16:04:51');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `alum_survey`
---
-ALTER TABLE `alum_survey`
-  ADD PRIMARY KEY (`answer_id`);
 
 --
 -- Indexes for table `alum_survey_q1`
@@ -3186,13 +2341,6 @@ ALTER TABLE `alum_survey_q19`
 ALTER TABLE `contactemp_ques`
   ADD PRIMARY KEY (`answer_id`),
   ADD UNIQUE KEY `user_id` (`user_id`);
-
---
--- Indexes for table `emp_survey`
---
-ALTER TABLE `emp_survey`
-  ADD PRIMARY KEY (`answer_id`),
-  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `emp_survey_q1`
@@ -3338,12 +2486,6 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `alum_survey`
---
-ALTER TABLE `alum_survey`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `alum_survey_q1`
 --
 ALTER TABLE `alum_survey_q1`
@@ -3371,7 +2513,7 @@ ALTER TABLE `alum_survey_q4`
 -- AUTO_INCREMENT for table `alum_survey_q5`
 --
 ALTER TABLE `alum_survey_q5`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q6`
@@ -3389,7 +2531,7 @@ ALTER TABLE `alum_survey_q7`
 -- AUTO_INCREMENT for table `alum_survey_q8`
 --
 ALTER TABLE `alum_survey_q8`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q9`
@@ -3407,7 +2549,7 @@ ALTER TABLE `alum_survey_q10`
 -- AUTO_INCREMENT for table `alum_survey_q11`
 --
 ALTER TABLE `alum_survey_q11`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q12`
@@ -3419,7 +2561,7 @@ ALTER TABLE `alum_survey_q12`
 -- AUTO_INCREMENT for table `alum_survey_q13`
 --
 ALTER TABLE `alum_survey_q13`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q14`
@@ -3443,19 +2585,19 @@ ALTER TABLE `alum_survey_q16`
 -- AUTO_INCREMENT for table `alum_survey_q17`
 --
 ALTER TABLE `alum_survey_q17`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q18`
 --
 ALTER TABLE `alum_survey_q18`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT for table `alum_survey_q19`
 --
 ALTER TABLE `alum_survey_q19`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `contactemp_ques`
@@ -3464,130 +2606,124 @@ ALTER TABLE `contactemp_ques`
   MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `emp_survey`
---
-ALTER TABLE `emp_survey`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=902;
-
---
 -- AUTO_INCREMENT for table `emp_survey_q1`
 --
 ALTER TABLE `emp_survey_q1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q2`
 --
 ALTER TABLE `emp_survey_q2`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q2_1`
 --
 ALTER TABLE `emp_survey_q2_1`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q3`
 --
 ALTER TABLE `emp_survey_q3`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q4`
 --
 ALTER TABLE `emp_survey_q4`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q5`
 --
 ALTER TABLE `emp_survey_q5`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q6`
 --
 ALTER TABLE `emp_survey_q6`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q7`
 --
 ALTER TABLE `emp_survey_q7`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q8`
 --
 ALTER TABLE `emp_survey_q8`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=222;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q9`
 --
 ALTER TABLE `emp_survey_q9`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q10`
 --
 ALTER TABLE `emp_survey_q10`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q11`
 --
 ALTER TABLE `emp_survey_q11`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q12`
 --
 ALTER TABLE `emp_survey_q12`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=144;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q13`
 --
 ALTER TABLE `emp_survey_q13`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q14`
 --
 ALTER TABLE `emp_survey_q14`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q15`
 --
 ALTER TABLE `emp_survey_q15`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q16`
 --
 ALTER TABLE `emp_survey_q16`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `emp_survey_q17`
 --
 ALTER TABLE `emp_survey_q17`
-  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `answer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `password_request`
 --
 ALTER TABLE `password_request`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
