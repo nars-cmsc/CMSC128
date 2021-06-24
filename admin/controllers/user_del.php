@@ -40,6 +40,7 @@ if (isset($_GET['id'])) {
 
 	// sending email to users
 	try {
+		$mail->SMTPDebug = SMTP::DEBUG_SERVER; 
 		$mail->isSMTP();
 		$mail->Host = 'smtp.gmail.com';
 		$mail->SMTPAuth = true;
@@ -63,7 +64,7 @@ if (isset($_GET['id'])) {
 		If you need help, please contact the site administrator. Thank you! <br><br><br>
 		<b>Admin User</b>";
 
-		$mail->AltBody = 'For non HTML clients';
+		//$mail->AltBody = 'For non HTML clients';
 
 		$_SESSION['success'] = "Email containing password was sent to user";
 		$mail->send();

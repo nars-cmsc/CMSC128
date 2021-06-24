@@ -3,6 +3,7 @@
 session_start();
 
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require ('config/connection.php');
@@ -86,12 +87,13 @@ if (isset($_POST['reg-btn'])) {
 
 		// sending email to newly registered users
 		try {
+			$mail->SMTPDebug = SMTP::DEBUG_SERVER; 
 			$mail->isSMTP();
 			$mail->Host = 'smtp.gmail.com';
 			$mail->SMTPAuth = true;
 			$mail->Username = 'dmcs.survey.test1@gmail.com'; // gmail address used as SMTP server
 			$mail->Password = 'eysiyplscikrzidf'; // password of gmail address
-			$mail->SMTPSecure = 'tsl';
+			$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 			$mail->Port = 587;
 
 			$mail->setFrom('dmcs.survey.test1@gmail.com', 'DMCS Survey');
@@ -136,7 +138,7 @@ if (isset($_POST['reg-btn'])) {
 			Kindly disregard if you already responded to this survey. Thank you.";
 			}
 			
-			$mail->AltBody = 'For non HTML clients';
+			//$mail->AltBody = 'For non HTML clients';
 
 			$mail->send();
 		} catch (Exception $e) {
