@@ -773,6 +773,7 @@ if ($_SESSION['role'] == 1) {
 	<?php include('footer.php'); ?>
 	
 	<script type="text/javascript" src="js/review.js"></script>
+	<script type="text/javascript" src="js/logout.js"></script>
 </body>
 </html>
 						
