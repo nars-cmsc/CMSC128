@@ -31,6 +31,6 @@
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" src="js/review.js"></script>
+		<!-- <script type="text/javascript" src="js/review.js"></script> -->
 		<script type="text/javascript" src="js/logout.js"></script>
 	</header>
