@@ -1,7 +1,9 @@
 <?php
 
+// start the session
 session_start();
 
+// enable connection to db
 require ('config/connection.php');
 
 $ADMIN_ROLE_ID = 0;
@@ -16,6 +18,7 @@ $email = "";
 
 // if user clicks log in button
 if (isset($_POST['login-btn'])) {
+
 	$email = $_POST['email'];
 	$password = $_POST['password'];
 
@@ -80,6 +83,7 @@ if (isset($_POST['login-btn'])) {
 
 		// if there are no errors proceed to log in
 		if (count($errors) == 0) {
+			// select user with matching email from db
 			$sql = "SELECT * FROM users WHERE email=? LIMIT 1";
 			$stmt = $db_conn->prepare($sql);
 			$stmt->bind_param('s', $email);
@@ -87,9 +91,10 @@ if (isset($_POST['login-btn'])) {
 			$result = $stmt->get_result();
 			$user = $result->fetch_assoc();
 
-			// chack if password matches email
+			// check if password matches email
 			if (password_verify($password, $user['password'])) {
 				// successful login
+				// store user details to session values to be accessed later
 				$_SESSION['id'] = $user['user_id'];
 				$_SESSION['email'] = $user['email'];
 				$_SESSION['role'] = $user['role_id'];
@@ -99,18 +104,22 @@ if (isset($_POST['login-btn'])) {
 				$rs = mysqli_query($db_conn, $sql_time);
 
 				// check role of the user
+				// if alumni only, go to alumni survey
 				if ($user['role_id'] === $ALUMNI_ROLE_ID) {
 					header('location: alum_survey.php');
 					exit();
 				}
+				// if employer only, go to employer survey
 				elseif ($user['role_id'] === $EMPLOYER_ROLE_ID) {
 					header('location: emp_survey.php');
 					exit();
 				}
+				// if alumni and employer, go to landing page
 				elseif ($user['role_id'] === $ALUM_EMP_ROLE_ID) {
 					header('location: alum_emp.php');
 					exit();
 				}
+				// if admin, go to admin index page
 				elseif ($user['role_id'] === $ADMIN_ROLE_ID) {
 					header('location: admin');
 					exit();

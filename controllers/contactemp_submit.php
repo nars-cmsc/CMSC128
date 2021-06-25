@@ -69,42 +69,35 @@ if (isset($_POST['submit-contactemp']) && $_POST['submitted'] == '1') {
 
 	
 	// if there are no errors store answers to db
-
-		
 	if ($error == false) {
-		
-		$ques_num = mysqli_real_escape_string($db_conn, $_POST['contactemp']);
+		// get answer to agreement
 		$contactemp = mysqli_real_escape_string($db_conn, $_POST['contactemp_yon']);
 
-		// if other is selected
+		// if yes is selected
 		if ($contactemp == 'Yes') {
+			// get the following values
 			$companyname = mysqli_real_escape_string($db_conn, $_POST['emp1']);
 			$contactperson = mysqli_real_escape_string($db_conn, $_POST['emp2']);
 			$contactnumber = mysqli_real_escape_string($db_conn, $_POST['emp3']);
 			$contactemail = mysqli_real_escape_string($db_conn, $_POST['emp4']);
-			
-		// store to db
-	    $sql = "INSERT INTO contactemp_ques (user_id, companyname, contactperson, contactnumber, contactemail, date_response, contacted) VALUES ('$id', '$companyname', '$contactperson', '$contactnumber', '$contactemail', now(), 'No')";
-		mysqli_query($db_conn, $sql);		
+			// store to db
+		    $sql = "INSERT INTO contactemp_ques (user_id, companyname, contactperson, contactnumber, contactemail, date_response, contacted) VALUES ('$id', '$companyname', '$contactperson', '$contactnumber', '$contactemail', now(), 'No')";
+			mysqli_query($db_conn, $sql);		
 		} else {
 			$companyname = $contactemp;
 			$contactperson = $contactemp;
 			$contactnumber = $contactemp;
 			$contactemail = $contactemp;
-			
 		}
 
-		// if user already answered employer survey
+		// if user already answered employer survey (for alumni and employer)
 		$emp_check_query = "SELECT * FROM emp_survey_q1 WHERE user_id='$id' LIMIT 1";
 		$result1 = mysqli_query($db_conn, $emp_check_query);
 		$user_emp = mysqli_fetch_assoc($result1);
 		
+		// decide where the user will be redirected depending on role
 		// if alumni only		
 		if ($_SESSION['role'] == $ALUMNI_ROLE_ID) {
-			// update time of response
-			$sql_time = "UPDATE contactemp_ques set date_response=now() where user_id=".$_SESSION['id'];
-			$rs = mysqli_query($db_conn, $sql_time);
-
 			header('location: thankyou.php');
 		}
 		// if  alumni and employer and employer survey is done

@@ -1,15 +1,17 @@
 <?php
-// display alum survey raw data from db
+// display contact info of employers from db
 session_start();
 
 require ('config/connection.php');
 
 $result = mysqli_query($db_conn, "SELECT * FROM contactemp_ques");
 
-
+// if the update button is clicked
 if (isset($_POST['update-bttn'])) {
+	// set all contacted values to No
 	$query = mysqli_query($db_conn, "UPDATE contactemp_ques SET contacted = 'No'");
 
+	// record checks as yes
 	if (!empty($_POST['contact-check'])) {
 		$selected_ids = array();
 

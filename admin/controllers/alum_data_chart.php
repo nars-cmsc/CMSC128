@@ -5,7 +5,6 @@ session_start();
 require ('../config/connection.php');
 
 // get total number of respondents
-
 $total = 0;
 $query = "SELECT user_id FROM alum_survey_q1";
 $result = mysqli_query($db_conn, $query);
@@ -17,6 +16,7 @@ while ($row = mysqli_fetch_array($result)) {
 
 ###################### QUESTION # 1 ######################
 	
+	// counters
 	$ct_fmale = 0;
 	$ct_male = 0;
 	
@@ -24,13 +24,6 @@ while ($row = mysqli_fetch_array($result)) {
 	$query = "SELECT user_id FROM alum_survey_q1 WHERE answer_body='Female'";
 	// execute query
 	$result = mysqli_query($db_conn, $query);
-
-	// check for error
-	if (!$result) {
-	    printf("Error: %s\n", mysqli_error($db_conn));
-	    exit();
-	}
-
 	// loop through returned data
 	while ($row = mysqli_fetch_array($result)) {
 		$ct_fmale++;

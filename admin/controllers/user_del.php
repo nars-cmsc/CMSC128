@@ -17,10 +17,14 @@ $mail = new PHPMailer(true);
 $query = mysqli_query($db_conn, "SELECT * FROM users");
 
 // for deleting users
+// get user_id of selected user
 if (isset($_GET['delete'])) {
+	// remove row where the user_id is the selected user's
 	mysqli_query($db_conn, "DELETE FROM users WHERE user_id='".$_GET['delete']."'");
+	// for confirmation message
 	$_SESSION['success'] = "User record has been deleted!";
 	
+	// redirect to index page
 	header('location: index.php');
 	exit();
 }

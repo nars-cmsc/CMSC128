@@ -25,6 +25,7 @@ function password_generate($chars) {
 }
 
 // for registering
+// check if register button is clicked
 if (isset($_POST['reg-btn'])) {
 
 	// check value of variables
@@ -51,6 +52,7 @@ if (isset($_POST['reg-btn'])) {
 	}
 	$pass = $password;
 
+	// checks if user exists
 	$query = "SELECT * FROM users WHERE email=? LIMIT 1";
 	$stmt = $db_conn->prepare($query);
 	$stmt->bind_param('s', $email);
@@ -77,10 +79,11 @@ if (isset($_POST['reg-btn'])) {
 
 	// no errors, proceed create new user
 	if (count($errors) === 0) {
+		// hashed password
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		$token = bin2hex(random_bytes(50));
 
-
+		// add new user info to db
 		$sql = "INSERT INTO users (email, token, password, pass, role_id) VALUES ('$email', '$token', '$password', '$pass', '$role_id')";
 		mysqli_query($db_conn, $sql);
 		$_SESSION['success'] = "User successfully added to the database!";
@@ -137,13 +140,11 @@ if (isset($_POST['reg-btn'])) {
 			Password : </b>$pass <br><br>
 			Kindly disregard if you already responded to this survey. Thank you.";
 			}
-			
-			//$mail->AltBody = 'For non HTML clients';
 
 			$mail->send();
 		} catch (Exception $e) {
 			$_SESSION['error'] = 'Message could not be sent. Mailer Error: '. $mail->ErrorInfo;
-		}
+		} // end send email
 
 		header('location: index.php');
 	 	exit();

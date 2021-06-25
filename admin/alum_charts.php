@@ -197,7 +197,7 @@ if ($_SESSION['role'] == 3) {
             plugins: {
                 datalabels: {
                   formatter: (value, ctx) => {
-                  
+                    // for the percentage displayed inside chart
                     if (value > 0) {
                        let sum = 0;
                         let dataArr = ctx.chart.data.datasets[0].data;
@@ -210,8 +210,6 @@ if ($_SESSION['role'] == 3) {
                         value = "";
                         return value;
                     }
-
-                
                   },
                   color: '#fff'
                 }
@@ -1124,7 +1122,6 @@ if ($_SESSION['role'] == 3) {
     <script type="text/javascript">
 
         var barChartData = {
-            // labels: ["Possess the skills and mindset to improve human life", "Commit to the freedom and welfare of all", "Demonstrate mastery of knowledge in your specific discipline", "Possess breadth of mind", "Possess strength of character", "Possess generosity of spirit", "Inclusively engage with society and the world at large", "Be mindful of the needs and capabilities of people", "Be sensitive to the challenges and opportunities of national development and global change", "Think critically", "Demonstrate discernment"],
             labels: ["Competency 1", "Competency 2", "Competency 3", "Competency 4", "Competency 5", "Competency 6", "Competency 7", "Competency 8", "Competency 9", "Competency 10", "Competency 11"],
             datasets: [{
                 label: 'Very Poorly',
